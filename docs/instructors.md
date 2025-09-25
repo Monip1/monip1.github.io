@@ -137,7 +137,7 @@ for tutor and office hours laid out in a weekly calendar.
 
 [1]: https://cse.ucsd.edu/about/floormaps
 
-## Tutors
+## Head Tutors
 
 <div class="profile-display">
   <div class="profile tutor-profile">
@@ -210,6 +210,9 @@ for tutor and office hours laid out in a weekly calendar.
       <a href="mailto:ryounan@ucsd.edu">ryounan@ucsd.edu</a>
       </div>
   </div>
+</div>
+
+<div class="profile-display">
   <div class="profile tutor-profile">
     <img class="profile-pic tutor-pic" src="/assets/people/Kenneth_Song.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Kenneth Song">
       <div class="profile-info tutor-info">
@@ -217,6 +220,11 @@ for tutor and office hours laid out in a weekly calendar.
       <a href="mailto:kjsong@ucsd.edu">kjsong@ucsd.edu</a>
       </div>
   </div>
+</div>
+
+## Tutors
+
+<div class="profile-display">
   <div class="profile tutor-profile">
     <img class="profile-pic tutor-pic" src="/assets/people/Mia_Chen.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Mia Chen">
       <div class="profile-info tutor-info">
