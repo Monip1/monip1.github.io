@@ -36,9 +36,10 @@ We expect that all students will need help at some point in the quarter, so plea
 
 ## Lectures
 
-| Lecture | Instructor | When? | Where? |
-| :---- | :---- | :---- | :---- |
-| A00 | Gerald Soosairaj | Tuesdays and Thursdays @ 2:00 \- 3:20pm | PETER 108 |
+| Lecture | When? | Where? |
+| :----  | :---- | :---- |
+| A00 | Tuesdays and Thursdays @ 2:00 \- 3:20pm | PETER 108 |
+| A00 | Tuesdays and Thursdays @ 2:00 \- 3:20pm | Zoom Link On Canvas | 
 
 ## Labs
 
@@ -46,14 +47,14 @@ We expect that all students will need help at some point in the quarter, so plea
 
 | Lab | When? | Where? |
 | :---- | :---- | :---- |
-| A50 | Wednesdays @ 10:00a \- 10:50a | EBU3B B250 |
-| A51 | Wednesdays @ 11:00a \- 11:50a | EBU3B B250 |
-| A52 | Wednesdays @ 12:00p \- 12:50p | EBU3B B250 |
-| A53 | Wednesdays @ 1:00p \- 1:50p | EBU3B B250 |
-| A54 | Wednesdays @ 2:00p \- 2:50p | EBU3B B250 |
-| A55 | Wednesdays @ 3:00p \- 3:50p | EBU3B B250 |
-| A56 | Wednesdays @ 4:00p \- 4:50p | EBU3B B250 |
-| A57 | Wednesdays @ 5:00p \- 5:50p | EBU3B B250 |
+| A50 | Wednesdays @ 10:00a \- 10:50am | EBU3B B250 |
+| A51 | Wednesdays @ 11:00a \- 11:50am | EBU3B B250 |
+| A52 | Wednesdays @ 12:00p \- 12:50pm | EBU3B B250 |
+| A53 | Wednesdays @ 1:00p \- 1:50pm | EBU3B B250 |
+| A54 | Wednesdays @ 2:00p \- 2:50pm | EBU3B B250 |
+| A55 | Wednesdays @ 3:00p \- 3:50pm | EBU3B B250 |
+| A56 | Wednesdays @ 4:00p \- 4:50pm | EBU3B B250 |
+| A57 | Wednesdays @ 5:00p \- 5:50pm | EBU3B B250 |
 
 {: .note}
 Students in CSE 6R will be given the option to sign up for 10 AM \- 4 PM labs (**so not the 5 \- 6 PM**).
@@ -61,13 +62,13 @@ Students in CSE 6R will be given the option to sign up for 10 AM \- 4 PM labs (*
 
 | Lab | When? | Where? |
 | :---- | :---- | :---- |
-| R50 | Wednesdays @ 10:00a \- 10:50a | Remote (Zoom Link TBA) |
-| R51 | Wednesdays @ 11:00a \- 11:50a | Remote (Zoom Link TBA) |
-| R52 | Wednesdays @ 12:00p \- 12:50p | Remote (Zoom Link TBA)|
-| R53 | Wednesdays @ 1:00p \- 1:50p | Remote (Zoom Link TBA) |
-| R54 | Wednesdays @ 2:00p \- 2:50p | Remote (Zoom Link TBA) |
-| R55 | Wednesdays @ 3:00p \- 3:50p | Remote (Zoom Link TBA) |
-| R56 | Wednesdays @ 4:00p \- 4:50p | Remote (Zoom Link TBA) |
+| R50 | Wednesdays @ 10:00a \- 10:50am | Remote (Zoom Link TBA) |
+| R51 | Wednesdays @ 11:00a \- 11:50am | Remote (Zoom Link TBA) |
+| R52 | Wednesdays @ 12:00p \- 12:50pm | Remote (Zoom Link TBA)|
+| R53 | Wednesdays @ 1:00p \- 1:50pm | Remote (Zoom Link TBA) |
+| R54 | Wednesdays @ 2:00p \- 2:50pm | Remote (Zoom Link TBA) |
+| R55 | Wednesdays @ 3:00p \- 3:50pm | Remote (Zoom Link TBA) |
+| R56 | Wednesdays @ 4:00p \- 4:50pm | Remote (Zoom Link TBA) |
 
 <style>
   .meme {
