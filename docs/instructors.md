@@ -199,7 +199,7 @@ for tutor and office hours laid out in a weekly calendar.
   <div class="profile tutor-profile">
     <img class="profile-pic tutor-pic" src="/assets/people/Yuan_Kai_Yang.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Yuan-Kai Yang">
       <div class="profile-info tutor-info">
-      <p class="profile-name">Yuan-Kai Yang</p>
+      <p class="profile-name">Yuan-Kai (Kevin) Yang</p>
       <a href="mailto:yuy080@ucsd.edu">yuy080@ucsd.edu</a>
       </div>
   </div>
