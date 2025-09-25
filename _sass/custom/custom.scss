@@ -23,7 +23,13 @@ $content-width: 90dvw;
   }
 
   & + .main {
-    margin-left: $nav-width;
+    @include mq(md) {
+      margin-left: $nav-width;
+    }
+
+    @include mq(lg) {
+      margin-left: $nav-width;
+    }
     // @include mq(md) {
     //   margin-left: $nav-width-md;
     // }

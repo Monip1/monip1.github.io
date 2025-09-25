@@ -1,15 +1,15 @@
 ---
 title: Syllabus
 layout: default
-nav_order: 3
+nav_order: 1
 permalink: /syllabus
 ---
 
 # Syllabus
 
-[Link to syllabus](https://docs.google.com/document/d/1IFghCUjc2Wk_UmuWWRTDeXClfMJz370zr0zzu31VaZU/edit?usp=sharing)
+[Link to syllabus](https://docs.google.com/document/d/1Q7MiXa8qNiSwhj0-UBcpz5ZfowosB3_AfcMyYV8KCMk/edit?usp=sharing)
 
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vTVbQPbflTqxpiddozefB3Rtyr_4hODUPnZwzy2ARg4QgAA95JQ27gkJpClLRt8x18nTqEyEII2rBgd/pub?embedded=true"></iframe>
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vQ4e2z7R7tadsS9w_lc24DbqqqM4Lsrb_hvYOOuRqotzHTj1WR2Kq8sgsflNCJDY767szUqVGCzCTUd/pub?embedded=true"></iframe>
 
 <style>
     iframe {
