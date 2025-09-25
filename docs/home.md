@@ -59,7 +59,7 @@ We expect that all students will need help at some point in the quarter, so plea
 ### CSE 6R
 
 {: .note}
-Students in CSE 6R will be given the option to sign up for labs starting from 10 AM \- 4 PM labs (**no remote option for 5 \- 5:50 PM lab**).
+Students in CSE 6R will be given the option to sign up for labs starting from 10 AM \- 4 PM (**no remote option for 5 \- 5:50 PM lab**).
 
 
 | Lab | When? | Where? |
