@@ -105,7 +105,7 @@ DEPENDENCIES
   bigdecimal
   csv
   erb
-  jekyll (~> 4.3.3)
+  jekyll
   jekyll-remote-theme
   just-the-docs
   logger

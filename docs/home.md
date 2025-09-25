@@ -5,30 +5,30 @@ permalink: /
 nav_order: 0
 ---
 
-# Systems Programming and Software Tools
+# Introduction to Programming in Python
 {: .no_toc}
 
-CSE 29 at UC San Diego (Spring 2025)
+CSE 8A/6R at UC San Diego (Fall 2025)
 {: .fs-6 .fw-300 }
 
-![XKCD Pointers Comic (xkcd 138)](/assets/pointers_xkcd.png){: .meme }
+![XKCD Pointers Comic (xkcd 138)](https://imgs.xkcd.com/comics/automation.png){: .meme }
 
-CSE 29 introduces you to an exciting range of materials from the broad field of systems programming, including 1\) the basics of how a single program executes on a computer, 2\) higher-level programming in C, 3\) software tools to help you interact with a computer using the command line interface, and 4\) understand the basics of what happens when multiple programs run on a computer at the same time. *All very cool stuff that every programmer should know\!*
+Welcome to CSE 8A/6R! We are excited to have you in this course. In this class, our goal is to help you experience the thrill of getting a computer to solve a problem of your choosing – by expressing that solution in a programming language. In this course you will do interactive in-class exercises and programming assignments to help you master the basics of computational problem solving and programming. 
 
-[Piazza](https://piazza.com/class/m8wkvbotcck3g2){: .btn .btn-outline }
+[EdStem](https://edstem.org/us/courses/87720/discussion){: .btn .btn-outline }
+[Canvas](){: .btn .btn-outline }
 [Gradescope](https://www.gradescope.com/courses/942522){: .btn .btn-outline }
-[Tutor Hours Queue](https://autograder.ucsd.edu/queue/787){: .btn .btn-outline }
-[PrairieLearn](https://us.prairielearn.com/pl/course_instance/180232){: .btn .btn-outline }
-[PrairieTest](https://us.prairietest.com/){: .btn .btn-outline }
-[WebClicker](https://webclicker.web.app/login/){: .btn .btn-outline }
+[Textbook](){: .btn .btn-outline }
+<!-- [Tutor Hours Queue](https://autograder.ucsd.edu/queue/787){: .btn .btn-outline } -->
+<!-- [PrairieLearn](https://us.prairielearn.com/pl/course_instance/180232){: .btn .btn-outline } -->
+<!-- [PrairieTest](https://us.prairietest.com/){: .btn .btn-outline } -->
+<!-- [WebClicker](https://webclicker.web.app/login/){: .btn .btn-outline } -->
 
 # Need Help?
 
-You can get help by submitting a help ticket on **[Autograder](https://autograder.ucsd.edu/queue/787)** or by attending office hours.
-You can also post on the Discord or Piazza for help from your peers and TAs/Tutors.
-- **Tutor Hours** are held in **CSE B240** on all days except Wednesdays.
-  On Wednesdays, tutor hours are held in **CSE B230** because CSE 110 labs take place in CSE B240.
-- Check the **[Tutor and Office Hours Calendar](/calendar#tutor-and-office-hours-calendar)** for the most up-to-date information on TA Office Hours and Tutor Hours.
+<!-- You can get help by submitting a help ticket on **[Autograder](https://autograder.ucsd.edu/queue/787)** or by attending office hours. -->
+You can also post on the EdStem for help from your peers and TAs/Tutors.
+
 We expect that all students will need help at some point in the quarter, so please do not hesitate to reach out&nbsp;:)
 
 
@@ -38,28 +38,36 @@ We expect that all students will need help at some point in the quarter, so plea
 
 | Lecture | Instructor | When? | Where? |
 | :---- | :---- | :---- | :---- |
-| A00 | Edwin Solares | Tuesdays and Thursdays @ 8am \- 9:20am | CENTER 115 |
-| B00 | Gerald Soosairaj | Tuesdays and Thursdays @ 2pm \- 3:20pm | CENTER 119 |
-
-## Discussions
-
-| Discussion | When? | Where? |
-| :---- | :---- | :---- |
-| A01 | Wednesdays @ 5pm \- 5:50pm | PCYNH 109 |
-| B01 | Wednesdays @ 6pm \- 6:50pm | PCYNH 109 |
+| A00 | Gerald Soosairaj | Tuesdays and Thursdays @ 2:00 \- 3:20pm | PETER 108 |
 
 ## Labs
 
+### CSE 8A
+
 | Lab | When? | Where? |
 | :---- | :---- | :---- |
-| A50 | Fridays @ 10 \- 11:50am | CSE Lab B240 |
-| A51 | Fridays @ 12 \- 1:50pm | CSE Lab B240 |
-| A52 | Fridays @ 2 \- 3:50pm | CSE Lab B240 |
-| A53 | Fridays @ 4 \- 5:50pm | CSE Lab B240 |
-| B50 | Fridays @ 10 \- 11:50am | CSE Lab B250 |
-| B51 | Fridays @ 12 \- 1:50pm | CSE Lab B250 |
-| B52 | Fridays @ 2 \- 3:50pm | CSE Lab B250 |
-| B53 | Fridays @ 4 \- 5:50pm | CSE Lab B250 |
+| A50 | Wednesdays @ 10:00a \- 10:50a | EBU3B B250 |
+| A51 | Wednesdays @ 11:00a \- 11:50a | EBU3B B250 |
+| A52 | Wednesdays @ 12:00p \- 12:50p | EBU3B B250 |
+| A53 | Wednesdays @ 1:00p \- 1:50p | EBU3B B250 |
+| A54 | Wednesdays @ 2:00p \- 2:50p | EBU3B B250 |
+| A55 | Wednesdays @ 3:00p \- 3:50p | EBU3B B250 |
+| A56 | Wednesdays @ 4:00p \- 4:50p | EBU3B B250 |
+| A57 | Wednesdays @ 5:00p \- 5:50p | EBU3B B250 |
+
+### CSE 6R
+Students in CSE 6R will be given the option to sign up for 10 AM \- 4 PM labs (so not the 5 \- 6 PM).
+
+| Lab | When? | Where? |
+| :---- | :---- | :---- |
+| R10 | Wednesdays @ 10:00a \- 10:50a | Remote (Zoom Link TBA) |
+| R11 | Wednesdays @ 11:00a \- 11:50a | Remote (Zoom Link TBA) |
+| R12 | Wednesdays @ 12:00p \- 12:50p | Remote (Zoom Link TBA)|
+| R13 | Wednesdays @ 1:00p \- 1:50p | Remote (Zoom Link TBA) |
+| R14 | Wednesdays @ 2:00p \- 2:50p | Remote (Zoom Link TBA) |
+| R15 | Wednesdays @ 3:00p \- 3:50p | Remote (Zoom Link TBA) |
+| R16 | Wednesdays @ 4:00p \- 4:50p | Remote (Zoom Link TBA) |
+| R17 | Wednesdays @ 5:00p \- 5:50p | Remote (Zoom Link TBA) |
 
 <style>
   .meme {
