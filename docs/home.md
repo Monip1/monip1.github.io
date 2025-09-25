@@ -18,7 +18,7 @@ Welcome to CSE 8A/6R! We're excited to have you in this course. Our goal is to h
 [EdStem](https://edstem.org/us/courses/87720/discussion){: .btn .btn-outline }
 [Canvas](){: .btn .btn-outline }
 [Gradescope](https://www.gradescope.com/){: .btn .btn-outline }
-[Textbook](){: .btn .btn-outline }
+[Textbook](https://cogniterra.org/course/705/){: .btn .btn-outline }
 <!-- [Tutor Hours Queue](https://autograder.ucsd.edu/queue/787){: .btn .btn-outline } -->
 <!-- [PrairieLearn](https://us.prairielearn.com/pl/course_instance/180232){: .btn .btn-outline } -->
 <!-- [PrairieTest](https://us.prairietest.com/){: .btn .btn-outline } -->
@@ -59,7 +59,7 @@ We expect that all students will need help at some point in the quarter, so plea
 ### CSE 6R
 
 {: .note}
-Students in CSE 6R will be given the option to sign up for 10 AM \- 4 PM labs (**so not the 5 \- 6 PM**).
+Students in CSE 6R will be given the option to sign up for labs starting from 10 AM \- 4 PM labs (**no remote option for 5 \- 5:50 PM lab**).
 
 
 | Lab | When? | Where? |

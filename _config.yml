@@ -13,7 +13,7 @@ math: katex
 
 aux_links:
   Gradescope: "https://www.gradescope.com/"
-  Textbook: "cogniterra"
+  Textbook: "https://cogniterra.org/course/705/"
   EdStem: "https://edstem.org/us/courses/87720/discussion"
   Canvas: "https://canvas.ucsd.edu/"
 aux_links_new_tab: true
