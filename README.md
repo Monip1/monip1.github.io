@@ -1,8 +1,8 @@
-# CSE 29 Spring 2025
+# CSE 8A/6R Fall 2025
 
-This is the course website for CSE 29, Systems Programming and Software Tools,
-in Spring 2025 at UC San Diego. It aims to provide comprehensive resources and
-timely course information. Content includes:
+This is the course website for CSE 8A and 6R, Introduction to Programming in Python,
+in Fall 2025 at University of California, San Diego. it aims to provide 
+comprehensive resouces and timely course information. Content includes:
 
 - Useful links (Piazza, Gradescope, PrairieLearn, textbook, autograder, WebClicker)
 - Scheduling information (lecture, lab, and discussion times, tutor/office hours)
