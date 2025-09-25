@@ -71,6 +71,38 @@ Assuming [Jekyll] and [Bundler] are installed on your computer:
 
     The built site is stored in the directory `_site`.
 
+## Favicon Generation
+
+This repository includes a script to automatically generate circular favicons from a base image.
+
+### Prerequisites
+
+- ImageMagick must be installed on your system:
+  - **Ubuntu/Debian**: `sudo apt install imagemagick`
+  - **macOS**: `brew install imagemagick`
+  - **Windows**: Download from [ImageMagick website](https://imagemagick.org/script/download.php#windows)
+
+### Usage
+
+1. Place your source image as `favicon_base.png` in the `assets/` directory
+2. Navigate to the assets directory: `cd assets`
+3. Run the script: `./generate_favicons.sh`
+
+The script will automatically generate all required favicon sizes with circular design and transparent corners:
+
+- `favicon-16x16.png` (16×16 pixels)
+- `favicon-32x32.png` (32×32 pixels)
+- `favicon.ico` (multi-size ICO file)
+- `apple-touch-icon.png` (180×180 pixels for iOS)
+- `android-chrome-192x192.png` (192×192 pixels for Android)
+- `android-chrome-512x512.png` (512×512 pixels for Android)
+
+All generated favicons will have circular design with transparent corners, providing a modern and polished appearance for the website.
+
+### Script Location
+
+The favicon generation script is located at: `assets/generate_favicons.sh`
+
 ## Publishing your built site on a different platform
 
 Just upload all the files in the directory `_site`.
