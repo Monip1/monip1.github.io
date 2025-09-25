@@ -6,7 +6,7 @@ color_scheme: light
 domain: cse8a-6r-fall2025.github.io
 url: https://cse8a-6r-fall2025.github.io
 
-logo: "/assets/logo_main.png"
+logo: "/assets/CSE_8A6R.png"
 favicon_ico: "/assets/favicon/favicon.ico"
 
 math: katex
@@ -14,7 +14,7 @@ math: katex
 aux_links:
   Gradescope: "https://www.gradescope.com/"
   Autograder: "https://autograder.ucsd.edu/"
-  Piazza: "https://piazza.com/"
+  EdStem: "https://edstem.org/us/courses/87720/discussion"
   Canvas: "https://canvas.ucsd.edu/"
 aux_links_new_tab: true
 
