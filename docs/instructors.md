@@ -190,7 +190,7 @@ for tutor and office hours laid out in a weekly calendar.
       </div>
   </div>
   <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Kyle_Trinh.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Kyle Trinh">
+    <img class="profile-pic tutor-pic" src="/assets/people/kytrinh.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Kyle Trinh">
       <div class="profile-info tutor-info">
       <p class="profile-name">Kyle Trinh</p>
       <a href="mailto:kytrinh@ucsd.edu">kytrinh@ucsd.edu</a>
