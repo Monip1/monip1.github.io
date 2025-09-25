@@ -70,15 +70,14 @@ nav_order: 4
     }
 </style>
 
-## Primary Instructors
+## Instructor
 
 <div class="profile profile-prof">
     <img class="profile-pic prof" src="/assets/people/asoosairaj.png" alt="Profile picture for Gerald Soosairaj">
     <div class="profile-info profile-info-prof">
         <p class="profile-name"><a href="https://geraldsoosairaj.github.io/" target="_blank">Prof. Gerald Soosairaj</a></p>
-        <p>Associate Professor @ CSE</p>
-        <p>Lecture: TuTh 2:00-3:20pm, CENTR 119</p>
-        <p>Office Hours: Tu 10:00-11:00, CSE 2106</p>
+        <p>Associate Teaching Professor, Computer Science and Engineering</p>
+        <p>Office Hours: Tuesdays and Thursdays 10 - 11am @ CSE 2106</p>
         <a href="mailto:asoosairaj@ucsd.edu">asoosairaj@ucsd.edu</a>
     </div>
 </div>
@@ -99,7 +98,7 @@ nav_order: 4
     <img class="profile-pic ta-pic" src="/assets/people/Hailey_Li.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Hailey Li">
      <div class="profile-info ta-info">
       <p class="profile-name">Hailey Li</p>
-      <p><em>Homework &amp; Exams</em></p>
+      <p><em>Homework</em></p>
        <p>Office Hours: TBD</p>
       <a href="mailto:hal180@ucsd.edu">hal180@ucsd.edu</a>
      </div>
@@ -117,7 +116,7 @@ nav_order: 4
     <img class="profile-pic ta-pic" src="/assets/people/Prudhviraj_Naidu.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Prudhviraj Naidu">
      <div class="profile-info ta-info">
       <p class="profile-name">Prudhviraj Naidu</p>
-      <p><em>PAs</em></p>
+      <p><em>Readings</em></p>
       <p>Office Hours: TBD</p>
       <a href="mailto:prnaidu@ucsd.edu">prnaidu@ucsd.edu</a>
      </div>
@@ -126,7 +125,7 @@ nav_order: 4
     <img class="profile-pic ta-pic" src="/assets/people/SangYoon_Byun.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Sang Yoon Byun">
      <div class="profile-info ta-info">
       <p class="profile-name">Sang Yoon Byun</p>
-      <p><em>Review Quizzes &amp; Skill Demos</em></p>
+      <p><em>Study Groups</em></p>
        <p>Office Hours: TBD</p>
       <a href="mailto:sabyun@ucsd.edu">sabyun@ucsd.edu</a>
      </div>
