@@ -25,7 +25,7 @@ nav_order: 4
     .profile-pic {
         height: 10rem;
         width: 10rem;
-        border-radius: 50%;
+        border-radius: 8px;
         object-fit: cover;
         margin-right: 8px;
         overflow: hidden;
