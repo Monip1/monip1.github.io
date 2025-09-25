@@ -82,56 +82,45 @@ nav_order: 4
         <a href="mailto:asoosairaj@ucsd.edu">asoosairaj@ucsd.edu</a>
     </div>
 </div>
-
-<div class="profile profile-prof">
-    <img class="profile-pic prof" src="/assets/people/esolares.jpg" alt="Profile picture for Edwin Solares">
-    <div class="profile-info profile-info-prof">
-        <p class="profile-name"><a href="http://edwinsolares.com/" target="_blank">Prof. Edwin Solares</a></p>
-        <p>Lecturer @ CSE and HDSI</p>
-        <p>Lecture: TuTh 8:00-9:20, CENTR 115</p>
-        <p>Office Hours: Fr 10-11am, CSE 2204</p>
-        <a href="mailto:esolares@ucsd.edu">esolares@ucsd.edu</a>
-    </div>
-</div>
 </div>
 
 ## Teaching Assistants
 
 <div class="profile-display">
   <div class="profile ta-profile">
-    <img class="profile-pic ta-pic" src="/assets/people/ccoleman.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Cora Coleman">
+    <img class="profile-pic ta-pic" src="/assets/people/Andrew_Cheung.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Andrew Cheung">
      <div class="profile-info ta-info">
-      <p class="profile-name">Cora Coleman</p>
+      <p class="profile-name">Andrew Cheung</p>
       <p><em>Labs</em></p>
-       <p>Office Hours: We 1:00-2:00pm and Th 10:00-11:00am in CSE B275, Th 12:00-1:00pm in CSE B240</p>
-      <a href="mailto:ccoleman@ucsd.edu">ccoleman@ucsd.edu</a>
+       <p>Office Hours: TBD</p>
+      <a href="mailto:a7cheung@ucsd.edu">a7cheung@ucsd.edu</a>
      </div>
   </div>
   <div class="profile ta-profile">
-    <img class="profile-pic ta-pic" src="/assets/people/tihu.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Jacky Hu">
+    <img class="profile-pic ta-pic" src="/assets/people/Hailey_Li.jpeg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Hailey Li">
      <div class="profile-info ta-info">
-      <p class="profile-name">Jacky Hu</p>
-      <p><em>Discussions &amp; Exams</em></p>
-       <p>Office Hours: Mo 11:00am-2:00pm, CSE B260A</p>
-      <a href="mailto:tihu@ucsd.edu">tihu@ucsd.edu</a>
+      <p class="profile-name">Hailey Li</p>
+      <p><em>Homework &amp; Exams</em></p>
+       <p>Office Hours: TBD</p>
+      <a href="mailto:hal180@ucsd.edu">hal180@ucsd.edu</a>
      </div>
   </div>
   <div class="profile ta-profile">
-    <img class="profile-pic ta-pic" src="/assets/people/ljeong.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Bella Jeong">
+    <img class="profile-pic ta-pic" src="/assets/people/lhardy.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Liam Hardy">
      <div class="profile-info ta-info">
-      <p class="profile-name">Bella Jeong</p>
+      <p class="profile-name">Liam Hardy</p>
       <p><em>Logistics</em></p>
        <p>Office Hours: TBD</p>
-      <a href="mailto:ljeong@ucsd.edu">ljeong@ucsd.edu</a>
+      <a href="mailto:lhardy@ucsd.edu">lhardy@ucsd.edu</a>
      </div>
   </div>
   <div class="profile ta-profile">
-    <img class="profile-pic ta-pic" src="/assets/people/h4peng.png" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Michael Peng">
+    <img class="profile-pic ta-pic" src="/assets/people/Prudhviraj_Naidu.jpeg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Prudhviraj Naidu">
      <div class="profile-info ta-info">
-      <p class="profile-name">Michael Peng</p>
+      <p class="profile-name">Prudhviraj Naidu</p>
       <p><em>PAs</em></p>
       <p>Office Hours: Tu 11:00-12:00 in CSE B240A, We 11:00-12:00 in CSE B230, Th 11:00-12:00 in CSE B240</p>
-      <a href="mailto:h4peng@ucsd.edu">h4peng@ucsd.edu</a>
+      <a href="mailto:prnaidu@ucsd.edu">prnaidu@ucsd.edu</a>
      </div>
   </div>
   <div class="profile ta-profile">
