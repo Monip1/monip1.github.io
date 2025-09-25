@@ -38,8 +38,8 @@ We expect that all students will need help at some point in the quarter, so plea
 
 | Lecture | When? | Where? |
 | :----  | :---- | :---- |
-| A00 | Tuesdays and Thursdays @ 2:00 \- 3:20pm | PETER 108 |
-| A00 | Tuesdays and Thursdays @ 2:00 \- 3:20pm | Zoom Link On Canvas | 
+| CSE 8A A00 | Tuesdays and Thursdays @ 2:00 \- 3:20pm | PETER 108 |
+| CSE 6R A00 | Tuesdays and Thursdays @ 2:00 \- 3:20pm | Zoom Link On Canvas | 
 
 ## Labs
 
