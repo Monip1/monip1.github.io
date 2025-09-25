@@ -50,3 +50,9 @@ plugins:
 
 mermaid:
   version: 11.6.0
+
+# Enable table of contents
+toc:
+  enabled: true
+  h_min: 2
+  h_max: 3

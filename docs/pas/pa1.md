@@ -4,7 +4,7 @@ title: PA 1
 parent: Programming Assignments
 permalink: /pa1
 nav_order: 2
-toc: sidebar
+toc: true
 ---
 
 # PA 1: Enigma Machine
