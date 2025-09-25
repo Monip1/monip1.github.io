@@ -56,6 +56,8 @@ We expect that all students will need help at some point in the quarter, so plea
 | A56 | Wednesdays @ 4:00p \- 4:50pm | EBU3B B250 |
 | A57 | Wednesdays @ 5:00p \- 5:50pm | EBU3B B250 |
 
+### CSE 6R
+
 {: .note}
 Students in CSE 6R will be given the option to sign up for 10 AM \- 4 PM labs (**so not the 5 \- 6 PM**).
 
