@@ -31,53 +31,60 @@ mkdir -p "$FAVICON_DIR"
 
 echo "Generating circular favicons from favicon_base.png..."
 
-# Step 1: Create a 512x512 version of the base image
-echo "  → Resizing base image to 512x512..."
-magick "$BASE_IMAGE" -resize 512x512 "$SCRIPT_DIR/temp_square_512.png"
+# Step 1: Create a 512x512 version of the base image with transparent background
+echo "  → Preparing base image..."
+magick "$BASE_IMAGE" -resize 512x512 -background none -gravity center -extent 512x512 "$SCRIPT_DIR/temp_square_512.png"
 
-# Step 2: Create a circular mask
-echo "  → Creating circular mask..."
-magick -size 512x512 xc:none -fill white -draw "circle 256,256 256,0" "$SCRIPT_DIR/temp_mask_512.png"
+# Step 2: Create a high-quality circular version using a better method
+echo "  → Creating circular mask with anti-aliasing..."
+magick "$SCRIPT_DIR/temp_square_512.png" \
+    \( -size 512x512 xc:none -fill white -draw "circle 256,256 256,20" -blur 0x1 \) \
+    -alpha off -compose copy_opacity -composite \
+    "$SCRIPT_DIR/temp_circular_512.png"
 
-# Step 3: Apply the circular mask to create circular image
-echo "  → Applying circular mask..."
-magick "$SCRIPT_DIR/temp_square_512.png" "$SCRIPT_DIR/temp_mask_512.png" -alpha off -compose copy_opacity -composite "$SCRIPT_DIR/temp_circular_512.png"
+# Alternative method for even better quality - use this if the above has issues
+# magick "$SCRIPT_DIR/temp_square_512.png" \
+#     \( +clone -threshold 101% -fill white -draw "circle 256,256 256,0" \) \
+#     -channel-fx "|gray=>alpha" \
+#     "$SCRIPT_DIR/temp_circular_512.png"
 
-# Step 4: Generate all favicon sizes from the circular version
+# Step 3: Generate all favicon sizes from the circular version with proper transparency
 echo "  → Generating favicon-16x16.png..."
-magick "$SCRIPT_DIR/temp_circular_512.png" -resize 16x16 "$FAVICON_DIR/favicon-16x16.png"
+magick "$SCRIPT_DIR/temp_circular_512.png" -resize 16x16 -background none -gravity center -extent 16x16 "$FAVICON_DIR/favicon-16x16.png"
 
 echo "  → Generating favicon-32x32.png..."
-magick "$SCRIPT_DIR/temp_circular_512.png" -resize 32x32 "$FAVICON_DIR/favicon-32x32.png"
+magick "$SCRIPT_DIR/temp_circular_512.png" -resize 32x32 -background none -gravity center -extent 32x32 "$FAVICON_DIR/favicon-32x32.png"
 
 echo "  → Generating apple-touch-icon.png..."
-magick "$SCRIPT_DIR/temp_circular_512.png" -resize 180x180 "$FAVICON_DIR/apple-touch-icon.png"
+magick "$SCRIPT_DIR/temp_circular_512.png" -resize 180x180 -background none -gravity center -extent 180x180 "$FAVICON_DIR/apple-touch-icon.png"
 
 echo "  → Generating android-chrome-192x192.png..."
-magick "$SCRIPT_DIR/temp_circular_512.png" -resize 192x192 "$FAVICON_DIR/android-chrome-192x192.png"
+magick "$SCRIPT_DIR/temp_circular_512.png" -resize 192x192 -background none -gravity center -extent 192x192 "$FAVICON_DIR/android-chrome-192x192.png"
 
 echo "  → Generating android-chrome-512x512.png..."
 cp "$SCRIPT_DIR/temp_circular_512.png" "$FAVICON_DIR/android-chrome-512x512.png"
 
-# Step 5: Create the ICO file with multiple sizes
-echo "  → Creating favicon.ico..."
-magick "$SCRIPT_DIR/temp_circular_512.png" -resize 32x32 "$SCRIPT_DIR/temp_circular_32.png"
-magick "$SCRIPT_DIR/temp_circular_512.png" -resize 16x16 "$SCRIPT_DIR/temp_circular_16.png"
-magick "$SCRIPT_DIR/temp_circular_32.png" "$SCRIPT_DIR/temp_circular_16.png" "$FAVICON_DIR/favicon.ico"
+# Step 4: Create the ICO file with multiple sizes and proper transparency
+echo "  → Creating favicon.ico with multiple sizes..."
+magick "$SCRIPT_DIR/temp_circular_512.png" -resize 32x32 -background none "$SCRIPT_DIR/temp_circular_32.png"
+magick "$SCRIPT_DIR/temp_circular_512.png" -resize 16x16 -background none "$SCRIPT_DIR/temp_circular_16.png"
 
-# Step 6: Clean up temporary files
+# Create ICO with transparent background
+magick "$SCRIPT_DIR/temp_circular_32.png" "$SCRIPT_DIR/temp_circular_16.png" -background none "$FAVICON_DIR/favicon.ico"
+
+# Step 5: Clean up temporary files
 echo "  → Cleaning up temporary files..."
 rm -f "$SCRIPT_DIR"/temp_*.png
 
 echo "✅ Circular favicons generated successfully!"
 echo ""
 echo "Generated files:"
-echo "  • favicon-16x16.png (16x16)"
-echo "  • favicon-32x32.png (32x32)"
+echo "  • favicon-16x16.png (16×16)"
+echo "  • favicon-32x32.png (32×32)"
 echo "  • favicon.ico (multi-size)"
-echo "  • apple-touch-icon.png (180x180)"
-echo "  • android-chrome-192x192.png (192x192)"
-echo "  • android-chrome-512x512.png (512x512)"
+echo "  • apple-touch-icon.png (180×180)"
+echo "  • android-chrome-192x192.png (192×192)"
+echo "  • android-chrome-512x512.png (512×512)"
 echo ""
-echo "All files have circular design with transparent corners."
+echo "All files have circular design with transparent corners and no white rings."
 echo "Files are located in: $FAVICON_DIR" 
