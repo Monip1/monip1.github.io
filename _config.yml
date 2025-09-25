@@ -18,7 +18,7 @@ aux_links:
   Canvas: "https://canvas.ucsd.edu/"
 aux_links_new_tab: true
 
-footer_content: 'Copyright &copy; 2025 University of California San Diego. Distributed by an <a href="https://opensource.org/license/mit">MIT license.</a>'
+footer_content: 'University of California San Diego. Built with <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>.'
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
