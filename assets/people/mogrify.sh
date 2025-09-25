@@ -15,7 +15,7 @@ for image_file in ./*; do
         # Check if file size is greater than 16KB
         if [ "$file_size_kb" -gt 16 ]; then
             # Run your desired command here
-            mogrify -strip -resize '200x200^' -gravity center -crop 200x200+0+0 +repage -quality 80 -auto-orient -format jpg "$image_file"
+            mogrify -strip -resize '400x400^' -gravity center -crop 400x400+0+0 +repage -quality 80 -auto-orient -format jpg "$image_file"
             file_size=$(stat -c %s "$image_file")
             new_file_sz_kb=$((file_size / 1024))
             echo "done ($new_file_sz_kb KB)"

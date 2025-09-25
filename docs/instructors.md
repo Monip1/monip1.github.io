@@ -23,23 +23,21 @@ nav_order: 4
         text-align: center;
     }
     .profile-pic {
-        height: 100px;
-        width: 100px;
+        height: 10rem;
+        width: 10rem;
         border-radius: 50%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
+        object-fit: cover;
         margin-right: 8px;
         overflow: hidden;
         flex-shrink: 0;
     }
     .tutor-pic {
-        height: 80px;
-        width: 80px;
+        height: 7.5rem;
+        width: 7.5rem;
     }
     .prof {
-        height: 150px;
-        width: 150px;
+        height: 12.5rem;
+        width: 12.5rem;
         margin-right: 0px;
         margin-bottom: 10px;
     }
@@ -50,6 +48,9 @@ nav_order: 4
     }
     .profile-info {
         margin: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .profile-info p {
         text-wrap: pretty;
@@ -95,7 +96,7 @@ nav_order: 4
      </div>
   </div>
   <div class="profile ta-profile">
-    <img class="profile-pic ta-pic" src="/assets/people/Hailey_Li.jpeg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Hailey Li">
+    <img class="profile-pic ta-pic" src="/assets/people/Hailey_Li.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Hailey Li">
      <div class="profile-info ta-info">
       <p class="profile-name">Hailey Li</p>
       <p><em>Homework &amp; Exams</em></p>
@@ -113,7 +114,7 @@ nav_order: 4
      </div>
   </div>
   <div class="profile ta-profile">
-    <img class="profile-pic ta-pic" src="/assets/people/Prudhviraj_Naidu.jpeg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Prudhviraj Naidu">
+    <img class="profile-pic ta-pic" src="/assets/people/Prudhviraj_Naidu.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Prudhviraj Naidu">
      <div class="profile-info ta-info">
       <p class="profile-name">Prudhviraj Naidu</p>
       <p><em>PAs</em></p>
@@ -197,7 +198,7 @@ for tutor and office hours laid out in a weekly calendar.
       </div>
   </div>
   <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Yuan_Kai_Yang.JPG" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Yuan-Kai Yang">
+    <img class="profile-pic tutor-pic" src="/assets/people/Yuan_Kai_Yang.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Yuan-Kai Yang">
       <div class="profile-info tutor-info">
       <p class="profile-name">Yuan-Kai Yang</p>
       <a href="mailto:yuy080@ucsd.edu">yuy080@ucsd.edu</a>
@@ -232,21 +233,21 @@ for tutor and office hours laid out in a weekly calendar.
       </div>
   </div>
   <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Kyla_Ma.png" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Kyla Ma">
+    <img class="profile-pic tutor-pic" src="/assets/people/Kyla_Ma.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Kyla Ma">
       <div class="profile-info tutor-info">
       <p class="profile-name">Kyla Ma</p>
       <a href="mailto:kym003@ucsd.edu">kym003@ucsd.edu</a>
       </div>
   </div>
   <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Lulu_Shao.JPG" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Lulu Shao">
+    <img class="profile-pic tutor-pic" src="/assets/people/Lulu_Shao.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Lulu Shao">
       <div class="profile-info tutor-info">
       <p class="profile-name">Lulu Shao</p>
       <a href="mailto:sishao@ucsd.edu">sishao@ucsd.edu</a>
       </div>
   </div>
   <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Renita_Justin.jpeg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Renita Justin">
+    <img class="profile-pic tutor-pic" src="/assets/people/Renita_Justin.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Renita Justin">
       <div class="profile-info tutor-info">
       <p class="profile-name">Renita Justin</p>
       <a href="mailto:rjustin@ucsd.edu">rjustin@ucsd.edu</a>
@@ -260,7 +261,7 @@ for tutor and office hours laid out in a weekly calendar.
       </div>
   </div>
   <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Anisha_Ramesh.jpeg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Anisha Ramesh">
+    <img class="profile-pic tutor-pic" src="/assets/people/Anisha_Ramesh.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Anisha Ramesh">
       <div class="profile-info tutor-info">
       <p class="profile-name">Anisha Ramesh</p>
       <a href="mailto:anramesh@ucsd.edu">anramesh@ucsd.edu</a>
@@ -274,7 +275,7 @@ for tutor and office hours laid out in a weekly calendar.
       </div>
   </div>
   <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Keyura_Valalla.png" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Keyura Valalla">
+    <img class="profile-pic tutor-pic" src="/assets/people/Keyura_Valalla.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Keyura Valalla">
       <div class="profile-info tutor-info">
       <p class="profile-name">Keyura Valalla</p>
       <a href="mailto:kvalalla@ucsd.edu">kvalalla@ucsd.edu</a>
