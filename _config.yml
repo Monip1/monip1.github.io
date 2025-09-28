@@ -12,7 +12,7 @@ favicon_ico: "/assets/favicon/favicon.ico"
 math: katex
 
 aux_links:
-  Gradescope: "https://www.gradescope.com/"
+  Gradescope: "https://www.gradescope.com/courses/882164"
   Textbook: "https://cogniterra.org/course/705/"
   EdStem: "https://edstem.org/us/courses/87720/discussion"
   Canvas: "https://canvas.ucsd.edu/courses/68535"
