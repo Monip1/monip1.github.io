@@ -64,10 +64,10 @@ Students in CSE 6R will be given the option to sign up for labs starting from 10
 
 | Lab | When? | Where? |
 | :---- | :---- | :---- |
-| R50 | Wednesdays @ 10:00a \- 10:50am | Remote (https://ucsd.zoom.us/j/2682550532) |
-| R51 | Wednesdays @ 11:00a \- 11:50am | Remote (https://ucsd.zoom.us/j/2682550532) |
-| R52 | Wednesdays @ 12:00p \- 12:50pm | Remote (https://ucsd.zoom.us/j/2682550532)|
-| R53 | Wednesdays @ 1:00p \- 1:50pm | Remote (https://ucsd.zoom.us/j/2682550532) |
+| R50 | Wednesdays @ 10:00a \- 10:50am | Remote (https://ucsd.zoom.us/j/2443249067) |
+| R51 | Wednesdays @ 11:00a \- 11:50am | Remote (https://ucsd.zoom.us/j/2443249067) |
+| R52 | Wednesdays @ 12:00p \- 12:50pm | Remote (https://ucsd.zoom.us/j/6683840265)|
+| R53 | Wednesdays @ 1:00p \- 1:50pm | Remote (https://ucsd.zoom.us/j/6683840265) |
 | R54 | Wednesdays @ 2:00p \- 2:50pm | Remote (https://ucsd.zoom.us/j/2682550532) |
 | R55 | Wednesdays @ 3:00p \- 3:50pm | Remote (https://ucsd.zoom.us/j/2682550532) |
 | R56 | Wednesdays @ 4:00p \- 4:50pm | Remote (https://ucsd.zoom.us/j/92571509967) |
