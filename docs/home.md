@@ -17,7 +17,7 @@ Welcome to CSE 8A/6R! We're excited to have you in this course. Our goal is to h
 
 [EdStem](https://edstem.org/us/courses/87720/discussion){: .btn .btn-outline }
 [Canvas](https://canvas.ucsd.edu/courses/68535){: .btn .btn-outline }
-[Gradescope](https://www.gradescope.com/courses/882164){: .btn .btn-outline }
+[Gradescope](https://www.gradescope.com/courses/1151997){: .btn .btn-outline }
 [Textbook](https://cogniterra.org/course/705/){: .btn .btn-outline }
 <!-- [Tutor Hours Queue](https://autograder.ucsd.edu/queue/787){: .btn .btn-outline } -->
 <!-- [PrairieLearn](https://us.prairielearn.com/pl/course_instance/180232){: .btn .btn-outline } -->
