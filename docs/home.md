@@ -5,7 +5,7 @@ permalink: /
 nav_order: 0
 ---
 
-# Human Centered, Process Oriented, Introduction to Programming in Python
+# Introduction to Programming in Python
 {: .no_toc}
 
 CSE 8A/6R at UC San Diego (Fall 2025)
