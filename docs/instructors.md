@@ -101,7 +101,8 @@ nav_order: 4
       <p class="profile-name">Hailey Li</p>
       <p><em>Homework</em></p>
        <p>Office Hours:</p>
-       <p>Mon, 10AM-12PM (<a href="https://ucsd.zoom.us/j/8310811419" target="_blank">Zoom</a>)</p>
+       <p>Mon, 10AM-11PM (<a href="https://ucsd.zoom.us/j/8310811419" target="_blank">Zoom</a>)</p>
+       <p>Mon, 4PM-5PM (<a href="https://ucsd.zoom.us/j/8310811419" target="_blank">Zoom</a>)</p>
       <a href="mailto:hal180@ucsd.edu">hal180@ucsd.edu</a>
      </div>
   </div>
