@@ -28,12 +28,12 @@ based on your current scores and social learning components.
                 <tbody>
                     {% for hw_num in (1..6) %}
                     <tr>
-                        <td>Homework {{ hw_num }} <input class="include" type="checkbox" id="hw-{{ hw_num }}-include" name="hw-{{ hw_num }}-include"><label for="hw-{{ hw_num }}-include">Include</label></td>
+                        <td><input class="include" type="checkbox" id="hw-{{ hw_num }}-include" name="hw-{{ hw_num }}-include">Homework {{ hw_num }}</td>
                         <td>
                             <div class="slider-container">
                                 <input type="range" id="hw-{{ hw_num }}" name="hw-{{ hw_num }}" min="0" max="3" step="1" value="0">
                                 <input type="number" id="hw-{{ hw_num }}-input" name="hw-{{ hw_num }}-input" min="0" max="3" step="1" value="0">
-                                <label id="hw-{{ hw_num }}-normalized-label">0</label>
+                                <span id="hw-{{ hw_num }}-score">0</span>
                             </div>
                         </td>
                     </tr>
@@ -92,7 +92,7 @@ based on your current scores and social learning components.
             <tbody>
                 {% for week in (1..10) %}
                 <tr>
-                    <td>Week {{ week }}</td>
+                    <td><input class="include" type="checkbox" id="week-{{ week }}-include" name="week-{{ week }}-include">Week {{ week }}</td>
                     <td style="text-align: center;"><input type="checkbox" id="tu-lec-{{ week }}" name="tu-lec-{{ week }}"></td>
                     <td style="text-align: center;"><input type="checkbox" id="th-lec-{{ week }}" name="th-lec-{{ week }}"></td>
                     <td style="text-align: center;"><input type="checkbox" id="lab-{{ week }}" name="lab-{{ week }}"></td>
@@ -106,13 +106,16 @@ based on your current scores and social learning components.
     </form>
 </div>
 
+<h3>Totals</h3>
+<p id="grade-modifier-display">N/A</p>
+<p id="hw-total-display">N/A</p>
+
 <style>
 #what-if {
     margin-bottom: 1rem;
 }
 .include {
-    margin-right: 0.25rem;
-    margin-left: 1rem;
+    margin-right: 0.75rem;
 }
 
 .calculator-container {
@@ -150,6 +153,11 @@ td {
 }
 .slider-container input[type="number"] {
     border-radius: 0.5rem;
+}
+
+tr.disabled {
+    color: #888;
+    background-color: #f9f9f9;
 }
 </style>
 
