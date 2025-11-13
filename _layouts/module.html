@@ -1,0 +1,35 @@
+<h2 class="fs-4" id="{{ page.title | slugify }}" >{{ page.title }}</h2>
+<div class="module">
+  <h3 class="module-header" id="{{ page.title | slugify }}">
+    <a href="#{{ page.title | slugify }}" class="anchor-heading" aria-labelledby="{{ page.title | slugify }}">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg>
+    </a>
+    {{ page.title }}
+  </h3>
+  {% if page.days %}
+  <dl class="module-days">
+    {% for day in page.days %}
+      <dt class="module-day {% if day.main %}main{% endif %}">{{ day.date }}</dt>
+      {% for event in day.events %}
+      <dd class="module-event {% if event.main %}main{% endif %}">
+        <p>
+          {% if event.type %}
+          <strong class="label label-{{ event.type_class }}">{{ event.type }}</strong>
+          {% endif %}
+          {{ event.name }}
+          {% if event.resources %}
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {% for resource in event.resources %}
+            <small>&nbsp;&nbsp;<a href="{{ resource.url | relative_url }}"><button type="button" class="btn btn-info">{{ resource.name }}</button></a></small>
+            {% endfor %}
+          {% endif %}
+        </p>
+        <p>{{ event.description | markdownify }}</p>
+      </dd>
+      {% endfor %}
+    {% endfor %}
+  </dl>
+  {% endif %}
+  {{ content }}
+</div>
