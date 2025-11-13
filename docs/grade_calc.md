@@ -2,9 +2,8 @@
 title: Grade Calculator
 layout: default
 permalink: /calculator
-nav_order: 7
+nav_exclude: true
 ---
-
 # Grade Calculator
 
 {: .warning}
@@ -135,6 +134,10 @@ based on your current scores and social learning components.
         <td><p id="exam-score-total">N/A</p></td>
         <td><p id="exam-possible-total">N/A</p></td>
         <td><p id="exam-result-total">N/A</p></td>
+    </tr>
+    <tr>
+        <th class="component">Final Grade</th>
+        <td colspan="3"><p id="final-grade-total">N/A</p></td>
     </tr>
 </table>
 
