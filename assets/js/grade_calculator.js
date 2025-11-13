@@ -378,12 +378,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         let totalScore = 0;
-        if (scores[0] < scores[1]) {
+        // if (scores[0] < scores[1] && midTermIncludeCheckbox.checked && finalIncludeCheckbox.checked) {
+        //     totalScore = 2 * scores[1];
+        //     console
+        // } else {
+        //     totalScore = scores[0] + scores[1];
+        // }
+
+        if (!midTermIncludeCheckbox.checked) {
+            totalScore = scores[1];
+        }
+        else if (!finalIncludeCheckbox.checked) {
+            totalScore = scores[0];
+        }
+        else if (!midTermIncludeCheckbox.checked && !finalIncludeCheckbox.checked) {
+            totalScore = 0;
+        }
+        else if (scores[0] < scores[1] ) {
             totalScore = 2 * scores[1];
         } else {
             totalScore = scores[0] + scores[1];
         }
-
         examScoreTotal.innerText = totalScore;
         examPossibleTotal.innerText = totalPossible;
 
@@ -417,7 +432,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         let baseLetterGrade = 0;
-        console.log("final grade array", letterGradesFinal);
 
         if (letterGradesFinal[0] === null || letterGradesFinal[1] === null || letterGradesFinal[2] === null) {
             document.getElementById('final-grade-total').innerText = 'N/A';
@@ -442,7 +456,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const grades = ['F', 'C', 'B', 'A'];
 
-        console.log("final grade calc", baseLetterGrade, modifier);
 
         // document.getElementById('final-grade-total').innerText = grades[modifier === 0 ? (baseLetterGrade - 1) < 0 ? 0 : baseLetterGrade - 1 : baseLetterGrade] + (modifier === 3 ? '+' : (modifier === 2 ? '' : (modifier === 1 ? '-' : '')));
         // ignore this abomination
