@@ -121,7 +121,7 @@ nav_order: 4
       <p class="profile-name">Prudhviraj Naidu</p>
       <p><em>Readings</em></p>
       <p>Office Hours:</p>
-      <p>Fri, 2PM-4PM (CSE 4217 & <a href="https://ucsd.zoom.us/j/91943976897" target="_blank">Zoom</a>)</p>
+      <p>Wed, 11aM-12PM (CSE Basement & <a href="https://ucsd.zoom.us/j/91943976897" target="_blank">Zoom</a>)</p>
       <a href="mailto:prnaidu@ucsd.edu">prnaidu@ucsd.edu</a>
      </div>
   </div>
