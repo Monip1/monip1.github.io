@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const hwTotals = [6, 5, 6, 5, 3, 3]; // Homework totals for HW1 to HW6
-    const hwThresholds = [[6, 3, 2], [5, 3, 2], [6, 3, 2], [5, 3, 2], [3, 2, 1], [3, 2, 1]]; // Thresholds for grades 3, 2, 1 respectively
-    const examTotals = [30, 3]; // Exam totals for Midterm and Final
-    const examThresholds = [[27, 24, 18], [3,2,1]]; // Thresholds for A, B, C respectively
+    const hwTotals = [3, 3, 3, 3, 3, 3]; // Homework totals for HW1 to HW6
+    const hwThresholds = [[3, 2, 1], [3, 2, 1], [3, 2, 1], [3, 2, 1], [3, 2, 1], [3, 2, 1]]; // Thresholds for grades 3, 2, 1 respectively
+    const examTotals = [3, 3]; // Exam totals for Midterm and Final
+    const examThresholds = [[3, 2, 1], [3,2,1]]; // Thresholds for A, B, C respectively
 
     let hwGrades = [0, 0, 0, 0, 0, 0];
     let socialGrades = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -37,9 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
         socialCheckboxes.push(week);
     }
 
+    let socialIncludes = [0,0,0,0,0,0,0,0,0,0];
+
+
     for (let i = 0; i < socialCheckboxes.length; i++) {
         for (let j = 0; j < socialCheckboxes[i].length; j++) {
             socialCheckboxes[i][j].addEventListener('change', function() {
+                socialIncludes[i] = socialCheckboxes[i][j].checked ? 1 : 0;
                 updateTotals();
             });
         }
@@ -106,12 +110,11 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTotals();
     });
 
-    let socialIncludes = 0;
-    let hwIncludes = 0;
+    let hwIncludes = [0,0,0,0,0,0];
 
     for (let i = 1; i <= 10; i++) {
         const includeCheckbox = document.getElementById(`week-${i}-include`);
-        socialIncludes += includeCheckbox.checked ? 1 : 0;
+        socialIncludes[i - 1] = includeCheckbox.checked ? 1 : 0;
         document.getElementById(`week-${i}-row`).classList.toggle('disabled', !includeCheckbox.checked);
         
         for (let j = 0; j < socialCheckboxes[i - 1].length; j++) {
@@ -123,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         includeCheckbox.addEventListener('change', function() {
-            socialIncludes += includeCheckbox.checked ? 1 : -1;
+            socialIncludes[i - 1] += includeCheckbox.checked ? 1 : -1;
             document.getElementById(`week-${i}-row`).classList.toggle('disabled', !includeCheckbox.checked);
             for (let j = 0; j < socialCheckboxes[i - 1].length; j++) {
                 if (!includeCheckbox.checked) {
@@ -211,12 +214,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     function updateSocialGrades() { 
+        let socialSum = 0;
+        let includedWeeks = 0;
+
         for (let i = 0; i < socialCheckboxes.length; i++) {
-            let score = 0;
-            for (let j = 0; j < socialCheckboxes[i].length; j++) {
-                if (socialCheckboxes[i][j].checked) {
-                    score++;
+            const includeCheckbox = document.getElementById(`week-${i + 1}-include`);
+            if (includeCheckbox && includeCheckbox.checked) {
+                includedWeeks++;
+                let score = 0;
+                for (let j = 0; j < socialCheckboxes[i].length; j++) {
+                    if (socialCheckboxes[i][j].checked) {
+                        score++;
+                    }
                 }
+
                 if (score >= 4 && socialCheckboxes[i][2].checked && socialCheckboxes[i][4].checked) {
                     socialGrades[i] = 3;
                 } else if (score >= 3 && (socialCheckboxes[i][2].checked || socialCheckboxes[i][4].checked)) {
@@ -226,19 +237,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     socialGrades[i] = 0;
                 }
+                socialSum += socialGrades[i];
+            } else {
+                socialGrades[i] = 0; // Ensure non-included weeks don't carry a score
             }
         }
 
         const gradeModifierDisplay = document.getElementById('social-result-total');
         const socialScoreTotal = document.getElementById('social-score-total');
         const socialPossibleTotal = document.getElementById('social-possible-total');
-        let socialSum = 0;
-
-        for (let i = 0; i < socialGrades.length; i++) {
-            socialSum += socialGrades[i];
-        }
-
-        if (socialIncludes === 0) {
+        
+        if (includedWeeks === 0) {
             gradeModifierDisplay.innerText = 'N/A';
             socialScoreTotal.innerText = 'N/A';
             socialPossibleTotal.innerText = 'N/A';
@@ -246,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const totalPossible = socialIncludes * 3; 
+        const totalPossible = includedWeeks * 3; 
         const percentage = socialSum / totalPossible;
         socialScoreTotal.innerText = socialSum;
         socialPossibleTotal.innerText = totalPossible;
@@ -267,16 +276,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateHomeworkGrades() {
+        let hwSum = 0;
+        let includedHomeworks = 0;
+
         for (let i = 0; i < hwSliders.length; i++) {
-            let score = hwSliders[i].value;
-            if (Number(score) === hwThresholds[i][0]) {
-                hwGrades[i] = 3;
-            } else if (Number(score) >= hwThresholds[i][1]) {
-                hwGrades[i] = 2;
-            } else if (Number(score) >= hwThresholds[i][2]) {
-                hwGrades[i] = 1;
+            const includeCheckbox = document.getElementById(`hw-${i + 1}-include`);
+            if (includeCheckbox && includeCheckbox.checked) {
+                includedHomeworks++;
+                let score = hwSliders[i].value;
+                if (Number(score) >= hwThresholds[i][0]) { // Note: using >= for the top threshold
+                    hwGrades[i] = 3;
+                } else if (Number(score) >= hwThresholds[i][1]) {
+                    hwGrades[i] = 2;
+                } else if (Number(score) >= hwThresholds[i][2]) {
+                    hwGrades[i] = 1;
+                } else {
+                    hwGrades[i] = 0;
+                }
+                hwSum += hwGrades[i];
             } else {
-                hwGrades[i] = 0;
+                hwGrades[i] = 0; // Ensure non-included homeworks don't carry a score
             }
         }
 
@@ -284,13 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const hwPossibleTotal = document.getElementById('hw-possible-total');
         const hwResultTotal = document.getElementById('hw-result-total');
 
-        let hwSum = 0;
-
-        for (let i = 0; i < hwGrades.length; i++) {
-            hwSum += hwGrades[i];
-        }
-
-        if (hwIncludes === 0) {
+        if (includedHomeworks === 0) {
             hwResultTotal.innerText = 'N/A';
             hwScoreTotal.innerText = 'N/A';
             hwPossibleTotal.innerText = 'N/A';
@@ -298,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const totalPossible = hwIncludes * 3; 
+        const totalPossible = includedHomeworks * 3; 
         hwScoreTotal.innerText = hwSum;
         hwPossibleTotal.innerText = totalPossible;
         if (hwSum / totalPossible >= (15/18)) {
@@ -378,22 +391,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         let totalScore = 0;
-        if (scores[0] < scores[1]) {
-            totalScore = 2 * scores[1];
+        let midtermFinalScore = scores[0];
+        let finalFinalScore = scores[1];
+
+        if (!midTermIncludeCheckbox.checked) {
+            midtermFinalScore = 0;
+        }
+        if (!finalIncludeCheckbox.checked) {
+            finalFinalScore = 0;
+        }
+
+        if (midtermFinalScore < finalFinalScore && midTermIncludeCheckbox.checked && finalIncludeCheckbox.checked) {
+            totalScore = 2 * finalFinalScore;
         } else {
-            totalScore = scores[0] + scores[1];
+            totalScore = midtermFinalScore + finalFinalScore;
         }
 
         examScoreTotal.innerText = totalScore;
         examPossibleTotal.innerText = totalPossible;
 
-        if (totalScore / totalPossible === 1) {
+        if (totalScore / totalPossible >= (6/6)) { // A
             letterGradesFinal[1] = 3;
             document.getElementById('exam-result-total').innerText = 'A';
-        } else if (totalScore / totalPossible >= (4/6)) {
+        } else if (totalScore / totalPossible >= (4/6)) { // B
             letterGradesFinal[1] = 2;
             document.getElementById('exam-result-total').innerText = 'B';
-        } else if (totalScore / totalPossible >= (2/6)) {
+        } else if (totalScore / totalPossible >= (2/6)) { // C
             letterGradesFinal[1] = 1;
             document.getElementById('exam-result-total').innerText = 'C';
         } else {
