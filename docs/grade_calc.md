@@ -27,7 +27,7 @@ based on your current scores and social learning components.
                 <tbody>
                     {% for hw_num in (1..6) %}
                     <tr id="hw-{{ hw_num }}-row">
-                        <td><input class="include" type="checkbox" id="hw-{{ hw_num }}-include" name="hw-{{ hw_num }}-include">Homework {{ hw_num }}</td>
+                        <td>Homework {{ hw_num }}</td>
                         <td>
                             <div class="slider-container">
                                 <input type="range" id="hw-{{ hw_num }}" name="hw-{{ hw_num }}" min="0" max="3" step="1" value="0">
@@ -51,7 +51,7 @@ based on your current scores and social learning components.
                 </thead>
                 <tbody>
                     <tr id="midterm-row">
-                        <td><input class="include" type="checkbox" id="midterm-include" name="midterm-include">Midterm</td>
+                        <td>Midterm</td>
                         <td>
                             <div class="slider-container">
                                 <input type="range" id="midterm-score" name="midterm-score" min="0" max="3" step="1" value="0">
@@ -61,7 +61,7 @@ based on your current scores and social learning components.
                         </td>
                     </tr>
                     <tr id="final-row">
-                        <td><input class="include" type="checkbox" id="final-include" name="final-include">Final</td>
+                        <td>Final</td>
                         <td>
                             <div class="slider-container">
                                 <input type="range" id="final-score" name="final-score" min="0" max="3" step="1" value="0">
@@ -93,7 +93,7 @@ based on your current scores and social learning components.
             <tbody>
                 {% for week in (1..10) %}
                 <tr id="week-{{ week }}-row">
-                    <td><input class="include" type="checkbox" id="week-{{ week }}-include" name="week-{{ week }}-include">Week {{ week }}</td>
+                    <td>Week {{ week }}</td>
                     <td style="text-align: center;"><input class="grade" type="checkbox" id="tu-lec-{{ week }}" name="tu-lec-{{ week }}"></td>
                     <td style="text-align: center;"><input class="grade" type="checkbox" id="th-lec-{{ week }}" name="th-lec-{{ week }}"></td>
                     <td style="text-align: center;"><input class="grade" type="checkbox" id="lab-{{ week }}" name="lab-{{ week }}"></td>
@@ -145,9 +145,6 @@ based on your current scores and social learning components.
 #what-if {
     margin-bottom: 1rem;
 }
-.include {
-    margin-right: 0.75rem;
-}
 
 .calculator-container {
     display: flex;
@@ -184,26 +181,6 @@ td {
 }
 .slider-container input[type="number"] {
     border-radius: 0.5rem;
-}
-
-.disabled {
-    color: #888;
-    background-color: #f9f9f9;
-}
-
-.disabled input[class="grade"] {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.disabled input[type="range"],
-.disabled input[type="number"] {
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.disabled span {
-    opacity: 0.5;
 }
 
 .totals-table td, th {
