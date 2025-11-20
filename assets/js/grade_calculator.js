@@ -112,93 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let hwIncludes = [0,0,0,0,0,0];
 
-    for (let i = 1; i <= 10; i++) {
-        const includeCheckbox = document.getElementById(`week-${i}-include`);
-        socialIncludes[i - 1] = includeCheckbox.checked ? 1 : 0;
-        document.getElementById(`week-${i}-row`).classList.toggle('disabled', !includeCheckbox.checked);
-        
-        for (let j = 0; j < socialCheckboxes[i - 1].length; j++) {
-            if (!includeCheckbox.checked) {
-                socialCheckboxes[i - 1][j].disabled = true;
-            } else {
-                socialCheckboxes[i - 1][j].disabled = false;
-            }
-        }
-
-        includeCheckbox.addEventListener('change', function() {
-            socialIncludes[i - 1] += includeCheckbox.checked ? 1 : -1;
-            document.getElementById(`week-${i}-row`).classList.toggle('disabled', !includeCheckbox.checked);
-            for (let j = 0; j < socialCheckboxes[i - 1].length; j++) {
-                if (!includeCheckbox.checked) {
-                    socialCheckboxes[i - 1][j].disabled = true;
-                } else {
-                    socialCheckboxes[i - 1][j].disabled = false;
-                }
-            }
-
-            updateTotals();
-        });
-    }
-
-    for (let i = 1; i <= 6; i++) {
-        const includeCheckbox = document.getElementById(`hw-${i}-include`);
-        hwIncludes += includeCheckbox.checked ? 1 : 0;
-
-        document.getElementById(`hw-${i}-row`).classList.toggle('disabled', !includeCheckbox.checked);
-
-        for (let j = 0; j < hwSliders.length; j++) {
-            if (!includeCheckbox.checked) {
-                hwSliders[i - 1].disabled = true;
-                hwNumberInputs[i - 1].disabled = true;
-            } else {
-                hwSliders[i - 1].disabled = false;
-                hwNumberInputs[i - 1].disabled = false;
-            }
-        }
-
-        includeCheckbox.addEventListener('change', function() {
-            hwIncludes += includeCheckbox.checked ? 1 : -1;
-            document.getElementById(`hw-${i}-row`).classList.toggle('disabled', !includeCheckbox.checked);
-            for (let j = 0; j < hwSliders.length; j++) {
-                if (!includeCheckbox.checked) {
-                    hwSliders[i - 1].disabled = true;
-                    hwNumberInputs[i - 1].disabled = true;
-                } else {
-                    hwSliders[i - 1].disabled = false;
-                    hwNumberInputs[i - 1].disabled = false;
-                }
-            }
-            updateTotals();
-        });
-    }
-
-    document.getElementById('midterm-row').classList.toggle('disabled', !document.getElementById('midterm-include').checked);
-    document.getElementById('midterm-score').disabled = !document.getElementById('midterm-include').checked;
-    document.getElementById('midterm-score-input').disabled = !document.getElementById('midterm-include').checked;
-    document.getElementById('midterm-include').addEventListener('change', function() {
-        midtermIncludes = document.getElementById('midterm-include').checked ? 1 : 0;
-        document.getElementById('midterm-row').classList.toggle('disabled', !document.getElementById('midterm-include').checked);
-        document.getElementById('midterm-score').disabled = !document.getElementById('midterm-include').checked;
-        document.getElementById('midterm-score-input').disabled = !document.getElementById('midterm-include').checked;
-        updateTotals();
-    });
-
-    document.getElementById('final-row').classList.toggle('disabled', !document.getElementById('final-include').checked);
-    document.getElementById('final-score').disabled = !document.getElementById('final-include').checked;
-    document.getElementById('final-score-input').disabled = !document.getElementById('final-include').checked;
-    document.getElementById('final-include').addEventListener('change', function() {
-        finalIncludes = document.getElementById('final-include').checked ? 1 : 0;
-        document.getElementById('final-row').classList.toggle('disabled', !document.getElementById('final-include').checked);
-        document.getElementById('final-score').disabled = !document.getElementById('final-include').checked;
-        document.getElementById('final-score-input').disabled = !document.getElementById('final-include').checked;
-        updateTotals();
-    });
-
-
-
-    // --- Functions to update totals and grades -------------------------------
-
-
     function updateTotals() {
         // Update social grades
         updateSocialGrades();
@@ -210,37 +123,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Update displays
         updateDisplays();
+        
+        saveToLocalStorage();
     }
 
 
     function updateSocialGrades() { 
         let socialSum = 0;
-        let includedWeeks = 0;
+        const includedWeeks = socialCheckboxes.length; // All weeks are included
 
         for (let i = 0; i < socialCheckboxes.length; i++) {
-            const includeCheckbox = document.getElementById(`week-${i + 1}-include`);
-            if (includeCheckbox && includeCheckbox.checked) {
-                includedWeeks++;
-                let score = 0;
-                for (let j = 0; j < socialCheckboxes[i].length; j++) {
-                    if (socialCheckboxes[i][j].checked) {
-                        score++;
-                    }
+            let score = 0;
+            for (let j = 0; j < socialCheckboxes[i].length; j++) {
+                if (socialCheckboxes[i][j].checked) {
+                    score++;
                 }
-
-                if (score >= 4 && socialCheckboxes[i][2].checked && socialCheckboxes[i][4].checked) {
-                    socialGrades[i] = 3;
-                } else if (score >= 3 && (socialCheckboxes[i][2].checked || socialCheckboxes[i][4].checked)) {
-                    socialGrades[i] = 2;
-                } else if (score >= 2) {
-                    socialGrades[i] = 1;
-                } else {
-                    socialGrades[i] = 0;
-                }
-                socialSum += socialGrades[i];
-            } else {
-                socialGrades[i] = 0; // Ensure non-included weeks don't carry a score
             }
+
+            if (score >= 4 && socialCheckboxes[i][2].checked && socialCheckboxes[i][4].checked) {
+                socialGrades[i] = 3;
+            } else if (score >= 3 && (socialCheckboxes[i][2].checked || socialCheckboxes[i][4].checked)) {
+                socialGrades[i] = 2;
+            } else if (score >= 2) {
+                socialGrades[i] = 1;
+            } else {
+                socialGrades[i] = 0;
+            }
+            socialSum += socialGrades[i];
         }
 
         const gradeModifierDisplay = document.getElementById('social-result-total');
@@ -277,26 +186,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateHomeworkGrades() {
         let hwSum = 0;
-        let includedHomeworks = 0;
+        const includedHomeworks = hwSliders.length; // All homeworks are included
 
         for (let i = 0; i < hwSliders.length; i++) {
-            const includeCheckbox = document.getElementById(`hw-${i + 1}-include`);
-            if (includeCheckbox && includeCheckbox.checked) {
-                includedHomeworks++;
-                let score = hwSliders[i].value;
-                if (Number(score) >= hwThresholds[i][0]) { // Note: using >= for the top threshold
-                    hwGrades[i] = 3;
-                } else if (Number(score) >= hwThresholds[i][1]) {
-                    hwGrades[i] = 2;
-                } else if (Number(score) >= hwThresholds[i][2]) {
-                    hwGrades[i] = 1;
-                } else {
-                    hwGrades[i] = 0;
-                }
-                hwSum += hwGrades[i];
+            let score = hwSliders[i].value;
+            if (Number(score) >= hwThresholds[i][0]) { // Note: using >= for the top threshold
+                hwGrades[i] = 3;
+            } else if (Number(score) >= hwThresholds[i][1]) {
+                hwGrades[i] = 2;
+            } else if (Number(score) >= hwThresholds[i][2]) {
+                hwGrades[i] = 1;
             } else {
-                hwGrades[i] = 0; // Ensure non-included homeworks don't carry a score
+                hwGrades[i] = 0;
             }
+            hwSum += hwGrades[i];
         }
 
         const hwScoreTotal = document.getElementById('hw-score-total');
@@ -332,8 +235,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateExamTotals() {
         const midtermScoreInput = document.getElementById('midterm-score');
         const finalScoreInput = document.getElementById('final-score');
-        const midTermIncludeCheckbox = document.getElementById('midterm-include');
-        const finalIncludeCheckbox = document.getElementById('final-include');
 
         const midtermScoreDisplay = document.getElementById('midterm-score-display');
         const finalScoreDisplay = document.getElementById('final-score-display');
@@ -374,49 +275,29 @@ document.addEventListener('DOMContentLoaded', function() {
             finalScoreDisplay.innerText = '0';
         }
 
-        let totalPossible = 0;
-        if (midTermIncludeCheckbox.checked) {
-            totalPossible += 3;
-        }
-        if (finalIncludeCheckbox.checked) {
-            totalPossible += 3;
-        }
-
-        if (totalPossible === 0) {
-            document.getElementById('exam-result-total').innerText = 'N/A';
-            document.getElementById('exam-score-total').innerText = 'N/A';
-            document.getElementById('exam-possible-total').innerText = 'N/A';
-            letterGradesFinal[1] = null;
-            return;
-        }
+        const totalPossible = 6; // Midterm and Final are always included
 
         let totalScore = 0;
         let midtermFinalScore = scores[0];
         let finalFinalScore = scores[1];
 
-        if (!midTermIncludeCheckbox.checked) {
-            midtermFinalScore = 0;
-        }
-        if (!finalIncludeCheckbox.checked) {
-            finalFinalScore = 0;
+        // If the final exam score is higher, it replaces the midterm score.
+        if (finalFinalScore > midtermFinalScore) {
+            midtermFinalScore = finalFinalScore;
         }
 
-        if (midtermFinalScore < finalFinalScore && midTermIncludeCheckbox.checked && finalIncludeCheckbox.checked) {
-            totalScore = 2 * finalFinalScore;
-        } else {
-            totalScore = midtermFinalScore + finalFinalScore;
-        }
+        totalScore = midtermFinalScore + finalFinalScore;
 
         examScoreTotal.innerText = totalScore;
         examPossibleTotal.innerText = totalPossible;
 
-        if (totalScore / totalPossible >= (6/6)) { // A
+        if (totalScore / totalPossible >= 5/6) {
             letterGradesFinal[1] = 3;
             document.getElementById('exam-result-total').innerText = 'A';
-        } else if (totalScore / totalPossible >= (4/6)) { // B
+        } else if (totalScore / totalPossible >= 3/6) {
             letterGradesFinal[1] = 2;
             document.getElementById('exam-result-total').innerText = 'B';
-        } else if (totalScore / totalPossible >= (2/6)) { // C
+        } else if (totalScore / totalPossible >= 1/6) {
             letterGradesFinal[1] = 1;
             document.getElementById('exam-result-total').innerText = 'C';
         } else {
@@ -470,20 +351,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // document.getElementById('final-grade-total').innerText = grades[modifier === 0 ? (baseLetterGrade - 1) < 0 ? 0 : baseLetterGrade - 1 : baseLetterGrade] + (modifier === 3 ? '+' : (modifier === 2 ? '' : (modifier === 1 ? '-' : '')));
         // ignore this abomination
 
-        if (modifier === 0 && baseLetterGrade !== 0) {
+        if (modifier === 0 && baseLetterGrade > 0) {
             baseLetterGrade -= 1;
         } 
 
         let gradeModifierDisplay = '';
-        if (modifier === 3) {
-            gradeModifierDisplay = '+';
+        if (baseLetterGrade > 0) { // Do not add modifier for 'F' grade
+            if (modifier === 3) {
+                gradeModifierDisplay = '+';
+            }
+            else if (modifier === 1) {
+                gradeModifierDisplay = '-';
+            } 
         }
-        else if (modifier === 2) {
-            gradeModifierDisplay = '';
-        }
-        else if (modifier === 1) {
-            gradeModifierDisplay = '-';
-        } 
 
         document.getElementById('final-grade-total').innerText = grades[baseLetterGrade] + gradeModifierDisplay;
 
@@ -491,6 +371,68 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Local Storage Persistence -------------------------------------------
     function saveToLocalStorage() {
+        const state = {
+            homeworks: [],
+            exams: {},
+            social: []
+        };
+
+        for (let i = 0; i < hwSliders.length; i++) {
+            state.homeworks.push(hwSliders[i].value);
+        }
+
+        state.exams.midterm = document.getElementById('midterm-score').value;
+        state.exams.final = document.getElementById('final-score').value;
+
+        for (let i = 0; i < socialCheckboxes.length; i++) {
+            const weekState = [];
+            for (let j = 0; j < socialCheckboxes[i].length; j++) {
+                weekState.push(socialCheckboxes[i][j].checked);
+            }
+            state.social.push(weekState);
+        }
+
+        localStorage.setItem('gradeCalculatorState', JSON.stringify(state));
     }
+
+    function loadFromLocalStorage() {
+        const savedState = localStorage.getItem('gradeCalculatorState');
+        if (savedState) {
+            const state = JSON.parse(savedState);
+
+            // Load homework scores
+            for (let i = 0; i < state.homeworks.length; i++) {
+                if (hwSliders[i]) {
+                    hwSliders[i].value = state.homeworks[i];
+                    hwNumberInputs[i].value = state.homeworks[i];
+                }
+            }
+
+            // Load exam scores
+            if (state.exams) {
+                const midtermSlider = document.getElementById('midterm-score');
+                const midtermInput = document.getElementById('midterm-score-input');
+                const finalSlider = document.getElementById('final-score');
+                const finalInput = document.getElementById('final-score-input');
+
+                midtermSlider.value = state.exams.midterm || 0;
+                midtermInput.value = state.exams.midterm || 0;
+                finalSlider.value = state.exams.final || 0;
+                finalInput.value = state.exams.final || 0;
+            }
+
+            // Load social learning checkboxes
+            for (let i = 0; i < state.social.length; i++) {
+                for (let j = 0; j < state.social[i].length; j++) {
+                    if (socialCheckboxes[i] && socialCheckboxes[i][j]) {
+                        socialCheckboxes[i][j].checked = state.social[i][j];
+                    }
+                }
+            }
+        }
+    }
+
+    loadFromLocalStorage();
+    updateTotals();
     
 });
