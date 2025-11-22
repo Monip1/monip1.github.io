@@ -1,438 +1,351 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+    new GradeCalculator();
+});
 
-    const hwTotals = [3, 3, 3, 3, 3, 3]; // Homework totals for HW1 to HW6
-    const hwThresholds = [[3, 2, 1], [3, 2, 1], [3, 2, 1], [3, 2, 1], [3, 2, 1], [3, 2, 1]]; // Thresholds for grades 3, 2, 1 respectively
-    const examTotals = [3, 3]; // Exam totals for Midterm and Final
-    const examThresholds = [[3, 2, 1], [3,2,1]]; // Thresholds for A, B, C respectively
-
-    let hwGrades = [0, 0, 0, 0, 0, 0];
-    let socialGrades = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-    let letterGradesFinal = [0, 0, 0];
-
-    let socialCheckboxes = []; // all the checkboxes for social learning
-
-    let hwSliders = [document.getElementById('hw-1'),
-                     document.getElementById('hw-2'),
-                     document.getElementById('hw-3'),
-                     document.getElementById('hw-4'),
-                     document.getElementById('hw-5'),
-                     document.getElementById('hw-6')];
-                     
-    let hwNumberInputs = [document.getElementById('hw-1-input'),
-                          document.getElementById('hw-2-input'),
-                          document.getElementById('hw-3-input'),
-                          document.getElementById('hw-4-input'),
-                          document.getElementById('hw-5-input'),
-                          document.getElementById('hw-6-input')];
-
-    for (let i = 1; i <= 10; i++) {
-        const week = [];
-        week.push(document.getElementById(`tu-lec-${i}`));
-        week.push(document.getElementById(`th-lec-${i}`));
-        week.push(document.getElementById(`lab-${i}`));
-        week.push(document.getElementById(`study-group-${i}`));
-        week.push(document.getElementById(`rq-${i}`));
-
-        socialCheckboxes.push(week);
+const CONFIG = {
+    hw: {
+        count: 6,
+        maxScore: 3,
+        thresholds: [3, 2, 1] 
+    },
+    exams: {
+        count: 2,
+        maxScore: 3,
+        thresholds: [3, 2, 1]
+    },
+    social: {
+        weeks: 10,
+        itemsPerWeek: 5,
+        mandatoryIndices: [2, 4] // Lab(2) and StudyGroup(4)
+    },
+    grading: {
+        labels: ['F', 'C', 'B', 'A'], 
+        modifiers: ['One letter grade reduction', 'Minus (-)', 'No modifier', 'Plus (+)']
     }
+};
 
-    let socialIncludes = [0,0,0,0,0,0,0,0,0,0];
-
-
-    for (let i = 0; i < socialCheckboxes.length; i++) {
-        for (let j = 0; j < socialCheckboxes[i].length; j++) {
-            socialCheckboxes[i][j].addEventListener('change', function() {
-                socialIncludes[i] = socialCheckboxes[i][j].checked ? 1 : 0;
-                updateTotals();
-            });
-        }
-    }
-
-    for (let i = 0; i < hwSliders.length; i++) {
-        hwSliders[i].setAttribute('max', hwTotals[i]);
-        hwNumberInputs[i].setAttribute('max', hwTotals[i]);
-
-        hwSliders[i].addEventListener('input', function() {
-            hwNumberInputs[i].value = hwSliders[i].value;
-            updateTotals();
-        });
-
-        hwNumberInputs[i].addEventListener('input', function() {
-            if (Number(hwNumberInputs[i].value) > parseInt(hwNumberInputs[i].max)) {
-                hwNumberInputs[i].value = hwNumberInputs[i].max;
-            }
-            if (Number(hwNumberInputs[i].value) < parseInt(hwNumberInputs[i].min)) {
-                hwNumberInputs[i].value = hwNumberInputs[i].min;
-            }
-            hwSliders[i].value = hwNumberInputs[i].value;
-            updateTotals();
-        });
-    }
-
-    const finalScoreSlider = document.getElementById('final-score');
-    const finalScoreInput = document.getElementById('final-score-input');
-    finalScoreSlider.setAttribute('max', examTotals[1]);
-    finalScoreInput.setAttribute('max', examTotals[1]);
-
-    finalScoreSlider.addEventListener('input', function() {
-        finalScoreInput.value = finalScoreSlider.value;
-        updateTotals();
-    });
-    finalScoreInput.addEventListener('input', function() {
-        if (Number(finalScoreInput.value) > parseInt(finalScoreInput.max)) {
-            finalScoreInput.value = finalScoreInput.max;
-        }
-        if (Number(finalScoreInput.value) < parseInt(finalScoreInput.min)) {
-            finalScoreInput.value = finalScoreInput.min;
-        }
-        finalScoreSlider.value = finalScoreInput.value;
-        updateTotals();
-    });
-
-    const midtermScoreSlider = document.getElementById('midterm-score');
-    const midtermScoreInput = document.getElementById('midterm-score-input');
-    midtermScoreSlider.setAttribute('max', examTotals[0]);
-    midtermScoreInput.setAttribute('max', examTotals[0]);
-
-    midtermScoreSlider.addEventListener('input', function() {
-        midtermScoreInput.value = midtermScoreSlider.value;
-        updateTotals();
-    });
-    midtermScoreInput.addEventListener('input', function() {
-        if (Number(midtermScoreInput.value) > parseInt(midtermScoreInput.max)) {
-            midtermScoreInput.value = midtermScoreInput.max;
-        }
-        if (Number(midtermScoreInput.value) < parseInt(midtermScoreInput.min)) {
-            midtermScoreInput.value = midtermScoreInput.min;
-        }
-        midtermScoreSlider.value = midtermScoreInput.value;
-        updateTotals();
-    });
-
-    let hwIncludes = [0,0,0,0,0,0];
-
-    function updateTotals() {
-        // Update social grades
-        updateSocialGrades();
-
-        // Update homework grades
-        updateHomeworkGrades();
-
-        updateExamTotals();
-
-        // Update displays
-        updateDisplays();
-        
-        saveToLocalStorage();
-    }
-
-
-    function updateSocialGrades() { 
-        let socialSum = 0;
-        const includedWeeks = socialCheckboxes.length; // All weeks are included
-
-        for (let i = 0; i < socialCheckboxes.length; i++) {
-            let score = 0;
-            for (let j = 0; j < socialCheckboxes[i].length; j++) {
-                if (socialCheckboxes[i][j].checked) {
-                    score++;
-                }
-            }
-
-            if (score >= 4 && socialCheckboxes[i][2].checked && socialCheckboxes[i][4].checked) {
-                socialGrades[i] = 3;
-            } else if (score >= 3 && (socialCheckboxes[i][2].checked || socialCheckboxes[i][4].checked)) {
-                socialGrades[i] = 2;
-            } else if (score >= 2) {
-                socialGrades[i] = 1;
-            } else {
-                socialGrades[i] = 0;
-            }
-            socialSum += socialGrades[i];
-        }
-
-        const gradeModifierDisplay = document.getElementById('social-result-total');
-        const socialScoreTotal = document.getElementById('social-score-total');
-        const socialPossibleTotal = document.getElementById('social-possible-total');
-        
-        if (includedWeeks === 0) {
-            gradeModifierDisplay.innerText = 'N/A';
-            socialScoreTotal.innerText = 'N/A';
-            socialPossibleTotal.innerText = 'N/A';
-            letterGradesFinal[2] = null;
-            return;
-        }
-
-        const totalPossible = includedWeeks * 3; 
-        const percentage = socialSum / totalPossible;
-        socialScoreTotal.innerText = socialSum;
-        socialPossibleTotal.innerText = totalPossible;
-        
-        if (percentage >= 0.8) { 
-            gradeModifierDisplay.innerText = 'Plus (+)';
-            letterGradesFinal[2] = 3;
-        } else if (percentage >= 0.6) { 
-            gradeModifierDisplay.innerText = 'No modifier';
-            letterGradesFinal[2] = 2;
-        } else if (percentage >= 0.4) { 
-            gradeModifierDisplay.innerText = 'Minus (-)';
-            letterGradesFinal[2] = 1;
-        } else {
-            gradeModifierDisplay.innerText = 'One letter grade reduction';
-            letterGradesFinal[2] = 0;
-        }
-    }
-
-    function updateHomeworkGrades() {
-        let hwSum = 0;
-        const includedHomeworks = hwSliders.length; // All homeworks are included
-
-        for (let i = 0; i < hwSliders.length; i++) {
-            let score = hwSliders[i].value;
-            if (Number(score) >= hwThresholds[i][0]) { // Note: using >= for the top threshold
-                hwGrades[i] = 3;
-            } else if (Number(score) >= hwThresholds[i][1]) {
-                hwGrades[i] = 2;
-            } else if (Number(score) >= hwThresholds[i][2]) {
-                hwGrades[i] = 1;
-            } else {
-                hwGrades[i] = 0;
-            }
-            hwSum += hwGrades[i];
-        }
-
-        const hwScoreTotal = document.getElementById('hw-score-total');
-        const hwPossibleTotal = document.getElementById('hw-possible-total');
-        const hwResultTotal = document.getElementById('hw-result-total');
-
-        if (includedHomeworks === 0) {
-            hwResultTotal.innerText = 'N/A';
-            hwScoreTotal.innerText = 'N/A';
-            hwPossibleTotal.innerText = 'N/A';
-            letterGradesFinal[0] = null;
-            return;
-        }
-
-        const totalPossible = includedHomeworks * 3; 
-        hwScoreTotal.innerText = hwSum;
-        hwPossibleTotal.innerText = totalPossible;
-        if (hwSum / totalPossible >= (15/18)) {
-            letterGradesFinal[0] = 3;
-            hwResultTotal.innerText = 'A';
-        } else if (hwSum / totalPossible >= (12/18)) {
-            letterGradesFinal[0] = 2;
-            hwResultTotal.innerText = 'B';
-        } else if (hwSum / totalPossible >= (9/18)) {
-            letterGradesFinal[0] = 1;
-            hwResultTotal.innerText = 'C';
-        } else {
-            letterGradesFinal[0] = 0;
-            hwResultTotal.innerText = 'F';
-        }
-    }
-
-    function updateExamTotals() {
-        const midtermScoreInput = document.getElementById('midterm-score');
-        const finalScoreInput = document.getElementById('final-score');
-
-        const midtermScoreDisplay = document.getElementById('midterm-score-display');
-        const finalScoreDisplay = document.getElementById('final-score-display');
-
-        const examScoreTotal = document.getElementById('exam-score-total');
-        const examPossibleTotal = document.getElementById('exam-possible-total');
-
-        const midtermScore = Number(midtermScoreInput.value) || 0;
-        const finalScore = Number(finalScoreInput.value) || 0;
-
-        let scores = [0, 0];
-
-        if (midtermScore >= examThresholds[0][0]) {
-            scores[0] = 3;
-            midtermScoreDisplay.innerText = '3';
-        } else if (midtermScore >= examThresholds[0][1]) {
-            scores[0] = 2;
-            midtermScoreDisplay.innerText = '2';
-        } else if (midtermScore >= examThresholds[0][2]) {
-            scores[0] = 1;
-            midtermScoreDisplay.innerText = '1';
-        } else {
-            scores[0] = 0;
-            midtermScoreDisplay.innerText = '0';
-        }
-
-        if (finalScore >= examThresholds[1][0]) {
-            scores[1] = 3;
-            finalScoreDisplay.innerText = '3';
-        } else if (finalScore >= examThresholds[1][1]) {
-            scores[1] = 2;
-            finalScoreDisplay.innerText = '2';
-        } else if (finalScore >= examThresholds[1][2]) {
-            scores[1] = 1;
-            finalScoreDisplay.innerText = '1';
-        } else {
-            scores[1] = 0;
-            finalScoreDisplay.innerText = '0';
-        }
-
-        const totalPossible = 6; // Midterm and Final are always included
-
-        let totalScore = 0;
-        let midtermFinalScore = scores[0];
-        let finalFinalScore = scores[1];
-
-        // If the final exam score is higher, it replaces the midterm score.
-        if (finalFinalScore > midtermFinalScore) {
-            midtermFinalScore = finalFinalScore;
-        }
-
-        totalScore = midtermFinalScore + finalFinalScore;
-
-        examScoreTotal.innerText = totalScore;
-        examPossibleTotal.innerText = totalPossible;
-
-        if (totalScore / totalPossible >= 5/6) {
-            letterGradesFinal[1] = 3;
-            document.getElementById('exam-result-total').innerText = 'A';
-        } else if (totalScore / totalPossible >= 3/6) {
-            letterGradesFinal[1] = 2;
-            document.getElementById('exam-result-total').innerText = 'B';
-        } else if (totalScore / totalPossible >= 1/6) {
-            letterGradesFinal[1] = 1;
-            document.getElementById('exam-result-total').innerText = 'C';
-        } else {
-            letterGradesFinal[1] = 0;
-            document.getElementById('exam-result-total').innerText = 'F';
-        }
-    }
-
-
-    function updateDisplays() {
-        for (let i = 1; i <= 10; i++) {
-            const display = document.getElementById(`week-${i}-score`);
-            display.innerText = socialGrades[i - 1];
-        }
-
-        // implement hw
-
-        for (let i = 1; i <= 6; i++) {
-            const display = document.getElementById(`hw-${i}-score`);
-            display.innerText = hwGrades[i - 1];
-        }
-
-        let baseLetterGrade = 0;
-        console.log("final grade array", letterGradesFinal);
-
-        if (letterGradesFinal[0] === null || letterGradesFinal[1] === null || letterGradesFinal[2] === null) {
-            document.getElementById('final-grade-total').innerText = 'N/A';
-            return;
-        }
-
-        if (letterGradesFinal[0] !== null && letterGradesFinal[1] !== null) {
-            baseLetterGrade = Math.min(letterGradesFinal[0], letterGradesFinal[1]);
-        }
-        else if (letterGradesFinal[0] !== null) {
-            baseLetterGrade = letterGradesFinal[0];
-        }
-        else if (letterGradesFinal[1] !== null) {
-            baseLetterGrade = letterGradesFinal[1];
-        }
-        else {
-            document.getElementById('final-grade-total').innerText = 'N/A';
-            return;
-        }
-
-        let modifier = letterGradesFinal[2];
-
-        const grades = ['F', 'C', 'B', 'A'];
-
-        console.log("final grade calc", baseLetterGrade, modifier);
-
-        // document.getElementById('final-grade-total').innerText = grades[modifier === 0 ? (baseLetterGrade - 1) < 0 ? 0 : baseLetterGrade - 1 : baseLetterGrade] + (modifier === 3 ? '+' : (modifier === 2 ? '' : (modifier === 1 ? '-' : '')));
-        // ignore this abomination
-
-        if (modifier === 0 && baseLetterGrade > 0) {
-            baseLetterGrade -= 1;
-        } 
-
-        let gradeModifierDisplay = '';
-        if (baseLetterGrade > 0) { // Do not add modifier for 'F' grade
-            if (modifier === 3) {
-                gradeModifierDisplay = '+';
-            }
-            else if (modifier === 1) {
-                gradeModifierDisplay = '-';
-            } 
-        }
-
-        document.getElementById('final-grade-total').innerText = grades[baseLetterGrade] + gradeModifierDisplay;
-
-    }
-
-    // --- Local Storage Persistence -------------------------------------------
-    function saveToLocalStorage() {
-        const state = {
-            homeworks: [],
-            exams: {},
-            social: []
+class GradeCalculator {
+    constructor() {
+        // 1. Initialize State
+        this.state = {
+            hw: Array(CONFIG.hw.count).fill(0),
+            social: Array.from({ length: CONFIG.social.weeks }, () => Array(CONFIG.social.itemsPerWeek).fill(false)),
+            exams: { midterm: 0, final: 0 }
         };
 
-        for (let i = 0; i < hwSliders.length; i++) {
-            state.homeworks.push(hwSliders[i].value);
-        }
+        // 2. Cache DOM Elements
+        this.ui = this.cacheDOMElements();
 
-        state.exams.midterm = document.getElementById('midterm-score').value;
-        state.exams.final = document.getElementById('final-score').value;
-
-        for (let i = 0; i < socialCheckboxes.length; i++) {
-            const weekState = [];
-            for (let j = 0; j < socialCheckboxes[i].length; j++) {
-                weekState.push(socialCheckboxes[i][j].checked);
-            }
-            state.social.push(weekState);
-        }
-
-        localStorage.setItem('gradeCalculatorState', JSON.stringify(state));
+        // 3. Load Data & Bind Events
+        this.loadFromStorage();
+        this.bindEvents();
+        
+        // 4. Initial Render
+        this.update();
     }
 
-    function loadFromLocalStorage() {
-        const savedState = localStorage.getItem('gradeCalculatorState');
-        if (savedState) {
-            const state = JSON.parse(savedState);
-
-            // Load homework scores
-            for (let i = 0; i < state.homeworks.length; i++) {
-                if (hwSliders[i]) {
-                    hwSliders[i].value = state.homeworks[i];
-                    hwNumberInputs[i].value = state.homeworks[i];
-                }
+    cacheDOMElements() {
+        const get = (id) => document.getElementById(id);
+        
+        const getHwElements = (suffix) => 
+            Array.from({ length: CONFIG.hw.count }, (_, i) => get(`hw-${i + 1}${suffix}`));
+        
+        const getSocialElements = () => {
+            const weeks = [];
+            const types = ['tu-lec', 'th-lec', 'lab', 'study-group', 'rq'];
+            for (let i = 1; i <= CONFIG.social.weeks; i++) {
+                weeks.push(types.map(type => get(`${type}-${i}`)));
             }
+            return weeks;
+        };
 
-            // Load exam scores
-            if (state.exams) {
-                const midtermSlider = document.getElementById('midterm-score');
-                const midtermInput = document.getElementById('midterm-score-input');
-                const finalSlider = document.getElementById('final-score');
-                const finalInput = document.getElementById('final-score-input');
-
-                midtermSlider.value = state.exams.midterm || 0;
-                midtermInput.value = state.exams.midterm || 0;
-                finalSlider.value = state.exams.final || 0;
-                finalInput.value = state.exams.final || 0;
-            }
-
-            // Load social learning checkboxes
-            for (let i = 0; i < state.social.length; i++) {
-                for (let j = 0; j < state.social[i].length; j++) {
-                    if (socialCheckboxes[i] && socialCheckboxes[i][j]) {
-                        socialCheckboxes[i][j].checked = state.social[i][j];
-                    }
-                }
-            }
-        }
+        return {
+            hw: {
+                sliders: getHwElements(''),
+                inputs: getHwElements('-input'),
+                scores: getHwElements('-score')
+            },
+            social: {
+                checkboxes: getSocialElements(),
+                weekScores: Array.from({ length: CONFIG.social.weeks }, (_, i) => get(`week-${i + 1}-score`))
+            },
+            exams: {
+                midtermSlider: get('midterm-score'),
+                midtermInput: get('midterm-score-input'),
+                midtermDisplay: get('midterm-score-display'),
+                finalSlider: get('final-score'),
+                finalInput: get('final-score-input'),
+                finalDisplay: get('final-score-display')
+            },
+            explanationDisplay: get('grade-explanation') 
+        };
     }
 
-    loadFromLocalStorage();
-    updateTotals();
-    
-});
+    bindEvents() {
+        // Homework Inputs
+        this.ui.hw.sliders.forEach((slider, i) => {
+            this.syncInputs(slider, this.ui.hw.inputs[i], (val) => {
+                this.state.hw[i] = val;
+                this.update();
+            });
+        });
+
+        // Social Checkboxes
+        this.ui.social.checkboxes.forEach((week, wIndex) => {
+            week.forEach((checkbox, cIndex) => {
+                if(!checkbox) return; 
+                checkbox.addEventListener('change', () => {
+                    this.state.social[wIndex][cIndex] = checkbox.checked;
+                    this.update();
+                });
+            });
+        });
+
+        // Exams
+        this.syncInputs(this.ui.exams.midtermSlider, this.ui.exams.midtermInput, (val) => {
+            this.state.exams.midterm = val;
+            this.update();
+        });
+        this.syncInputs(this.ui.exams.finalSlider, this.ui.exams.finalInput, (val) => {
+            this.state.exams.final = val;
+            this.update();
+        });
+    }
+
+    syncInputs(slider, numberInput, callback) {
+        if (!slider || !numberInput) return;
+
+        const max = slider.getAttribute('max') || 3;
+        const min = 0;
+        
+        slider.setAttribute('max', max);
+        numberInput.setAttribute('max', max);
+        numberInput.setAttribute('min', min);
+
+        const updateState = (val) => {
+            let safeVal = Math.max(min, Math.min(max, Number(val)));
+            slider.value = safeVal;
+            numberInput.value = safeVal;
+            callback(safeVal);
+        };
+
+        slider.addEventListener('input', () => updateState(slider.value));
+        numberInput.addEventListener('input', () => updateState(numberInput.value));
+    }
+
+    update() {
+        const socialResults = this.calcSocial();
+        const hwResults = this.calcHomework();
+        const examResults = this.calcExams();
+        const finalGrade = this.calcFinalGrade(hwResults.letterIndex, examResults.letterIndex, socialResults.modifierIndex);
+
+        this.render(socialResults, hwResults, examResults, finalGrade);
+        this.saveToStorage();
+    }
+
+    // --- Calculation Logic ---
+
+    calcSocial() {
+        let totalScore = 0;
+        const weekScores = this.state.social.map((week) => {
+            const checkedCount = week.filter(Boolean).length;
+            const hasMandatory = week[2] && week[4];
+            const hasOneMandatory = week[2] || week[4];
+
+            let score = 0;
+            if (checkedCount >= 4 && hasMandatory) score = 3;
+            else if (checkedCount >= 3 && hasOneMandatory) score = 2;
+            else if (checkedCount >= 2) score = 1;
+            
+            totalScore += score;
+            return score;
+        });
+
+        const maxPoints = CONFIG.social.weeks * 3;
+        const ratio = totalScore / maxPoints;
+        
+        let modifierIndex = 0;
+        if (ratio >= 0.8) modifierIndex = 3;
+        else if (ratio >= 0.6) modifierIndex = 2;
+        else if (ratio >= 0.4) modifierIndex = 1;
+
+        return { weekScores, totalScore, maxPoints, modifierIndex };
+    }
+
+    calcHomework() {
+        let totalScore = 0;
+        const scores = this.state.hw.map(val => {
+            let grade = 0;
+            if (val >= CONFIG.hw.thresholds[0]) grade = 3;
+            else if (val >= CONFIG.hw.thresholds[1]) grade = 2;
+            else if (val >= CONFIG.hw.thresholds[2]) grade = 1;
+            totalScore += grade;
+            return grade;
+        });
+
+        const maxPoints = CONFIG.hw.count * 3;
+        const ratio = totalScore / maxPoints;
+
+        let letterIndex = 0;
+        if (ratio >= 15/18) letterIndex = 3;
+        else if (ratio >= 12/18) letterIndex = 2;
+        else if (ratio >= 9/18) letterIndex = 1;
+
+        return { scores, totalScore, maxPoints, letterIndex };
+    }
+
+    calcExams() {
+        const getScore = (raw) => {
+            if (raw >= CONFIG.exams.thresholds[0]) return 3;
+            if (raw >= CONFIG.exams.thresholds[1]) return 2;
+            if (raw >= CONFIG.exams.thresholds[2]) return 1;
+            return 0;
+        };
+
+        let midScore = getScore(this.state.exams.midterm);
+        let finScore = getScore(this.state.exams.final);
+
+        if (finScore > midScore) midScore = finScore;
+
+        const totalScore = midScore + finScore;
+        const maxPoints = 6;
+        const ratio = totalScore / maxPoints;
+
+        let letterIndex = 0;
+        if (ratio >= 5/6) letterIndex = 3;
+        else if (ratio >= 3/6) letterIndex = 2;
+        else if (ratio >= 1/6) letterIndex = 1;
+
+        return { midScore, finScore, totalScore, maxPoints, letterIndex };
+    }
+
+    calcFinalGrade(hwIndex, examIndex, socialModifier) {
+        let baseIndex = Math.min(hwIndex, examIndex);
+        
+        if (socialModifier === 0 && baseIndex > 0) {
+            baseIndex -= 1; 
+        }
+
+        let displayModifier = '';
+        if (baseIndex > 0) {
+            if (socialModifier === 3) displayModifier = '+';
+            if (socialModifier === 1) displayModifier = '-';
+        }
+
+        const letter = CONFIG.grading.labels[baseIndex];
+        return { text: `${letter}${displayModifier}` };
+    }
+
+    // --- Rendering ---
+
+    render(social, hw, exams, final) {
+        // 1. Update Social Week Scores (Small numbers in table)
+        social.weekScores.forEach((s, i) => {
+            if(this.ui.social.weekScores[i]) this.ui.social.weekScores[i].innerText = s;
+        });
+
+        // 2. Update HW Individual Scores (Small numbers in list)
+        hw.scores.forEach((s, i) => {
+            if(this.ui.hw.scores[i]) this.ui.hw.scores[i].innerText = s;
+        });
+
+        // 3. Update Exam Individual Scores (Small numbers)
+        if(this.ui.exams.midtermDisplay) this.ui.exams.midtermDisplay.innerText = exams.midScore;
+        if(this.ui.exams.finalDisplay) this.ui.exams.finalDisplay.innerText = exams.finScore;
+
+        // 4. Generate and Render the Explanation Block
+        this.updateExplanation(hw, exams, social, final);
+    }
+
+    updateExplanation(hw, exams, social, final) {
+        if (!this.ui.explanationDisplay) return;
+
+        const baseIndex = Math.min(hw.letterIndex, exams.letterIndex);
+        const baseGrade = CONFIG.grading.labels[baseIndex];
+        
+        let text = `Grade Breakdown for Final Grade: ${final.text}\n`;
+        text += "=".repeat(50) + "\n\n";
+
+        // Stats
+        text += `Homework Points: ${hw.totalScore}/${hw.maxPoints}\n`;
+        text += `Exam Points: ${exams.totalScore}/${exams.maxPoints}\n`;
+        text += `Base Grade: ${baseGrade}\n\n`;
+
+        // Base Grade Logic
+        text += "Base Grade Criteria:\n";
+        if (baseIndex === 3) { 
+            text += `✓ Met requirements for A (15+ homework points AND 6 exam points)\n`;
+        } else if (baseIndex === 2) { 
+            text += `✓ Met requirements for B (12+ homework points AND 4+ exam points)\n`;
+            if (hw.totalScore < 15 || exams.totalScore < 6) {
+                text += `✗ Did not meet A requirements (need 15+ homework AND 6 exam)\n`;
+            }
+        } else if (baseIndex === 1) { 
+            text += `✓ Met requirements for C (9+ homework points AND 2+ exam points)\n`;
+            if (hw.totalScore < 12 || exams.totalScore < 4) {
+                 text += `✗ Did not meet B requirements (need 12+ homework AND 4+ exam)\n`;
+            }
+        } else { 
+            text += `✗ Did not meet minimum requirements for C\n`;
+        }
+
+        text += "\n";
+
+        // Social Logic
+        text += `Social Learning Points: ${social.totalScore}/${social.maxPoints}\n`;
+
+        switch (social.modifierIndex) {
+            case 3:
+                text += "Social Modifier: + (24+ points - excellent participation!)\n";
+                text += `Final Grade: ${baseGrade} + modifier = ${final.text}\n`;
+                break;
+            case 2:
+                text += "Social Modifier: none (18-23 points - good participation)\n";
+                text += `Final Grade: ${baseGrade} (no change) = ${final.text}\n`;
+                break;
+            case 1:
+                text += "Social Modifier: - (12-17 points - moderate participation)\n";
+                text += `Final Grade: ${baseGrade} + modifier = ${final.text}\n`;
+                break;
+            case 0:
+                text += "Social Modifier: Lower one letter grade (<12 points - needs improvement)\n";
+                text += `Final Grade: ${baseGrade} lowered by one grade = ${final.text}\n`;
+                break;
+        }
+
+        this.ui.explanationDisplay.innerText = text;
+    }
+
+    // --- Storage ---
+
+    saveToStorage() {
+        localStorage.setItem('gradeCalculatorState', JSON.stringify(this.state));
+    }
+
+    loadFromStorage() {
+        const saved = localStorage.getItem('gradeCalculatorState');
+        if (!saved) return;
+        
+        try {
+            const parsed = JSON.parse(saved);
+            if(parsed.hw) this.state.hw = parsed.hw;
+            if(parsed.social) this.state.social = parsed.social;
+            if(parsed.exams) this.state.exams = parsed.exams;
+
+            this.ui.hw.sliders.forEach((el, i) => el.value = this.state.hw[i]);
+            this.ui.hw.inputs.forEach((el, i) => el.value = this.state.hw[i]);
+            
+            this.ui.social.checkboxes.forEach((week, w) => {
+                week.forEach((box, i) => box.checked = this.state.social[w][i]);
+            });
+
+            this.ui.exams.midtermSlider.value = this.state.exams.midterm;
+            this.ui.exams.midtermInput.value = this.state.exams.midterm;
+            this.ui.exams.finalSlider.value = this.state.exams.final;
+            this.ui.exams.finalInput.value = this.state.exams.final;
+
+        } catch (e) {
+            console.error("Failed to load save data", e);
+        }
+    }
+}

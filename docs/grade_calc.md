@@ -9,10 +9,6 @@ nav_exclude: true
 {: .warning}
 This is only an estimate and may not reflect your actual final grade.
 
-
-This grade calculator allows you to estimate your final grade in the course
-based on your current scores and social learning components. 
-
 <div class="calculator-container">
     <div class="left-column">
         <form id="homework-scores">
@@ -75,7 +71,6 @@ based on your current scores and social learning components.
         </form>
     </div>
 
-    <!-- a spreadsheet like form with rows for each week and checkboxes for each social learning component i.e. 2 lecs, 1 lab, 1 study group and 1 rq -->
     <form id="social-learning-scores">
         <h3>Social Learning</h3>
         <table>
@@ -107,47 +102,19 @@ based on your current scores and social learning components.
     </form>
 </div>
 
-<h3>Totals</h3>
-<table class="totals-table">
-    <thead>
-        <tr>
-            <th style="width: 25%;">Component</th>
-            <th style="width: 25%;">Total Score</th>
-            <th style="width: 25%;">Total Possible</th>
-            <th style="width: 25%;">Result</th>
-        </tr>
-    </thead>
-    <tr>
-        <th class="component">Grade Modifier</th>
-        <td><p id="social-score-total">N/A</p></td>
-        <td><p id="social-possible-total">N/A</p></td>
-        <td><p id="social-result-total">N/A</p></td>
-    </tr>
-    <tr>
-        <th class="component">Homework Total</th>
-        <td><p id="hw-score-total">N/A</p></td>
-        <td><p id="hw-possible-total">N/A</p></td>
-        <td><p id="hw-result-total">N/A</p></td>
-    </tr>
-    <tr>
-        <th class="component">Exam Total</th>
-        <td><p id="exam-score-total">N/A</p></td>
-        <td><p id="exam-possible-total">N/A</p></td>
-        <td><p id="exam-result-total">N/A</p></td>
-    </tr>
-    <tr>
-        <th class="component">Final Grade</th>
-        <td colspan="3"><p id="final-grade-total">N/A</p></td>
-    </tr>
-</table>
+<hr style="margin: 2rem 0;">
 
+<div class="report-wrapper">
+    <div class="report-header">
+        <span class="report-label">GRADE REPORT</span>
+        <span class="report-status">LIVE ESTIMATE</span>
+    </div>
+    <div id="grade-explanation">Calculating...</div>
+</div>
 
 
 <style>
-#what-if {
-    margin-bottom: 1rem;
-}
-
+/* --- Layout & Forms --- */
 .calculator-container {
     display: flex;
     flex-wrap: wrap;
@@ -165,14 +132,7 @@ based on your current scores and social learning components.
     min-width: 400px;
 }
 
-th {
-    min-width: 80px;
-}
-
-td {
-    min-width: 80px;
-}
-
+/* --- Inputs --- */
 .slider-container {
     display: flex;
     align-items: center;
@@ -183,12 +143,61 @@ td {
 }
 .slider-container input[type="number"] {
     border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    padding: 4px;
+}
+th, td {
+    padding: 8px;
 }
 
-.totals-table td, th {
-    text-align: center;
+
+/* The outer container acting as the "Card" */
+.report-wrapper {
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Soft, floating shadow */
+    overflow: hidden; /* Ensures children don't break rounded corners */
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* A dark header bar to make it look like a system window or report */
+.report-header {
+    background: #2d333b; /* Dark slate */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #1e2329;
+}
+
+.report-label {
+    font-weight: 700;
+    color: #adbac7; /* Soft grey text */
+    text-transform: uppercase;
+}
+
+.report-status {
+    background: #2ea043; /* Green badge */
+    color: white;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+/* The actual text area */
+#grade-explanation {
+    white-space: pre-wrap; /* Preserves the \n formatting from JS */
+    font-family: 'Menlo', 'Consolas', 'Monaco', 'Courier New', monospace; /* Code font */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 25px;
+    border-left: 5px solid #4f46e5; /* Accent bar on the left (Indigo) */
+}
 
 </style>
 
@@ -222,27 +231,6 @@ DO NOT RELY ON CANVAS SCORE CALCULATIONS. Use Canvas *only* to see the individua
 |   C   |      >= 9       |     >= 2    |
 |   F   |  < 9 | < 2 |
 
-```python
-def calculate_base_grade(homework_points, exam_points):
-    """
-    Determine base letter grade based on homework and exam points.
-    
-    Args:
-        homework_points: Total homework points (max 18)
-        exam_points: Total exam points (max 6)
-    
-    Returns:
-        str: Base letter grade ('A', 'B', 'C', or 'F')
-    """
-    if homework_points >= 15 and exam_points >= 6:
-        return 'A'
-    elif homework_points >= 12 and exam_points >= 4:
-        return 'B'
-    elif homework_points >= 9 and exam_points >= 2:
-        return 'C'
-    else:
-        return 'F'
-```
 
 ## Social Learning Modifier
 Your participation in social learning activities determines a modifier that can adjust your base grade. 
@@ -268,108 +256,6 @@ This total social points then determine your social learning modifier as follows
 |         < 12        | Lower one letter grade  |
 
 
-```python
-def calculate_social_modifier(social_points):
-    """
-    Determine social learning modifier based on total social points.
-    
-    Args:
-        social_points: Total social learning points (max 30)
-    
-    Returns:
-        str: Modifier ('+', '', '-', or 'lower')
-    """
-    if social_points >= 24:
-        return '+'
-    elif 18 <= social_points <= 23:
-        return ''
-    elif 12 <= social_points <= 17:
-        return '-'
-    else:
-        return 'lower'
-```
-
-### Final Grade Calculation
-The final grade is calculated by applying the social learning modifier to your base grade.
-
-```python
-def calculate_final_grade(homework_points, exam_points, social_points):
-    base_grade = calculate_base_grade(homework_points, exam_points)
-    social_modifier = calculate_social_modifier(social_points)
-    
-    if social_modifier == 'lower':
-        if base_grade == 'A':
-            final_grade = 'B'
-        elif base_grade == 'B':
-            final_grade = 'C'
-        elif base_grade == 'C':
-            final_grade = 'F'
-        else:
-            final_grade = 'F'
-    else:
-        final_grade = base_grade + social_modifier
-    
-    return final_grade
-```
-
-### Detailed Grade Explanation
-This function provides a detailed breakdown of how your final grade was determined.
-
-```python
-def explain_grade(homework_points, exam_points, social_points):
-    """
-    Provide a detailed explanation of why a student received their final grade.
-    
-    Args:
-        homework_points: Total homework points (max 18)
-        exam_points: Total exam points (max 6)
-        social_points: Total social learning points (max 30)
-    
-    Returns:
-        str: A detailed explanation of the final grade calculation
-    """
-    base_grade = calculate_base_grade(homework_points, exam_points)
-    social_modifier = calculate_social_modifier(social_points)
-    final_grade = calculate_final_grade(homework_points, exam_points, social_points)
-    
-    explanation = f"Grade Breakdown for Final Grade: {final_grade}\n"
-    explanation += "=" * 50 + "\n\n"
-    
-    # Explain homework and exam performance
-    explanation += f"Homework Points: {homework_points}/18\n"
-    explanation += f"Exam Points: {exam_points}/6\n"
-    explanation += f"Base Grade: {base_grade}\n\n"
-    
-    # Explain how base grade was determined
-    explanation += "Base Grade Criteria:\n"
-    if base_grade == 'A':
-        explanation += "✓ Met requirements for A (15+ homework points AND 6 exam points)\n"
-    elif base_grade == 'B':
-        explanation += "✓ Met requirements for B (12+ homework points AND 4+ exam points)\n"
-        explanation += "✗ Did not meet A requirements (need 15+ homework AND 6 exam)\n"
-    elif base_grade == 'C':
-        explanation += "✓ Met requirements for C (9+ homework points AND 2+ exam points)\n"
-        explanation += "✗ Did not meet B requirements (need 12+ homework AND 4+ exam)\n"
-    else:
-        explanation += "✗ Did not meet minimum requirements for C\n"
-    
-    explanation += "\n"
-    
-    # Explain social learning impact
-    explanation += f"Social Learning Points: {social_points}/30\n"
-    
-    if social_modifier == '+':
-        explanation += "Social Modifier: + (24+ points - excellent participation!)\n"
-        explanation += f"Final Grade: {base_grade} + modifier = {final_grade}\n"
-    elif social_modifier == '':
-        explanation += "Social Modifier: none (18-23 points - good participation)\n"
-        explanation += f"Final Grade: {base_grade} (no change) = {final_grade}\n"
-    elif social_modifier == '-':
-        explanation += "Social Modifier: - (12-17 points - moderate participation)\n"
-        explanation += f"Final Grade: {base_grade} + modifier = {final_grade}\n"
-    else:  # 'lower'
-        explanation += "Social Modifier: Lower one letter grade (<12 points - needs improvement)\n"
-        explanation += f"Final Grade: {base_grade} lowered by one grade = {final_grade}\n"
-    
-    return explanation
-```
+## Final Grade Calculation
+The final grade is calculated by applying the social learning modifier to your base grade. 
+Modifiers don't apply to F grades; if your base grade is F, your final grade remains F regardless of social learning points.
