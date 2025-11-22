@@ -27,6 +27,8 @@ const CONFIG = {
 class GradeCalculator {
     constructor() {
         // 1. Initialize State
+        this.mode = 'simple'; // 'simple' or 'advanced'
+
         this.state = {
             hw: Array(CONFIG.hw.count).fill(0),
             social: Array.from({ length: CONFIG.social.weeks }, () => Array(CONFIG.social.itemsPerWeek).fill(false)),
@@ -41,6 +43,7 @@ class GradeCalculator {
         this.bindEvents();
         
         // 4. Initial Render
+        this.toggleMode('simple'); // Default to simple
         this.update();
     }
 
@@ -60,6 +63,17 @@ class GradeCalculator {
         };
 
         return {
+            mode: {
+                simpleBtn: get('btn-simple'),
+                advancedBtn: get('btn-advanced'),
+                simplePanel: get('simple-ui'),
+                advancedPanel: get('advanced-ui')
+            },
+            simple: {
+                hw: get('simple-hw'),
+                exam: get('simple-exam'),
+                social: get('simple-social')
+            },
             hw: {
                 sliders: getHwElements(''),
                 inputs: getHwElements('-input'),
@@ -82,7 +96,27 @@ class GradeCalculator {
     }
 
     bindEvents() {
-        // Homework Inputs
+        // Toggle Buttons
+        this.ui.mode.simpleBtn.addEventListener('click', () => this.toggleMode('simple'));
+        this.ui.mode.advancedBtn.addEventListener('click', () => this.toggleMode('advanced'));
+
+        // Simple Inputs
+        ['hw', 'exam', 'social'].forEach(key => {
+            this.ui.simple[key].addEventListener('input', () => {
+                // Ensure values stay within bounds
+                let max = 18; 
+                if (key === 'exam') max = 6;
+                if (key === 'social') max = 30;
+                
+                let val = parseFloat(this.ui.simple[key].value);
+                if (val > max) this.ui.simple[key].value = max;
+                if (val < 0) this.ui.simple[key].value = 0;
+                
+                this.update();
+            });
+        });
+
+        // Advanced: Homework Inputs
         this.ui.hw.sliders.forEach((slider, i) => {
             this.syncInputs(slider, this.ui.hw.inputs[i], (val) => {
                 this.state.hw[i] = val;
@@ -90,7 +124,7 @@ class GradeCalculator {
             });
         });
 
-        // Social Checkboxes
+        // Advanced: Social Checkboxes
         this.ui.social.checkboxes.forEach((week, wIndex) => {
             week.forEach((checkbox, cIndex) => {
                 if(!checkbox) return; 
@@ -101,7 +135,7 @@ class GradeCalculator {
             });
         });
 
-        // Exams
+        // Advanced: Exams
         this.syncInputs(this.ui.exams.midtermSlider, this.ui.exams.midtermInput, (val) => {
             this.state.exams.midterm = val;
             this.update();
@@ -110,6 +144,22 @@ class GradeCalculator {
             this.state.exams.final = val;
             this.update();
         });
+    }
+
+    toggleMode(mode) {
+        this.mode = mode;
+        if (mode === 'simple') {
+            this.ui.mode.simplePanel.style.display = 'block';
+            this.ui.mode.advancedPanel.style.display = 'none';
+            this.ui.mode.simpleBtn.classList.add('active');
+            this.ui.mode.advancedBtn.classList.remove('active');
+        } else {
+            this.ui.mode.simplePanel.style.display = 'none';
+            this.ui.mode.advancedPanel.style.display = 'block';
+            this.ui.mode.simpleBtn.classList.remove('active');
+            this.ui.mode.advancedBtn.classList.add('active');
+        }
+        this.update(); // Recalculate based on new mode
     }
 
     syncInputs(slider, numberInput, callback) {
@@ -134,16 +184,71 @@ class GradeCalculator {
     }
 
     update() {
-        const socialResults = this.calcSocial();
-        const hwResults = this.calcHomework();
-        const examResults = this.calcExams();
+        let hwResults, examResults, socialResults;
+
+        if (this.mode === 'simple') {
+            // Read from simple inputs
+            hwResults = this.calcSimpleHomework();
+            examResults = this.calcSimpleExams();
+            socialResults = this.calcSimpleSocial();
+        } else {
+            // Read from advanced state and update simple inputs
+            hwResults = this.calcHomework();
+            examResults = this.calcExams();
+            socialResults = this.calcSocial();
+
+            // Sync Advanced results to Simple Inputs
+            this.ui.simple.hw.value = hwResults.totalScore;
+            this.ui.simple.exam.value = examResults.totalScore;
+            this.ui.simple.social.value = socialResults.totalScore;
+        }
+
         const finalGrade = this.calcFinalGrade(hwResults.letterIndex, examResults.letterIndex, socialResults.modifierIndex);
 
         this.render(socialResults, hwResults, examResults, finalGrade);
         this.saveToStorage();
     }
 
-    // --- Calculation Logic ---
+    // --- Simple Mode Calculations ---
+
+    calcSimpleHomework() {
+        const total = parseFloat(this.ui.simple.hw.value) || 0;
+        const maxPoints = 18;
+        const ratio = total / maxPoints;
+        let letterIndex = 0;
+        if (ratio >= 15/18) letterIndex = 3;
+        else if (ratio >= 12/18) letterIndex = 2;
+        else if (ratio >= 9/18) letterIndex = 1;
+        
+        // For simple mode, scores array is irrelevant for display
+        return { scores: [], totalScore: total, maxPoints, letterIndex };
+    }
+
+    calcSimpleExams() {
+        const total = parseFloat(this.ui.simple.exam.value) || 0;
+        const maxPoints = 6;
+        const ratio = total / maxPoints;
+        let letterIndex = 0;
+        if (ratio >= 5/6) letterIndex = 3;
+        else if (ratio >= 3/6) letterIndex = 2;
+        else if (ratio >= 1/6) letterIndex = 1;
+
+        return { midScore: 0, finScore: 0, totalScore: total, maxPoints, letterIndex };
+    }
+
+    calcSimpleSocial() {
+        const total = parseFloat(this.ui.simple.social.value) || 0;
+        const maxPoints = 30;
+        const ratio = total / maxPoints;
+        let modifierIndex = 0;
+        if (ratio >= 0.8) modifierIndex = 3;
+        else if (ratio >= 0.6) modifierIndex = 2;
+        else if (ratio >= 0.4) modifierIndex = 1;
+
+        return { weekScores: [], totalScore: total, maxPoints, modifierIndex };
+    }
+
+    // --- Advanced Mode Calculations ---
 
     calcSocial() {
         let totalScore = 0;
@@ -239,21 +344,20 @@ class GradeCalculator {
     // --- Rendering ---
 
     render(social, hw, exams, final) {
-        // 1. Update Social Week Scores (Small numbers in table)
-        social.weekScores.forEach((s, i) => {
-            if(this.ui.social.weekScores[i]) this.ui.social.weekScores[i].innerText = s;
-        });
+        // Only update Advanced UI if we are in Advanced Mode
+        if (this.mode === 'advanced') {
+            social.weekScores.forEach((s, i) => {
+                if(this.ui.social.weekScores[i]) this.ui.social.weekScores[i].innerText = s;
+            });
 
-        // 2. Update HW Individual Scores (Small numbers in list)
-        hw.scores.forEach((s, i) => {
-            if(this.ui.hw.scores[i]) this.ui.hw.scores[i].innerText = s;
-        });
+            hw.scores.forEach((s, i) => {
+                if(this.ui.hw.scores[i]) this.ui.hw.scores[i].innerText = s;
+            });
 
-        // 3. Update Exam Individual Scores (Small numbers)
-        if(this.ui.exams.midtermDisplay) this.ui.exams.midtermDisplay.innerText = exams.midScore;
-        if(this.ui.exams.finalDisplay) this.ui.exams.finalDisplay.innerText = exams.finScore;
+            if(this.ui.exams.midtermDisplay) this.ui.exams.midtermDisplay.innerText = exams.midScore;
+            if(this.ui.exams.finalDisplay) this.ui.exams.finalDisplay.innerText = exams.finScore;
+        }
 
-        // 4. Generate and Render the Explanation Block
         this.updateExplanation(hw, exams, social, final);
     }
 
@@ -263,86 +367,98 @@ class GradeCalculator {
         const baseIndex = Math.min(hw.letterIndex, exams.letterIndex);
         const baseGrade = CONFIG.grading.labels[baseIndex];
         
-        let text = `Grade Breakdown for Final Grade: ${final.text}\n`;
-        text += "=".repeat(50) + "\n\n";
+        let html = `Grade Breakdown for Final Grade: <strong>${final.text}</strong>\n`;
+        html += "=".repeat(50) + "\n\n";
 
-        // Stats
-        text += `Homework Points: ${hw.totalScore}/${hw.maxPoints}\n`;
-        text += `Exam Points: ${exams.totalScore}/${exams.maxPoints}\n`;
-        text += `Base Grade: ${baseGrade}\n\n`;
+        // 1. Stats
+        html += `Homework Points: <strong>${hw.totalScore}/${hw.maxPoints}</strong>\n`;
+        html += `Exam Points: <strong>${exams.totalScore}/${exams.maxPoints}</strong>\n`;
+        html += `Base Grade: <strong>${baseGrade}</strong>\n\n`;
 
-        // Base Grade Logic
-        text += "Base Grade Criteria:\n";
+        // 2. Base Grade Criteria Logic
+        html += "Base Grade Criteria:\n";
         if (baseIndex === 3) { 
-            text += `✓ Met requirements for A (15+ homework points AND 6 exam points)\n`;
+            html += `<strong>✓ Met requirements for A</strong> (15+ homework points AND 6 exam points)\n`;
         } else if (baseIndex === 2) { 
-            text += `✓ Met requirements for B (12+ homework points AND 4+ exam points)\n`;
+            html += `<strong>✓ Met requirements for B</strong>\n`;
             if (hw.totalScore < 15 || exams.totalScore < 6) {
-                text += `✗ Did not meet A requirements (need 15+ homework AND 6 exam)\n`;
+                html += `✗ Did not meet A requirements (need 15+ homework AND 6 exam)\n`;
             }
         } else if (baseIndex === 1) { 
-            text += `✓ Met requirements for C (9+ homework points AND 2+ exam points)\n`;
+            html += `<strong>✓ Met requirements for C</strong>\n`;
             if (hw.totalScore < 12 || exams.totalScore < 4) {
-                 text += `✗ Did not meet B requirements (need 12+ homework AND 4+ exam)\n`;
+                 html += `✗ Did not meet B requirements (need 12+ homework AND 4+ exam)\n`;
             }
         } else { 
-            text += `✗ Did not meet minimum requirements for C\n`;
+            html += `<strong>✗ Did not meet minimum requirements for C</strong>\n`;
         }
 
-        text += "\n";
+        html += "\n";
 
-        // Social Logic
-        text += `Social Learning Points: ${social.totalScore}/${social.maxPoints}\n`;
+        // 3. Social Logic
+        html += `Social Learning Points: <strong>${social.totalScore}/${social.maxPoints}</strong>\n`;
 
         switch (social.modifierIndex) {
             case 3:
-                text += "Social Modifier: + (24+ points - excellent participation!)\n";
-                text += `Final Grade: ${baseGrade} + modifier = ${final.text}\n`;
+                html += "Social Modifier: <strong>+ (24+ points - excellent participation!)</strong>\n";
+                html += `Final Grade: ${baseGrade} + modifier = <strong>${final.text}</strong>\n`;
                 break;
             case 2:
-                text += "Social Modifier: none (18-23 points - good participation)\n";
-                text += `Final Grade: ${baseGrade} (no change) = ${final.text}\n`;
+                html += "Social Modifier: <strong>none (18-23 points - good participation)</strong>\n";
+                html += `Final Grade: ${baseGrade} (no change) = <strong>${final.text}</strong>\n`;
                 break;
             case 1:
-                text += "Social Modifier: - (12-17 points - moderate participation)\n";
-                text += `Final Grade: ${baseGrade} + modifier = ${final.text}\n`;
+                html += "Social Modifier: <strong>- (12-17 points - moderate participation)</strong>\n";
+                html += `Final Grade: ${baseGrade} + modifier = <strong>${final.text}</strong>\n`;
                 break;
             case 0:
-                text += "Social Modifier: Lower one letter grade (<12 points - needs improvement)\n";
-                text += `Final Grade: ${baseGrade} lowered by one grade = ${final.text}\n`;
+                html += "Social Modifier: <strong>Lower one letter grade (<12 points - needs improvement)</strong>\n";
+                html += `Final Grade: ${baseGrade} lowered by one grade = <strong>${final.text}</strong>\n`;
                 break;
         }
 
-        this.ui.explanationDisplay.innerText = text;
+        this.ui.explanationDisplay.innerHTML = html;
     }
-
+    
     // --- Storage ---
 
     saveToStorage() {
-        localStorage.setItem('gradeCalculatorState', JSON.stringify(this.state));
+        const data = {
+            mode: this.mode,
+            state: this.state
+        };
+        localStorage.setItem('gradeCalculatorState_v4', JSON.stringify(data));
     }
 
     loadFromStorage() {
-        const saved = localStorage.getItem('gradeCalculatorState');
+        const saved = localStorage.getItem('gradeCalculatorState_v4');
         if (!saved) return;
         
         try {
             const parsed = JSON.parse(saved);
-            if(parsed.hw) this.state.hw = parsed.hw;
-            if(parsed.social) this.state.social = parsed.social;
-            if(parsed.exams) this.state.exams = parsed.exams;
-
-            this.ui.hw.sliders.forEach((el, i) => el.value = this.state.hw[i]);
-            this.ui.hw.inputs.forEach((el, i) => el.value = this.state.hw[i]);
             
-            this.ui.social.checkboxes.forEach((week, w) => {
-                week.forEach((box, i) => box.checked = this.state.social[w][i]);
-            });
+            // Handle Mode
+            if (parsed.mode) this.toggleMode(parsed.mode);
 
-            this.ui.exams.midtermSlider.value = this.state.exams.midterm;
-            this.ui.exams.midtermInput.value = this.state.exams.midterm;
-            this.ui.exams.finalSlider.value = this.state.exams.final;
-            this.ui.exams.finalInput.value = this.state.exams.final;
+            // Handle Advanced State
+            if (parsed.state) {
+                if(parsed.state.hw) this.state.hw = parsed.state.hw;
+                if(parsed.state.social) this.state.social = parsed.state.social;
+                if(parsed.state.exams) this.state.exams = parsed.state.exams;
+
+                // Sync Advanced Inputs
+                this.ui.hw.sliders.forEach((el, i) => el.value = this.state.hw[i]);
+                this.ui.hw.inputs.forEach((el, i) => el.value = this.state.hw[i]);
+                
+                this.ui.social.checkboxes.forEach((week, w) => {
+                    week.forEach((box, i) => box.checked = this.state.social[w][i]);
+                });
+
+                this.ui.exams.midtermSlider.value = this.state.exams.midterm;
+                this.ui.exams.midtermInput.value = this.state.exams.midterm;
+                this.ui.exams.finalSlider.value = this.state.exams.final;
+                this.ui.exams.finalInput.value = this.state.exams.final;
+            }
 
         } catch (e) {
             console.error("Failed to load save data", e);
