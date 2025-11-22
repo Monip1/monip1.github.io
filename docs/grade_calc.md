@@ -146,7 +146,6 @@ This is only an estimate and may not reflect your actual final grade.
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 25px;
 }
 
 .mode-btn {
