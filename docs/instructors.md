@@ -101,7 +101,7 @@ nav_order: 4
       <p class="profile-name">Hailey Li</p>
       <p><em>Homework</em></p>
        <p>Office Hours:</p>
-       <p>Mon, 10AM-11PM (<a href="https://ucsd.zoom.us/j/8310811419" target="_blank">Zoom</a>)</p>
+       <p>Mon, 10AM-11AM (<a href="https://ucsd.zoom.us/j/8310811419" target="_blank">Zoom</a>)</p>
       <a href="mailto:hal180@ucsd.edu">hal180@ucsd.edu</a>
      </div>
   </div>
@@ -121,7 +121,8 @@ nav_order: 4
       <p class="profile-name">Prudhviraj Naidu</p>
       <p><em>Readings</em></p>
       <p>Office Hours:</p>
-      <p>Fri, 2PM-4PM (CSE 4217 & <a href="https://ucsd.zoom.us/j/91943976897" target="_blank">Zoom</a>)</p>
+      <p>Wed, 11AM-12PM (CSE Basement</p>
+      <p>& <a href="https://ucsd.zoom.us/j/91943976897" target="_blank">Zoom</a>)</p>
       <a href="mailto:prnaidu@ucsd.edu">prnaidu@ucsd.edu</a>
      </div>
   </div>
@@ -132,7 +133,6 @@ nav_order: 4
       <p><em>Exams</em></p>
        <p>Office Hours:</p>
        <p>Wed, 1PM-2PM (CSE B250A)</p>
-       <p>Thu, 4PM-5PM (<a href="https://ucsd.zoom.us/j/2682550532" target="_blank">Zoom</a>)</p>
       <a href="mailto:sabyun@ucsd.edu">sabyun@ucsd.edu</a>
      </div>
   </div>
