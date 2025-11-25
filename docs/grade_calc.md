@@ -2,7 +2,7 @@
 title: Grade Calculator
 layout: default
 permalink: /calculator
-nav_exclude: true
+nav_order: 6
 ---
 # Grade Calculator
 
