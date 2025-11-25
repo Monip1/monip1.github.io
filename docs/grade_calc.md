@@ -9,8 +9,13 @@ nav_order: 6
 {: .warning}
 This is only an estimate and may not reflect your actual final grade.
 
-Enter the totals from your Canvas gradebook below. It is normal for these totals
-to be a week behind as grades are updated. 
+Enter the totals from your Canvas gradebook below. **It is normal for these totals
+to be a week behind as grades are updated.**
+
+All grades are calculated using the total point totals at the end of the quarter. 
+If you are using this calculator before the end of the quarter, your grades might be lower than expected. 
+To get a more accurate estimate, consider estimating your expected scores for remaining assignments.
+
 
 <div class="calculator-container">
     
@@ -158,6 +163,11 @@ to be a week behind as grades are updated.
 Here's a breakdown of how the final grade is calculated based on the different components.
 
 ## Base Grade Calculation
+
+{: .important}
+If your final grade is greater than your midterm grade, your final grade will replace your midterm grade,
+i.e. `if final grade > midterm grade, then total exam points = final exam points + final exam points`
+
 The base grade is determined by your performance on homework and exams. 
 How does this work? Each homework assignment is worth 3 points, each point corresponding
 to Exemplary Pass (3 points), Satisfactory Pass (2 points), or Needs Improvement (1 point) 
