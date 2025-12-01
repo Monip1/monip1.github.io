@@ -5,7 +5,7 @@ permalink: /
 nav_order: 0
 ---
 
-# Human Centered Process Oriented Introduction to Programming
+# Human-Centered Process-Oriented Introduction to Programming
 {: .no_toc}
 
 CSE 8A/6R at UC San Diego (Fall 2025)
