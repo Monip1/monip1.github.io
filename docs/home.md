@@ -13,7 +13,7 @@ CSE 8A/6R at UC San Diego (Fall 2025)
 
 ![XKCD Pointers Comic (xkcd 138)](https://imgs.xkcd.com/comics/automation.png){: .meme }
 
-Welcome to CSE 8A/6R! We're excited to have you in this course. Our goal is to help you experience the beauty and joy of computing! This course emphasizes a mastery-based and collaborative approach to learning. Through interactive in-class exercises, homework assignments, and group work, you will not only master the basics of computational problem-solving and programming but also learn to work effectively with others, a crucial skill for successful programmers. Our class places a strong emphasis on the problem-solving process over the final product, encouraging you to learn from feedback and develop a true mastery of the concepts.
+Welcome to CSE 8A/6R! We're excited to have you in this course. Our course is a **human-centered and process-oriented introduction to programming**! Our goal is to help you experience the beauty and joy of computing! This course emphasizes a mastery-based and collaborative approach to learning. Through interactive in-class exercises, homework assignments, and group work, you will not only master the basics of computational problem-solving and programming but also learn to work effectively with others, a crucial skill for successful programmers. Our class places a strong emphasis on the problem-solving process over the final product, encouraging you to learn from feedback and develop a true mastery of the concepts.
 
 [EdStem](https://edstem.org/us/courses/87720/discussion){: .btn .btn-outline }
 [Canvas](https://canvas.ucsd.edu/courses/68535){: .btn .btn-outline }
