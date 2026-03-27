@@ -1,16 +1,17 @@
-title: CSE 8A/6R Fall 2025
-description: The official website for CSE 8A/6R at UC San Diego (Fall 2025).
+title: CSE 29 Spring 2026
+description: The official website for CSE 29 at UC San Diego (Spring 2026).
 remote_theme: just-the-docs/just-the-docs
 color_scheme: light
 
-domain: cse8a-6r-fall2025.github.io
-url: https://cse8a-6r-fall2025.github.io
+domain: cse29spring2026.github.io
+url: https://cse29spring2026.github.io
 
 logo: "/assets/new_logo.png"
 favicon_ico: "/assets/favicon/favicon.ico"
 
 math: katex
 
+# TODO: update these once all the links are obtained
 aux_links:
   Gradescope: "https://www.gradescope.com/courses/1151997"
   Textbook: "https://cogniterra.org/course/705/"
