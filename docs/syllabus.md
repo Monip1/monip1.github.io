@@ -21,9 +21,9 @@ CSE 29 introduces you to the amazing world of systems programming, including 1) 
   - Office Hours: TBA
 
 - [Olivia Weng](https://www.oliviaweng.com/about/)
-  - Office Hours: https://cse29spring2026.github.io/
+  - Office Hours: TBA
 
-**Course Website:** https://cse29spring2026.github.io/
+**Course Website:** <https://cse29spring2026.github.io/>
 
 **Lectures:**
 
@@ -65,13 +65,13 @@ Students who successfully complete this course will be able to:
 5. Describe what happens in the computer's memory when programs execute
 6. Describe how multiple programs run at the same time on a computer
 
-## Course Schedule: [see schedule](schedule.md)
+## Course Schedule: [see schedule](schedule)
 
 # Course Resources
 
 ## Free Online Textbooks (Required)
 
-1. Dive Into Systems: https://diveintosystems.org/book/
+1. Dive Into Systems: <https://diveintosystems.org/book/>
 
 ## Additional Readings (Optional)
 
@@ -81,12 +81,12 @@ Students who successfully complete this course will be able to:
 
 ## Course Tools
 
-1. **Course Website:** https://cse29spring2026.github.io/
-2. **Ed Discussion:** https://edstem.org/us/courses/97308/discussion (Online Q&A)
-   - **Signup Link:** https://edstem.org/us/join/VYDtgP
-3. **Canvas:** https://canvas.ucsd.edu (Grades, Podcasts)
-4. **Gradescope:** https://www.gradescope.com (Exams, Assignments)
-5. **PrairieLearn:** https://www.prairielearn.com (Problem Sets and Skill Demos)
+1. **Course Website:** <https://cse29spring2026.github.io/>
+2. **Ed Discussion:** <https://edstem.org/us/courses/97308/discussion> (Online Q&A)
+   - **Signup Link:** <https://edstem.org/us/join/VYDtgP>
+3. **Canvas:** <https://canvas.ucsd.edu> (Grades, Podcasts)
+4. **Gradescope:** <https://www.gradescope.com> (Exams, Assignments)
+5. **PrairieLearn:** <https://www.prairielearn.com> (Problem Sets and Skill Demos)
 
 ---
 
