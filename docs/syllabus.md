@@ -210,7 +210,7 @@ There will be two in-person, paper-based exams.
 
 **Midterm Exam:** Thursday, April 30, 2026 (during lecture time)
 
-**Final Exam:** Saturday, June 6, 2026 at 11:30am – 2:29pm in TBA
+**Final Exam:** Saturday, June 6, 2026 at 3pm – 5:59pm in in CENTR 115 (A00 section) and CENTR 109 (B00 section)
 
 The final exam is **cumulative** and covers all topics from the course.
 
@@ -294,9 +294,9 @@ Your base letter grade is determined by meeting minimum thresholds in **both** o
 
 | Base Grade | Assignments | Assessments |
 |------------|-------------|-------------|
-| **A** | ≥ 25 pts (out of 30) | ≥ 10 pts (out of 12) |
-| **B** | ≥ 20 pts (out of 30) | ≥ 7 pts (out of 12) |
-| **C** | ≥ 14 pts (out of 30) | ≥ 4 pts (out of 12) |
+| **A** | ≥ 27 pts (out of 30) | ≥ 10 pts (out of 12) |
+| **B** | ≥ 24 pts (out of 30) | ≥ 8 pts (out of 12) |
+| **C** | ≥ 20 pts (out of 30) | ≥ 6 pts (out of 12) |
 | **F** | Does not meet C requirements | |
 
 *Note: Assignments = Homework Assignment points + PA points combined (max 30 pts total). Assessments = Skill Demo points + Exam points combined (max 12 pts total).*
@@ -317,28 +317,28 @@ So a base grade of B with 25 Social Learning points becomes a **B+**; a base gra
 ## Grading Examples
 
 **Student 1:**
-Assignments: 27 pts (HW: 16, PAs: 11) | Assessments: 11 pts | Social Learning: 28 pts
+Assignments: 27 pts (HW: 16, PAs: 11) | Assessments: 10 pts | Social Learning: 28 pts
 → Meets A requirements in all categories. 28 social points → "+" modifier.
 **Final Grade: A+**
 
 **Student 2:**
-Assignments: 22 pts (HW: 13, PAs: 9) | Assessments: 8 pts | Social Learning: 22 pts
+Assignments: 24 pts (HW: 14, PAs: 10) | Assessments: 8 pts | Social Learning: 22 pts
 → Meets B requirements in all categories. 22 social points → no modifier.
 **Final Grade: B**
 
 **Student 3:**
-Assignments: 16 pts (HW: 10, PAs: 6) | Assessments: 5 pts | Social Learning: 17 pts
+Assignments: 20 pts (HW: 12, PAs: 8) | Assessments: 6 pts | Social Learning: 17 pts
 → Meets C requirements in all categories. 17 social points → "−" modifier.
 **Final Grade: C−**
 
 **Student 4:**
-Assignments: 23 pts (HW: 14, PAs: 9) | Assessments: 8 pts | Social Learning: 11 pts
+Assignments: 24 pts (HW: 14, PAs: 10) | Assessments: 8 pts | Social Learning: 11 pts
 → Meets B requirements in all categories. 11 social points → one full letter grade reduction.
 **Final Grade: C**
 
 **Student 5:**
-Assignments: 16 pts (HW: 10, PAs: 6) | Assessments: 2 pts | Social Learning: 25 pts
-→ Meets C assignment requirement but fails to meet C assessment threshold (needs ≥ 4 pts).
+Assignments: 20 pts (HW: 12, PAs: 8) | Assessments: 5 pts | Social Learning: 25 pts
+→ Meets C assignment requirement but fails to meet C assessment threshold (needs ≥ 6 pts).
 **Final Grade: F**
 
 ---
