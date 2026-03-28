@@ -5,8 +5,8 @@ nav_order: 1
 permalink: /syllabus
 ---
 
-# CSE 29: Systems Programming and Software Tools
-# Course Syllabus — Spring 2026
+# CSE 29: Systems Programming and Software Tools (Spring 2026)
+# Course Syllabus
 
 Welcome to CSE 29: Systems Programming and Software Tools! We are so excited to have you here! :)
 
