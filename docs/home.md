@@ -5,23 +5,23 @@ permalink: /
 nav_order: 0
 ---
 
-# Human-Centered Process-Oriented Introduction to Programming
+# Systems Programming and Software Tools
 {: .no_toc}
 
-CSE 8A/6R at UC San Diego (Fall 2025)
+CSE 29 at UC San Diego (Spring 2026)
 {: .fs-6 .fw-300 }
 
-![XKCD Pointers Comic (xkcd 138)](https://imgs.xkcd.com/comics/automation.png){: .meme }
+![XKCD Pointers Comic (xkcd 138)](https://imgs.xkcd.com/comics/pointers.png){: .meme }
 
-Welcome to CSE 8A/6R! We're excited to have you in this course. Our course is a **human-centered and process-oriented introduction to programming**! Our goal is to help you experience the beauty and joy of computing! This course emphasizes a mastery-based and collaborative approach to learning. Through interactive in-class exercises, homework assignments, and group work, you will not only master the basics of computational problem-solving and programming but also learn to work effectively with others, a crucial skill for successful programmers. Our class places a strong emphasis on the problem-solving process over the final product, encouraging you to learn from feedback and develop a true mastery of the concepts.
+Welcome to CSE 29! We're excited to have you in this course. This course introduces you to an exciting range of materials from the broad field of **systems programming**, including 1) the basics of how a single program executes on a computer, 2) higher-level programming in C, 3) software tools to help you interact with a computer using the command line interface, and 4) understand the basics of what happens when multiple programs run on a computer at the same time. *All very cool stuff that every programmer should know!*
 
-[EdStem](https://edstem.org/us/courses/87720/discussion){: .btn .btn-outline }
+[EdStem](https://edstem.org/us/courses/97308/discussion){: .btn .btn-outline }
 [Canvas](https://canvas.ucsd.edu/courses/68535){: .btn .btn-outline }
 [Gradescope](https://www.gradescope.com/courses/1151997){: .btn .btn-outline }
-[Textbook](https://cogniterra.org/course/705/){: .btn .btn-outline }
+<!-- [Textbook](https://cogniterra.org/course/705/){: .btn .btn-outline } -->
 <!-- [Tutor Hours Queue](https://autograder.ucsd.edu/queue/787){: .btn .btn-outline } -->
-<!-- [PrairieLearn](https://us.prairielearn.com/pl/course_instance/180232){: .btn .btn-outline } -->
-<!-- [PrairieTest](https://us.prairietest.com/){: .btn .btn-outline } -->
+[PrairieLearn](https://us.prairielearn.com/pl/course_instance/212869){: .btn .btn-outline }
+[PrairieTest](https://us.prairietest.com/){: .btn .btn-outline }
 <!-- [WebClicker](https://webclicker.web.app/login/){: .btn .btn-outline } -->
 
 <!-- # Need Help?
@@ -38,39 +38,20 @@ We expect that all students will need help at some point in the quarter, so plea
 
 | Lecture | When? | Where? |
 | :----  | :---- | :---- |
-| CSE 8A A00 | Tuesdays and Thursdays @ 2:00 \- 3:20pm | PETER 108 |
-| CSE 6R A00 | Tuesdays and Thursdays @ 2:00 \- 3:20pm | [Link](https://ucsd.zoom.us/my/adalbertgerald) | 
+| A00 (Gerald) | Tuesdays and Thursdays @ 11:00am \- 12:20pm | WLH 2005 |
+| B00 (Olivia) | Tuesdays and Thursdays @ 12:30pm \- 1:50pm | CSB 002  | 
 
 ## Labs
 
-### CSE 8A
-
 | Lab | When? | Where? |
 | :---- | :---- | :---- |
-| A50 | Wednesdays @ 10:00a \- 10:50am | EBU3B B250 |
-| A51 | Wednesdays @ 11:00a \- 11:50am | EBU3B B250 |
-| A52 | Wednesdays @ 12:00p \- 12:50pm | EBU3B B250 |
-| A53 | Wednesdays @ 1:00p \- 1:50pm | EBU3B B250 |
-| A54 | Wednesdays @ 2:00p \- 2:50pm | EBU3B B250 |
-| A55 | Wednesdays @ 3:00p \- 3:50pm | EBU3B B250 |
-| A56 | Wednesdays @ 4:00p \- 4:50pm | EBU3B B250 |
-| A57 | Wednesdays @ 5:00p \- 5:50pm | EBU3B B250 |
-
-### CSE 6R
-
-{: .note}
-Students in CSE 6R will be given the option to sign up for labs starting from 10 AM \- 4 PM (**no remote option for 5 \- 5:50 PM lab**).
-
-
-| Lab | When? | Where? |
-| :---- | :---- | :---- |
-| R50 | Wednesdays @ 10:00a \- 10:50am | Remote: [Link](https://ucsd.zoom.us/j/2443249067) |
-| R51 | Wednesdays @ 11:00a \- 11:50am | Remote: [Link](https://ucsd.zoom.us/j/2443249067) |
-| R52 | Wednesdays @ 12:00p \- 12:50pm | Remote: [Link](https://ucsd.zoom.us/j/6683840265)|
-| R53 | Wednesdays @ 1:00p \- 1:50pm | Remote: [Link](https://ucsd.zoom.us/j/6683840265) |
-| R54 | Wednesdays @ 2:00p \- 2:50pm | Remote: [Link](https://ucsd.zoom.us/j/2682550532) |
-| R55 | Wednesdays @ 3:00p \- 3:50pm | Remote: [Link](https://ucsd.zoom.us/j/2682550532) |
-| R56 | Wednesdays @ 4:00p \- 4:50pm | Remote: [Link](https://ucsd.zoom.us/j/92571509967) |
+| A50 | Fridays @ 10:00am \- 11:50am | CSE B250 |
+| A51 | Fridays @ 12:00am \- 1:50pm | CSE B250 |
+| A52 | Fridays @ 2:00pm \- 3:50pm | CSE B250 |
+| A53 | Fridays @ 4:00pm \- 5:50pm | CSE B250 |
+| B50 | Fridays @ 10:00am \- 11:50am | CSE B240 |
+| B51 | Fridays @ 12:00pm \- 1:50pm | CSE B240 |
+| B52 | Fridays @ 2:00pm \- 3:50pm | CSE B240 |
 
 <style>
   .meme {

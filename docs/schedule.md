@@ -7,9 +7,9 @@ permalink: /schedule
 
 # Schedule
 
-[Link to schedule](https://docs.google.com/spreadsheets/d/11Y9lZSuPNxQOgdIQQ15rlCUsjHRH2nZGxHW5gf8PNTc/edit?usp=sharing)
+[Link to schedule](https://docs.google.com/spreadsheets/d/1othSrrYM-aebpfh-06uSpCdudL3SdLlA3LROsJebHUI/edit?usp=sharing)
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQj4j2BcdCPf1uDm4u6E-xD2-9t0yMfIc_Qq4sHxe35hQNA2st-Wb-kdb_QNy7ws3daEFJ62mjMjh32/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="border:solid 1px #777" width="100%" frameborder="0" scrolling="no" id="schedule-iframe"></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/1othSrrYM-aebpfh-06uSpCdudL3SdLlA3LROsJebHUI/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="border:solid 1px #777" width="100%" frameborder="0" scrolling="no" id="schedule-iframe"></iframe>
 
 <style>
     #schedule-iframe {
