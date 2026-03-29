@@ -171,7 +171,7 @@ How does this work? Each assignment (homework assignments and programming assign
 is worth 3 points, each point corresponding to Exemplary Pass (3 points), Satisfactory Pass (2 points), 
 Needs Improvement (1 point), or Incomplete (0 points).
 
-Similarly, each assessment (skil demos, midterm, and final) is also worth 3 points each, with the same
+Similarly, each assessment (skill demos, midterm, and final) is also worth 3 points each, with the same
 point system.
 
 {: .important}

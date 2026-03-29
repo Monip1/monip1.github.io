@@ -13,10 +13,9 @@ math: katex
 
 # TODO: update these once all the links are obtained
 aux_links:
-  Gradescope: "https://www.gradescope.com/courses/1151997"
-  Textbook: "https://cogniterra.org/course/705/"
-  EdStem: "https://edstem.org/us/courses/87720/discussion"
+  EdStem: "https://edstem.org/us/courses/97308/discussion"
   Canvas: "https://canvas.ucsd.edu/courses/68535"
+  Gradescope: "https://www.gradescope.com/courses/1151997"
 aux_links_new_tab: true
 
 footer_content: 'University of California San Diego. Built with <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>.'
