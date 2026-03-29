@@ -24,17 +24,17 @@ To get a more accurate estimate, consider estimating your expected scores for re
         
         <div class="inputs-wrapper">
             <div class="input-group">
-                <label for="simple-hw">Homework Total <span class="max-label">(Max 18)</span></label>
-                <input type="number" id="simple-hw" min="0" max="18" step="1" placeholder="0">
+                <label for="simple-hw">Assignments Total <span class="max-label">(Max 30)</span></label>
+                <input type="number" id="simple-hw" min="0" max="30" step="1" placeholder="0">
             </div>
 
             <div class="input-group">
-                <label for="simple-exam">Exam Total <span class="max-label">(Max 6)</span></label>
-                <input type="number" id="simple-exam" min="0" max="6" step="1" placeholder="0">
+                <label for="simple-exam">Assessments Total <span class="max-label">(Max 12)</span></label>
+                <input type="number" id="simple-exam" min="0" max="12" step="1" placeholder="0">
             </div>
 
             <div class="input-group">
-                <label for="simple-social">Social Total <span class="max-label">(Max 30)</span></label>
+                <label for="simple-social">Social Learning Total <span class="max-label">(Max 30)</span></label>
                 <input type="number" id="simple-social" min="0" max="30" step="1" placeholder="0">
             </div>
         </div>
@@ -162,18 +162,21 @@ To get a more accurate estimate, consider estimating your expected scores for re
 # Grade Calculation Explained
 Here's a breakdown of how the final grade is calculated based on the different components.
 
+{: .note}
+As a reminder, all information regarding grading policies and cutoffs (and more!) is taken from the [syllabus](syllabus), so use that as the source of truth.
+
 ## Base Grade Calculation
+The base grade is determined by your performance on assignments and assessments. 
+How does this work? Each assignment (homework assignments and programming assignments)
+is worth 3 points, each point corresponding to Exemplary Pass (3 points), Satisfactory Pass (2 points), 
+Needs Improvement (1 point), or Incomplete (0 points).
+
+Similarly, each assessment (skil demos, midterm, and final) is also worth 3 points each, with the same
+point system.
 
 {: .important}
 If your final grade is greater than your midterm grade, your final grade will replace your midterm grade,
-i.e. `if final grade > midterm grade, then total exam points = final exam points + final exam points`
-
-The base grade is determined by your performance on homework and exams. 
-How does this work? Each homework assignment is worth 3 points, each point corresponding
-to Exemplary Pass (3 points), Satisfactory Pass (2 points), or Needs Improvement (1 point) 
-and Incomplete (0 points).
-
-Similarly, each exam (midterm and final) is also worth 3 points each, with the same point system.
+i.e. `if final grade > midterm grade, then total assessment points = skill demo 1 points + skill demo 2 points + final exam points + final exam points`. A similar policy applies to Skill Demo #3 and your *lowest* Skill Demo grade.
 
 You can find these grades on Canvas under the "Grades" section. 
 
@@ -184,25 +187,25 @@ DO NOT RELY ON CANVAS SCORE CALCULATIONS. Use Canvas *only* to see the individua
 
 | Grade | Homework Points | Exam Points |
 |:-----:|:---------------:|:-----------:|
-|   A   |      >= 15      |     >= 6    |
-|   B   |      >= 12      |     >= 4    |
-|   C   |      >= 9       |     >= 2    |
-|   F   |  < 9 | < 2 |
+|   A   |      >= 27      |     >= 10   |
+|   B   |      >= 24      |     >= 8    |
+|   C   |      >= 20      |     >= 6    |
+|   F   |  < 20 | < 6 |
 
 
 ## Social Learning Modifier
 Your participation in social learning activities determines a modifier that can adjust your base grade. 
-What are these activities? Lectures, labs, study groups, and reading quizzes all contribute to your social learning points.
+What are these activities? Lectures, labs, and study groups all contribute to your social learning points.
 
 ### Grading criteria:
-- **Exemplary (3 social points):** You receive a "Pass" for at least 4 events, including a "Pass" on both the weekly lab and the reading quiz.
-- **Satisfactory (2 social points):** You receive a "Pass" for at least 3 events, including a "Pass" on at least one of the weekly lab or the reading quiz.
-- **Needs Improvement (1 social point):** You receive a "Pass" for at least 2 events.
-- **Incomplete (0 social points):** You receive a "Pass" for fewer than 2 events.
+- **Exemplary (3 social points):** You receive a "Pass" for at least 3 events, including a "Pass" on the weekly lab.
+- **Satisfactory (2 social points):** You receive a "Pass" for at least 2 events, including a "Pass" on the weekly lab.
+- **Needs Improvement (1 social point):** You receive a "Pass" for at least 1 event.
+- **Incomplete (0 social points):** You receive a "Pass" for no events.
 
-Every week, you can earn up to 3 social points and accumulate up to 30 points (3 points x 10 weeks).
+Every week, you can earn up to 3 social learning points and accumulate up to 30 points (3 points x 10 weeks).
 
-This total social points then determine your social learning modifier as follows:
+These total social learning points then determine your social learning modifier as follows:
 
 ### Modifier criteria:
 

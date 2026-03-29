@@ -29,9 +29,9 @@ class GradeCalculator {
             
             this.ui[key].addEventListener('input', () => {
                 // Basic constraints to prevent crazy numbers
-                let max = 18; 
-                if (key === 'exam') max = 6;
-                if (key === 'social') max = 30;
+                let max = 30; 
+                if (key === 'exam') max = 12;
+                // if (key === 'social') max = 30;
                 
                 let val = parseFloat(this.ui[key].value);
                 
@@ -61,29 +61,29 @@ class GradeCalculator {
 
     calcHomework() {
         let total = parseFloat(this.ui.hw.value) || 0;
-        const maxPoints = 18;
+        const maxPoints = 30;
         
         // Clamp for calculation
         total = Math.min(total, maxPoints);
         
         let letterIndex = 0;
-        if (total >= 15) letterIndex = 3;      // A
-        else if (total >= 12) letterIndex = 2; // B
-        else if (total >= 9) letterIndex = 1;  // C
+        if (total >= 27) letterIndex = 3;      // A
+        else if (total >= 24) letterIndex = 2; // B
+        else if (total >= 20) letterIndex = 1;  // C
         
         return { totalScore: total, maxPoints, letterIndex };
     }
 
     calcExams() {
         let total = parseFloat(this.ui.exam.value) || 0;
-        const maxPoints = 6;
+        const maxPoints = 12;
 
         total = Math.min(total, maxPoints);
 
         let letterIndex = 0;
-        if (total >= 6) letterIndex = 3;      // A
-        else if (total >= 4) letterIndex = 2; // B
-        else if (total >= 2) letterIndex = 1; // C
+        if (total >= 10) letterIndex = 3;      // A
+        else if (total >= 8) letterIndex = 2; // B
+        else if (total >= 6) letterIndex = 1; // C
 
         return { totalScore: total, maxPoints, letterIndex };
     }
@@ -142,19 +142,19 @@ class GradeCalculator {
         // 2. Base Grade Criteria Logic
         html += "Base Grade Criteria:\n";
         if (baseIndex === 3) { 
-            html += `<strong>✓ Met requirements for A</strong> (15+ homework points AND 6 exam points)\n`;
+            html += `<strong>✓ Met requirements for A</strong> (27+ assignment points AND 10+ assessment points)\n`;
         } else if (baseIndex === 2) { 
-            html += `<strong>✓ Met requirements for B</strong>\n`;
-            if (hw.totalScore < 15 || exams.totalScore < 6) {
-                html += `✗ Did not meet A requirements (need 15+ homework AND 6 exam)\n`;
+            html += `<strong>✓ Met requirements for B</strong> (24+ assignment points AND 8+ assessment points)\n`;
+            if (hw.totalScore < 27 || exams.totalScore < 10) {
+                html += `✗ Did not meet A requirements (need 27 assignment points AND 10 assessment points)\n`;
             }
         } else if (baseIndex === 1) { 
-            html += `<strong>✓ Met requirements for C</strong>\n`;
-            if (hw.totalScore < 12 || exams.totalScore < 4) {
-                 html += `✗ Did not meet B requirements (need 12+ homework AND 4+ exam)\n`;
+            html += `<strong>✓ Met requirements for C</strong> (20+ assignment points AND 6+ assessment points)\n`;
+            if (hw.totalScore < 24 || exams.totalScore < 8) {
+                 html += `✗ Did not meet B requirements (need 24 assignment points AND 8 assessment points)\n`;
             }
         } else { 
-            html += `<strong>✗ Did not meet minimum requirements for C</strong>\n`;
+            html += `<strong>✗ Did not meet minimum requirements for C</strong> (20+ assignment points AND 6+ assessment points)\n`;
         }
 
         html += "\n";
