@@ -71,69 +71,64 @@ nav_order: 4
 </style>
 
 ## Instructor
-
+<div class="profile-display">
 <div class="profile profile-prof">
-    <img class="profile-pic prof" src="/assets/people/asoosairaj.png" alt="Profile picture for Gerald Soosairaj">
+    <img class="profile-pic prof" src="/assets/people/asoosairaj.png" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Gerald Soosairaj">
     <div class="profile-info profile-info-prof">
         <p class="profile-name"><a href="https://geraldsoosairaj.github.io/" target="_blank">Prof. Gerald Soosairaj</a></p>
         <p>Associate Teaching Professor, Computer Science and Engineering</p>
-        <p>Office Hours: Tuesdays and Thursdays 10 - 11am @ CSE 2106</p>
+        <p>Office Hours: TBA</p>
         <a href="mailto:asoosairaj@ucsd.edu">asoosairaj@ucsd.edu</a>
     </div>
+</div>
+<div class="profile profile-prof">
+    <img class="profile-pic prof" src="/assets/people/Olivia_Weng.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Olivia Weng">
+    <div class="profile-info profile-info-prof">
+        <p class="profile-name"><a href="https://www.oliviaweng.com/about/" target="_blank">Prof. Olivia Weng</a></p>
+        <p>Associate Instructor, Computer Science and Engineering</p>
+        <p>Office Hours: TBA</p>
+        <a href="mailto:oweng@ucsd.edu">oweng@ucsd.edu</a>
+    </div>
+</div>
 </div>
 
 ## Teaching Assistants
 
 <div class="profile-display">
   <div class="profile ta-profile">
+    <img class="profile-pic ta-pic" src="/assets/people/SangYoon_Byun.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Sang Yoon Byun">
+     <div class="profile-info ta-info">
+      <p class="profile-name">Sang Yoon Byun</p>
+      <p><em>Logistics</em></p>
+        <p>Office Hours: TBA</p>
+      <a href="mailto:sabyun@ucsd.edu">sabyun@ucsd.edu</a>
+     </div>
+  </div>
+  <div class="profile ta-profile">
     <img class="profile-pic ta-pic" src="/assets/people/Andrew_Cheung.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Andrew Cheung">
      <div class="profile-info ta-info">
       <p class="profile-name">Andrew Cheung</p>
-      <p><em>Labs</em></p>
-       <p>Office Hours:</p>
-       <p>Fri, 10AM-12PM (<a href="https://ucsd.zoom.us/j/2443249067" target="_blank">Zoom</a>)</p>
+      <p><em>PAs</em></p>
+        <p>Office Hours: TBA</p>
       <a href="mailto:a7cheung@ucsd.edu">a7cheung@ucsd.edu</a>
      </div>
   </div>
   <div class="profile ta-profile">
-    <img class="profile-pic ta-pic" src="/assets/people/Hailey_Li.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Hailey Li">
+    <img class="profile-pic ta-pic" src="/assets/people/etomson.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Elena Tomson">
      <div class="profile-info ta-info">
-      <p class="profile-name">Hailey Li</p>
-      <p><em>Homework</em></p>
-       <p>Office Hours:</p>
-       <p>Mon, 4PM-5PM (<a href="https://ucsd.zoom.us/j/8310811419" target="_blank">Zoom</a>)</p>
-      <a href="mailto:hal180@ucsd.edu">hal180@ucsd.edu</a>
+      <p class="profile-name">Elena Tomson</p>
+      <p><em>Labs</em></p>
+        <p>Office Hours: TBA</p>
+      <a href="mailto:etomson@ucsd.edu">etomson@ucsd.edu</a>
      </div>
   </div>
   <div class="profile ta-profile">
-    <img class="profile-pic ta-pic" src="/assets/people/lhardy.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Liam Hardy">
+    <img class="profile-pic ta-pic" src="/assets/people/Lydia_Zoghbi.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Lydia Zoghbi">
      <div class="profile-info ta-info">
-      <p class="profile-name">Liam Hardy</p>
-      <p><em>Logistics</em></p>
-       <p>Office Hours:</p>
-       <p>Mon, 1PM-2PM (CSE B275)</p>
-      <a href="mailto:lhardy@ucsd.edu">lhardy@ucsd.edu</a>
-     </div>
-  </div>
-  <div class="profile ta-profile">
-    <img class="profile-pic ta-pic" src="/assets/people/Prudhviraj_Naidu.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Prudhviraj Naidu">
-     <div class="profile-info ta-info">
-      <p class="profile-name">Prudhviraj Naidu</p>
-      <p><em>Readings</em></p>
-      <p>Office Hours:</p>
-      <p>Wed, 11AM-12PM (CSE Basement</p>
-      <p>& <a href="https://ucsd.zoom.us/j/91943976897" target="_blank">Zoom</a>)</p>
-      <a href="mailto:prnaidu@ucsd.edu">prnaidu@ucsd.edu</a>
-     </div>
-  </div>
-  <div class="profile ta-profile">
-    <img class="profile-pic ta-pic" src="/assets/people/SangYoon_Byun.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Sang Yoon Byun">
-     <div class="profile-info ta-info">
-      <p class="profile-name">Sang Yoon Byun</p>
-      <p><em>Exams</em></p>
-       <p>Office Hours:</p>
-       <p>Wed, 1PM-2PM (CSE B250A)</p>
-      <a href="mailto:sabyun@ucsd.edu">sabyun@ucsd.edu</a>
+      <p class="profile-name">Lydia Zoghbi</p>
+      <p><em>HWs & Skill Demos</em></p>
+        <p>Office Hours: TBA</p>
+      <a href="mailto:lzoghbi@ucsd.edu">lzoghbi@ucsd.edu</a>
      </div>
   </div>
 </div>
@@ -143,91 +138,6 @@ for tutor and office hours laid out in a weekly calendar.
 
 [1]: https://cse.ucsd.edu/about/floormaps
 
-## Head Tutors
-
-<div class="profile-display">
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Fatimah_Alhumrani.PNG" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Fatimah Alhumrani">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Fatimah Alhumrani</p>
-      <a href="mailto:falhumrani@ucsd.edu">falhumrani@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Joshua_Kave.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Joshua Kave">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Joshua Kave</p>
-      <a href="mailto:jkave@ucsd.edu">jkave@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/skavuri.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Sriharsha Kavuri">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Sriharsha Kavuri</p>
-      <a href="mailto:skavuri@ucsd.edu">skavuri@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/mim019.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Michelle Ma">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Michelle Ma</p>
-      <a href="mailto:mim019@ucsd.edu">mim019@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/D_ante_McCurty.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for D'ante McCurty">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">D'ante McCurty</p>
-      <a href="mailto:dmccurty@ucsd.edu">dmccurty@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Sierra_Myers.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Sierra Myers">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Sierra Myers</p>
-      <a href="mailto:ssmyers@ucsd.edu">ssmyers@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/s3shi.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Steven Shi">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Steven Shi</p>
-      <a href="mailto:s3shi@ucsd.edu">s3shi@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/kytrinh.png" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Kyle Trinh">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Kyle Trinh</p>
-      <a href="mailto:kytrinh@ucsd.edu">kytrinh@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Yuan_Kai_Yang.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Yuan-Kai Yang">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Yuan-Kai (Kevin) Yang</p>
-      <a href="mailto:yuy080@ucsd.edu">yuy080@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Ryan_Younan.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Ryan Younan">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Ryan Younan</p>
-      <a href="mailto:ryounan@ucsd.edu">ryounan@ucsd.edu</a>
-      </div>
-  </div>
-</div>
-
-<div class="profile-display">
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Kenneth_Song.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Kenneth Song">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Kenneth Song</p>
-      <a href="mailto:kjsong@ucsd.edu">kjsong@ucsd.edu</a>
-      </div>
-  </div>
-</div>
-
 ## Tutors
 
 <div class="profile-display">
@@ -235,70 +145,73 @@ for tutor and office hours laid out in a weekly calendar.
     <img class="profile-pic tutor-pic" src="/assets/people/Mia_Chen.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Mia Chen">
       <div class="profile-info tutor-info">
       <p class="profile-name">Mia Chen</p>
+		<p><em>PAs</em></p>
       <a href="mailto:mic048@ucsd.edu">mic048@ucsd.edu</a>
       </div>
   </div>
   <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Shravi_Jain.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Shravi Jain">
+    <img class="profile-pic tutor-pic" src="/assets/people/achernova.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Anya Chernova">
+	  <div class="profile-info tutor-info">
+      <p class="profile-name">Anya Chernova</p>
+		<p><em>PAs</em></p>
+      <a href="mailto:achernova@ucsd.edu">achernova@ucsd.edu</a>
+      </div>
+  </div>
+  <div class="profile tutor-profile">
+    <img class="profile-pic tutor-pic" src="/assets/people/Miles_Davis.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Miles Davis">
       <div class="profile-info tutor-info">
-      <p class="profile-name">Shravi Jain</p>
-      <a href="mailto:shj009@ucsd.edu">shj009@ucsd.edu</a>
+      <p class="profile-name">Miles Davis</p>
+		<p><em>Logistics</em></p>
+      <a href="mailto:midavis@ucsd.edu">midavis@ucsd.edu</a>
+      </div>
+  </div>
+  <div class="profile tutor-profile">
+    <img class="profile-pic tutor-pic" src="/assets/people/Samuel_Gonzalez.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Samuel Gonzalez">
+      <div class="profile-info tutor-info">
+      <p class="profile-name">Samuel Gonzalez</p>
+	    <p><em>Labs</em></p>	
+      <a href="mailto:sag028@ucsd.edu">sag028@ucsd.edu</a>
+      </div>
+  </div>
+  <div class="profile tutor-profile">
+    <img class="profile-pic tutor-pic" src="/assets/people/Travis_Henry.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Travis Henry">
+      <div class="profile-info tutor-info">
+      <p class="profile-name">Travis Henry</p>
+		<p><em>Labs</em></p>
+      <a href="mailto:trhenry@ucsd.edu">trhenry@ucsd.edu</a>
       </div>
   </div>
   <div class="profile tutor-profile">
     <img class="profile-pic tutor-pic" src="/assets/people/Kyla_Ma.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Kyla Ma">
       <div class="profile-info tutor-info">
       <p class="profile-name">Kyla Ma</p>
+		<p><em>PAs</em></p>
       <a href="mailto:kym003@ucsd.edu">kym003@ucsd.edu</a>
       </div>
   </div>
   <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Lulu_Shao.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Lulu Shao">
+    <img class="profile-pic tutor-pic" src="/assets/people/Sierra_Myers.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Sierra Myers">
       <div class="profile-info tutor-info">
-      <p class="profile-name">Lulu Shao</p>
-      <a href="mailto:sishao@ucsd.edu">sishao@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Renita_Justin.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Renita Justin">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Renita Justin</p>
-      <a href="mailto:rjustin@ucsd.edu">rjustin@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Masha_Kogan.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Masha Kogan">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Masha Kogan</p>
-      <a href="mailto:m1kogan@ucsd.edu">m1kogan@ucsd.edu</a>
-      </div>
-  </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Anisha_Ramesh.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Anisha Ramesh">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Anisha Ramesh</p>
-      <a href="mailto:anramesh@ucsd.edu">anramesh@ucsd.edu</a>
+      <p class="profile-name">Sierra Myers</p>
+		<p><em>HWs & Skill Demos</em></p>
+      <a href="mailto:ssmyers@ucsd.edu">ssmyers@ucsd.edu</a>
       </div>
   </div>
   <div class="profile tutor-profile">
     <img class="profile-pic tutor-pic" src="/assets/people/Janoj_Rengaraj.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Janoj Rengaraj">
       <div class="profile-info tutor-info">
       <p class="profile-name">Janoj Rengaraj</p>
+		<p><em>HWs & Skill Demos</em></p>
       <a href="mailto:jrengaraj@ucsd.edu">jrengaraj@ucsd.edu</a>
       </div>
   </div>
   <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Keyura_Valalla.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Keyura Valalla">
+    <img class="profile-pic tutor-pic" src="/assets/people/Yuan_Kai_Yang.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Yuan-Kai Yang">
       <div class="profile-info tutor-info">
-      <p class="profile-name">Keyura Valalla</p>
-      <a href="mailto:kvalalla@ucsd.edu">kvalalla@ucsd.edu</a>
+      <p class="profile-name">Yuan-Kai (Kevin) Yang</p>
+		<p><em>Logistics</em></p>
+      <a href="mailto:yuy080@ucsd.edu">yuy080@ucsd.edu</a>
       </div>
   </div>
-  <div class="profile tutor-profile">
-    <img class="profile-pic tutor-pic" src="/assets/people/Isha_Varada.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Isha Varada">
-      <div class="profile-info tutor-info">
-      <p class="profile-name">Isha Varada</p>
-      <a href="mailto:ivarada@ucsd.edu">ivarada@ucsd.edu</a>
-      </div>
-  </div>
+
 </div>
