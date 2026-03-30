@@ -126,7 +126,7 @@ nav_order: 4
     <img class="profile-pic ta-pic" src="/assets/people/Lydia_Zoghbi.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Lydia Zoghbi">
      <div class="profile-info ta-info">
       <p class="profile-name">Lydia Zoghbi</p>
-      <p><em>HWs & Skill Demos</em></p>
+      <p><em>PSets & Skill Demos</em></p>
         <p>Office Hours: TBA</p>
       <a href="mailto:lzoghbi@ucsd.edu">lzoghbi@ucsd.edu</a>
      </div>
@@ -193,7 +193,7 @@ for tutor and office hours laid out in a weekly calendar.
     <img class="profile-pic tutor-pic" src="/assets/people/Sierra_Myers.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Sierra Myers">
       <div class="profile-info tutor-info">
       <p class="profile-name">Sierra Myers</p>
-		<p><em>HWs & Skill Demos</em></p>
+		<p><em>PSets & Skill Demos</em></p>
       <a href="mailto:ssmyers@ucsd.edu">ssmyers@ucsd.edu</a>
       </div>
   </div>
@@ -201,7 +201,7 @@ for tutor and office hours laid out in a weekly calendar.
     <img class="profile-pic tutor-pic" src="/assets/people/Janoj_Rengaraj.jpg" onerror="this.src='/assets/people/Fallback.png'" alt="Profile picture for Janoj Rengaraj">
       <div class="profile-info tutor-info">
       <p class="profile-name">Janoj Rengaraj</p>
-		<p><em>HWs & Skill Demos</em></p>
+		<p><em>PSets & Skill Demos</em></p>
       <a href="mailto:jrengaraj@ucsd.edu">jrengaraj@ucsd.edu</a>
       </div>
   </div>
