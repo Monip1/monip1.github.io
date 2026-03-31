@@ -9,7 +9,8 @@ permalink: /schedule
 
 [Link to schedule](https://docs.google.com/spreadsheets/d/1othSrrYM-aebpfh-06uSpCdudL3SdLlA3LROsJebHUI/edit?usp=sharing)
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYAF9OTTL-lk0uszhlx8XX0I7n-2Awwt5mpXmJRNKz1LKzS43PXV0vba_MwZtX2ZrbzAwTurYm4O3y/pubhtml?gid=0&single=true" style="border:solid 1px #777" width="100%" frameborder="0" scrolling="no" id="schedule-iframe"></iframe>
+<!-- <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYAF9OTTL-lk0uszhlx8XX0I7n-2Awwt5mpXmJRNKz1LKzS43PXV0vba_MwZtX2ZrbzAwTurYm4O3y/pubhtml?gid=0&single=true" style="border:solid 1px #777" width="100%" frameborder="0" scrolling="no" id="schedule-iframe"></iframe> -->
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQYAF9OTTL-lk0uszhlx8XX0I7n-2Awwt5mpXmJRNKz1LKzS43PXV0vba_MwZtX2ZrbzAwTurYm4O3y/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"  style="border:solid 1px #777" width="100%" frameborder="0" scrolling="no" id="schedule-iframe"></iframe>
 
 <style>
     #schedule-iframe {
