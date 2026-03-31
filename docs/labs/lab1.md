@@ -30,6 +30,17 @@ These labs are a low-stakes environment to get proficient with programming and s
 1. TOC
 {:toc }
 
+# Icebreaker
+
+* How you'd like people to refer to you (pronounce your name/nickname, pronouns like he/her/they, etc)
+* Your major
+* One of:
+    * A UCSD student organization you're a member of or interested in
+    * Your favorite place you've found on campus so far
+    * A useful campus shortcut or trick you know
+* Your answer to the following question. Get to know your fellow group members!  
+If you could wake up tomorrow and be any (non-human) animal, what animal would you choose to be and why? Would you want to be a pet or be free? Have you had any pets growing up?
+
 # Let’s connect to `ieng6`
 
 First, open up a terminal window by following the instructions for your operating system.
