@@ -16,8 +16,8 @@ CSE 29 at UC San Diego (Spring 2026)
 Welcome to CSE 29! We're excited to have you in this course. This course introduces you to an exciting range of materials from the broad field of **systems programming**, including 1) the basics of how a single program executes on a computer, 2) higher-level programming in C, 3) software tools to help you interact with a computer using the command line interface, and 4) understand the basics of what happens when multiple programs run on a computer at the same time. *All very cool stuff that every programmer should know!*
 
 [EdStem](https://edstem.org/us/courses/97308/discussion){: .btn .btn-outline }
-[Canvas](https://canvas.ucsd.edu/courses/68535){: .btn .btn-outline }
-[Gradescope](https://www.gradescope.com/courses/1151997){: .btn .btn-outline }
+[Canvas](https://canvas.ucsd.edu/courses/74040){: .btn .btn-outline }
+[Gradescope](https://www.gradescope.com/courses/1290406){: .btn .btn-outline }
 <!-- [Textbook](https://cogniterra.org/course/705/){: .btn .btn-outline } -->
 <!-- [Tutor Hours Queue](https://autograder.ucsd.edu/queue/787){: .btn .btn-outline } -->
 [PrairieLearn](https://us.prairielearn.com/pl/course_instance/212869){: .btn .btn-outline }

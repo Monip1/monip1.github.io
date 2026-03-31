@@ -86,7 +86,7 @@ Students who successfully complete this course will be able to:
    - **Signup Link:** <https://edstem.org/us/join/VYDtgP>
 3. **Canvas:** <https://canvas.ucsd.edu> (Grades, Podcasts)
 4. **Gradescope:** <https://www.gradescope.com> (Exams, Assignments)
-5. **PrairieLearn:** <https://www.prairielearn.com> (Problem Sets and Skill Demos)
+5. **PrairieLearn:** <https://us.prairielearn.com> (Problem Sets and Skill Demos)
 
 ---
 
