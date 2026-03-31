@@ -413,7 +413,10 @@ UCSD provides additional resources on academic integrity: https://academicintegr
 
 # Technology Policy
 
-Technology may *not* be used in class only. Devices for digital notetaking (e.g., ipads) are okay but only when its use directly supports the activity/learning that a student is engaged in.
+Technology may *not* be used in class. 
+Devices for digital notetaking (e.g., ipads) are okay but only when its use directly supports the activity/learning that a student is engaged in.
+Laptops and mobile phones are not allowed during the lecture. 
+We except students to take notes using their physical or digital notebooks.
 
 Use of technology for any activity not directly related to what is going on in class is strictly prohibited. This includes, but is not limited to, the following:
 
