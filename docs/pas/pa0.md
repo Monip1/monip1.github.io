@@ -179,8 +179,21 @@ Hello world!
 Now, you can modify `variables.c` to match the logic of
 `variables.java` After each modification, you can re-run the `gcc` command to compile your code and then run it to check if your output matches that of `variables.java`.
 
+You know you're done when running `variables.c` produces the same output as `variables.java`!
+
 ## Submission
 
 For this PA, you will submit `variables.c` to Gradescope.
 
-instructions here.. todo.
+### Downloading `variables.c` to your local machine
+
+On your `ieng6` machine, you can use `scp` to download `variables.c` to your local machine.
+
+If you've set up your folders the same way as described in the "Getting Started" section, you can run the following command from your local terminal:
+
+```
+$ scp <your-username>@ieng6.ucsd.edu:/home/<your-username>/pa0/variables.c .
+```
+
+After you're done, you should see `variables.c` in whatever directory you ran the above command from. Upload this file to Gradescope to submit your PA!
+
