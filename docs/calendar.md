@@ -10,7 +10,7 @@ nav_order: 2
 ## Class Calendar
 This calendar contains CSE 29 lectures, labs, and important deadlines!
 
-<iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=WEEK&src=Y19kZjUzMTM4NmZkODhhMDEyZTJjYjc1OTE0N2M0YWFkMjFkNzMxNmE4ZDRhYThiMzUzZTFjOTI4N2Y0Njc0MGU2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%238e24aa" style="border:solid 1px #777" width="100%" height="800" frameborder="0" scrolling="no" id="calendar-iframe"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&mode=WEEK&src=c_41f7d1deb3c2b34915e041e8a4c1dfb89029bd571c2f6d5e8609220265375da3&color=%238e24aa" style="border:solid 1px #777" width="100%" height="800" frameborder="0" scrolling="no" id="calendar-iframe"></iframe>
 
 <style>
     /* Specific styling for calendar page to override global iframe styles */
