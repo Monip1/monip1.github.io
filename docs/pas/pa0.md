@@ -79,7 +79,7 @@ We can use `wget` to download the starter code for this PA:
 $ cd pa0
 $ pwd
 /home/<your-username>/pa0
-$ wget https://raw.githubusercontent.com/cse-29/pa0/main/assets/pas/pa0/variables.java
+$ wget https://cse29spring2026.github.io/assets/pas/pa0/variables.java
 ```
 
 After you've run the command above, you should see `variables.java` in your current directory. You can use `ls` to check this:
@@ -189,7 +189,10 @@ For this PA, you will submit `variables.c` to Gradescope.
 
 On your `ieng6` machine, you can use `scp` to download `variables.c` to your local machine.
 
-If you've set up your folders the same way as described in the "Getting Started" section, you can run the following command from your local terminal:
+{: .note }
+Make sure that you're running the `scp` command from _your local machine's terminal_, not from the `ieng6` terminal!
+
+If you've set up your folders the same way as described in the "Getting Started" section, you can run the following command to download `variables.c`:
 
 ```
 $ scp <your-username>@ieng6.ucsd.edu:/home/<your-username>/pa0/variables.c .
