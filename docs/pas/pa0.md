@@ -183,7 +183,7 @@ You know you're done when running `variables.c` produces the same output as `var
 
 ## Submission
 
-For this PA, you will submit `variables.c` to Gradescope.
+For this PA, you will submit `variables.c` to Gradescope. (Submission link coming soon!)
 
 ### Downloading `variables.c` to your local machine
 
