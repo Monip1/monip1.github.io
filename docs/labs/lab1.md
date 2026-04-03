@@ -53,7 +53,7 @@ Throughout this lab, we strongly encourage you to help each other. The staff is 
 
 First, open up a terminal window by following the instructions for your operating system.
 
-* **Windows**: Do you have (Windows Subsystem for Linux) installed? (if you aren't sure assume you do not)
+* **Windows**: Do you have (Windows Subsystem for Linux) installed? (if you aren't sure, assume you do not)
   * **No WSL**: Press the Windows button, type in “Terminal”, then select “Terminal” or “Command Prompt” (if “Terminal” doesn’t exist).
     * Once the window launches, type `ssh` and press Enter. If you see a red error message stating that `ssh` is not recognized, please follow the instructions [here](https://www.howtogeek.com/336775/how-to-enable-and-use-windows-10s-built-in-ssh-commands/) to enable SSH.
     * We do recommend installing wsl as it is a very useful tool! Let us know if you run into any issues on EdStem, in tutor hours, or in office hours.
@@ -333,7 +333,7 @@ Try looking up some of the commands we’ve learned about so far in the manual. 
 
 Using the commands above, fill out the following whiteboard with your group!  
 > Each group member should put their answer for each box.  
-My answers have been given, 
+A set of example answers have been given 
 
 ![whiteboard1](../../assets/labs/sp26/whoami_whiteboard.png)
 
@@ -341,7 +341,7 @@ My answers have been given,
 As a group, call over your tutor/TA to get checked off for your whiteboard.
 
 # Who are we anyways? -- Whiteboard Activity
-Now that you've established who you are using some commands you just learned, we've made an activity for you to explore more commands from above *and* learn something about your course staff.
+Now that you've established who you are using some commands you just learned, the course staff has come together to make an activity for you to explore more commands from above *and* learn something about them.
 
 Run:
  1. On ieng6, create a directory called `cse29`, this will be the directory that contains all your work for labs
@@ -396,7 +396,7 @@ After all, all the awesome hackers in movies are always *typing*, have you seen 
 Our terminal-based editor is called **vim**. It’s an incredibly powerful editor once you learn how to use it properly. However, the learning curve is very steep, which is why the more you practice in these earlier weeks, the better. In this lab, you will use vim to write a small C program while learning a few essential vim features along the way.
 
 {: .exercise}
-> to get acquainted with `vim`, you can run `$ vimtutor` to open `vimtutor` which is a tutorial in and of itself. Please complete sections 1 and 2 of vim-tutor. If you are a bit low on time, you can skip 2.3-2.5 and do them later.
+> to get acquainted with `vim`, you can run `$ vimtutor` to open vimtutor which is a tutorial in and of itself. Please complete sections 1 and 2 of vimtutor. If you are a bit low on time, you can skip 2.3-2.5 and do them later.
 > Don't worry about memorizing everything as you go, you can always revisit it later and I have provided some of the same information throughout the last activity for your reference. 
 
 
@@ -443,8 +443,6 @@ int main() {
 }
 ```
 
-A quick side note - in class we recently learned about using char arrays as strings and having a null terminator to mark the end of the data. However, this does not apply to other array data types, like int.
-
 ## The Normal mode
 
 Press **Esc** to exit Insert mode. The `-- INSERT --` indicator at the bottom left should disappear. You are now in Normal mode, where you can:
@@ -481,7 +479,7 @@ A quick side note - avoid running two instances of Vim on the same file at the s
 
 
 {: .owntime }
-Vim has many more commands and shortcuts. Run the `vimtutor` command in your own time for a guided tutorial through them.
+Vim has many more commands and shortcuts. You can complete more of `vimtutor` on your own time for a guided tutorial through them.
 
 # Compiling and running your program
 
@@ -511,4 +509,4 @@ $ ./contains
 
 You should see your linear search implementation in action.
 
-Congratulations! In this lab, you have created, compiled, and executed a C program. If your program has not run, please ask a tutor near you for help getting it to run.
+Congratulations! In this lab, you have created, compiled, and executed a C program. If your program has not run, please ask a staff member near you for help.
