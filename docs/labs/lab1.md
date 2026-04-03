@@ -174,7 +174,11 @@ Most commands will have multiple pre-defined options which allow you to modify t
 * `--color`: colors the output which on `ieng6` makes all your directories blue and executable files green
 
 If you would like to always have the colored output, run the following command which will add the line "alias ls=\"ls --color\" to the end of a file called .bash_profile. You do not need to fully understand this yet.  
-`echo alias ls=\"ls --color\" >> ~/.bash_profile`
+`echo alias ls=\"ls --color\" >> ~/.bash_profile`  
+
+{: .note }
+If you get a message resembling: `-bash: (...) .bash_profile Permission denied`  
+Run: `chmod +w ~/.bash_profile` to give yourself permission to write to the file.
 
 ## cd \- Going Places
 
