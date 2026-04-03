@@ -288,6 +288,7 @@ iframe {
   --callout-note-bg: #e7f3ff;
   --callout-warning-bg: #fff0f0;
   --callout-important-bg: #f0fff0;
+  --callout-funfact-bg: #48cbe8;
 }
 
 [data-theme="dark"] {
@@ -308,6 +309,7 @@ iframe {
   --callout-note-bg: #1a2332;
   --callout-warning-bg: #321a1a;
   --callout-important-bg: #1a321a;
+  --callout-funfact-bg: #48aee8;
 }
 
 // Apply dark mode to elements
@@ -476,6 +478,41 @@ table {
 
 .important {
   background-color: var(--callout-important-bg) !important;
+}
+
+.fun-fact {
+  content: "Fun Fact";
+  background-color: var(--callout-funfact-bg) !important;
+  background-image: linear-gradient(35deg, transparent 10%, rgba(130, 231, 211, 0.5) 25%, rgba(132, 176, 243, 0.5) 50%, rgba(171, 150, 254, 0.5) 75%, transparent 90%) !important;
+  background-size: 300% 100%;
+  background-position: 0% 0%;
+  animation: ff-slide 20s linear infinite;
+  color: var(--text-color) !important;
+  border-left-color: #41ac99 !important;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  margin: 1rem 0;
+}
+
+.fun-fact::before {
+  content: "Fun fact: ✨";
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+  vertical-align: middle;
+  animation: ff-pulse 8s ease-in-out infinite;
+}
+
+@keyframes ff-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes ff-slide {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 300% 0%; }
 }
 
 // Other elements

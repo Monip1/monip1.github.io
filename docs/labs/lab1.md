@@ -2,16 +2,18 @@
 layout: default
 title: Lab 1
 parent: Labs
-nav_order: 1
+nav_order: 2
 permalink: /lab1
 ---
 
 # Lab 1: Unix, SSH, and Vim
 {: .no_toc}
 
-Welcome to your first CSE 29 lab of the quarter!
-
-* In each lab, you will follow this guide to get firsthand experience with the tools and techniques we have introduced to you in lectures and discussions. This experience will be essential to your PA work. You earn credit for participation by being engaged with the content of this lab and interacting with the staff when asked.
+Welcome to the first CSE 29 lab!  
+I'm your lab for this course, here to provide you with the time and space to explore practical software tools, including Unix commands, Git, GDB, Valgrind, Makefiles, and shell scripting.  
+You are not expected to know any of these topics yet—this is just a preview of what’s to come. Over the next 10 weeks, I will guide you as you build familiarity with these tools, which you’ll use throughout this course and in future endeavors.  
+I hope you enjoy the process and have some fun along the way!
+* In each lab session, you will follow this guide to get firsthand experience with the tools and techniques we have introduced to you in lectures and discussions. This experience will be essential to your PA work. You earn credit for participation by being engaged with the content of this lab and interacting with the staff when asked.
 
 These labs are a low-stakes environment to get proficient with programming and software tools with support from fellow classmates and course staff. **Please ask for help from course staff if you are stuck on something—we are here for you!**
 
@@ -32,14 +34,20 @@ These labs are a low-stakes environment to get proficient with programming and s
 
 # Icebreaker
 
+* Discuss the following with the people around you. Get to know your fellow group members!
+
 * How you'd like people to refer to you (pronounce your name/nickname, pronouns like he/her/they, etc)
 * Your major
 * One of:
     * A UCSD student organization you're a member of or interested in
     * Your favorite place you've found on campus so far
     * A useful campus shortcut or trick you know
-* Your answer to the following question. Get to know your fellow group members!  
-If you could wake up tomorrow and be any (non-human) animal, what animal would you choose to be and why? Would you want to be a pet or be free? Have you had any pets growing up?
+
+* What is your favorite movie, or (if you prefer) the last movie you saw? What genre is it?
+* Who is your favorite character and why?
+* What is your favorite thing about the movie?
+
+Throughout this lab, we strongly encourage you to help each other. The staff is always there to help, but do try working together and helping each other out first.
 
 # Let’s connect to `ieng6`
 
@@ -69,16 +77,17 @@ Since this is likely the first time you’ve connected to this server, you will 
 
 ```
 $ ssh aname@ieng6.ucsd.edu
-The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established.
-RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
-Are you sure you want to continue connecting (yes/no/[fingerprint])?
+The authenticity of host 'ieng6.ucsd.edu (128.54.70.236)' can't be established.
+ED25519 key fingerprint is SHA256:8vAtB6KpnYXm5dYczS0M9sotRVhvD55GYz8EjN1DYgs.
+This host key is known by the following other names/addresses:
+    C:\Users\etomson/.ssh/known_hosts:1: ieng6.ucsd.edu
+Are you sure you want to continue connecting (yes/no/[fingerprint])? 
 ```
+answer with: `yes` and it should say:
+```
+Warning: Permanently added 'ieng6.ucsd.edu' (ED25519) to the list of known hosts.
+``` 
 
-If you see this prompt, copy and paste the one of the corresponding listed public key fingerprints and press Enter. We do this for complicated security reasons. Please note that if you have taken 15L, you will need to remove your SSH keys.
-
-* If you see the phrase **ED25519 key fingerprint** answer with: `SHA256:8vAtB6KpnYXm5dYczS0M9sotRVhvD55GYz8EjN1DYgs`
-* If you see the phrase **ECDSA key fingerprint** answer with: `SHA256:/bQ70BSkHU8AEUqommBUhdAg0M4GaFIHLKq0YQyKvmw`
-* If you see the phrase **RSA key fingerprint** answer with: `SHA256:npmS8Gk0l+zAXD0nNGUxr7hLeYPn7zzhYWVKxlfNaeQ`
 
 After this, you get a prompt to enter your password. This is the same password you use to log into your student account on other websites, like Canvas and Tritonlink. The terminal itself does not show what you type when you enter your password. This is conventionally done for your own security, so that others looking at your screen don’t see it. Just trust that it gets inputted when you type. Press Enter when you are done.
 
@@ -94,57 +103,20 @@ To see all available software packages, type "prep -l" at the command prompt, or
 [aname@ieng6-999]:~:45$
 ```
 
-Now your terminal is connected to a computer in the CSE basement, and any commands you run will run on that computer\! We call your computer the *client* and the computer in the basement the *server* based on how you are connected.
+Now your terminal is connected to a computer that is physically somewhere else on campus, and any commands you run will run on that computer\! We call your computer the *client* and the computer that is elsewhere the *server* based on how you are connected.
+
+{: .fun-fact}
+> I sent one of your staff members on a mission to inquire about the origin of the name *ieng6*. The following was provided by the Office of Engineering Computing:  
+> "ieng6 is a load-balanced multiprocessor Linux server that is maintained by ITS. This hostname originated decades ago, and unfortunately, we do not know why it was named ieng6. It may not even stand for anything."  
+> While the history of the name remains a mystery (at least for the time being), we did learn something interesting about *what* it is. Many people can use ieng6 at the same time.  
+> Being a "multiprocessor" system means each machine(201, 202, 203 ...) has multiple CPUs (or cores), so it can run many tasks at the same time.  
+> Being "load balanced" means that when people connect to ieng6, they are distributed across multiple machines behind the scenes so no single machine becomes overloaded with work. When you SSH into ieng6 you are placed on a specific machine (such as ieng6-201, ieng6-202 or ieng6-203) which you can see in your prompt. Which one are you on? Is it the same as the people around you?  
+>"Linux" is the operating system it runs. Other operating systems you may be familiar with include Windows and macOS.
 
 If, in this process, you run into errors and can’t figure out how to proceed, ask\! Remember – it is **rare** for a tutorial to work perfectly. We often have to stop, think, guess, Google search, ask someone, etc. in order to get things to work the way the tutorial says.
 
 To exit out of the `ieng6` server and return to running commands on your local device, type `exit` as a command, or press <kbd>Ctrl+D</kbd> (which sends an EOF character). **Please exit the `ieng6` server now for the next section.**
 
-{: .checkoff }
-Call over a tutor to get checked off for signing into `ieng6`, and paste a screenshot of your terminal into your lab report.
-
-{: .owntime }
-Your SSH client is pretty versatile. You can "bookmark" common connections and refer to them by name (so you could type `ssh ieng6` instead of `ssh aname@ieng6.ucsd.edu`). You can also register your client with `ieng6` so that you don't have to type out your password every time. If you're interested, check out [this guide](https://blog.geekinstitute.org/2024/11/the-complete-guide-to-ssh-secure-shell.html#ssh-configuration) for an overview of these features.
-
-# Identify yourself to ieng6
-
-With this setup, each time you log in to your `ieng6` account, you have to type the password. This can get a bit tedious. Luckily, there is a cool and interesting way to avoid this while still staying secure using SSH keys. **You should perform the following on your own device, not on a lab computer.** If you don't have your own device with you, please indicate this in your lab report and skip to the next section.
-
-{: .important-title }
-> Windows Users
->
-> Please open a terminal in WSL before proceeding. Verify this by the prompt displayed in the terminal (It should *not* start with "`PS`", and it *should* end with `$`, not `>`). If you don't have WSL, you may still proceed with a PowerShell terminal, but you should [install WSL](/docs/setup.html) before the next lab.
-
-1. Verify that you are **not** logged into `ieng6`. If your prompt does not contain the string `ieng6`, then you're probably not on it.
-2. Run `ssh-keygen -t rsa`. This command will generate a pair of SSH keys for you: one public (ends in .pub) and one private.
-   If the program claims that the keys already exist, answer the `Overwrite (y/n)?` prompt with `n` to prevent overwriting your existing keys. Otherwise, keep pressing `<Enter>` until the program shows some text it calls the "randomart image".
-3. Expand the instructions that match your system below:
-
-<details>
-    <summary>
-        <strong>If your prompt ends with $ or % or #, not > (macOS, WSL, Linux)</strong> (Click to show instructions)
-    </summary>
-    Run <code>ssh-copy-id <span class="code-replace-me" contenteditable>username</span>@ieng6.ucsd.edu</code>, and enter your password (one last time). The program should claim that it has installed your key.
-</details>
-<details>
-    <summary>
-        <strong>If your prompt ends with > (Windows)</strong> (Click to show instructions)
-    </summary>
-    <ol>
-        <li>Log into ieng6 with <code>ssh</code> (using your password as usual)</li>
-        <li>Run <code>mkdir -p .ssh</code> in the terminal</li>
-        <li>Log out of your remote account by pressing <kbd>Ctrl</kbd>+<kbd>D</kbd> or typing <code>exit</code>.</li>
-        <li>On your local machine, run the following command:<br />
-           <code>type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <span class="code-replace-me" contenteditable>username</span>@ieng6.ucsd.edu "cat >> .ssh/authorized_keys"</code><br />
-           (Credit to <a href="https://chrisjhart.com/Windows-10-ssh-copy-id/">Christopher Hart</a> for this convenient command. Please note if the above command does not work, copy in your full path to the SSH key)
-        </li>
-    </ol>
-</details>
-
-Try to log onto your remote account again. **You shouldn’t be prompted for a password anymore.** If you are, ask for help and carefully review the steps above with your group.
-
-{: .important }
-Please put a screenshot of you logging into your `ieng6` account without a password prompt into your lab report. No check-off is needed\!
 
 # The Terminal and You
 
@@ -161,6 +133,30 @@ $ pwd
 /home/linux/ieng6/oce/6k/aname
 ```
 
+## uname - "Who am I?"
+**U**nix **name** will give you nformation about the unix or linux system you are currently on.
+```
+$ uname
+Linux
+```
+This alone does not tell us much but there are several flags that are useful.
+* `-a`:print all information, except omit -p and -i if unknown
+* `-s`: print the kernel name (this is the same as default `uname`)
+* `-n`: print the network node hostname i.e. the name of the computer.
+
+### systeminfo - Who am I on windows?
+As `uname` stands for *unix* name, it does not tend to work on *Windows* machines. Thankfully, windows has provided it's own command to print information about the system -- `systeminfo`.
+
+```
+$ systeminfo
+
+Host Name:                     ELENA-M15
+OS Name:                       Microsoft Windows 11 Pro
+OS Version:                    10.0.26200 N/A Build 26200
+(...)
+```
+It gives far more information than you would need for this lab, but do note that it includes the name of the computer equivalent to `uname -n`.
+
 ## ls \- Looking around
 
 You can’t do much without knowing what exists in the current working directory to interact with. You can use the `ls` command to **l**i**s**t out the contents of the current working directory.
@@ -175,6 +171,10 @@ Most commands will have multiple pre-defined options which allow you to modify t
 * `-a`: list all files, including hidden files
 * `-l`: list in a long format, which shows additional information, such as permissions and time of creation
 * `-al`:  enables both the `-a` and `-l` options for the same command
+* `--color`: colors the output which on `ieng6` makes all your directories blue and executable files green
+
+If you would like to always have the colored output, run the following command which will add the line "alias ls=\"ls --color\" to the end of a file called .bash_profile. You do not need to fully understand this yet.  
+`echo alias ls=\"ls --color\" >> ~/.bash_profile`
 
 ## cd \- Going Places
 
@@ -192,6 +192,60 @@ There are also built-in symbols which refer to locations in the filesystem that 
 * `~` (tilde) represents the home directory, which is usually a specific directory assigned to each user on a system.
 * `.` represents the current directory.
 * `..` represents the parent directory, i.e. the directory in which this directory is contained.
+
+## mv \- Moving Things
+You can **m**o**v**e your files with `mv`.
+
+We have a misspelt file in the wrong location.
+```
+$ ls -R
+.:
+cse29  hellowrold.c
+
+./cse29:
+$ mv hellowrold.c cse29/helloworld.c
+$ ls -R
+.:
+cse29
+
+./cse29:
+helloworld.c
+```
+Moved the file `hellowrold.c` into the `cse29` directory and fixed it's name. You can rename files, change their location, or both at once as shown.
+
+## cp \- Copying Things
+You can **c**o**p**y files with `cp`.
+```
+$ ls
+alloc_basic.c
+$ cp alloc_basic.c mytest.c
+$ ls
+alloc_basic.c mytest.c
+```
+Works exactly the same as `mv` except doesn't remove the original file.  
+Good for when you want to make a variation of a file or have a backup.
+
+## scp \- Securely Copying Things 
+you can **s**ecurely **c**o**p**y your files with `scp`.
+Assume I start on my machine which is windows -- not `ieng6`
+```
+$ ls
+fruits.txt
+$ scp .\fruits.txt etomson@ieng6.ucsd.edu:~/
+fruits.txt                                100%   31     0.0KB/s   00:00
+PS C:\Users\etomson> ssh etomson@ieng6.ucsd.edu
+$ ls
+Downloads    Music      pokemon.sh    cse29fa24  
+cse29su25    cse8a      ece148        MailArchive   
+fruits.txt   cse29      cse29sp24     cse29wi26  
+Documents   juotes.sh   quotes.sh
+```
+The file `fruits.txt` was copied into my home directory on `ieng6`.
+
+A general format for copying to `ieng6` is:
+
+`scp <file you wish to copy> <username>@ieng6.ucsd.edu:<path on ieng6 to put it>`  
+`username` is the same as you used for `ssh`.
 
 ## touch \- Creating Things
 
@@ -217,7 +271,7 @@ $ cat mylocation.txt
 /home/aname/folder
 ```
 
-## mkdir \- Creating Things to Hold Things
+## mkdir \- Creating Directories (Folders) to Hold Things
 
  You can use the *mkdir* command to **m**a**k**e a new **dir**ectory with the given name as an argument.
 
@@ -274,20 +328,51 @@ To navigate the manual page, you can use the up and down arrow keys. To exit the
 
 Try looking up some of the commands we’ve learned about so far in the manual. Who knows? You might learn something new.
 
+
+# Who are you? -- Whiteboard Activity
+
+Using the commands above, fill out the following whiteboard with your group!  
+> Each group member should put their answer for each box.  
+My answers have been given, 
+
+![whiteboard1](../../assets/labs/sp26/whoami_whiteboard.png)
+
+{: .checkoff }
+As a group, call over your tutor/TA to get checked off for your whiteboard.
+
+# Who are we anyways? -- Whiteboard Activity
+Now that you've established who you are using some commands you just learned, we've made an activity for you to explore more commands from above *and* learn something about your course staff.
+
+Run:
+ 1. On ieng6, create a directory called `cse29`, this will be the directory that contains all your work for labs
+ 1. Within `cse29`,  create a directory called `lab1`
+ 1. Within `lab1`, Run:
+`cp -r /home/linux/ieng6/CSE29_SP26_A00/public/people .` 
+
+{: .note }
+the `.` at the end is the path for your *current directory*. This will recursively copy the entire directory we've made called `people` into `lab1` since that's where you are.
+
 {: .exercise }
-> 1. On ieng6, create a directory called cse29, this will be the directory that contains all your work for labs
-> 2. Within cse29,  create a directory called lab1
-> 3. Inside lab1, create two directories called Music and Books
-> 4. In Music and Books, create a couple of files with the names of your favorite songs and books respectively, here’s an example:
+Using commands from above, write down some information you find. Each person should contribute at least one thing they found to the whiteboard resulting in something like this 
+
+![people_whiteboard](../../assets/labs/sp26/people_whiteboard.png)
+
+
+{: .exercise }
+
+> 1. Inside lab1, create two directories called Music and Books
+> 1. In Music and Books, create a couple of files with the names of your favorite songs and books respectively, here’s an example:
 >
 >         lab1
 >         |----Music
->         |   |----Auld Lang Syne.mp3
->         |   |----Canon in D.mp3
+>         |    |----Auld Lang Syne.mp3
+>         |    |----Canon in D.mp3
 >         |----Books
->             |----OSTEP.txt
->             |----Frankenstein.txt
->             |----The Little Prince.txt
+>         |    |----OSTEP.txt
+>         |    |----Frankenstein.txt
+>         |    |----The Little Prince.txt
+>         |----people
+>              |--(...)          
 >
 >    **HINT:** to pass in strings with spaces as arguments, surround them in quotes, for example:
 >     `$ touch "Auld Lang Syne.mp3"`
@@ -310,10 +395,15 @@ After all, all the awesome hackers in movies are always *typing*, have you seen 
 
 Our terminal-based editor is called **vim**. It’s an incredibly powerful editor once you learn how to use it properly. However, the learning curve is very steep, which is why the more you practice in these earlier weeks, the better. In this lab, you will use vim to write a small C program while learning a few essential vim features along the way.
 
+{: .exercise}
+> to get acquainted with `vim`, you can run `$ vimtutor` to open `vimtutor` which is a tutorial in and of itself. Please complete sections 1 and 2 of vim-tutor. If you are a bit low on time, you can skip 2.3-2.5 and do them later.
+> Don't worry about memorizing everything as you go, you can always revisit it later and I have provided some of the same information throughout the last activity for your reference. 
+
+
 Vim is highly configurable—using its own scripting language (VimScript), we can customize its behavior in a wide variety of ways. We can even install a Vim package manager and add [plugins](https://vimawesome.com/) that make it feel like VSCode\! For now, let's start with some sensible defaults, like 4 spaces for indentation, syntax highlighting enabled, and automatic "smart" indentation. If you haven't configured Vim on `ieng6` before, run the following command to download and install our configuration file:
 
 ```
-$ wget https://cse29.site/assets/labs/lab1_commandline/vimrc.txt -O ~/.vimrc
+$ curl https://cse29spring2026.github.io/assets/labs/lab1_commandline/vimrc.txt >> ~/.vimrc
 ```
 
 Now, we are ready to begin. Inside the `lab1` directory you created in the previous section, run the following command to edit a new file named `contains.c`:
