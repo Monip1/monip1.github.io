@@ -472,8 +472,8 @@ By the way, if you ever change your mind and want to abandon your command, press
 A quick side note - avoid running two instances of Vim on the same file at the same time as this can lead to <a href="https://engineering.purdue.edu/ece264/21sp/resources/vim_swap_warnings">swap file conflicts</a>. You should not close your terminal window to exit Vim as this will leave the swapfile there.
 
 {: .exercise }
-> 1. Using `y` and `p` in Normal mode, change your code to make several calls to `contains` with different values for `item`, printing out the result each time.
-> 2. Using `d` in Normal mode, remove the line with `return 0;` inside the `main` function. This line is actually not required for the `main` function.
+> 1. Using `yy` and `p` in Normal mode, change your code to make several calls to `contains` with different values for `item`, printing out the result each time.
+> 2. Using `dd` in Normal mode, remove the line with `return 0;` inside the `main` function. This line is actually not required for the `main` function.
 > 3. Save your changes and exit vim.
 > 4. To verify that your changes are saved, display the contents of `contains.c` without using vim.
 
