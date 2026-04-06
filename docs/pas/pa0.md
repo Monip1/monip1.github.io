@@ -127,6 +127,7 @@ a / (int) c = 5
 (int) (a / c) = 4
 ASCII of A = 65
 ASCII of a = 97
+ASCII of 0 = 48
 ```
 
 ## Your Task
