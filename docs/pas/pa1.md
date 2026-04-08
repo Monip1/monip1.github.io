@@ -13,7 +13,7 @@ toc: sidebar
 Due date: April 22 23:59 PDT
 {: .fs-4 }
 
-[GitHub Classroom Assignment](https://classroom.github.com/a/s42XE9UH){: .btn .btn-blue }
+[GitHub Classroom Assignment](https://classroom.github.com/a/L8ErURO-){: .btn .btn-blue }
 
 ## Updates
 {: .no_toc }
@@ -38,17 +38,9 @@ In this assignment, we will:
 
 ## Getting Help
 
-You are always welcome to attend office hours and tutor hours, both
-of which are listed on our [Calendar](/calendar#tutor-and-office-hours-calendar)
-page. In professor office hours, however, conceptual questions will be
-prioritized. To get help during tutor hours, please sign up on the
-[Autograder](https://autograder.ucsd.edu/queue/787) queue. We'll be waiting!
-
-You can also post questions on [Piazza][piazza] or collaborate with your peers
-in accordance with collaboration policy in our
-[course syllabus](https://docs.google.com/document/d/1IFghCUjc2Wk_UmuWWRTDeXClfMJz370zr0zzu31VaZU/edit?usp=sharing).
-
-[piazza]: https://piazza.com/class/m8wkvbotcck3g2
+In CSE29, we have lots of ways to get and receive help. We encourage you
+to take advantage of all of them! Study groups, office hours, and
+EdStem are all great places to ask questions and collaborate with your peers. :\)
 
 ## Before we Begin
 
@@ -672,21 +664,21 @@ to make our own.
 All of our programming assignments will be hosted on GitHub Classoom.
 Use the following link to accept the GitHub Classroom assignment.
 
-[Click here to accept this GitHub Classroom assignment.](https://classroom.github.com/a/s42XE9UH) (Right click to open in new tab)
+[Click here to accept this GitHub Classroom assignment.](https://classroom.github.com/a/L8ErURO-) (Right click to open in new tab)
 
 Once the assignment is accepted, you will see a repository generated for you
 with the starter code for this assignment. Click the link to go to the
 repository.
 
 {: .important }
-If you haven't done Lab 2 yet, please follow the instructions for [Lab 2](/lab2)
+If you haven't done Lab 2 yet, please follow the instructions for Lab 2
 up until _Git Gud Bro_ to authorize your `ieng6` account to access your assignment
 repository on GitHub. You should also refer to these instructions whenever you
 encounter anything unclear about Git in the remainder of this PA.
 
 Using commands from the lab instructions, **clone** your new repository
-into your `ieng6` account. It should contain `enigma.c`, `README.md`, and
-`credits.txt`. In this course, you should use Vim to work on all PAs.
+into your `ieng6` account. It should contain `enigma.c` and `README.md`.
+In this course, you should use Vim to work on all PAs.
 
 {: .warning}
 Can I get started now? Y- No. Read the whole thing.
@@ -721,7 +713,7 @@ the structure and where to implement your functions.
   above. You do not need to check for invalid inputs.
 
 {: .note }
-> Prior to the lecture on April 15th, review the [relevant Dive Into Systems page](https://diveintosystems.org/book/C2-C_depth/advanced_cmd_line_args.html)
+> Make sure that you review the [relevant Dive Into Systems page](https://diveintosystems.org/book/C2-C_depth/advanced_cmd_line_args.html)
 > for how to parse command-line arguments.
 
 ## Skeleton Code Description
@@ -847,12 +839,56 @@ Your solution must be tested comprehensively to ensure that you have more than j
 hopes and prayers to rely on when you submit your code. Testing is also an
 essential responsible practice for software engineering professionalism.
 
+Importantly, part of your submission will include writing _unit tests_ for your code.
+As review, unit tests are tests that verify the correctness of individual functions
+of code.
+
+### Writing Unit Tests
+
+Let's say we had the following function (which isn't from this PA, but just an example):
+
+```c
+// This function is supposed to add two integers and return the result, but it has a bug.
+int add(int a, int b) {
+    return a + 0;
+}
+```
+
+Astute readers will immediately notice that this function is incorrect,
+as it doesn't add `b` to `a`. If we were to write a unit test for this function,
+we would be able to catch this bug. A unit test for this function might look like this:
+
+```c
+void test_add_ok() {
+    int actual_result = add(2, 3);
+    int expected_result = 5;
+    if (actual_result != expected_result) {
+        printf("test failed.\n");
+    }
+}
+```
+
+Notice that if the test passes, then nothing will be printed. If the test _fails_, however,
+then we'll get a nice message printed to the console. This is a pretty simple unit test,
+but it helps us catch a pretty nasty bug!
+
+As part of your submission, **you should write at least one unit test
+for each of the functions you implement in `enigma.c`**. For example:
+this means that for the `parse_rotor_indices()` function,
+you should write a test function which calls `parse_rotor_indices()` with some input
+and checks if the output matches your expected output. To pass the autograder,
+your tests should only print something to the console if the test fails,
+and should not print anything if the test passes.
+
+You should call these functions from `main()` to test them. You can
+write more unit tests if you want to, and we encourage you to do so!
+
+
 {: .warning}
 If you plan to rely on the autograder to test your code, keep in mind that you
 will only be able to see your program's performance against the public test cases.
 The performance of your code on the hidden test cases will remain unavailable
-until after the deadline. Therefore, make sure to thoroughly test your code
-with your own test cases.
+until after the deadline. Therefore, make sure to think carefully about your unit tests!
 
 Here are the public test cases that we will run on your code (_you should too_):
 
@@ -991,14 +1027,14 @@ assignment on Gradescope without pushing your latest changes to GitHub at least 
 Always make sure your repository on GitHub is up-to-date before submitting!
 
 Steps to submit via Gradescope:
-- Navigate to the submission page for this PA using the button below.
+- Navigate to the submission page for this PA using the button below. (We haven't set up the Gradescope page yet, but we will update this section once we do.)
 - When you submit the assignment, you will see the option to submit from a specific GitHub repository.
 - Link your GitHub account if you haven’t already.
 - Select your PA 1 repository and choose the main branch for submission.
 
-[Go to Gradescope](https://www.gradescope.com/courses/1013315/assignments/6045550){: .btn .btn-purple }
+<!-- [Go to Gradescope](https://www.gradescope.com/courses/1013315/assignments/6045550){: .btn .btn-purple } -->
 
-## Reflection Survey 1
+<!-- ## Reflection Survey 1
 
 The last part of this assignment is a reflection survey.
 Please spend a few minutes reflecting on your experience in this course and
@@ -1026,7 +1062,7 @@ the program's output.
 | Reflection survey | 2 points for completion | 2 |
 
 Total: 25 points
-{: .fs-5 .fw-500 }
+{: .fs-5 .fw-500 } -->
 
 <style>
   pre.highlight {
