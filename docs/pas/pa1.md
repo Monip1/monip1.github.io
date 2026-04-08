@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PA 1
+title: PA1
 parent: Programming Assignments
 permalink: /pa1
 nav_order: 2
@@ -10,7 +10,7 @@ toc: sidebar
 # PA 1: Enigma Machine
 {: .no_toc}
 
-Due date: April 22 23:59 PDT
+Due date: April 21 23:59 PDT
 {: .fs-4 }
 
 [GitHub Classroom Assignment](https://classroom.github.com/a/L8ErURO-){: .btn .btn-blue }
@@ -641,7 +641,8 @@ Rotor 1 and decrypt it to `JAVA`.
 
 While performing encryption or decryption of the message, we enter some
 **non-negative** integer number of rotations, which is the number of times to
-rotate a rotor's values to the right.
+rotate a rotor's values to the right. (You might want to rotate the rotors
+to help prevent people from catching onto the pattern!)
 
 For example, to perform `rotation = 3` on Rotor 1, then
 
