@@ -34,7 +34,7 @@ callouts:
     title: important
   checkoff:
     color: green
-    title: 📋 Check your progress!
+    title: 📋 Team check in!
   owntime:
     color: grey-dk
     title: 🚀 In your own time
