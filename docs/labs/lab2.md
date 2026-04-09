@@ -323,6 +323,10 @@ We’ll revisit Git in a later lab and in your own time, if you’d like to lear
 {: .checkoff }
 Verify each team member has a repo with you and your teammates’ shared Music and Books folders. Run `git log --name-status` to verify who wrote each change.
 
+# Git `people`
+
+Recall the `people` directory from lab1. 
+
 # *Oops\!* Undoing destructive changes
 
 To illustrate that Git is useful even for individual projects (like your PAs), let's create a scenario where you make a destructive change to your code. We'll reuse the `contains.c` file you may have written in Lab 1\.
