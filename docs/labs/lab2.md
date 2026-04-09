@@ -12,6 +12,7 @@ Welcome to Lab 2, glad you're here! For a later section of the lab, you will wor
 
 
 ## Lab 2 Learning Objectives
+{: .no_toc }
 
 * Enable your `ieng6` account to communicate with GitHub on your account's behalf
 * Familiarize yourself with the conceptual model of Git
@@ -97,8 +98,8 @@ If this is your first time connecting to GitHub, you might get a warning about t
 
 After a successful connection, it should output `Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access`.
 
-{: .important }
-📋 Take a screenshot of this (successfully authenticated) message and put it in your lab report\! No need to have a tutor check it.
+{: .checkoff }
+If you did not get this success message, please ask someone for help, you will not be able to complete the next part if your ssh keys are not properly set up.
 
 That *should* conclude the GitHub SSH key setup process. If the others in your group are struggling with this, please help them\! The next step will require everyone in your group to be able to successfully connect to GitHub.
 # Git Gud Bro
