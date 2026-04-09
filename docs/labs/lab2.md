@@ -197,7 +197,7 @@ $ mv <span class="code-replace-me" contenteditable>repo_name</span> ~/cse29/<spa
 </code>, where `repo_name` is the name of your repo. This command is also used to move and rename files.
 
 {: .checkoff }
-Call over a tutor to get checked off for successfully cloning the lab2 repo onto your ieng6 machine in your cse29 folder. Also have your tutor make sure that you and your teammates have correctly completed the command line exercise from lab 1, with the Books and Music directories being correctly named and structured.
+Each member of your group should have now successfully cloned the lab2 repo onto ieng6 in the cse29 folder. Make sure you have all correctly completed the command line exercise from lab 1, with the Books and Music directories being correctly named and structured.
 
 ## “You have good taste\!”
 Remember those books and songs that you created last week? Now it’s time to pool them all together into one big Books directory and one big Music directory\! Before you proceed, make sure that everyone on your team has done the previous checkoff, as it is crucial each person’s `lab1` files are properly organized.
@@ -321,7 +321,7 @@ Now you can see what songs and books your teammates enjoy\! Albeit it probably w
 We’ll revisit Git in a later lab and in your own time, if you’d like to learn more about some of the concepts introduced today such as commits and how they are tracked, you can look into the [Le Git Graph browser extension](https://chromewebstore.google.com/detail/le-git-graph-commits-grap/joggkdfebigddmaagckekihhfncdobff) and its [GitHub repository](https://github.com/NirmalScaria/le-git-graph). You can also check out this [interview with the creator of Git](https://github.blog/open-source/git/git-turns-20-a-qa-with-linus-torvalds/) that celebrates its 20th birthday this year, woo!
 
 {: .checkoff }
-Call over a tutor to get checked off for successfully having a repo with you and your teammates’ shared Music and Books folders. Show them the result of running `git log --name-status`, as well the contents of the folders themselves.
+Verify each team member has a repo with you and your teammates’ shared Music and Books folders. Run `git log --name-status` to verify who wrote each change.
 
 # *Oops\!* Undoing destructive changes
 
@@ -366,7 +366,7 @@ Changes not staged for commit:
 To undo our destructive change, we precisely need to "`discard changes in working directory`" relative to our last commit. So, let's follow the instructions from `git status` to restore `contains.c`. **Please compose the command on your own from the instructions.**
 
 {: .checkoff }
-Call over a tutor to get checked off for successfully restoring your destroyed `contains.c` contents, and paste a screenshot of your entire terminal window into your lab report. You are now ready to submit it to [Gradescope](https://www.gradescope.com/courses/1013315)!
+Make sure everyone in your group was able to successfully restore the once destroyed `contains.c` contents.
 
 {: .owntime }
 You might have heard about `git revert`, `git reset`, and `git restore`. Each command performs a unique operation. Learn more about what they do with Git's [official documentation](https://git-scm.com/docs/git#_reset_restore_and_revert).
