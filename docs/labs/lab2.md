@@ -323,9 +323,23 @@ We’ll revisit Git in a later lab and in your own time, if you’d like to lear
 {: .checkoff }
 Verify each team member has a repo with you and your teammates’ shared Music and Books folders. Run `git log --name-status` to verify who wrote each change.
 
-# Git `people`
+# Git people
 
-Recall the `people` directory from lab1. 
+Recall the `people` directory from lab1? If not, no need to worry but once you `git clone` to explore the `people`, our descriptions of [ls](./lab1#ls---looking-around) and [man](./lab1#man---getting-help) may be of use to you.
+
+Now you get to add data of your own!
+
+
+{: .exercise}
+Using [**this repository**](https://classroom.github.com/a/CwYTVeid):  
+Make a `Students` directory alongside the `Instructors`, `TAs` and `Tutors` directories in your workspace.  
+Create a directory in `Students` that is your name  
+Make and populate a `data.md` file with and fun facts you want to share (we have an outline.md file you can use or you can make one of your own)  
+`git push` each team member's changes to github so you can see them all there.  
+
+From github, you can then look at files by clicking the `people` folder from this screen ![git_people](../../assets/labs/sp26/github_people_repo.png)  
+From here you can go look at the `.md` files which use [markdown formatting](https://www.markdownguide.org/getting-started/) which add formatting to our plain text files. Go find one of your staff members' `data.md` to see some [formatting options](https://commonmark.org/help/) in practice.
+
 
 # *Oops\!* Undoing destructive changes
 
@@ -377,7 +391,56 @@ You might have heard about `git revert`, `git reset`, and `git restore`. Each co
 
 # Next steps
 
-If you finish with the lab content above you may do the following (in no particular order):
+If you finish with the lab content above you may any do the following:
+* Continue reading and get a sneak-peak on topics covered in lab 3! 👀
+* Do the parts of the lab marked as "On your own time"
 * Work on PA1
 * Work on HW2
-* Do the parts of the lab marked as "On your own time"
+
+# Lab 3 Preview: Debugging with gdb
+
+If you haven't already, at some point in this class while writing your programs you will surely encounter a **segmentation fault** (or just **segfault** for short). These occur when you try accessing memory that you're not supposed to, and are your computer's way of saving you from harming it.
+
+## Intro to gdb commands:
+- To use gdb, make sure you’ve compiled your program with "debug symbols" like so:
+```
+$ gcc -g YOUR_CODE.c 
+```
+- Run your compiled code in gdb 
+```
+$ gdb YOUR_BINARY
+```
+- This puts you into a gdb prompt: normal terminal commands don’t work here, and you can instead run gdb-specific commands
+```
+(gdb) run     # starts running your program
+```
+- If your program stops running or segfaults in gdb, print out the backtrace (also called a “stack trace”)
+```
+(gdb) backtrace    
+```
+or    
+```
+(gdb) bt
+```
+
+If you would like to see this in practice you can try it on any of the 3 buggy files in [**this repo**](https://github.com/ucsd-cse29/lab3-buggy).
+
+
+## Use the following commands to print out values at the point the program stopped: 
+- `(gdb) info locals`
+- `(gdb) info args`
+- `(gdb) print VALUE (or p VALUE)`
+  - You can print any variable or expression, e.g.
+    - `print x`,  `p arr[5]`, `p ((x & 0b1111) << 3)`
+  - You can also specify a format to print in
+    - `print/t` (binary), `print/x` (hex), `print/d` (decimal)
+- `(gdb) x ADDRESS`    
+  - This prints out memory at an address, e.g. strings / arrays / pointers
+- `(gdb) x/16cb str1`      
+  - This prints the first 16 bytes of `str1` as characters
+- `(gdb) x/20xb str2`      
+  - This prints 20 bytes of `str2` in hex
+- `(gdb) x/4dw  arr`       
+  - This prints 4 “words” (i.e. int32s) of `arr`, as decimal numbers 
+- You can use the following [reference card](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf) for reference on gdb commands, and format commands for x and print.
+
