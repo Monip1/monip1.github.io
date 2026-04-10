@@ -106,7 +106,7 @@ That *should* conclude the GitHub SSH key setup process. If the others in your g
 
 For this section of the lab, you should work in groups of 2-3. Let a TA or tutor know if you don’t have a group\!
 
-Have **one member** of the group follow [**this link**](TODO) to accept the assignment for this lab on GitHub. Create a team for your group (give it any name you want\!), then the other group members should add themselves to the team by following the link themselves.
+Have **one member** of the group follow [**this link**](https://classroom.github.com/a/k1PmAZSW) to accept the assignment for this lab on GitHub. Create a team for your group (give it any name you want\!), then the other group members should add themselves to the team by following the link themselves.
 
 Before you start using git hands-on, we should establish some vocabulary and concepts about git and GitHub.
 
