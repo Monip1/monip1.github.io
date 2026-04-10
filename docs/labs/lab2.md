@@ -329,6 +329,9 @@ Recall the `people` directory from lab1? If not, no need to worry but once you `
 
 Now you get to add data of your own!
 
+Write each git command that you use in the following activity on your whiteboard along with a short description of what it did on your whiteboards. (Please let each person write at least one).
+
+![git-whiteboard](../../assets/labs/sp26/l2git_whiteboard.png)
 
 {: .exercise}
 Using [**this repository**](https://classroom.github.com/a/CwYTVeid):  
