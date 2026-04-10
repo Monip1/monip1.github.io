@@ -13,7 +13,8 @@ toc: sidebar
 Due date: April 21 23:59 PDT
 {: .fs-4 }
 
-[GitHub Classroom Assignment](https://classroom.github.com/a/L8ErURO-){: .btn .btn-blue }
+[GitHub Classroom Assignment](https://classroom.github.com/a/fLd9TVsl){: .btn .btn-blue }
+
 
 ## Updates
 {: .no_toc }
@@ -665,7 +666,7 @@ to make our own.
 All of our programming assignments will be hosted on GitHub Classoom.
 Use the following link to accept the GitHub Classroom assignment.
 
-[Click here to accept this GitHub Classroom assignment.](https://classroom.github.com/a/L8ErURO-) (Right click to open in new tab)
+[Click here to accept this GitHub Classroom assignment.](https://classroom.github.com/a/fLd9TVsl) (Right click to open in new tab)
 
 Once the assignment is accepted, you will see a repository generated for you
 with the starter code for this assignment. Click the link to go to the
