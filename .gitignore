@@ -28,7 +28,3 @@ node_modules
 *.gem
 .bundle
 .ruby-version
-
-# sam ._.
-.gitignore
-save
