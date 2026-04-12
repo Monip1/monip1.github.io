@@ -1011,9 +1011,9 @@ As stated in the [course syllabus](/syllabus):
 > used AI in the contributions section of each PA. This citation allows us to
 > understand the role of AI in the learning process, and will not impact your grade.
 
-For this PA, **please describe your AI usage in `credits.txt`**, which should be in
+For this PA, **please describe your AI usage in `CREDITS.txt`**, which should be in
 your starter repository. **If you did not use AI, you must state this in
-`credits.txt`.** The autograder will require you to edit `credits.txt` to
+`CREDITS.txt`.** The autograder will require you to edit `CREDITS.txt` to
 get points.
 
 ## Submission Instructions
