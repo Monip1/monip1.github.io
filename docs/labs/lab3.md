@@ -91,7 +91,7 @@ The correct behavior of `index_of_E` is to find the index of the first occurrenc
 To run the program in GDB, use the `gdb` and pass the program as an argument:
 
 ```
-$ gdb ./index_of
+$ gdb ./index_of_E
 ```
 
 This will spit out several lines of text, with some software and legal information that we don’t need to worry about. In the last line, you should notice that the terminal command prompt `$` (as well as the other stuff before `$`) has been replaced by the GDB command prompt `(gdb)`. This means that the GDB program is active and ready to receive commands.
