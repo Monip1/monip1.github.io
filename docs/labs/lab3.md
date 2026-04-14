@@ -10,13 +10,12 @@ permalink: /lab3
 {: .no_toc}
 In this lab, you will get hands-on experience using GDB to debug C programs. GDB will become an essential tool for your PA work as this course develops, so lock in\!
 
-[Start your lab report →](https://docs.google.com/document/d/1vS4yr6LCM5qSnsvifupCFqvLXbcABQFX/copy){: .btn .btn-blue }
-
 ## Lab 3 learning objectives
 {: .no_toc}
 
 * Recognize the need for debugging using a debugger
 * Compile a C program for debugging
+* Catch possible bugs using a compiler
 * Run a program in GDB while stopping at breakpoints
 * Use various GDB commands to observe and control program execution
 * Use GDB to troubleshoot a crashing program
