@@ -84,9 +84,14 @@ GDB (**G**NU Project **D**e**b**ugger) is a command line program that offers a c
 
 The `gdb` directory contains several programs which we will debug with GDB: `index_of_E` and `charshift.c`. We’ll start with the `index_of_E` program to introduce basic GDB commands, then look at `charshift.c` to talk about segmentation faults and how to debug them with GDB.
 
-## Running in GDB
 
-The correct behavior of `index_of_E` is to find the index of the first occurrence of the character `E` in a string `str`. Predict the output for the following strings, "Baby_Alpaca", "CSE29", "Alp" and "Alpacas_Eat". 
+The correct behavior of `index_of_E` is to find the index of the first occurrence of the character `E` in a string `str`. 
+{: .exercise}
+Predict the output for the following strings, "Baby_Alpaca", "CSE29", "Alp" and "Alpacas_Eat". Fill out your whiteboard, leaving some extra space for your later bug fix like so:
+![whiteboard2](../../assets/labs/sp26/l3_whiteboard_alpaca.png)
+
+
+## Running in GDB
 
 To run the program in GDB, use the `gdb` and pass the program as an argument:
 
