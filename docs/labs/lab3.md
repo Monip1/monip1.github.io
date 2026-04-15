@@ -104,7 +104,7 @@ This will spit out several lines of text, with some software and legal informati
 Use the `run` command to **run** the program in GDB. Since this program takes in a command line argument, you can provide it like so:
 
 ```
-(gdb) run cse29_is_fantastic!
+(gdb) run CSE29_is_fantastic!
 ```
 This is just like running the command `./index_of_E CSE29_is_fantastic!`. For now, it runs through the program without stopping. GDB might say something here about “Missing separate debuginfos”, but don’t worry about this. GDB is just asking to install some extra packages to get more information for debugging, but these aren’t necessary for our purposes right now.
 
@@ -115,15 +115,8 @@ To **quit** out of GDB, you can use the `quit` command.
 ```
 
 {: .important }
-In the future, please add `-Wall` to your compilation command to ask the compiler to help you find potential bugs. We are leaving it off for this lab so that you can practice finding those bugs using GDB.
+In the future, please add `-Wall` to your compilation command to ask the compiler to help you find potential bugs.
 
-## Compiling for GDB
-
-In order to use GDB, we have to compile our program with the `-g` flag. This tells the compiler to add some extra information to your executable file, which GDB will use. Recompile `char_shift.c` with this flag.
-
-```
-$ gcc -o char_shift -g char_shift.c
-```
 
 
 ## Breakpoints
@@ -145,6 +138,15 @@ to set a breakpoint at line 12 in the file `index_of_E.c`, You can set breakpoin
 You can use the `info breakpoints` command to list out which breakpoints have been set, as well as some information about where they are and what their associated number is. You can delete breakpoints with the command `delete <number>` where `<number>` is the number associated with the breakpoint.
 
 After setting a breakpoint, you can run the program again (copy the `run` command from earlier) and see that it pauses execution right where the breakpoint is.
+
+## Compiling for GDB
+
+In order to use GDB, we have to compile our program with the `-g` flag. This tells the compiler to add some extra information to your executable file, which GDB will use. Recompile `charshift.c` with this flag.
+
+```shell
+$ gcc -o charshift -g charshift.c
+```
+
 
 # Part 3: TUI, Commands, Segfault, and BackTrace
 
