@@ -57,7 +57,7 @@ At approximately 10 mins into the lab, the staff members present will bring the 
     - if you have file permission issues, you can use `chmod u+rwx ~/.bash_profile`
 
 
-# -Wall
+# Part 1: <span style="color:red">Warning</span>
 Our compiler `gcc` is designed to catch possible errors at compile time and warn you. While it gives you some of these warnings by default, we can force it to display all possible errors it sees by using the `-Wall` flag. We can add this flag as follows:  
 `gcc myprogram.c -o myprogram -Wall`  
 
@@ -66,7 +66,7 @@ The order of flags given to `gcc` does not matter. The only space-seperated stri
 
 Using [**this repository**](gitclasslink--TODO) navigagte to the `Wall` directory and fix the programs. All bugs will be reported by compiliing using the `-Wall` flag
 
-# What and why debugging?
+# Part 2: What and why debugging?
 
 Debugging is the practice of finding and fixing errors in programs. There are no *real* bugs in your program, although [this has actually happened at least once before](https://en.wikipedia.org/wiki/Debugging#Etymology).
 
@@ -146,7 +146,7 @@ You can use the `info breakpoints` command to list out which breakpoints have be
 
 After setting a breakpoint, you can run the program again (copy the `run` command from earlier) and see that it pauses execution right where the breakpoint is.
 
-# TUI, Commands, Segfault, and BackTrace
+# Part 3: TUI, Commands, Segfault, and BackTrace
 
 ## TUI in GDB
 
@@ -232,10 +232,51 @@ Since we know that segfaults are caused by illegal memory access, and we know th
 {: .checkoff }
 Fix the bug in `charshift.c`. Ask a tutor or TA to check your fix, and put a screenshot of the fixed program's output into your lab report. You're now ready to submit it to [Gradescope](https://www.gradescope.com/courses/1013315/assignments/6105029)\!
 
-# Next steps: Practice Skill Demo
+# Part 4: Hacking
+## 4.1. Background
 
-Unlike the Review Quizzes, the Practice Skill Demo is **not graded**. When we resume from the 5-minute break, you should decide whether to use a lab computer for the Practice Skill Demo. **We highly recommend using a lab computer** because its environment will be identical to that during the actual Skill Demo, especially if you use a Mac. But, if you can't sign into PrairieLearn on your lab computer in 5 minutes or don't have access to one, feel free to use your own computer. You may find [PrairieLearn](https://us.prairielearn.com/pl/course_instance/180232/assessments) at **us.prairietest.com**.
+Imagine that you're a less ethical student than I'm sure you actually are. You
+overhear from some other students in lab that there's a binary available on the
+pi-cluster that can show you your grades on assignments before we formally
+release them. You hear quieter whispers that someone found a way to use it to
+_change_ their grade. Given our less-than-ethical assumption about your state
+of mind, you might be tempted to exploit this for yourself.  
 
-We encourage you to work through the problem on your own, but you may ask for help from your tutors/TA if you're stuck. Please do not collaborate with others in your group.
+## 4.2. The Plot Thickens
 
-If you finish the Practice Skill Demo problem early, you're free to leave the lab. Best wishes on your Skill Demo!
+You see some code open on the professor's laptop during office hours.  You do
+your best to commit it to memory and write it down (remember, you're acting
+quite unethically in this story), because it strikes you that the code was
+something regarding assignment scores.  
+![gradebook source code](../../assets/labs/sp26/gradebook_src.png)
+
+Using this information, you decide to give yourself and A with a score 
+to match while maintaining a real due date.  
+**HINT**
+When important values are adjacent on the stack, overflowing an array with
+values that you control can let you assign into other stack-allocated values.
+
+
+GDB commands that may be useful for this activity:
+
+-   `(gdb) info locals`
+
+-   `(gdb) info args`
+
+-   `(gdb) print VALUE (or p VALUE)` You can print any variable or expression, e.g.
+
+-   `print x`, `p arr[5]`, `p ((x & 0b1111) << 3)`
+
+-   You can also specify a format to print in
+
+-   `print/t` (binary), `print/x` (hex), `print/d` (decimal)
+
+-   `(gdb) x ADDRESS` This prints out memory at an address, e.g. strings / arrays / pointers
+
+-   `(gdb) x/16cb str1` This prints the first 16 bytes of `str1` as characters
+
+-   `(gdb) x/20xb str2` This prints 20 bytes of `str2` in hex
+
+-   `(gdb) x/4dw  arr` This prints 4 "words" (i.e. `int32s`) of `arr`, as decimal numbers
+
+-   You can use the following [reference card](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf) for reference on gdb commands, and format commands for x and print.
