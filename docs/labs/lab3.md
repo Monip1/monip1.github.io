@@ -91,6 +91,14 @@ Predict the output for the following strings, "Baby_Alpaca", "CSE29", "Alp" and 
 ![whiteboard2](../../assets/labs/sp26/l3_whiteboard_alpaca.png)
 
 
+## Compiling for GDB
+
+In order to use GDB, we have to compile our program with the `-g` flag. This tells the compiler to add some extra information to your executable file, which GDB will use. `index_of_E` was compiled using the following command.
+
+```shell
+$ gcc -o index_of_R -g index_of_E.c
+```
+
 ## Running in GDB
 
 To run the program in GDB, use the `gdb` and pass the program as an argument:
@@ -138,15 +146,6 @@ to set a breakpoint at line 12 in the file `index_of_E.c`, You can set breakpoin
 You can use the `info breakpoints` command to list out which breakpoints have been set, as well as some information about where they are and what their associated number is. You can delete breakpoints with the command `delete <number>` where `<number>` is the number associated with the breakpoint.
 
 After setting a breakpoint, you can run the program again (copy the `run` command from earlier) and see that it pauses execution right where the breakpoint is.
-
-## Compiling for GDB
-
-In order to use GDB, we have to compile our program with the `-g` flag. This tells the compiler to add some extra information to your executable file, which GDB will use. Recompile `charshift.c` with this flag.
-
-```shell
-$ gcc -o charshift -g charshift.c
-```
-
 
 # Part 3: TUI, Commands, Segfault, and BackTrace
 
@@ -221,7 +220,7 @@ This buggy program demonstrated an example of a logical error. A logical error i
 
 ## Segfault and Backtrace
 
-Another common type of error is a *segmentation fault* (or just *segfault*). Segmentation faults can happen when we try to access someplace in memory illegally (yes, that’s the technical term). In `shift_chars.c`, we’ll look at an example of that.
+Another common type of error is a *segmentation fault* (or just *segfault*). Segmentation faults can happen when we try to access someplace in memory illegally (yes, that’s the technical term). In `charshift.c`, we’ll look at an example of that.
 
 Compile `charshift.c` for GDB and try running `./charshift`. It should immediately crash and give you a `Segmentation fault (core dumped)` error, telling you that some kind of illegal memory access happened. Most unhelpfully, the error message does not care to tell you why or even where it happened. Somewhat helpfully, GDB can at least answer the “where”. **From this lab onward, whenever you see your program segfaulting, you should consider debugging it with GDB.**
 
