@@ -28,8 +28,10 @@ In this lab, you will get hands-on experience using GDB to debug C programs. GDB
 
 {: .fun-fact}
 >For some history, ieng stands for "Interactive Engineering" and dates back to when we had machines in AP&M that you had to use a video terminal to interact with the machines. The 6 in the name is from the IP Address originally assigned,  which was 132.239.50.6. There used to be other "ieng" machines, you may encounter someone that remembers ieng9 that used to host Solaris SPARC used in CSE30 and CSE120.
+>
 > ieng6 and almost all of the infrastructure students might use is physically located in SDSC. The ieng6 machines are entirely virtual machine based so they're balanced on a cluster of hardware supporting most ITS.
 > ieng6.ucsd.edu is a round robin load balancer that currently balances number of connections between ieng6-201, 202, and 203 (this will be increasing this summer). 201-203 are SSH only machines, everything else also allows RDP desktop sessions which you can connect to from campus/VPN or via linuxcloud.ucsd.edu. All the ieng6 machines are open to use as needed but we may point courses at specific sets of machines depending on what's needed for the course.
+>
 > ieng6-240 - 253 are the original desktop cluster and the number is based off their IP address. 
 > $ host ieng6-240
 ieng6-240.ucsd.edu has address 128.54.70.240
