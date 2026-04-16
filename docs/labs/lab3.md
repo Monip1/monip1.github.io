@@ -60,14 +60,15 @@ In this lab, you will get hands-on experience using GDB to debug C programs. GDB
 {: .note}
 >SDSC is the San Diego Supercomputer Center which resides near RIMAC on Ridgewalk.
 
-# Icebreaker and warm-up
+# Whiteboard activity #1
 
+## Icebreaker
 The CSE 29 genie, which runs on ieng6, would like to grant you 3 wishes. You may wish for anything you want, except you may not wish recursively (i.e., wish for more wishes). What do you wish for?
 
 {: .note }
 Please write the answers of yourself and one of your group members on your whiteboard.
 
-## Whiteboard
+## Warm-up
 
 Draw the memory diagram for the following 2D array on your whiteboard.
 ```c
