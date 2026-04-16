@@ -90,6 +90,7 @@ At approximately 10 mins into the lab, the staff members present will bring the 
 1. if you did not opt to make your `ls` colorful in [week1](./lab1#ls---looking-around), now is the time.  
 1. Run `echo alias ls=\"ls --color\" >> ~/.bash_profile`  
     - if you have file permission issues, you can use `chmod u+rwx ~/.bash_profile`
+1. you can use `source ~/.bash_profile` to apply these changes right now.
 
 
 # Part 1: <span style="color:red">-W(arn)all</span> 
