@@ -28,7 +28,7 @@ In this lab, you will get hands-on experience using GDB to debug C programs. GDB
 
 
 {: .fun-fact}
->On the quest I sent a staff member to gather information about ieng6, success was achieved. ITS (IT Services) has answered many questions.<br><br> 
+>On the quest I sent a staff member to gather information about ieng6, success was achieved. Some guy of ITS (IT Services) has answered many questions.<br><br> 
 >"For some history, ieng stands for "Interactive Engineering" and dates back to when we had machines in AP&M that you had to use a video terminal to interact with the machines. The 6 in the name is from the IP Address originally assigned,  which was 132.239.50.6. There used to be other "ieng" machines, you may encounter someone that remembers ieng9 that used to host Solaris SPARC used in CSE30 and CSE120.
 ><br><br>
 >ieng6 and almost all of the infrastructure students might use is physically located in SDSC. The ieng6 machines are entirely virtual machine based so they're balanced on a cluster of hardware supporting most ITS.
@@ -41,7 +41,7 @@ In this lab, you will get hands-on experience using GDB to debug C programs. GDB
 ><br>
 >ieng6-240.ucsd.edu has address 128.54.70.240
 ><br>
->ieng6-640 and ieng6-641were originally the first x86_64 deployments and are currently used to support old software that needs CentOS 7.
+>ieng6-640 and ieng6-641 were originally the first x86_64 deployments and are currently used to support old software that needs CentOS 7.
 ><br>
 >ieng6-700 through 702 and ieng6-300 through 309 are higher resource machines (more memory + CPU) which were added as we needed to support more intensive desktop software/more desktop sessions total during covid.
 ><br>
@@ -55,8 +55,10 @@ In this lab, you will get hands-on experience using GDB to debug C programs. GDB
 ><br><br>
 >`$ getent passwd etomson`
 ><br>
->etomson:*:112263:20:Tomson, Elena:/home/linux/ieng6/students/263/etomson:/bin/bash
+>etomson:*:112263:20:Tomson, Elena:/home/linux/ieng6/students/263/etomson:/bin/bash"
 
+{: .note}
+>SDSC is the San Diego Supercomputer Center which resides near RIMAC on Ridgewalk.
 
 # Icebreaker and warm-up
 
