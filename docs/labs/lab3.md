@@ -82,7 +82,7 @@ for(int i = 0; i < 4; i++){
     }
 }
 ```
-<img src="../../assets/labs/sp26/l3_whiteboard_memory.png" alt="whiteboard" width="600">
+<img src="../../assets/labs/sp26/l3_whiteboard_memory.png" alt="whiteboard" width="800">
 
 At approximately 10 mins into the lab, the staff members present will bring the class together to go over the board. If you finish the whiteboard and icebreaker before that time, feel free to read the next section.
 
@@ -124,7 +124,7 @@ The correct behavior of `index_of_E` is to find the index of the first occurrenc
 {: .exercise}
 Predict the output for the following strings, "Baby_Alpaca", "CSE29", "Alp" and "Alpacas_Eat". Fill out your whiteboard, leaving some extra space for your later bug fix like so:
 
-<img src="../../assets/labs/sp26/l3_whiteboard_alpaca.png" alt="whiteboard_2" width="600">
+<img src="../../assets/labs/sp26/l3_whiteboard_alpaca.png" alt="whiteboard_2" width="800">
 
 ## Compiling for GDB
 
