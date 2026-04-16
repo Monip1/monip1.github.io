@@ -92,8 +92,8 @@ At approximately 10 mins into the lab, the staff members present will bring the 
     - if you have file permission issues, you can use `chmod u+rwx ~/.bash_profile`
 
 
-# Part 1: <span style="color:red">Warning</span>
-Our compiler `gcc` is designed to catch possible errors at compile time and warn you. While it gives you some of these warnings by default, we can force it to display all possible errors it sees by using the `-Wall` flag. We can add this flag as follows:  
+# Part 1: <span style="color:red">-W(arn)all</span> 
+Our compiler `gcc` is designed to catch possible errors at compile time and warn you. While it gives you some of these warnings by default, we can force it to display all possible errors it detects by telling it to W(arn) all using `-Wall` flag. We can add this flag as follows:  
 `gcc myprogram.c -o myprogram -Wall`  
 
 {: .note}
