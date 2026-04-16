@@ -139,7 +139,7 @@ $ gcc -o index_of_E -g index_of_E.c
 
 To run the program in GDB, use the `gdb` and pass the program as an argument:
 
-```
+```shell
 $ gdb ./index_of_E
 ```
 
@@ -147,14 +147,14 @@ This will spit out several lines of text, with some software and legal informati
 
 Use the `run` command to **run** the program in GDB. Since this program takes in a command line argument, you can provide it like so:
 
-```
+```shell
 (gdb) run CSE29_is_fantastic!
 ```
 This is just like running the command `./index_of_E CSE29_is_fantastic!`. For now, it runs through the program without stopping. GDB might say something here about “Missing separate debuginfos”, but don’t worry about this. GDB is just asking to install some extra packages to get more information for debugging, but these aren’t necessary for our purposes right now.
 
 To **quit** out of GDB, you can use the `quit` command.
 
-```
+```shell
 (gdb) quit
 ```
 
@@ -167,13 +167,13 @@ In the future, please add `-Wall` to your compilation command to ask the compile
 
 To pause execution at some point in the program, we have to set a **break***point*. Restart `gdb ./index_of_E`. Use the `break` command and give it a location in the source code that you want to pause execution at. At the moment, we’re not too sure exactly which part of the code is wrong, so we’ll pause at the beginning (the main function) and go step-by-step from there. You can use either
 
-```
+```shell
 (gdb) break main
 ```
 
 to automatically set a breakpoint wherever the main function is. which happens to be line 12 in `index_of_E.c`, or if you had the source code and knew the line number:  
 
-```
+```shell
 (gdb) break index_of_E.c:12
 ```
 
@@ -191,7 +191,7 @@ Notice that GDB printed out a single line of code from the source file. This is 
 
 The `layout src` command may also be helpful to enable a TUI (Text User Interface) for GDB that automatically renders a portion of the source code in the top half of the screen. The highlighted line in the TUI shows which line of code is to be executed next. To disable the TUI, press `Ctrl` \+ `X`, followed by `A`.
 
-```
+```shell
 (gdb) layout src
 ```
 
@@ -205,7 +205,7 @@ On the left hand side of the TUI, you can see that the breakpoint is marked with
 
 After setting a breakpoint and running, execution is paused right after we enter the main function, before any other code is executed. You can verify this by using the `print` command to print out the contents of the variable `result`:
 
-```
+```shell
 (gdb) print result
 ```
 
@@ -213,13 +213,13 @@ and see that it contains an uninitialized value. We see this because the line th
 
 To run the **next** line of code, we use the `next` command:
 
-```
+```shell
 (gdb) next
 ```
 
 The highlighted line has moved on, indicating that the previous line has been executed. You can check the values of `argc` and `argv` using the `print` command, which accepts any valid expression in C:
 
-```
+```shell
 (gdb) print argc
 (gdb) print argv
 (gdb) print argv[0]
@@ -232,7 +232,7 @@ We now know that this input exposes a bug inside `index_of_E`, so we want to loo
 
 Use `next` to execute the program up until, but not actually executing, the call to `index_of()`. You’ll know that `index_of()` is next to be executed, but not executed yet, when the line of code is highlighted. This time, instead of using `next` to run the entire `index_of()` function at once, use the `step` command to **step** into the function and begin executing line-by-line from inside:
 
-```
+```shell
 (gdb) step
 ```
 
