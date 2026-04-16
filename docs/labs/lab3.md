@@ -52,7 +52,8 @@ In this lab, you will get hands-on experience using GDB to debug C programs. GDB
 >New accounts are standardized with the home directory bin being the last 3 digits of your UID. Note your UID is 112263
 ><br><br>
 >$ getent passwd etomson
-etomson:*:112263:20:Tomson, Elena:/home/linux/ieng6/students/263/etomson:/bin/bash
+><br><br>
+>etomson:*:112263:20:Tomson, Elena:/home/linux/ieng6/students/263/etomson:/bin/bash
 
 
 # Icebreaker and warm-up
