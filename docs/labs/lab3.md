@@ -96,7 +96,7 @@ Predict the output for the following strings, "Baby_Alpaca", "CSE29", "Alp" and 
 In order to use GDB, we have to compile our program with the `-g` flag. This tells the compiler to add some extra information to your executable file, which GDB will use. `index_of_E` was compiled using the following command.
 
 ```shell
-$ gcc -o index_of_R -g index_of_E.c
+$ gcc -o index_of_E -g index_of_E.c
 ```
 
 ## Running in GDB
@@ -161,7 +161,7 @@ The `layout src` command may also be helpful to enable a TUI (Text User Interfac
 
 The TUI won’t render any source code unless there is a program that is active, i.e. in the middle of execution.
 
-Sometimes the TUI can get messed up if the program prints something out (which `index_of_E` does). When this happens, try using the `refresh` command to refresh the TUI and hope that it will restore its correct format. If something seems *really* messed up, try disabling and re-enabling the TUI.
+Sometimes the TUI can get messed up if the program prints something out (which `index_of_E` does). When this happens, try using the `refresh` command to refresh the TUI and hope that it will restore its correct format. If something seems *really* messed up, try disabling and re-enabling the TUI. Use `tui disable` to disable the tui.
 
 On the left hand side of the TUI, you can see that the breakpoint is marked with `B+>`.
 
