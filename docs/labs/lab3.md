@@ -205,7 +205,7 @@ On the left hand side of the TUI, you can see that the breakpoint is marked with
 
 After setting a breakpoint and running, execution is paused right after we enter the main function, before any other code is executed. You can verify this by using the `print` command to print out the contents of the variable `result`:
 
-```shell
+```bash
 (gdb) print result
 ```
 
@@ -232,7 +232,7 @@ We now know that this input exposes a bug inside `index_of_E`, so we want to loo
 
 Use `next` to execute the program up until, but not actually executing, the call to `index_of()`. You’ll know that `index_of()` is next to be executed, but not executed yet, when the line of code is highlighted. This time, instead of using `next` to run the entire `index_of()` function at once, use the `step` command to **step** into the function and begin executing line-by-line from inside:
 
-```shell
+```bash
 (gdb) step
 ```
 
