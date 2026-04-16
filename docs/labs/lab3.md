@@ -189,7 +189,7 @@ After setting a breakpoint, you can run the program again (copy the `run` comman
 
 Notice that GDB printed out a single line of code from the source file. This is the line of code that is about to be executed next. Here, you can use the `list` command to print out some of the surrounding code. This can be helpful to contextualize where the code is running.
 
-The `layout src` command may also be helpful to enable a TUI (Text User Interface) for GDB that automatically renders a portion of the source code in the top half of the screen. The highlighted line in the TUI shows which line of code is to be executed next. To disable the TUI, press `Ctrl` \+ `X`, followed by `A`.
+The `layout src` command may also be helpful to enable a TUI (Text User Interface) for GDB that automatically renders a portion of the source code in the top half of the screen. The highlighted line in the TUI shows which line of code is to be executed next. To disable the TUI, use `tui disable`. Alternatively, press `Ctrl` \+ `X`, followed by `A`.
 
 ```shell
 (gdb) layout src
@@ -197,7 +197,7 @@ The `layout src` command may also be helpful to enable a TUI (Text User Interfac
 
 The TUI won’t render any source code unless there is a program that is active, i.e. in the middle of execution.
 
-Sometimes the TUI can get messed up if the program prints something out (which `index_of_E` does). When this happens, try using the `refresh` command to refresh the TUI and hope that it will restore its correct format. If something seems *really* messed up, try disabling and re-enabling the TUI. Use `tui disable` to disable the tui.
+Sometimes the TUI can get messed up if the program prints something out (which `index_of_E` does). When this happens, try using the `refresh` command to refresh the TUI and hope that it will restore its correct format. If something seems *really* messed up, try disabling and re-enabling the TUI. 
 
 On the left hand side of the TUI, you can see that the breakpoint is marked with `B+>`.
 
