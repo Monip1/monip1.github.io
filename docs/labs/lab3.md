@@ -82,7 +82,7 @@ for(int i = 0; i < 4; i++){
     }
 }
 ```
-![whiteboard](../../assets/labs/sp26/l3_whiteboard_memory.png)
+<img src="../../assets/labs/sp26/l3_whiteboard_memory.png" alt="whiteboard" width="600">
 
 At approximately 10 mins into the lab, the staff members present will bring the class together to go over the board. If you finish the whiteboard and icebreaker before that time, feel free to read the next section.
 
