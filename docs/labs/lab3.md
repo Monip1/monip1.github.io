@@ -123,8 +123,8 @@ The `gdb` directory contains several programs which we will debug with GDB: `ind
 The correct behavior of `index_of_E` is to find the index of the first occurrence of the character `E` in a string `str`. 
 {: .exercise}
 Predict the output for the following strings, "Baby_Alpaca", "CSE29", "Alp" and "Alpacas_Eat". Fill out your whiteboard, leaving some extra space for your later bug fix like so:
-![whiteboard2](../../assets/labs/sp26/l3_whiteboard_alpaca.png)
 
+<img src="../../assets/labs/sp26/l3_whiteboard_alpaca.png" alt="whiteboard_2" width="600">
 
 ## Compiling for GDB
 
