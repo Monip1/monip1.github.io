@@ -244,7 +244,7 @@ Use `next` to execute the program up until, but not actually executing, the call
 Then continue using `next` to run through the loop and figure out why `index_of()` is buggy. Try printing out the relevant variables as you go through each iteration. Once you figure out why `index_of()` isn’t working, write what the problem was along with how you would fix it on your whiteboard.
 
 {: .checkoff }
-Ask a staff member to check your fix for `index_of_E`.
+Ask a staff member to check the fix for `index_of_E` on your whiteboard.
 
 This buggy program demonstrated an example of a logical error. A logical error is one in which the behavior of the program is different than what we expect it to be, without refusing to compile or crashing at runtime. However, before your fix, it was theoretically possible for this program to crash—why do you think it was? Feel free to verify your thoughts with your peers, tutors or TA.
 
