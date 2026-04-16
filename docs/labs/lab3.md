@@ -267,10 +267,10 @@ Here, we can use the `backtrace` command (or the shorter `bt`) to show a **backt
 Since we know that segfaults are caused by illegal memory access, and we know that line 6 in `charshift.c` caused a segfault, we can infer that `ch` probably contains an address that the program can't access legally. Confirm this by running `print ch`. Then, run `print str` to see the address of the beginning of the message. What do you notice between these two addresses, and what does that imply about the loop in `shift_chars`? This should help you pinpoint and fix the bug. Feel free to work with your peers and ask your tutors/TAs for a hint if you're stuck\!
 
 ## Debugging practice
+
 {: .exercise }
 >There are 3 buggy programs in the `gdb` directory with names `buggy*.c`.
 > Use what you have learned in this lab to fix these programs.
-
 
 
 # Identify yourself to ieng6
