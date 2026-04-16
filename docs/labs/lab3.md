@@ -266,6 +266,45 @@ Here, we can use the `backtrace` command (or the shorter `bt`) to show a **backt
 
 Since we know that segfaults are caused by illegal memory access, and we know that line 6 in `charshift.c` caused a segfault, we can infer that `ch` probably contains an address that the program can't access legally. Confirm this by running `print ch`. Then, run `print str` to see the address of the beginning of the message. What do you notice between these two addresses, and what does that imply about the loop in `shift_chars`? This should help you pinpoint and fix the bug. Feel free to work with your peers and ask your tutors/TAs for a hint if you're stuck\!
 
+## Debugging practice
+{: .exercise }
+>There are 3 buggy programs in the `gdb` directory with names `buggy*.c`.
+> Use what you have learned in this lab to fix these programs.
+
+
+
+# Identify yourself to ieng6
+
+With this setup, each time you log in to your `ieng6` account, you have to type the password. This can get a bit tedious. Luckily, there is a cool and interesting way to avoid this while still staying secure using SSH keys. **You should perform the following on the device your frequently ssh into `ieng6` from, not particularly on a lab computer.**
+
+1. Verify that you are **not** logged into `ieng6`. If your prompt does not contain the string `ieng6`, then you're probably not on it.
+2. Run `ssh-keygen -t rsa -b 4096`. This command will generate a pair of SSH keys for you: one public (ends in .pub) and one private.
+   If the program claims that the keys already exist, answer the `Overwrite (y/n)?` prompt with `n` to prevent overwriting your existing keys. Otherwise, keep pressing `<Enter>` until the program shows some text it calls the "randomart image".
+3. Expand the instructions that match your system below:
+
+<details>
+    <summary>
+        <strong>If your prompt ends with $ or % or #, not > (macOS, WSL, Linux)</strong> (Click to show instructions)
+    </summary>
+    Run <code>ssh-copy-id <span class="code-replace-me" contenteditable>username</span>@ieng6.ucsd.edu</code>, and enter your password (one last time). The program should claim that it has installed your key.
+</details>
+<details>
+    <summary>
+        <strong>If your prompt ends with > (Windows)</strong> (Click to show instructions)
+    </summary>
+    <ol>
+        <li>Log into ieng6 with <code>ssh</code> (using your password as usual)</li>
+        <li>Run <code>mkdir -p .ssh</code> in the terminal</li>
+        <li>Log out of your remote account by pressing <kbd>Ctrl</kbd>+<kbd>D</kbd> or typing <code>exit</code>.</li>
+        <li>On your local machine, run the following command:<br />
+           <code>type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <span class="code-replace-me" contenteditable>username</span>@ieng6.ucsd.edu "cat >> .ssh/authorized_keys"</code><br />
+           (Credit to <a href="https://chrisjhart.com/Windows-10-ssh-copy-id/">Christopher Hart</a> for this convenient command. Please note if the above command does not work, copy in your full path to the SSH key)
+        </li>
+    </ol>
+</details>
+
+Try to log onto your remote account again. **You shouldn’t be prompted for a password anymore.** If you are, ask for help and carefully review the steps above with your group.
+
 
 # Part 4: Hacking
 ## 4.1. Background
