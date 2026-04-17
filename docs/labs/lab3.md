@@ -306,8 +306,14 @@ With this setup, each time you log in to your `ieng6` account, you have to type 
 
 Try to log onto your remote account again. **You shouldn’t be prompted for a password anymore.** If you are, ask for help and carefully review the steps above with your group.
 
+# Next steps
 
-# Part 4: Hacking
+If you finish with the lab content above you may any do the following:
+* Continue reading and get a sneak-peak on topics covered in lab 4! 👀
+* Work on PA1
+* Work on HW3
+
+# Lab 3 Preview:: Hacking
 ## 4.1. Background
 
 Imagine that you're a less ethical student than I'm sure you actually are. You
