@@ -12,5 +12,6 @@ As each lab is a mix of information and activities, it can become a lot to look 
 
 | [Lab 1](./lab1) | [Connect to ieng6](./lab1#lets-connect-to-ieng6) | [Intro to terminal and it's commands](./lab1#the-terminal-and-you) | [VIM](./lab1#the-vim-text-editor) | [Compiling and Running C Programs](./lab1#compiling-and-running-your-program) |
 | [Lab 2](./lab2.md) | [The Key to Git from ieng6](./lab2#the-key-to-git) | [Git Gud Bro (Overview of Git)](./lab2#git-gud-bro) | [Undoing changes using git](./lab2#oops-undoing-destructive-changes) |
+| [Lab 3](./lab3.md) | [ W(arn)all ](./lab3#part-1--warnall) | [ GDB commands ](./lab3#compiling-for-gdb) | [ Identify Yourself to ieng6 ](./lab3#identify-yourself-to-ieng6)|
 
 
