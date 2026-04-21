@@ -100,7 +100,7 @@ Our compiler `gcc` is designed to catch possible errors at compile time and warn
 {: .note}
 The order of flags given to `gcc` does not matter. The only space-seperated string where the order matters is if the flag is followed by an argument. `-o` is followed immediately by what the binary file should be named as.
 
-Using [**this repository**](https://classroom.github.com/a/7dYavFbQ) navigagte to the `Wall` directory and fix the programs. All bugs will be reported by compiliing using the `-Wall` flag
+Using [**this repository**](https://classroom.github.com/a/7dYavFbQ) navigate to the `Wall` directory and fix the programs. All bugs will be reported by compiling using the `-Wall` flag
 
 # Part 2: What and why debugging?
 
