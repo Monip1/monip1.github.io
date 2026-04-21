@@ -100,7 +100,7 @@ Our compiler `gcc` is designed to catch possible errors at compile time and warn
 {: .note}
 The order of flags given to `gcc` does not matter. The only space-seperated string where the order matters is if the flag is followed by an argument. `-o` is followed immediately by what the binary file should be named as.
 
-Using [**this repository**](https://classroom.github.com/a/7dYavFbQ) navigate to the `Wall` directory and fix the programs. All bugs will be reported by compiling using the `-Wall` flag
+Using [**this repository**](https://classroom.github.com/a/7dYavFbQ) navigate to the `Wall` directory and fix the programs. All bugs will be reported by compiliing using the `-Wall` flag
 
 # Part 2: What and why debugging?
 
@@ -306,8 +306,14 @@ With this setup, each time you log in to your `ieng6` account, you have to type 
 
 Try to log onto your remote account again. **You shouldn’t be prompted for a password anymore.** If you are, ask for help and carefully review the steps above with your group.
 
+# Next steps
 
-# Part 4: Hacking
+If you finish with the lab content above you may any do the following:
+* Continue reading and get a sneak-peak on topics covered in lab 4! 👀
+* Work on PA1
+* Work on HW3
+
+# Lab 3 Preview:: Hacking
 ## 4.1. Background
 
 Imagine that you're a less ethical student than I'm sure you actually are. You

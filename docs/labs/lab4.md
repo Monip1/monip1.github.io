@@ -2,15 +2,13 @@
 layout: default
 title: Lab 4
 parent: Labs
-nav_order: 4
+nav_order: 5
 permalink: /lab4
 ---
 
 # Lab 4: Finding memory errors with Valgrind
 {: .no_toc}
 In this lab, you'll use Valgrind, a memory error checker, to identify memory management mishaps in programs involving arrays and linked lists. Valgrind is ubiquitous in systems programming workflows, especially for programs written in C and C++. You'll find it valuable for PA 2 and onward, too\!
-
-[Start your lab report →](https://docs.google.com/document/d/1Cbc7UEt2APD3kikD1YCEf3YYy7sEBv51/copy){: .btn .btn-blue }
 
 ## Lab 4 learning objectives
 {: .no_toc}
@@ -37,7 +35,7 @@ Please write the answers of yourself and one of your group members in your lab r
 
 # Help! My program leaks…
 
-Please clone the [GitHub repository](https://github.com/CSE29Spring2025/lab4-valgrind) for this lab's starter code onto your `ieng6` account. It contains code for a few programs that leak memory, and in this lab, we'll use Valgrind to detect these leaks and help fix them.
+Please clone the [GitHub repository](TODO) for this lab's starter code onto `ieng6`. It contains code for a few programs that leak memory, and in this lab, we'll use Valgrind to detect these leaks and help fix them.
 
 Let's start with `leak.c`:
 
@@ -238,6 +236,5 @@ Once you are certain that the function is fixed, put a screenshot of Valgrind's 
 # Next steps: Review Quiz
 As usual, we have a fresh Review Quiz for you this week. It will help you make progress on PA 2\.
 
-[Go to PrairieLearn →](https://us.prairielearn.com/pl/course_instance/180232){: .btn .btn-blue }
 
 
