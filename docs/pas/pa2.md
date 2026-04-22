@@ -147,7 +147,7 @@ Given a week, an event ID, and a new start and end time, this should move
 the matching event to the new time. The new time may be on a different
 day of the week than the event's original day.
 
-{ : .note }
+{: .note }
 It's okay if the event's ID changes after rescheduling! 
 
 `reschedule_event` should return one of three things:
