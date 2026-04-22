@@ -120,16 +120,22 @@ use them as a companion to the function descriptions in the comments of `calenda
 int add_event(week_t *week, time_t start_time, time_t end_time, char *name);
 ```
 
-`add_event` should add an event to the calendar by
-(1) finding the correct day to add the event to,
-and (2) adding the event to the linked list of events
-for that day. If (1) the day is out of the range of the calendar,
-or (2) the event conflicts
-with an existing event,
-then the function should return `-1` to indicate the event's invalid.
+`add_event` should add an event to the calendar with the given start time, end time, and name,
+as long as the event is valid. For example, from our starting diagram, let's say
+we added an event called "Post-Midterm Dance" on Monday from 3:45-3:55 PM.
 
-Otherwise, you should add the event! Remember that the linked list of events for each day should
-be sorted in ascending order.
+There indeed _is_ space for this event, since it doesn't conflict with any existing events.
+So, we should add it to the calendar, and the resulting calendar would look like this:
+
+<iframe height="600" src="https://whimsical.com/embed/after-add-event-8h7YAMEfWMzhCdnMyHwo6d"></iframe>
+
+Notice that we added the event _between_ the two events on Monday -- this helps preserve
+the sorted order of the events on that day.
+
+Okay, one more example. From here, let's say we wanted to add another event:
+an event on Thursday from 5:30-7PM. Should we add the event? No! The event already conflicts
+with the "Sun God Festival" event on Thursday, so we shouldn't add it to the calendar.
+We should _leave the calendar alone_ and return `-1` to indicate that the event couldn't be added.
 
 ### `remove_event`
 
@@ -154,6 +160,16 @@ day of the week than the event's original day.
 {: .note }
 It's okay if the event's ID changes after rescheduling! 
 
+Let's say we wanted to reschedule the "Post-Midterm Dance" event from
+Monday 3:45-3:55 PM to Wednesday from 8-8:10 AM (obviously).
+This is a valid rescheduling, since the new time doesn't conflict with any existing events.
+
+After running `reschedule_event`, the calendar would look like this:
+
+<iframe height="600" src="https://whimsical.com/embed/after-reschedule-event-Sr8YDDxsiBbgw76Bi3aFKB"></iframe>
+
+Notice that the "Post-Midterm Dance" event is now on Wednesday, and that it has a new ID.
+
 `reschedule_event` should return one of three things:
 1. If no event in the week has that ID, return `1`.
 2. If the new time is out of range, or conflicts with another event,
@@ -169,8 +185,10 @@ int search_event(week_t *week, const char *query, event_t *results[]);
 
 Given a week and a query string, this should find every event in the week
 whose name _contains_ the query as a substring, matching **case-insensitively**.
-Write a pointer to each matching event into the provided `results` array,
-and return the number of matches.
+
+For example -- if we searched the above calendar for the query "midterm", we should
+see that `results` has two events in it: the "CSE 29 Midterm" event on Monday, and the
+"Post-Midterm Dance" event on Wednesday.
 
 You may assume that no more than 10 events will match any given query.
 
