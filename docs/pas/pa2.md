@@ -10,7 +10,7 @@ toc: sidebar
 # PA 2: Unix Calendar
 {: .no_toc}
 
-Due date: April 21 23:59 PDT
+Due date: May 5 23:59 PDT
 {: .fs-4 }
 
 [GitHub Classroom Assignment](#){: .btn .btn-blue }
@@ -47,7 +47,7 @@ EdStem are all great places to ask questions and collaborate with your peers. :\
 
 {: .warning}
 You may find this PA difficult until our lecture on Thursday, April 23, which
-covers linked lists in greater detail. You also might find testing our code difficult
+covers linked lists in greater detail. You also might find writing tests difficult
 until you've had further practice with `assert()` statements, which will be introduced
 in Lab 4.
 
@@ -72,8 +72,9 @@ We'll also go over the details of these structs below.
 
 An `event` has a name, a start time, and an end time, just like you'd expect from
 a calendar event. The important thing to note is that in addition to these
-pieces of information, an `event` also has a _pointer_ to the next `event` in the same day.
-You will find this familiar once you've learned about linked lists in lecture!
+pieces of information, an `event` also has (1) an ID and (2)
+ a _pointer_ to the next `event` in the same day.
+You will find (2) familiar once you've learned about linked lists in lecture!
 
 One thing you'll observe is that the days are sorted in ascending order; the early
 events of the day come before the later events.
@@ -92,7 +93,7 @@ with `days[0]` being the earliest day and `days[6]` being the latest.
 
 {: .note }
 Before you start implementing, it's probably worth your time to
-skim the [Unix Time](#unix-time)
+skim the Unix Time
 section in the FAQ for a quick primer on how our calendar represents
 time.
 
@@ -182,10 +183,13 @@ int search_event(week_t *week, const char *query, event_t *results[]);
 
 Given a week and a query string, this should find every event in the week
 whose name _contains_ the query as a substring, matching **case-insensitively**.
+Any matches that are found should be added to the `results` array, and the
+function should return the number of events found.
 
 For example -- if we searched the above calendar for the query "midterm", we should
 see that `results` has two events in it: the "CSE 29 Midterm" event on Monday, and the
-"Post-Midterm Dance" event on Wednesday.
+"Post-Midterm Dance" event on Wednesday. Once we've added both events to `results`,
+we should return `2` to indicate that two events were found.
 
 You may assume that no more than 10 events will match any given query.
 
@@ -291,7 +295,7 @@ ignored.
 ## What's `calendar.h`?
 
 `calendar.h` is a header file that helps tell C how to interpret the code in `calendar.c`.
-You don't have to know all the details of `calendar.h` to get started with this lab;
+You don't have to know all the details of `calendar.h` to get started with this PA;
 the main thing to know is that it contains the definitions of the `week`, `day`, and `event` structs.
 
 ## What's `typedef`?
@@ -330,7 +334,7 @@ if (time_a < time_b) {
 
 {: .important }
 While this PA will show you the big idea behind Unix time, you won't need
-to write C code to parse, format, or interpret Unix time values. In fact, **you
+to write C code to actually parse/format Unix time values. In fact, **you
 should NOT have to use any function declared in `time.h`, including `localtime`,
 `mktime`, or `difftime`.** We have written those parts for you in the
 implementation of `same_date` and `combine_date_time`.
