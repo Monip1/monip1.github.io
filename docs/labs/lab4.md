@@ -18,7 +18,7 @@ In this lab, you'll use Valgrind, a memory error checker, to identify memory man
 * Recognize Valgrind outputs for direct leaks, indirect leaks, use after free, and double free
 * Use Valgrind to guide memory error fixing
 
-![Illustration of 2D arrays and linked lists in memory](/assets/labs/pointers_meme.png)
+![Illustration of 2D arrays and linked lists in memory](../../assets/labs/sp26/l4_pointers_meme.png)
 
 #### Table of contents
 {: .no_toc}
@@ -31,7 +31,7 @@ In this lab, you'll use Valgrind, a memory error checker, to identify memory man
 If you could only eat one meal for the rest of your life, what would it be?
 
 {: .note }
-Please write the answers of yourself and one of your group members in your lab report. No check-off is needed!
+Please write the answers on your whiteboard. No check-off is needed!
 
 # Help! My program leaks…
 
