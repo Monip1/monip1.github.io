@@ -97,6 +97,59 @@ skim the Unix Time
 section in the FAQ for a quick primer on how our calendar represents
 time.
 
+## Program Specification
+
+### Assumptions
+
+Throughout this program, you may make the following _assumptions_ (i.e., you do
+not need to verify them, you do not need to account for situations where
+they are false, and you shouldn't violate them when providing data to your
+program while it's running):
+
+- Every event starts and ends on the same day.
+  - For example, an event that starts on Tuesday at 11pm and ends on Wednesday
+    at 12am is impossible.
+- Every event has a positive duration (in other words, `start_time < end_time`).
+- All `start_time` and `end_time` values are 15-minute aligned. This means:
+  - The only possible minute values are 0, 15, 30, and 45.
+  - The only possible second value is 0.
+- The program will always operate on a machine in the `America/Los_Angeles`
+  timezone. In general, you don't need to worry about timezones.
+- `malloc` always succeeds (i.e., it will never return `NULL`)
+
+More detailed assumptions are listed in the comments next to each
+function in `calendar.h`.
+
+### Invariants
+
+The following _invariants_ should always be true. **You are responsible** for
+ensuring that they are never violated by your code:
+
+- There should be no time conflicts between any pair of events. Adjacent events
+  (e.g., 2-4pm followed by 4-6pm), however, must be allowed.
+  - `calendar.h` specifies what to do when each function detects a conflict.
+- Within each day, the linked list of events should be ordered by their time of
+  occurrence from earliest to latest. Because our calendar prohibits time
+  conflicts, you can achieve this by ordering the events by either `start_time`
+  or `end_time`.
+- Within each day, both the start time and the end time of every event must fall
+  under the same date as the `date` member of the `day` struct.
+  - For example, if a `struct event` named `evt` is in the linked list of events
+    for `calendar->days[2]`, then
+    `same_date(evt.start_time, calendar->days[2].date)` and
+    `same_date(evt.end_time, calendar->days[2].date)` must both be true.
+- Within each day, the `num_events` member of the `day` struct must match the
+  actual number of `event` structs in the linked list attached to the `day` struct.
+
+### Policies
+
+Your solution MUST NOT:
+
+- Add any `#include` statements beyond what we have provided in `calendar.c`
+- Rely on a modification to `calendar.h` or `callib.c`
+  - We recommend that you make these two files read-only to prevent inadvertent
+    edits. Run `chmod a-w calendar.h callib.c` to do so.
+
 ## Functions to implement
 
 In order to complete your calendar, you'll need to implement the following functions inside `calendar.c`:
@@ -106,9 +159,6 @@ In order to complete your calendar, you'll need to implement the following funct
 - `reschedule_event`
 - `search_event`
 - `free_week`
-
-All your code should be written in `calendar.c`. **Do not
-edit `calendar.h`!**
 
 Now, we'll briefly describe what each one of these functions actually do.
 **Note that these descriptions are incomplete; they're meant to be read
@@ -201,6 +251,16 @@ void free_week(week_t *week);
 
 Free every piece of memory your calendar has allocated: every event, every
 event's name, and the `week` itself.
+
+## Interacting with your Calendar
+
+Your program will interact with the user via a TUI (text-based user interface).
+The user is able to enter text in response to interactive prompts to perform all
+available actions on the calendar, including saving it to a file and loading it
+from a file. To reduce your workload and sharpen your focus on linked lists and
+structs, **we have implemented user interaction and file saving/loading
+operations for you**. Your task, then, is to implement all the other calendar
+operations.
 
 ## Testing Your Code
 
@@ -338,6 +398,30 @@ to write C code to actually parse/format Unix time values. In fact, **you
 should NOT have to use any function declared in `time.h`, including `localtime`,
 `mktime`, or `difftime`.** We have written those parts for you in the
 implementation of `same_date` and `combine_date_time`.
+
+## Why would we use a linked list?
+No one likes linked lists. Lose one pointer and your whole list goes kaput.
+Why not just use an array for this instead? Let's ponder this for a moment.
+
+Let's give each day an array with 10 slots.
+What if you have a particularly successful week of procrastination and
+you end up with 20 events? Or 30? Or 100? Let's just make the array bigger.
+I see your 10 element array and I raise you 20. To grow this array,
+you'd have to allocate more space, then loop through the old array,
+copying each event over to the new, larger array. Finally, to prevent memory leaks,
+you'd have to free the old array.
+
+Now to really prove the point, let's say you have to go watch the Minecraft
+movie with your friends and you find a last minute ticket for the 3:30 showing
+**today**. If you have a lot of events after it, then using an array would
+require you to shift _all of them_ over by one slot and possibly have to copy
+the entire array. That's a lot of work!
+
+Okay now with that point made, I hope you won't come bearing diamond swords
+when I say that linked lists are the way to go for representing calendar events.
+They are much easier to work with when it comes to inserting and deleting
+arbitrary events. You can just change a few pointers and you're done.
+No need to shift everything over!
 
 <style>
   pre.highlight {
