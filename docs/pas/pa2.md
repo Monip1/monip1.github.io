@@ -91,8 +91,9 @@ The calendar itself is represented by a `week`, which wraps up all
 with `days[0]` being the earliest day and `days[6]` being the latest.
 
 {: .note }
-Before you start implementing, take a peek at the [Unix Time](#unix-time)
-section in the Appendix for a quick primer on how our calendar represents
+Before you start implementing, it's probably worth your time to
+skim the [Unix Time](#unix-time)
+section in the FAQ for a quick primer on how our calendar represents
 time.
 
 ## Functions to implement
@@ -270,9 +271,21 @@ like in PA1.
 used by the autograder**. All other files, including `calendar.h`, will be
 ignored.
 
-# Appendix
+# FAQs
 
-## Unix Time
+## What's `calendar.h`?
+
+`calendar.h` is a header file that helps tell C how to interpret the code in `calendar.c`.
+You don't have to know all the details of `calendar.h` to get started with this lab;
+the main thing to know is that it contains the definitions of the `week`, `day`, and `event` structs.
+
+## What's `typedef`?
+
+`typedef` is a C keyword that allows us to create an alias for a type. `calendar.h` uses
+`typedef` so that instead of writing `struct event` or `struct day` everywhere,
+we can write `event_t` and `day_t` instead.
+
+## What's Unix time?
 
 As you're working with the structs, you'll need to be introduced
 to the concept of Unix time.
