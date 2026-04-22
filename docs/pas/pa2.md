@@ -105,6 +105,9 @@ In order to complete your calendar, you'll need to implement the following funct
 - `search_event`
 - `free_week`
 
+All your code should be written in `calendar.c`. **Do not
+edit `calendar.h`!**
+
 Now, we'll briefly describe what each one of these functions actually do.
 **Note that these descriptions are incomplete; they're meant to be read
 as a gentle introduction to the functions, not as a full specification.** You should
@@ -260,8 +263,12 @@ shouldn't exclusively rely on the autograder to test your code!
 ## Submitting Your Code
 
 Once you're done, you can submit your code by pushing it to the GitHub repository,
-like in PA1. Note that the autograder will only see your `calendar.c` file,
-so **please don't edit any other files, such as `calendar.h`!**
+like in PA1.
+
+{: .important }
+**When turning in your work, only `calendar.c` and `credits.txt` will be
+used by the autograder**. All other files, including `calendar.h`, will be
+ignored.
 
 # Appendix
 
@@ -294,10 +301,11 @@ if (time_a < time_b) {
 ```
 
 {: .important }
-Although there's a whole standard library header (`time.h`) for
-converting between `time_t` and human-readable dates, **you should not call
-any function from `time.h` directly in this PA**. We provide two helpers,
-`same_date` and `combine_date_time`, which cover everything you'll need.
+While this PA will show you the big idea behind Unix time, you won't need
+to write C code to parse, format, or interpret Unix time values. In fact, **you
+should NOT have to use any function declared in `time.h`, including `localtime`,
+`mktime`, or `difftime`.** We have written those parts for you in the
+implementation of `same_date` and `combine_date_time`.
 
 <style>
   pre.highlight {
