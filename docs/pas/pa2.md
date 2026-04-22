@@ -254,11 +254,8 @@ encouraged to write more than one — the nuances in each function's
 specification make a single test per function nowhere near enough coverage.
 
 {: .warning }
-If you plan to rely on the autograder to test your code, keep in mind that
-you will only be able to see your program's performance against the public
-test cases. The performance of your code on the hidden test cases will
-remain unavailable until after the deadline. Your own unit tests are what
-will catch the bugs that public tests don't.
+Like with PA1, some of the autograder's tests will be hidden, so you
+shouldn't exclusively rely on the autograder to test your code!
 
 ## Submitting Your Code
 
@@ -270,8 +267,9 @@ so **please don't edit any other files, such as `calendar.h`!**
 
 ## Unix Time
 
-Before we get to the structs, we need to talk about how our calendar represents
-time. In C, a moment in time is represented with the type `time_t`, which is
+As you're working with the structs, you'll need to be introduced
+to the concept of Unix time.
+In C, a moment in time is represented with the type `time_t`, which is
 just an integer. Specifically, `time_t` counts the **number of seconds that
 have elapsed since midnight UTC on January 1, 1970** — a reference point
 called the **Unix epoch**.
@@ -284,20 +282,22 @@ called the **Unix epoch**.
 | May 5, 2025 12:00:00 AM PDT | `1746428400` |
 
 Why represent time as a single integer? Because it makes a lot of time
-operations shockingly simple:
+operations shockingly simple: for example, if you want to see
+if some time `a` is before time `b`, you can just compare the two integers:
 
-- **Is event A before event B?** `a.start_time < b.start_time`
-
-Contrast that with representing time as a struct with year, month, day, hour,
-minute, and second fields — you'd need a lot of arithmetic (and special cases
-for leap years, month lengths, and time zones) to do even simple comparisons.
+```c
+time_t time_a = 1746428400; // May 5, 2025 12:00:00 AM PDT
+time_t time_b = 1746432000; // May 5, 2025 1:00:00 AM PDT
+if (time_a < time_b) {
+    printf("time_a is before time_b!\n");
+}
+```
 
 {: .important }
 Although there's a whole standard library header (`time.h`) for
 converting between `time_t` and human-readable dates, **you should not call
 any function from `time.h` directly in this PA**. We provide two helpers,
 `same_date` and `combine_date_time`, which cover everything you'll need.
-You'll see them in use below.
 
 <style>
   pre.highlight {
