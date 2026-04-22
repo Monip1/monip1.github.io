@@ -114,7 +114,7 @@ Now, we'll briefly describe what each one of these functions actually do.
 as a gentle introduction to the functions, not as a full specification.** You should
 use them as a companion to the function descriptions in the comments of `calendar.c`.
 
-### `add_event`
+### Adding an event
 
 ```c
 int add_event(week_t *week, time_t start_time, time_t end_time, char *name);
@@ -137,7 +137,7 @@ an event on Thursday from 5:30-7PM. Should we add the event? No! The event alrea
 with the "Sun God Festival" event on Thursday, so we shouldn't add it to the calendar.
 We should _leave the calendar alone_ and return `-1` to indicate that the event couldn't be added.
 
-### `remove_event`
+### Removing an event
 
 ```c
 int remove_event(week_t *week, int id);
@@ -147,7 +147,7 @@ Given a week and an event ID, this should remove the matching event from
 the calendar. Return `0` if the event was found and removed, or `-1` if
 no event in the week has that ID.
 
-### `reschedule_event`
+### Rescheduling an event
 
 ```c
 int reschedule_event(week_t *week, int id, time_t start_time, time_t end_time);
@@ -156,9 +156,6 @@ int reschedule_event(week_t *week, int id, time_t start_time, time_t end_time);
 Given a week, an event ID, and a new start and end time, this should move
 the matching event to the new time. The new time may be on a different
 day of the week than the event's original day.
-
-{: .note }
-It's okay if the event's ID changes after rescheduling! 
 
 Let's say we wanted to reschedule the "Post-Midterm Dance" event from
 Monday 3:45-3:55 PM to Wednesday from 8-8:10 AM (obviously).
@@ -177,7 +174,7 @@ Notice that the "Post-Midterm Dance" event is now on Wednesday, and that it has 
    was.)
 3. Otherwise, update the event to the new time and return `0`.
 
-### `search_event`
+### Searching for events
 
 ```c
 int search_event(week_t *week, const char *query, event_t *results[]);
@@ -192,7 +189,7 @@ see that `results` has two events in it: the "CSE 29 Midterm" event on Monday, a
 
 You may assume that no more than 10 events will match any given query.
 
-### `free_week`
+### Freeing the calendar
 
 ```c
 void free_week(week_t *week);
@@ -236,8 +233,8 @@ void test_add_ok() {
 }
 ```
 
-Starting with PA2, we'll use `assert` from `<assert.h>`, which you should be
-familiar with from Lab 4. The same test written with `assert`:
+Starting with PA2, we'll use `assert` from `<assert.h>`, which you will
+become familiar with from Lab 4. The same test written with `assert`:
 
 ```c
 #include <assert.h>
