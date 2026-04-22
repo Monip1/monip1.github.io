@@ -63,7 +63,10 @@ and search for events while avoiding time conflicts between events.
 ## What's the calendar look like?
 
 The calendar is comprised of a series of two important structs: `day`s and `event`s.
-Let's start with `event`s.
+You can get a sense for what each of these structs look like by analyzing the following image:
+<iframe height="600" src="https://whimsical.com/embed/XsiPeoeb16q6KveT4KSanr"></iframe>
+
+We'll also go over the details of these structs below.
 
 ### Events
 
