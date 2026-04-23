@@ -35,9 +35,18 @@ Please write the answers on your whiteboard. No check-off is needed!
 
 ## Warm-up
 
-Draw the memory diagram for the following linked list on your whiteboard. These function calls are similar to your PA, but we have simplified it slightly for this activity.
+Draw the memory diagram for the following linked list on your whiteboard. These function calls are similar to your PA, but we have simplified it for this activity. Show the week, days, and the events of each day.
 ```c
-
+   week_t finals = week_t("June 11th 2026 10am"); //7 days each week
+   add_event(&finals, "June 12th 2026 10am", "June 12th 2026 11am", "Study");
+   add_event(&finals, "June 12th 2026 12pm", "June 12th 2026 2pm", "Taco Bell");
+   add_event(&finals, "June 15th 2026 3pm", "June 15th 2026 6pm", "Larp");
+   remove_event(&finals, "Study");
+   add_event(&finals, "June 15th 2026 7pm", "June 15th 2026 8pm", "Talk to Claude");
+   add_event(&finals, "June 16th 2026 10am", "June 16th 2026 12pm", "Fail Exam");
+   add_event(&finals, "June 16th 2026 1pm", "June 16th 2026 2pm", "Cry");
+   add_event(&finals, "June 15th 2026 1pm", "June 15th 2026 2pm", "Love CSE29");
+   reschedule_event(&finals, "Cry", "June 16th 2026 1pm", "June 16th 2026 5pm");
 ```
 <img src="../../assets/labs/sp26/linked_list.png" alt="whiteboard" width="800">
 
