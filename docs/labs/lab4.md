@@ -33,6 +33,14 @@ If you could only eat one meal for the rest of your life, what would it be?
 {: .note }
 Please write the answers on your whiteboard. No check-off is needed!
 
+## Warm-up
+
+Draw the memory diagram for the following linked list on your whiteboard. These function calls are similar to your PA, but we have simplified it slightly for this activity.
+```c
+
+```
+<img src="../../assets/labs/sp26/linked_list.png" alt="whiteboard" width="800">
+
 # Help! My program leaks…
 
 Please clone the [GitHub repository](TODO) for this lab's starter code onto `ieng6`. It contains code for a few programs that leak memory, and in this lab, we'll use Valgrind to detect these leaks and help fix them.
