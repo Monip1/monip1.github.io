@@ -28,7 +28,9 @@ In this lab, you'll use Valgrind, a memory error checker, to identify memory man
 
 # Icebreaker
 
-If you could only eat one meal for the rest of your life, what would it be?
+If you could choose a superpower to have, what would it be? What would you do with it?
+Who’s your favorite superhero/villain, if you have any?
+
 
 {: .note }
 Please write the answers on your whiteboard. No check-off is needed!
@@ -52,19 +54,25 @@ Draw the memory diagram for the following linked list on your whiteboard. These 
 
 # Help! My program leaks…
 
-Please clone the [GitHub repository](TODO) for this lab's starter code onto `ieng6`. It contains code for a few programs that leak memory, and in this lab, we'll use Valgrind to detect these leaks and help fix them.
+Please clone the [GitHub repository](TODO) for this lab's starter code onto `ieng6` in your `cse29` directory. It contains code for a few programs that leak memory, and in this lab, we'll use Valgrind to detect these leaks and help fix them.
 
 Let's start with `leak.c`:
 
-```
+```bash
 $ gcc leak.c -g -Wall -o leak
 ```
 
 Remember `-g` from last week? This flag instructs GCC to add debugging symbols to the compiled executable. These symbols enable GDB to look up and show your source code during debugging. They also enable Valgrind to show you line numbers in its error backtraces.
 
-Take a moment to review `leak.c` and predict what it should print, then run `./leak`. Although running the program gives no visible errors, the program actually produced some memory leaks as a result of us not properly freeing the allocated memory. The *Valgrind* program allows us to see how much memory is still being used when the program exits, and therefore leaked. Like with GDB, you pass in the program to inspect as an argument to valgrind. We also add the `--leak-check=full` flag to instruct Valgrind to report the locations where leaked memory had been allocated:
+Take a moment to review `leak.c` and predict what it should print, then run `./leak`. Although running the program gives no visible errors, the program actually produced some memory leaks as a result of us not properly freeing the allocated memory. The *Valgrind* program allows us to see how much memory is still being used when the program exits, and therefore leaked. Like with GDB, you pass in the program to inspect as an argument to valgrind. 
 
+```bash
+$ valgrind ./leak
 ```
+
+We see a suggestion from valgrind to add `--leak-check=full` flag to instruct Valgrind to report the locations where leaked memory had been allocated:
+
+```bash
 $ valgrind --leak-check=full ./leak
 ```
 
@@ -72,16 +80,61 @@ Valgrind provides a “heap summary” of how much memory is still being used at
 
 Because we supplied the `--leak-check=full` flag, Valgrind also printed the stack trace at the instant where each chunk of leaked memory was allocated. **You might be inclined to think that the problem lies around the line number it references, but this is usually not the case!** Valgrind is just pointing out where the leaked memory got allocated. You, the programmer, decide where it is supposed to be freed. Sometimes, the appropriate place for a `free` call can be far away from its `malloc` call in your source code.
 
-# Valgrind on Arrays
+## Memory Leaks
 
+Unlike real life (plumbing) leaks, it's okay to leave the (memory) leak in `leak.c` alone for now; we'll come back to it later.
+
+Memory leaks are especially harmful in long-running programs, where the amount of available memory gradually reduces over a long time, thereby also reducing the overall performance of the program or the computer in general.
+
+In `memory_errors.c`, we demonstrate some common situations in which memory errors can occur. Rather than manually writing the compilation command, we've provided a Makefile for you to use. This will be helpful since we have quite a few files to compile in this lab. To compile a program, use the `make` command followed by the name of the file to compile without the `.c` suffix. For example, to compile `memory_errors.c` into the `memory_errors` binary file, use this command:
+```bash
+$ make memory_errors
+```
+
+In order to see more details of the leaked memory, make sure to add the `--leak-check=full` flag.
+
+```
+$ valgrind --leak-check=full ./memory_errors
+```
+With this flag, the Valgrind heap summary will also report the locations where leaked memory had been allocated, since we compiled the program with the `-g` flag.
+
+Let's go over each function in `memory_errors.c` in more detail, and fix each of them:
+- `memory_leak()`: In general, memory leaks occur when we allocate memory and do not free the memory before the program exits. Here, we fix the memory leak by calling `free()` on the pointer returned by `malloc()` which points to the allocated memory.
+- `free_after_set()`: In this case, we lose the pointer to the allocated memory when we set it to `NULL`, therefore calling `free(p)` does not do anything. In general, we consider it good practice to set a freed pointer to `NULL`, but it actually needs to be freed first! We can fix this by making sure to call `free()` on the pointer before setting the pointer to `NULL`, instead of after.
+- `double_free()`: This one isn't actually a memory leak, but it's an error that can occur with improper usage of `free()`, which is why it's here. Calling `free()` on a pointer that has already been freed is considered undefined behavior, meaning that it should not be expected to work properly. This program gives you a really messy memory error when you try to run it. Valgrind will also report an "invalid free" error above the heap summary. In this case, it's apparent why the double free error occurs and how to fix it, but in other cases it may be more obscure.
+- `reuse_freed()`: Also not a memory leak, but a case in which we try to access memory that was already freed. Valgrind reports this error as an "invalid write" above the heap summary. Again, it's good practice to set a freed pointer to `NULL` immediately after it's been freed.
+- `double_malloc()`: This can accidentally occur when you intend to allocate two blocks of memory to be used one after the other with the same pointer, but forget to free the first block. What should be done here to fix this leak?
+
+{: .owntime}
+Once you've implemented the fixes, compile and re-run the program with Valgrind to confirm that there are no longer any memory leaks or errors. It should report that "all heap blocks were freed -- no leaks are possible". Yippee! Although if there are still memory leaks/errors, try again, then yippee.
+
+### Types of Memory Leaks
+
+You might have noticed in the leak summary of Valgrind that there are different types of memory leaks. The distinction between these leaks isn't too important for our purposes, but may help you identify how leaks are happening in a more complex program.
+
+In `leak_types.c`, we demonstrate each of the different types in separate functions. There's no need to fix these leaks; just compile and run Valgrind on the program to see how Valgrind reports different types.
+```
+$ make leak_types
+$ valgrind --leak-check=full ./leak_types
+```
+Notice how the heap summary gives you information on where each memory error occurs. Inspect the source code to see how each type is caused.
+
+- Definitely lost: Besides myself, memory leaks are also considered "definitely lost" when the pointer to the memory becomes inaccessible. This can happen when the pointer is deleted when a function ends and its stack frame is deleted, or when the pointer is set to another value.
+- Indirectly lost: Blocks of memory are considered "indirectly lost" when there exists a pointer in another leaked memory to the block. In this case, the memory pointed to by `pp` (i.e. `*pp`) is definitely lost, and the memory pointed to by `*pp` (i.e. `**pp`) is indirectly lost.
+- Possibly lost: "Possibly lost" memory leaks occur when we have a pointer to some part of the leaked memory, but not to the base of the memory block, likely because the pointer was modified. In this case, we allocate an array of integers, then move the pointer to point to the middle of the array.
+- Still reachable: Memory leaks are "still reachable" when the pointer is not lost when program exits, but the memory is still unfreed. This can occur when a global variable contains a pointer to leaked memory.
+- Suppressed: Users can specify the flag `--suppressions=<filename>` to Valgrind to intentionally ignore leaks that are known to be harmless or unavoidable. If you want to learn how to use this flag, you can check out this [StackOverflow post](https://stackoverflow.com/questions/13692890/suppress-potential-memory-leak-in-valgrind), although in our (at least one old tutor and at least one old TA) experience this flag is seldom used, if at all.
+
+# Valgrind on Arrays
+//TODO confident solid
 Now let’s put what you’ve learned into practice. In the lab repository, `leak.c` and `losing_track.c` have memory leaks. Try to identify and fix the problems in each program. Feel free to work with those around you\!
 
 In `leak.c`, there is a function that performs matrix addition on two 2D arrays. While the functionality may appear correct, a run of valgrind will tell you that memory isn’t freed properly. For reference, here is a diagram of how matrix addition works:
 
-![Matrix addition visualization](/assets/labs/matrix_addition.png)
+![Matrix addition visualization](../../assets/labs/sp26/l4matrix_addition.png)
 
 {: .checkoff }
-Ask a tutor or TA to check your fix for `leak.c` along with Valgrind's output, which should state that "All heap blocks were freed". Put a screenshot of Valgrind's output for `leak.c` into your lab report.
+Maybe a whiteboard here instead??? TODO: Ask a tutor or TA to check your fix for `leak.c` along with Valgrind's output, which should state that "All heap blocks were freed". Put a screenshot of Valgrind's output for `leak.c` into your lab report.
 
 In `losing_track.c`, there is a function that returns the lower-cased version of the [query string](https://en.wikipedia.org/wiki/Query_string) of a url **without modifying the original string**. This is the portion after the question mark in http urls that are often used to specify parameters for a website. We want to return this portion without modifying the original URL. Like previously mentioned, this function appears to work properly, but does not manage memory properly. This error is particularly nasty because this implementation **loses track** of its allocated memory. Let's take a deeper look into what this means. 
 
@@ -132,12 +185,6 @@ The program should write a simple song to `mysong.txt` using file I/O operations
 Put a screenshot of Valgrind's output for `./writesong` into your lab report. No need to have a tutor/TA check it---you should now be able to tell if you've fixed the memory problem on your own! Remember to submit your lab report to [Gradescope](https://www.gradescope.com/courses/942522).
 
 As we have seen, Valgrind is useful for discovering memory bugs in your program. This will be especially useful in PA 2, where you will be graded on proper memory management as you query and sort your linked list and array. Alongside Valgrind, we cannot understate the usefulness of **drawing memory diagrams** in helping you reason about memory management and fix memory issues, especially for linked lists. They make memory management much more intuitive, so embrace them!
-
-# Next steps: Review Quiz
-
-As usual, we have a fresh Review Quiz for you this week. This Review Quiz will help you with parts of PA 2 and prepare you for the midterm next week.
-
-[Go to PrairieLearn →](https://us.prairielearn.com/pl/course_instance/180232){: .btn .btn-blue }
 
 
 # Lab 5: Exposing bugs via automated testing
