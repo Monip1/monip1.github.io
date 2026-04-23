@@ -13,7 +13,7 @@ toc: sidebar
 Due date: May 5 23:59 PDT
 {: .fs-4 }
 
-[GitHub Classroom Assignment](#){: .btn .btn-blue }
+[GitHub Classroom Assignment](https://classroom.github.com/a/V88wy-FY){: .btn .btn-blue }
 
 
 ## Updates
@@ -342,8 +342,8 @@ shouldn't exclusively rely on the autograder to test your code!
 
 ## Submitting Your Code
 
-Once you're done, you can submit your code by pushing it to the GitHub repository,
-like in PA1.
+Once you're done, you can submit your code by (1) pushing your code to the GitHub repository, and (2) uploading it to the corresponding Gradescope
+assignment (coming soon!).
 
 {: .important }
 **When turning in your work, only `calendar.c` and `credits.txt` will be
