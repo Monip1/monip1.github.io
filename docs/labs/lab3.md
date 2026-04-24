@@ -313,7 +313,7 @@ If you finish with the lab content above you may any do the following:
 * Work on PA1
 * Work on HW3
 
-# Lab 3 Preview:: Hacking
+# Lab 4 Preview: Hacking
 ## 4.1. Background
 
 Imagine that you're a less ethical student than I'm sure you actually are. You
