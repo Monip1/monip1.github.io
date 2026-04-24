@@ -52,7 +52,7 @@ Draw the memory diagram for the following linked list on your whiteboard. These 
 ```
 <img src="../../assets/labs/sp26/linked_list.png" alt="whiteboard" width="800">
 
-# Help! My program leaks…
+# Part1: Help! My program leaks…
 
 Please clone the [GitHub repository](TODO) for this lab's starter code onto `ieng6` in your `cse29` directory. It contains code for a few programs that leak memory, and in this lab, we'll use Valgrind to detect these leaks and help fix them.
 
@@ -80,7 +80,7 @@ Valgrind provides a “heap summary” of how much memory is still being used at
 
 Because we supplied the `--leak-check=full` flag, Valgrind also printed the stack trace at the instant where each chunk of leaked memory was allocated. **You might be inclined to think that the problem lies around the line number it references, but this is usually not the case!** Valgrind is just pointing out where the leaked memory got allocated. You, the programmer, decide where it is supposed to be freed. Sometimes, the appropriate place for a `free` call can be far away from its `malloc` call in your source code.
 
-## Memory Leaks
+## Types of Memory Errors
 
 Unlike real life (plumbing) leaks, it's okay to leave the (memory) leak in `leak.c` alone for now; we'll come back to it later.
 
@@ -108,7 +108,7 @@ Let's go over each function in `memory_errors.c` in more detail, and fix each of
 {: .owntime}
 Once you've implemented the fixes, compile and re-run the program with Valgrind to confirm that there are no longer any memory leaks or errors. It should report that "all heap blocks were freed -- no leaks are possible". Yippee! Although if there are still memory leaks/errors, try again, then yippee.
 
-### Types of Memory Leaks
+## Types of Memory Leaks
 
 You might have noticed in the leak summary of Valgrind that there are different types of memory leaks. The distinction between these leaks isn't too important for our purposes, but may help you identify how leaks are happening in a more complex program.
 
@@ -125,7 +125,7 @@ Notice how the heap summary gives you information on where each memory error occ
 - Still reachable: Memory leaks are "still reachable" when the pointer is not lost when program exits, but the memory is still unfreed. This can occur when a global variable contains a pointer to leaked memory.
 - Suppressed: Users can specify the flag `--suppressions=<filename>` to Valgrind to intentionally ignore leaks that are known to be harmless or unavoidable. If you want to learn how to use this flag, you can check out this [StackOverflow post](https://stackoverflow.com/questions/13692890/suppress-potential-memory-leak-in-valgrind), although in our (at least one old tutor and at least one old TA) experience this flag is seldom used, if at all.
 
-# Valgrind on Arrays
+## Valgrind on Arrays
 
 Now let’s put what you’ve learned into practice. In the lab repository, `leak.c` and `losing_track.c` have memory leaks. Try to identify and fix the problems in each program. Feel free to work with those around you\!
 
@@ -151,16 +151,13 @@ However, after we convert the string to lower case, use `ptr` to traverse throug
 >Describe the problem and how you would fix it. Work with your teammates and write this on your whiteboard. 
 >Do leave yourself space to add 2 more similar descriptions and fixes.
 
-<<<<<<< HEAD
 {: .owntime}
 >Given time, you may implement the solution and check your work however implementing your solution is **OPTIONAL**. If you would like to implement your your solution, note that given this is a very involved change, **please** modify the method as much as you like!
 >
 >*HINT: the problem of the current implementation is that in the string we return, we don't keep track of the beginning of the string. How can you change this code so that the string we return has its pointer pointing to the beginning?*
-=======
-Discuss in your groups your interpretation of the problem and solution for `losing_track.c`. 
->>>>>>> 73d77df9046dfd326333985dbe4b2e455f61abde
 
-# Valgrind on Linked Lists
+
+## Valgrind on Linked Lists
 
 As we prepare for PA 2, let's see how Valgrind can help us discover memory problems surrounding linked list implementations. **Compile `list.c` and run it with Valgrind using the same flags from above.** In this case, it should report that 32 bytes of memory have been leaked. Follow the stack trace shown by Valgrind to contextualize yourself with the "story" of the lifetime of this chunk of memory. When did it get allocated? When do you think it should've been freed? How can you fix it?
 
@@ -168,13 +165,8 @@ A common misconception is that we can free memory by redirecting pointers to tha
 
 Once you recompile and re-run with Valgrind, you should see a different error: `Invalid read of size 8`. This time around, Valgrind has a richer story to tell about this chunk of memory. Read the series of backtraces from the bottom line upward to see the events that took place in chronological order along with where they were triggered. Use this story to help understand the nature of the memory problem and figure out how to fix it. You can also pull out GDB if you'd like.
 
-<<<<<<< HEAD
 {: .exercise }
 Once you fix this error, re-compile and re-run the `list` program with Valgrind, and make sure that Valgrind reports no errors and that "no leaks are possible". Add the problem and solution to the whiteboard.
-=======
-
-Once you fix this error, re-compile and re-run the `list` program with Valgrind, and make sure that Valgrind reports no errors and that "no leaks are possible". Put a screenshot of its output into your lab report.
->>>>>>> 73d77df9046dfd326333985dbe4b2e455f61abde
 
 This is an example of "**use after free**", accessing a chunk of memory after you have freed it. The program might still have worked prior to your most recent fix, but because it accessed and relied on data inside a chunk of memory after it was freed, the program was subject to *undefined behavior*—it could crash, corrupt other memory it owns, or do whatever it wants! Thankfully, Valgrind can detect most instances of undefined behavior and help you eliminate it.
 
@@ -182,7 +174,7 @@ This is an example of "**use after free**", accessing a chunk of memory after yo
 
 In addition to `Invalid read of size 8`, where `free_list` attempts to access the `next` member of a freed node, Valgrind also reports `Invalid free() / delete / delete[] / realloc()` arising from the first `free()` call inside `free_list`. Now you know!
 
-# Valgrind and uninitialized values
+## Valgrind and uninitialized values
 
 Another source of undefined behavior is reading from uninitialized memory. Valgrind can detect this, too! **Compile `writesong.c` using the same flags as above, but now, run Valgrind with the following:**
 
@@ -192,25 +184,21 @@ $ valgrind --track-origins=yes ./writesong
 
 The program should write a simple song to `mysong.txt` using file I/O operations you will also encounter in PA 2. However, Valgrind reports several instances of "Conditional jump or move depends on uninitialised value(s)" and "Use of uninitialised value", and because we included the `--track-origins=yes` flag, it shows us where each uninitialized value was declared. The reports seem to repeat, indicating that an uninitialized value was used in a loop. Read the contents of `writesong.c` to figure out the problematic variable and initialize it properly. Verify that Valgrind no longer reports these errors when you run the program.
 
-<<<<<<< HEAD
 {: .exercise }
 You should now be able to tell if you've fixed the memory problem on your own! Add the problem identified and how you fixed it to your whiteboard.
 
 {: .checkoff }
 Make sure to call over a staff member to go over your plan for how to fix the memory leak in `losing_track.c`, `list.c`, and `writesong.c` that are on your whiteboard.
-=======
->>>>>>> 73d77df9046dfd326333985dbe4b2e455f61abde
 
 As we have seen, Valgrind is useful for discovering memory bugs in your program. This will be especially useful in PA 2, where you will be graded on proper memory management as you query and sort your linked list and array. Alongside Valgrind, we cannot understate the usefulness of **drawing memory diagrams** in helping you reason about memory management and fix memory issues, especially for linked lists. They make memory management much more intuitive, so embrace them!
 
 
-# Exposing bugs via automated testing
-{: .no_toc}
+# Part 2: Exposing bugs via automated testing
 
 In this section, you will put your GDB and Valgrind skills into practice by finding and fixing bugs in an aviation-themed linked list program. You'll also learn to write unit tests using assert statements to expose bugs. We hope that our introduction to testing helps you with writing your own tests in PA 2\!
 
 
-# Negative, tester, the pattern is full…
+## Negative, tester, the pattern is full…
 
 You will be testing some bad implementations of some common linked list functions and finding out what’s wrong with them. Some of these implementations have memory leaks, others may be logically incorrect, and some of them just straight-up crash on certain inputs. It’s up to you to use all the tools in your debugging arsenal and all the knowledge you’ve gained to pick out the exact problem(s). **Please clone our [starter repository](https://github.com/CSE29Spring2025/lab5-testing) into your account on ieng6.** Head to the `flights.c` file to take a look at the code you’ll be critiquing.
 
@@ -249,7 +237,7 @@ Let's start with `bad_free_path_1`. Around line 101 in `flights.c`, we have writ
 
 Now that we have seen how an assert works for writing a few test cases and catching bugs, we shall write our own. We have given you 2 broken functions, `bad_remove_element` and `bad_insert_element_at_pos`.
 
-# Bad Remove Element
+## Bad Remove Element
 
 There are 2 problems with `bad_remove_element` in `flights.c`. One will be caught by Valgrind, and the other we will have to find using asserts. Write assert statements to test this function, including one which should fail. Some test cases we usually want to consider when dealing with lists are what happens at the beginning, the end, and somewhere in between. Here's an example test you could write:
 
@@ -262,7 +250,7 @@ There are 2 problems with `bad_remove_element` in `flights.c`. One will be caugh
 Now that we have successfully found in which case the program does not give us the desired behavior, it is easier to pinpoint where in the code there is a problem. For the second problem, keep in mind that for every `malloc` there must also be a `free` and vice versa. Use this to help you fix the function.
 
 
-# Bad Insert Element
+## Bad Insert Element
 
 At this point, you are probably getting bored of the uninspired section names. What we hope you haven’t gotten bored of is writing tests, because that is what you will be doing yet again.
 
