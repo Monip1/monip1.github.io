@@ -363,8 +363,8 @@ void call_all_test_functions() {
 }
 ```
 
-`call_all_test_functions` is called from `calendar.c`'s `main()`, so all your
-tests will run when you run the program.
+`call_all_test_functions` is called from `callib.c`'s `main()`, so when you
+run the program, all your unit tests will run first.
 
 {: .note }
 Because a failing `assert` aborts the program, any tests you'd normally run
