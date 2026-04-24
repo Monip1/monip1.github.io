@@ -126,7 +126,7 @@ Notice how the heap summary gives you information on where each memory error occ
 - Suppressed: Users can specify the flag `--suppressions=<filename>` to Valgrind to intentionally ignore leaks that are known to be harmless or unavoidable. If you want to learn how to use this flag, you can check out this [StackOverflow post](https://stackoverflow.com/questions/13692890/suppress-potential-memory-leak-in-valgrind), although in our (at least one old tutor and at least one old TA) experience this flag is seldom used, if at all.
 
 # Valgrind on Arrays
-//TODO confident solid
+
 Now let’s put what you’ve learned into practice. In the lab repository, `leak.c` and `losing_track.c` have memory leaks. Try to identify and fix the problems in each program. Feel free to work with those around you\!
 
 In `leak.c`, there is a function that performs matrix addition on two 2D arrays. While the functionality may appear correct, a run of valgrind will tell you that memory isn’t freed properly. For reference, here is a diagram of how matrix addition works:
@@ -134,25 +134,27 @@ In `leak.c`, there is a function that performs matrix addition on two 2D arrays.
 ![Matrix addition visualization](../../assets/labs/sp26/l4matrix_addition.png)
 
 {: .checkoff }
-Maybe a whiteboard here instead??? TODO: Ask a tutor or TA to check your fix for `leak.c` along with Valgrind's output, which should state that "All heap blocks were freed". Put a screenshot of Valgrind's output for `leak.c` into your lab report.
+Please check in with your teammates to make sure everyone understands `leak.c` and it's problem and solution. If you have any questions now is a good time to ask a staff member as a group for any clarifications.
 
 In `losing_track.c`, there is a function that returns the lower-cased version of the [query string](https://en.wikipedia.org/wiki/Query_string) of a url **without modifying the original string**. This is the portion after the question mark in http urls that are often used to specify parameters for a website. We want to return this portion without modifying the original URL. Like previously mentioned, this function appears to work properly, but does not manage memory properly. This error is particularly nasty because this implementation **loses track** of its allocated memory. Let's take a deeper look into what this means. 
 
 When we first initialize `query`, we point to the beginning of the string, and therefore have access to our whole chunk of memory. Our memory looks like this:
 
-![image](/assets/labs/image1.png)
+![image](../../assets/labs/sp26/l4_query.png)
 
 
 However, after we convert the string to lower case, use `ptr` to traverse through the string, and return `ptr`, we no longer have access to the beginning of the string, and therefore can't free the chunk of memory!
 
-![image](/assets/labs/image.png)
+![image](../../assets/labs/sp26/l4_query2.png)
 
-Describe the problem and how you would fix it. Please feel free to work with your teammates together on this. Given time, you may implement the solution and check your work however implementing your solution is **OPTIONAL**. If you would like to implement your your solution, note that given this is a very involved change, **please** modify the method as much as you like!
+{: .exercise}
+>Describe the problem and how you would fix it. Work with your teammates and write this on your whiteboard. 
+>Do leave yourself space to add 2 more similar descriptions and fixes.
 
-*HINT: the problem of the current implementation is that in the string we return, we don't keep track of the beginning of the string. How can you change this code so that the string we return has its pointer pointing to the beginning?*
-
-{: .checkoff }
-Ask a tutor or TA to check your interpretation of the problem and solution for `losing_track.c`. Write your description of the problem and solution for `losing_track.c` in your lab report.
+{: .owntime}
+>Given time, you may implement the solution and check your work however implementing your solution is **OPTIONAL**. If you would like to implement your your solution, note that given this is a very involved change, **please** modify the method as much as you like!
+>
+>*HINT: the problem of the current implementation is that in the string we return, we don't keep track of the beginning of the string. How can you change this code so that the string we return has its pointer pointing to the beginning?*
 
 # Valgrind on Linked Lists
 
@@ -162,8 +164,8 @@ A common misconception is that we can free memory by redirecting pointers to tha
 
 Once you recompile and re-run with Valgrind, you should see a different error: `Invalid read of size 8`. This time around, Valgrind has a richer story to tell about this chunk of memory. Read the series of backtraces from the bottom line upward to see the events that took place in chronological order along with where they were triggered. Use this story to help understand the nature of the memory problem and figure out how to fix it. You can also pull out GDB if you'd like.
 
-{: .checkoff }
-Once you fix this error, ask a tutor or TA to check your fix. Then, re-compile and re-run the `list` program with Valgrind, and make sure that Valgrind reports no errors and that "no leaks are possible". Put a screenshot of its output into your lab report.
+{: .exercise }
+Once you fix this error, re-compile and re-run the `list` program with Valgrind, and make sure that Valgrind reports no errors and that "no leaks are possible". Add the problem and solution to the whiteboard.
 
 This is an example of "**use after free**", accessing a chunk of memory after you have freed it. The program might still have worked prior to your most recent fix, but because it accessed and relied on data inside a chunk of memory after it was freed, the program was subject to *undefined behavior*—it could crash, corrupt other memory it owns, or do whatever it wants! Thankfully, Valgrind can detect most instances of undefined behavior and help you eliminate it.
 
@@ -181,8 +183,11 @@ $ valgrind --track-origins=yes ./writesong
 
 The program should write a simple song to `mysong.txt` using file I/O operations you will also encounter in PA 2. However, Valgrind reports several instances of "Conditional jump or move depends on uninitialised value(s)" and "Use of uninitialised value", and because we included the `--track-origins=yes` flag, it shows us where each uninitialized value was declared. The reports seem to repeat, indicating that an uninitialized value was used in a loop. Read the contents of `writesong.c` to figure out the problematic variable and initialize it properly. Verify that Valgrind no longer reports these errors when you run the program.
 
-{: .important }
-Put a screenshot of Valgrind's output for `./writesong` into your lab report. No need to have a tutor/TA check it---you should now be able to tell if you've fixed the memory problem on your own! Remember to submit your lab report to [Gradescope](https://www.gradescope.com/courses/942522).
+{: .exercise }
+You should now be able to tell if you've fixed the memory problem on your own! Add the problem identified and how you fixed it to your whiteboard.
+
+{: .checkoff }
+Make sure to call over a staff member to go over your plan for how to fix the memory leak in `losing_track.c`, `list.c`, and `writesong.c` that are on your whiteboard.
 
 As we have seen, Valgrind is useful for discovering memory bugs in your program. This will be especially useful in PA 2, where you will be graded on proper memory management as you query and sort your linked list and array. Alongside Valgrind, we cannot understate the usefulness of **drawing memory diagrams** in helping you reason about memory management and fix memory issues, especially for linked lists. They make memory management much more intuitive, so embrace them!
 
