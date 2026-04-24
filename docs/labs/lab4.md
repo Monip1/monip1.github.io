@@ -151,8 +151,7 @@ Describe the problem and how you would fix it. Please feel free to work with you
 
 *HINT: the problem of the current implementation is that in the string we return, we don't keep track of the beginning of the string. How can you change this code so that the string we return has its pointer pointing to the beginning?*
 
-{: .checkoff }
-Ask a tutor or TA to check your interpretation of the problem and solution for `losing_track.c`. Write your description of the problem and solution for `losing_track.c` in your lab report.
+Discuss in your groups your interpretation of the problem and solution for `losing_track.c`. 
 
 # Valgrind on Linked Lists
 
@@ -162,8 +161,8 @@ A common misconception is that we can free memory by redirecting pointers to tha
 
 Once you recompile and re-run with Valgrind, you should see a different error: `Invalid read of size 8`. This time around, Valgrind has a richer story to tell about this chunk of memory. Read the series of backtraces from the bottom line upward to see the events that took place in chronological order along with where they were triggered. Use this story to help understand the nature of the memory problem and figure out how to fix it. You can also pull out GDB if you'd like.
 
-{: .checkoff }
-Once you fix this error, ask a tutor or TA to check your fix. Then, re-compile and re-run the `list` program with Valgrind, and make sure that Valgrind reports no errors and that "no leaks are possible". Put a screenshot of its output into your lab report.
+
+Once you fix this error, re-compile and re-run the `list` program with Valgrind, and make sure that Valgrind reports no errors and that "no leaks are possible". Put a screenshot of its output into your lab report.
 
 This is an example of "**use after free**", accessing a chunk of memory after you have freed it. The program might still have worked prior to your most recent fix, but because it accessed and relied on data inside a chunk of memory after it was freed, the program was subject to *undefined behavior*—it could crash, corrupt other memory it owns, or do whatever it wants! Thankfully, Valgrind can detect most instances of undefined behavior and help you eliminate it.
 
@@ -181,46 +180,15 @@ $ valgrind --track-origins=yes ./writesong
 
 The program should write a simple song to `mysong.txt` using file I/O operations you will also encounter in PA 2. However, Valgrind reports several instances of "Conditional jump or move depends on uninitialised value(s)" and "Use of uninitialised value", and because we included the `--track-origins=yes` flag, it shows us where each uninitialized value was declared. The reports seem to repeat, indicating that an uninitialized value was used in a loop. Read the contents of `writesong.c` to figure out the problematic variable and initialize it properly. Verify that Valgrind no longer reports these errors when you run the program.
 
-{: .important }
-Put a screenshot of Valgrind's output for `./writesong` into your lab report. No need to have a tutor/TA check it---you should now be able to tell if you've fixed the memory problem on your own! Remember to submit your lab report to [Gradescope](https://www.gradescope.com/courses/942522).
 
 As we have seen, Valgrind is useful for discovering memory bugs in your program. This will be especially useful in PA 2, where you will be graded on proper memory management as you query and sort your linked list and array. Alongside Valgrind, we cannot understate the usefulness of **drawing memory diagrams** in helping you reason about memory management and fix memory issues, especially for linked lists. They make memory management much more intuitive, so embrace them!
 
 
-# Lab 5: Exposing bugs via automated testing
+# Exposing bugs via automated testing
 {: .no_toc}
 
-{: .note }
-Starting with Lab 4, we will release staff solutions for each lab after 7 days. You may find our solutions to Lab 4 in our [solutions repository](https://github.com/CSE29Spring2025/lab4-solutions). We will also start to release the [make-up questions](https://docs.google.com/document/d/16aUlbzs8LCp3ki1XYv4DGY5I9gNnLYPNbMExjGHV0Fs) for each lab after the deadline. For now, let's focus on lab 5.
+In this section, you will put your GDB and Valgrind skills into practice by finding and fixing bugs in an aviation-themed linked list program. You'll also learn to write unit tests using assert statements to expose bugs. We hope that our introduction to testing helps you with writing your own tests in PA 2\!
 
-In this lab, you will put your GDB and Valgrind skills into practice by finding and fixing bugs in an aviation-themed linked list program. You'll also learn to write unit tests using assert statements to expose bugs. We hope that our introduction to testing encourages you to write your own tests in PA 2\!
-
-This lab is relatively open-ended and involved. There is no need to rush during lab time as you have until Thursday at 11:59 PM to submit your final lab report.
-
-[Start your lab report →](https://docs.google.com/document/d/1zYzacLiQLAy2tXvmGfVSsfcyMzVrLh3_/copy){: .btn .btn-blue }
-
-## Lab 5 learning objectives
-{: .no_toc}
-
-* Recognize the value of automated tests in software development
-* Write automated tests using `assert` statements
-* Use Valgrind and GDB to troubleshoot bugs exposed by failing tests
-
-#### Table of contents
-{: .no_toc}
-
-1. TOC
-{:toc }
-
-# Icebreaker
-
-With the people around you, discuss:
-
-* If you could choose a superpower to have, what would it be? What would you do with it?
-* Who’s your favorite superhero/villain, if you have any?
-
-{: .note }
-Please write the answers of yourself and one of your group members in your lab report. No check-off is needed\!
 
 # Negative, tester, the pattern is full…
 
@@ -245,8 +213,7 @@ Let's start with `bad_free_path_1`. Around line 101 in `flights.c`, we have writ
 
 **💡 Drawing diagrams is very useful for wrapping your head around linked lists. If you're stuck, draw a diagram! There's a reason why almost every staff member relies on a drawing of nodes and connections when explaining linked list operations.**
 
-{: .checkoff }
-Ask a tutor or TA to check your fix for `bad_free_path_1`, and put a screenshot of the fixed code into your lab report.
+
 
 {: .owntime }
 > **Test-First Development**
@@ -271,14 +238,9 @@ There are 2 problems with `bad_remove_element` in `flights.c`. One will be caugh
 3. Assert that the first item of the list is now SFO
 4. Assert that the second item of the list is now PDX
 
-{: .checkoff }
-After finishing your tests, put a screenshot of your failing test code for `bad_remove_element` into your lab report. Ask a tutor or TA to check your test code to ensure that your tests are valid.
 
 Now that we have successfully found in which case the program does not give us the desired behavior, it is easier to pinpoint where in the code there is a problem. For the second problem, keep in mind that for every `malloc` there must also be a `free` and vice versa. Use this to help you fix the function.
 
-{: .note }
-Once you are certain that the function is fixed, put a screenshot of Valgrind's output for `./flights` into your lab report.
-**No need to have a tutor or TA check this one---you should already know how to check it!**
 
 # Bad Insert Element
 
@@ -288,17 +250,9 @@ The `bad_insert_element_at_pos` function takes in a `path`, the name of a new ai
 
 Use these examples to help you write tests that expose the bugs in `bad_insert_element_at_pos`.
 
-{: .checkoff }
-After finishing your tests, put a screenshot of your failing test code for `bad_insert_element_at_pos` into your lab report. Ask a tutor or TA to check your test code to ensure that your tests are valid.
 
 After finding the bug, now you should be able to debug the code and implement a working solution.
 
-{: .note }
-Once you are certain that the function is fixed, put a screenshot of Valgrind's output for `./flights` into your lab report.
-**No need to have a tutor or TA check this one---you should already know how to check it!**
-
-# Next steps: Review Quiz
-As usual, we have a fresh Review Quiz for you this week. It will help you make progress on PA 2\.
 
 
 
