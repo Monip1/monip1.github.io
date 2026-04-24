@@ -52,6 +52,12 @@ Draw the memory diagram for the following linked list on your whiteboard. These 
 ```
 <img src="../../assets/labs/sp26/linked_list.png" alt="whiteboard" width="800">
 
+{: .quality}
+> Before you get right into memory leaks and how to fix them, we have a quality of life improvement.
+> Recall that in lab2 you made a pair of ssh keys to allow you to securely access github from your ieng6 account.
+> There is another pair of keys we can make which give you the power to never have to type your password when signing into ieng6 again.
+> The tutorial for this resides in the last lab: [here](./lab3#identify-yourself-to-ieng6).
+
 # Part 1: Help! My program leaks…
 
 Please clone the [GitHub repository](https://github.com/CSE29Spring2026/lab4-starter) for this lab's starter code onto `ieng6` in your `cse29` directory. It contains code for a few programs that leak memory, and in this lab, we'll use Valgrind to detect these leaks and help fix them. In this repository you will find a `Valgrind` directory, start here.
