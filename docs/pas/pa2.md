@@ -316,8 +316,7 @@ for free: if the assertion fails, `assert` prints a diagnostic message
 (with the failing expression, function name, and line number) and aborts
 the program. If it passes, nothing happens.
 
-We have provided a root-level function within `calendar.c` named `call_all_tests()`, which is called from `main()` in `callib.c`. You should call your unit test functions within `call_all_tests()`, i.e., you should
-have something similar to:
+We have provided a function within `calendar.c` named `call_all_tests()`, which is called from `main()` in `callib.c`. You should call your unit test functions within `call_all_tests()`, i.e., you should have something similar to:
 
 ```c
 void call_all_tests() {
@@ -333,7 +332,7 @@ Because a failing `assert` aborts the program, any tests you'd normally run
 after it won't run. If multiple tests in your `call_all_tests()` are failing, you'll only see the first one at a time. Fix the first failure, re-run, and continue from there.
 
 As with PA1, **you should write at least one unit test for each function you
-implement**, and call your test functions from `call_all_tests()` (not `main()`, as you should not be editing `callib.c`!). You are strongly encouraged to write more than one — the nuances in each function's specification make a single test per function nowhere near enough coverage.
+implement**, and call your test functions from `call_all_tests()` (not `main()`, as you should not be editing `callib.c`). You are strongly encouraged to write more than one — the nuances in each function's specification make a single test per function nowhere near enough coverage.
 
 ### Finding Memory Errors
 
