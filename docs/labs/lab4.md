@@ -52,9 +52,9 @@ Draw the memory diagram for the following linked list on your whiteboard. These 
 ```
 <img src="../../assets/labs/sp26/linked_list.png" alt="whiteboard" width="800">
 
-# Part1: Help! My program leaks…
+# Part 1: Help! My program leaks…
 
-Please clone the [GitHub repository](TODO) for this lab's starter code onto `ieng6` in your `cse29` directory. It contains code for a few programs that leak memory, and in this lab, we'll use Valgrind to detect these leaks and help fix them.
+Please clone the [GitHub repository](https://github.com/CSE29Spring2026/lab4-starter) for this lab's starter code onto `ieng6` in your `cse29` directory. It contains code for a few programs that leak memory, and in this lab, we'll use Valgrind to detect these leaks and help fix them. In this repository you will find a `Valgrind` directory, start here.
 
 Let's start with `leak.c`:
 
@@ -93,7 +93,7 @@ $ make memory_errors
 
 In order to see more details of the leaked memory, make sure to add the `--leak-check=full` flag.
 
-```
+```bash
 $ valgrind --leak-check=full ./memory_errors
 ```
 With this flag, the Valgrind heap summary will also report the locations where leaked memory had been allocated, since we compiled the program with the `-g` flag.
@@ -113,7 +113,7 @@ Once you've implemented the fixes, compile and re-run the program with Valgrind 
 You might have noticed in the leak summary of Valgrind that there are different types of memory leaks. The distinction between these leaks isn't too important for our purposes, but may help you identify how leaks are happening in a more complex program.
 
 In `leak_types.c`, we demonstrate each of the different types in separate functions. There's no need to fix these leaks; just compile and run Valgrind on the program to see how Valgrind reports different types.
-```
+```bash
 $ make leak_types
 $ valgrind --leak-check=full ./leak_types
 ```
@@ -200,7 +200,7 @@ In this section, you will put your GDB and Valgrind skills into practice by find
 
 ## Negative, tester, the pattern is full…
 
-You will be testing some bad implementations of some common linked list functions and finding out what’s wrong with them. Some of these implementations have memory leaks, others may be logically incorrect, and some of them just straight-up crash on certain inputs. It’s up to you to use all the tools in your debugging arsenal and all the knowledge you’ve gained to pick out the exact problem(s). **Please clone our [starter repository](https://github.com/CSE29Spring2025/lab5-testing) into your account on ieng6.** Head to the `flights.c` file to take a look at the code you’ll be critiquing.
+You will be testing some bad implementations of some common linked list functions and finding out what’s wrong with them. Some of these implementations have memory leaks, others may be logically incorrect, and some of them just straight-up crash on certain inputs. It’s up to you to use all the tools in your debugging arsenal and all the knowledge you’ve gained to pick out the exact problem(s). Head to the `Testing` directory which is adjacent to `Valgrind`. Check out the `flights.c` file to take a look at the code you’ll be critiquing.
 
 We will stick to the following step-by-step process to remove defects from this file:
 
