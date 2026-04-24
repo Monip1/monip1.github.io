@@ -371,10 +371,10 @@ run the program, all your unit tests will run first.
 
 {: .note }
 Because a failing `assert` aborts the program, any tests you'd normally run
-after it won't run. If multiple tests in your `call_all_tests()` are failing, you'll only see the first one at a time. Fix the first failure, re-run, and continue from there.
+after it won't run. If multiple tests in your `call_all_test_functions()` are failing, you'll only see the first one at a time. Fix the first failure, re-run, and continue from there.
 
 As with PA1, **you should write at least one unit test for each function you
-implement**, and call your test functions from `call_all_tests()` (not `main()`, as you should not be editing `callib.c`). You are strongly encouraged to write more than one — the nuances in each function's specification make a single test per function nowhere near enough coverage.
+implement**, and call your test functions from `call_all_test_functions()` (not `main()`, as you should not be editing `callib.c`). You are strongly encouraged to write more than one — the nuances in each function's specification make a single test per function nowhere near enough coverage.
 
 ### Finding Memory Errors
 
