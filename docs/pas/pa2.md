@@ -18,8 +18,7 @@ Due date: May 5 23:59 PDT
 
 ## Updates
 {: .no_toc }
-
-- Nothing yet!
+- Apr 24: Updated section on testing/compiling to reflect `call_all_test_functions()`.
 
 #### Table of contents
 {: .no_toc}
@@ -262,6 +261,47 @@ structs, **we have implemented user interaction and file saving/loading
 operations for you**. Your task, then, is to implement all the other calendar
 operations.
 
+In order to compile your code, you'll need to run the following command,
+which *links* your code with the code we've provided for you in `callib.c`:
+
+```bash
+gcc -Wall calendar.c callib.c -o calendar
+```
+
+After running the compilation command above, you can run the compiled program
+and type commands that cause each of your functions to be called. When it
+begins, it will attempt to list all the `.unical` files in the current directory
+and ask you to enter the path to a `.unical` file to pre-load events from. To
+pre-load a sample calendar from `samples/`, type something like
+`samples/course.unical`. To start with an empty calendar, just press Enter.
+
+The program will display the prompt `unical >` and accept commands from
+you in a loop, much like your terminal shell. Use the command `?` to list all
+the available commands. Each command is identified by a single letter, like `w`
+for writing the calendar in memory to a `.unical` file. After calling your
+functions, you can use `p` (for print) or `l` (for list) to display the entire
+calendar for verification.
+
+{: .note }
+
+> The `p` command displays the calendar in a graphical format where each line
+> represents an instant, not a time interval. As such, each event occupies both
+> the line for its start time _and_ the line for its end time. For example, an
+> event from 11:00 to 12:00 looks like:
+>
+> ```
+> 11:00 || 001 Work on PA |
+> 11:15 || 001 Work on PA |
+> 11:30 || 001 Work on PA |
+> 11:45 || 001 Work on PA |
+> 12:00 || 001 Work on PA |
+> ```
+>
+> Under this scheme, back-to-back events (like 11:00--12:00 followed by
+> 12:00--13:00) overlap at the `12:00` line, where the earlier event takes
+> precedence.
+
+
 ## Testing Your Code
 
 Your solution must be tested comprehensively -- as C programmers,
@@ -313,17 +353,18 @@ for free: if the assertion fails, `assert` prints a diagnostic message
 (with the failing expression, function name, and line number) and aborts
 the program. If it passes, nothing happens.
 
-You should call your unit test functions from `main()`, i.e., you should
+You should call your unit test functions from `call_all_test_functions()`, i.e., you should
 have something similar to:
 
 ```c
-int main(int argc, char *argv[]) {
-    test_add_ok();
-    // ... call other test functions ...
-    // ... and also implement the calendar ...
-    return 0;
+void call_all_test_functions() {
+  test_add_ok();
+  test_other_function_ok();
 }
 ```
+
+`call_all_test_functions` is called from `calendar.c`'s `main()`, so all your
+tests will run when you run the program.
 
 {: .note }
 Because a failing `assert` aborts the program, any tests you'd normally run
