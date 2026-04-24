@@ -8,6 +8,7 @@ toc: sidebar
 ---
 
 # PA 2: Unix Calendar
+
 {: .no_toc}
 
 Due date: May 5 23:59 PDT
@@ -15,27 +16,27 @@ Due date: May 5 23:59 PDT
 
 [GitHub Classroom Assignment](https://classroom.github.com/a/V88wy-FY){: .btn .btn-blue }
 
-
 ## Updates
-{: .no_toc }
 
-- Nothing yet!
+{: .no_toc }
+- Apr 24: Updated section on testing/compiling to reflect `call_all_test_functions()`.
 
 #### Table of contents
+
 {: .no_toc}
 
 1. TOC
-{:toc }
+   {:toc }
 
 ## Learning Goals
 
 In this assignment, we will:
 
-* Practice implementing linked list operations
-* Learn how Unix time simplifies how computers deal with time
-* Organize data structures using C structs
-* Combine structs and linked lists to represent complex, growable data
-* Design helper functions to reduce code duplication and improve readability
+- Practice implementing linked list operations
+- Learn how Unix time simplifies how computers deal with time
+- Organize data structures using C structs
+- Combine structs and linked lists to represent complex, growable data
+- Design helper functions to reduce code duplication and improve readability
 
 ## Getting Help
 
@@ -59,11 +60,11 @@ stores a collection of _calendar events_, each containing a start time, an end t
 and a name. The code that you write will enable the calendar to add, remove, reschedule,
 and search for events while avoiding time conflicts between events.
 
-
 ## What's the calendar look like?
 
 The calendar is comprised of a series of two important structs: `day`s and `event`s.
 You can get a sense for what each of these structs look like by analyzing the following image:
+
 <iframe height="600" src="https://whimsical.com/embed/XsiPeoeb16q6KveT4KSanr"></iframe>
 
 We'll also go over the details of these structs below.
@@ -73,7 +74,7 @@ We'll also go over the details of these structs below.
 An `event` has a name, a start time, and an end time, just like you'd expect from
 a calendar event. The important thing to note is that in addition to these
 pieces of information, an `event` also has (1) an ID and (2)
- a _pointer_ to the next `event` in the same day.
+a _pointer_ to the next `event` in the same day.
 You will find (2) familiar once you've learned about linked lists in lecture!
 
 One thing you'll observe is that the days are sorted in ascending order; the early
@@ -83,7 +84,7 @@ events of the day come before the later events.
 
 `day`s are the building blocks of the calendar. As mentioned above, the calendar is made up of 7 `day`s.
 Each `day` has a date it represents, the number of events that day, and a pointer to a linked list of
-`event`s that occur on that day. 
+`event`s that occur on that day.
 
 ### The Week
 
@@ -219,6 +220,7 @@ After running `reschedule_event`, the calendar would look like this:
 Notice that the "Post-Midterm Dance" event is now on Wednesday, and that it has a new ID.
 
 `reschedule_event` should return one of three things:
+
 1. If no event in the week has that ID, return `1`.
 2. If the new time is out of range, or conflicts with another event,
    return `-1`. (In this case, the original event should be left as it
@@ -261,6 +263,47 @@ from a file. To reduce your workload and sharpen your focus on linked lists and
 structs, **we have implemented user interaction and file saving/loading
 operations for you**. Your task, then, is to implement all the other calendar
 operations.
+
+In order to compile your code, you'll need to run the following command,
+which *links* your code with the code we've provided for you in `callib.c`:
+
+```bash
+gcc -Wall calendar.c callib.c -o calendar
+```
+
+After running the compilation command above, you can run the compiled program
+and type commands that cause each of your functions to be called. When it
+begins, it will attempt to list all the `.unical` files in the current directory
+and ask you to enter the path to a `.unical` file to pre-load events from. To
+pre-load a sample calendar from `samples/`, type something like
+`samples/course.unical`. To start with an empty calendar, just press Enter.
+
+The program will display the prompt `unical >` and accept commands from
+you in a loop, much like your terminal shell. Use the command `?` to list all
+the available commands. Each command is identified by a single letter, like `w`
+for writing the calendar in memory to a `.unical` file. After calling your
+functions, you can use `p` (for print) or `l` (for list) to display the entire
+calendar for verification.
+
+{: .note }
+
+> The `p` command displays the calendar in a graphical format where each line
+> represents an instant, not a time interval. As such, each event occupies both
+> the line for its start time _and_ the line for its end time. For example, an
+> event from 11:00 to 12:00 looks like:
+>
+> ```
+> 11:00 || 001 Work on PA |
+> 11:15 || 001 Work on PA |
+> 11:30 || 001 Work on PA |
+> 11:45 || 001 Work on PA |
+> 12:00 || 001 Work on PA |
+> ```
+>
+> Under this scheme, back-to-back events (like 11:00--12:00 followed by
+> 12:00--13:00) overlap at the `12:00` line, where the earlier event takes
+> precedence.
+
 
 ## Testing Your Code
 
@@ -313,28 +356,29 @@ for free: if the assertion fails, `assert` prints a diagnostic message
 (with the failing expression, function name, and line number) and aborts
 the program. If it passes, nothing happens.
 
-You should call your unit test functions from `main()`, i.e., you should
+You should call your unit test functions from `call_all_test_functions()`, i.e., you should
 have something similar to:
 
 ```c
-int main(int argc, char *argv[]) {
-    test_add_ok();
-    // ... call other test functions ...
-    // ... and also implement the calendar ...
-    return 0;
+void call_all_test_functions() {
+  test_add_ok();
+  test_other_function_ok();
 }
 ```
 
+`call_all_test_functions` is called from `callib.c`'s `main()`, so when you
+run the program, all your unit tests will run first.
+
 {: .note }
 Because a failing `assert` aborts the program, any tests you'd normally run
-after it won't run. If multiple tests in your `main()` are failing, you'll
-only see the first one at a time. Fix the first failure, re-run, and continue
-from there.
+after it won't run. If multiple tests in your `call_all_test_functions()` are failing, you'll only see the first one at a time. Fix the first failure, re-run, and continue from there.
 
 As with PA1, **you should write at least one unit test for each function you
-implement**, and call your test functions from `main()`. You are strongly
-encouraged to write more than one — the nuances in each function's
-specification make a single test per function nowhere near enough coverage.
+implement**, and call your test functions from `call_all_test_functions()` (not `main()`, as you should not be editing `callib.c`). You are strongly encouraged to write more than one — the nuances in each function's specification make a single test per function nowhere near enough coverage.
+
+### Finding Memory Errors
+
+Additionally, your code should run without any memory leaks! To make sure of that, you need to run valgrind on your program. To recall how to run valgrind, refer to [Lab 4](./lab4#part-1-help-my-program-leaks).
 
 {: .warning }
 Like with PA1, some of the autograder's tests will be hidden, so you
@@ -373,12 +417,12 @@ just an integer. Specifically, `time_t` counts the **number of seconds that
 have elapsed since midnight UTC on January 1, 1970** — a reference point
 called the **Unix epoch**.
 
-| Date and time (UTC) | Unix time (`time_t`) |
-|:--------------------|---------------------:|
-| Jan 1, 1970 12:00:00 AM | `0` |
-| Jan 1, 1970 12:01:00 AM | `60` |
-| Jan 2, 1970 12:00:00 AM | `86400` |
-| May 5, 2025 12:00:00 AM PDT | `1746428400` |
+| Date and time (UTC)         | Unix time (`time_t`) |
+| :-------------------------- | -------------------: |
+| Jan 1, 1970 12:00:00 AM     |                  `0` |
+| Jan 1, 1970 12:01:00 AM     |                 `60` |
+| Jan 2, 1970 12:00:00 AM     |              `86400` |
+| May 5, 2025 12:00:00 AM PDT |         `1746428400` |
 
 Why represent time as a single integer? Because it makes a lot of time
 operations shockingly simple: for example, if you want to see
@@ -400,6 +444,7 @@ should NOT have to use any function declared in `time.h`, including `localtime`,
 implementation of `same_date` and `combine_date_time`.
 
 ## Why would we use a linked list?
+
 No one likes linked lists. Lose one pointer and your whole list goes kaput.
 Why not just use an array for this instead? Let's ponder this for a moment.
 
