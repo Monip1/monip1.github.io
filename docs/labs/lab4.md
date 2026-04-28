@@ -275,7 +275,7 @@ If you finish with the lab content above you may any do the following:
 * Work on PA2
 
 
-# Lab 5 Preview:: Hacking
+# Lab 5 Preview: Hacking
 ## 5.1. Background
 
 Imagine that you're a less ethical student than I'm sure you actually are. You

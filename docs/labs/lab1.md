@@ -339,7 +339,7 @@ Using the commands above, fill out the following whiteboard with your group!
 > Each group member should put their answer for each box.  
 A set of example answers have been given 
 
-![whiteboard1]({{ "/assets/labs/sp26/whoami_whiteboard.png" | relative_url }})
+![whiteboard1](../../assets/labs/sp26/whoami_whiteboard.png)
 
 {: .checkoff }
 As a group, call over your tutor/TA to get checked off for your whiteboard.
@@ -359,7 +359,7 @@ the `.` at the end is the path for your *current directory*. This will recursive
 {: .exercise }
 Using commands from above, write down some information you find. Each person should contribute at least one thing they found to the whiteboard resulting in something like this 
 
-![people_whiteboard]({{ "/assets/labs/sp26/people_whiteboard.png" | relative_url }})
+![people_whiteboard](../../assets/labs/sp26/people_whiteboard.png)
 
 
 {: .exercise }
