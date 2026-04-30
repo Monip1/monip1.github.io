@@ -716,8 +716,8 @@ If you would like 2 Pokemon, add the line <code>paste <span contenteditable clas
 
 If you want to do the same thing on your own computer, you can add this same line to your `.bash_profile` or `.bashrc` file. Just make sure to download the referenced `.pk` files using `pokeget.sh` and edit the paths as needed!
 
-# Part 2: Hacking
-## 2.1. Background
+# Hacking
+## Background
 
 Imagine that you're a less ethical student than I'm sure you actually are. You
 overhear from some other students in lab that there's a binary available on the
@@ -726,7 +726,7 @@ release them. You hear quieter whispers that someone found a way to use it to
 _change_ their grade. Given our less-than-ethical assumption about your state
 of mind, you might be tempted to exploit this for yourself.  
 
-## 2.2. The Plot Thickens
+## The Plot Thickens
 
 You see some code open on the professor's laptop during office hours.  You do
 your best to commit it to memory and write it down (remember, you're acting
