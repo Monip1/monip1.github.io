@@ -35,7 +35,7 @@ future labs\! Please write an icebreaker of your own for this lab. One icebreake
 from last quarter was: _What is your favorite letter?_ which I encourage you to also answer.
 
 {: .important }
-Please make sure that everyone in your group answers the icebreaker and writes their name on the whiteboard. We will come around to collect pictures for attendance soon.\!
+Please make sure that everyone in your group answers the icebreaker and writes their name on the whiteboard. We will come around to collect pictures for attendance soon\!
 
 ### Managing SSH Keys
 In this class, we will mostly be using the `ieng6` server. However, in the future you might have access to multiple servers for which you want to create separate SSH keys. To help us keep track of our SSH keys, we can create a configuration file called an SSH config file.
