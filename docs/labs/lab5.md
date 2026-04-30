@@ -10,16 +10,12 @@ permalink: /lab5
 {: .no_toc}
 
 {: .note }
-You may find our solutions to Lab 8 in our [solutions repository](https://github.com/CSE29Spring2025/lab8-solutions). You may also find the [make-up questions](https://docs.google.com/document/d/16aUlbzs8LCp3ki1XYv4DGY5I9gNnLYPNbMExjGHV0Fs/edit?usp=sharing) for each lab after the deadline. For now, let's focus on lab 9.
+You may find our solutions to Lab 4 in our [solutions repository](TODO). For now, let's focus on lab 5.
 
 In this lab, you will organize some nostalgic files using shell scripting, write
-your own `.gitignore`, and send mail messages with Pokemon. Since we decided not
-to add more burden to your Week 10 with another Review Quiz, we don't have a new
-Review Quiz for you today, so you have the entire lab period for this. Have fun!
+your own `.gitignore`, and send mail messages with Pokemon. You have the entire lab period for this. Have fun!
 
-[Start your lab report →](https://docs.google.com/document/d/1EqJ62XvsDDM9QqN_4dNz7M3qkhuvdsGm/copy){: .btn .btn-blue }
-
-## Lab 9 learning objectives
+## Lab 5 learning objectives
 {: .no_toc}
 
 * Understand the utility and overall mechanism of shell scripting
@@ -40,6 +36,90 @@ from last quarter was: _What is your favorite letter?_ which I encourage you to 
 
 {: .important }
 Please write the answers of yourself and one of your group members in your lab report. No check-off is needed\!
+
+### Managing SSH Keys
+In this class, we will mostly be using the `ieng6` server. However, in the future you might have access to multiple servers for which you want to create separate SSH keys. To help us keep track of our SSH keys, we can create a configuration file called an SSH config file.
+
+Exit the `ieng6` server one more time, and create this SSH config file inside your `.ssh` directory that is in your home directory on your computer.
+```
+$ vim ~/.ssh/config
+```
+
+Copy the following lines and paste them into the `config` you just created and opened.
+```
+Host ieng6
+    HostName ieng6.ucsd.edu
+    User <username>
+    IdentityFile ~/.ssh/id_rsa
+```
+Replace `<username>` with your `ieng6` username.  The `IdentityFile` field specifies the filename for the private key created to access the given server.
+
+Now try to login to your `ieng6` account again. This time, you can type the `ssh` command in a shorthand form using the name provided in the `ssh` config file after `Host`, which is `ieng6` in this case.
+```
+$ ssh ieng6
+```
+This configuration file can contain many entries to manage access to multiple sets of `ssh` keys for various servers that you might have access to in the future. And it will save you some typing also. How nice!
+
+## Some More Vim!
+Let's learn about just a few more Vim commands that might be helpful for the labs and programming assignments.
+
+### Moving Up and Down
+You may have noticed that moving up and down line by line in a Vim file can be relatively slow.  Scrolling up and down the file would be faster!
+
+To scroll **d**own in the file, <u>hold</u> the `Ctrl` key and press `d`.
+
+To scroll **u**p in the file, <u>hold</u> the `Ctrl` key and press `u`.
+
+### Custom Configuration
+So far, we have seen that Vim commands can be manually typed in an open Vim window, however this can quickly become repetitive if you commonly want to execute the same commands every time you open a new Vim window.
+
+Alternatively, we can tell Vim to execute a certain set of commands automatically every time we open a Vim window in the future. For example, we can type a command to enable syntax highlighting in Vim, which will add syntax-specific coloring to your code and will vastly improve your experience reading through code in Vim.  Another Vim nicety we might want to enable is adding line numbers to the file. There are many, many different commands and settings that we can enable and configure to create our own personal Vim experience, which will make writing code in Vim much more enjoyable!
+
+We will do this by putting these commands directly into a Vim runtime configuration file, called a `.vimrc` file.
+
+{: .note }
+> The `.` prefix means that it is a hidden file in UNIX, also commonly called a *dotfile*.  This means that these files will not display, by default, when listing the contents of a directory (using the `ls` command).
+
+By convention, you will create the `.vimrc` file in your home directory:  `~/.vimrc`
+
+{: .note }
+> Remember: the tilde character `~` is a shorthand for the current user's (your) home directory in UNIX.
+
+#### Create your .vimrc
+Using Vim, create an empty `.vimrc` file in your home directory on your `ieng6` account:
+```
+$ vim ~/.vimrc
+```
+
+Then copy the following lines into your empty `.vimrc` file, as shown in the code snippet below:
+```
+syntax on
+set number
+set belloff=all
+set showtabline=2   " always show buffer tabs
+set tabstop=4
+set expandtab   " expands tabs to space
+set autoindent
+set smartindent
+inoremap { {<CR>}<Esc>ko
+set backspace=indent,eol,start
+```
+
+The effect of each of these commands is summarized briefly below:
+- `syntax on`: enable syntax highlighting
+- `set number`: display line numbers in Vim
+- `set belloff=all`: disable Vim bell sounds
+- `set showtabline=2`: always show buffer tabs
+- `set tabstop=4`: set tabs to be four spaces
+- `set expandtab`: expands tabs to space
+- `set autoindent`: apply indentation to next line based on current line
+- `set smartindent`: apply indentation with respect to code syntax
+- `inoremap { {<CR>}<Esc>ko`: autocompletion of curly braces for ease of use
+
+{: .warning }
+> In general, you should not paste a command into your `.vimrc` if you are not sure what it is doing. But you can *definitely* trust us! :D
+
+These are our suggestions for `.vimrc` settings that we think would be helpful for you in this class. If you feel like you don't like some of these features, feel free to remove the corresponding lines in the `.vimrc` file. These configuration files are usually customized to each programmer's preferences&mdash;figure out what works well for you!
 
 # What the Shell?
 
@@ -635,3 +715,52 @@ If you would like 1 Pokemon, add the line <code>cat <span contenteditable class=
 If you would like 2 Pokemon, add the line <code>paste <span contenteditable class="code-replace-me">./path/to/pokemon/bigPoke.pk</span> <span contenteditable class="code-replace-me">./path/to/pokemon/smallPoke.pk</span></code> (replace the path with the actual path to your Pokemon file) to the end of the `.bash_profile` file in your home directory. Note that if you paste the smaller Pokemon first, the larger one will be cut in half. You are welcome to try to troubleshoot this.
 
 If you want to do the same thing on your own computer, you can add this same line to your `.bash_profile` or `.bashrc` file. Just make sure to download the referenced `.pk` files using `pokeget.sh` and edit the paths as needed!
+
+# Part 2: Hacking
+## 2.1. Background
+
+Imagine that you're a less ethical student than I'm sure you actually are. You
+overhear from some other students in lab that there's a binary available on the
+pi-cluster that can show you your grades on assignments before we formally
+release them. You hear quieter whispers that someone found a way to use it to
+_change_ their grade. Given our less-than-ethical assumption about your state
+of mind, you might be tempted to exploit this for yourself.  
+
+## 2.2. The Plot Thickens
+
+You see some code open on the professor's laptop during office hours.  You do
+your best to commit it to memory and write it down (remember, you're acting
+quite unethically in this story), because it strikes you that the code was
+something regarding assignment scores.  
+![gradebook source code](../../assets/labs/sp26/gradebook_src.png)
+
+Using this information, you decide to give yourself and A with a score 
+to match while maintaining a real due date.  
+**HINT**
+When important values are adjacent on the stack, overflowing an array with
+values that you control can let you assign into other stack-allocated values.
+
+
+GDB commands that may be useful for this activity:
+
+-   `(gdb) info locals`
+
+-   `(gdb) info args`
+
+-   `(gdb) print VALUE (or p VALUE)` You can print any variable or expression, e.g.
+
+-   `print x`, `p arr[5]`, `p ((x & 0b1111) << 3)`
+
+-   You can also specify a format to print in
+
+-   `print/t` (binary), `print/x` (hex), `print/d` (decimal)
+
+-   `(gdb) x ADDRESS` This prints out memory at an address, e.g. strings / arrays / pointers
+
+-   `(gdb) x/16cb str1` This prints the first 16 bytes of `str1` as characters
+
+-   `(gdb) x/20xb str2` This prints 20 bytes of `str2` in hex
+
+-   `(gdb) x/4dw  arr` This prints 4 "words" (i.e. `int32s`) of `arr`, as decimal numbers
+
+-   You can use the following [reference card](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf) for reference on gdb commands, and format commands for x and print.
