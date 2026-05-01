@@ -45,7 +45,7 @@ you may have wondered what is going on. This is the menu that appears when you t
 * Press `E` to open the last save you made. If you are ok with discarding the changes you made after you last `:w` you can choose this option.
 * Press `R` to recover what is saved in the `.swp` file. If you haven't saved recently or simply would like to recover the changes you had made, choose this. After you choose this, you can type `:w` as normal in vim to save these recovered changes to your file.  
 If you choose the latter option, you will see this menu.  
-<img src="../../assets/labs/sp26/l5_recover.png" alt="whiteboard" width="400">  
+<img src="../../assets/labs/sp26/l5_recover.png" alt="whiteboard" width="600">  
 As per it's suggestion, after you have saved the file and go back to the terminal, you can and should delete the swap file (`rm .hello.c.swp` for example).  
 If you choose the former option, you should also make sure to delete the swap file, for fear of later recovering a now out-of-date file.
 
