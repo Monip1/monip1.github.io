@@ -39,12 +39,13 @@ Please make sure that everyone in your group answers the icebreaker and writes t
 
 ## Swap files
 If you have ever gone to open your file and encountered the following: 
-![swap](../../assets/labs/sp26/l5_swp.png)
+<img src="../../assets/labs/sp26/l5_swp.png" alt="whiteboard" width="800">
 you may have wondered what is going on. This is the menu that appears when you try to open a file but your computer sees that it has an associated swap file. If your terminal crashes for some reason while you are editing it, you computer saves your work in a swap file named as follows: if you had `hello.c` it will create `.hello.c.swp` as the swap file (as seen in the picture above). In this file are the changes that it saved for you as it crashed. Reading through the options we find you can:
 
 * Press `E` to open the last save you made. If you are ok with discarding the changes you made after you last `:w` you can choose this option.
 * Press `R` to recover what is saved in the `.swp` file. If you haven't saved recently or simply would like to recover the changes you had made, choose this. After you choose this, you can type `:w` as normal in vim to save these recovered changes to your file.  
-If you choose the latter option, you will see this menu ![recover](../../assets/labs/sp26/l5_recover.png). As per it's suggestion, after you have saved the file and go back to the terminal, you can and should delete the swap file (`rm .hello.c.swp` for example).  
+If you choose the latter option, you will see this menu. 
+<img src="../../assets/labs/sp26/l5_recover.png" alt="whiteboard" width="800"> As per it's suggestion, after you have saved the file and go back to the terminal, you can and should delete the swap file (`rm .hello.c.swp` for example).  
 If you choose the former option, you should also make sure to delete the swap file, for fear of later recovering a now out-of-date file.
 
 ## Some More Vim!
