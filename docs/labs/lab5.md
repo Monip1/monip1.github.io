@@ -129,7 +129,7 @@ These are our suggestions for `.vimrc` settings that we think would be helpful f
 
 Today, you will use shell scripting to organize a messy file system.
 
-Start by cloning our [starter repo](https://github.com/CSE29Spring2025/lab9-scripting)
+Start by cloning our [starter repo](https://github.com/CSE29Spring2026/lab5-scripting)
 into your ieng6 account, as usual. Next, **change into the `minihome` directory**
 and take a look at its contents. This directory structure should hopefully look
 familiar to you!
@@ -753,9 +753,9 @@ Optional
 
 If you would like your Pokemon to appear when you open ieng6, you may do the following.
 
-If you would like 1 Pokemon, add the line <code>cat <span contenteditable class="code-replace-me">./path/to/pokemon.pk</span></code> (replace the path with the entire path to your Pokemon file, starting with `~`) to the end of the `.bash_profile` file in your home directory.
+If you would like 1 Pokemon, add the line <code>cat <span contenteditable class="code-replace-me">~/path/to/pokemon.pk</span></code> (replace the path with the entire path to your Pokemon file, starting with `~`) to the end of the `.bash_profile` file in your home directory.
 
-If you would like 2 Pokemon, add the line <code>paste <span contenteditable class="code-replace-me">./path/to/pokemon/bigPoke.pk</span> <span contenteditable class="code-replace-me">./path/to/pokemon/smallPoke.pk</span></code> (replace the path with the actual path to your Pokemon file) to the end of the `.bash_profile` file in your home directory. Note that if you paste the smaller Pokemon first, the larger one will be cut in half. You are welcome to try to troubleshoot this.
+If you would like 2 Pokemon, add the line <code>paste <span contenteditable class="code-replace-me">~/path/to/pokemon/bigPoke.pk</span> <span contenteditable class="code-replace-me">~/path/to/pokemon/smallPoke.pk</span></code> (replace the path with the actual path to your Pokemon file) to the end of the `.bash_profile` file in your home directory. Note that if you paste the smaller Pokemon first, the larger one will be cut in half. You are welcome to try to troubleshoot this.
 
 If you want to do the same thing on your own computer, you can add this same line to your `.bash_profile` or `.bashrc` file. Just make sure to download the referenced `.pk` files using `pokeget.sh` and edit the paths as needed!
 
