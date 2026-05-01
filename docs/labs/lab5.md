@@ -39,14 +39,14 @@ Please make sure that everyone in your group answers the icebreaker and writes t
 
 ## Swap files
 If you have ever gone to open your file and encountered the following:  
-<img src="../../assets/labs/sp26/l5_swp.png" alt="whiteboard" width="600">  
+<img src="../../assets/labs/sp26/l5_swp.png" alt="swap" width="600">  
 you may have wondered what is going on. This is the menu that appears when you try to open a file but your computer sees that it has an associated swap file. If your terminal crashes for some reason while you are editing it, you computer saves your work in a swap file named as follows: if you had `hello.c` it will create `.hello.c.swp` as the swap file (as seen in the picture above). In this file are the changes that it saved for you as it crashed. Reading through the options we find you can:
 
 * Press `E` to open the last save you made. If you are ok with discarding the changes you made after you last `:w` you can choose this option.
 * Press `R` to recover what is saved in the `.swp` file. If you haven't saved recently or simply would like to recover the changes you had made, choose this. After you choose this, you can type `:w` as normal in vim to save these recovered changes to your file.  
 
 If you choose the latter option, you will see this menu.  
-<img src="../../assets/labs/sp26/l5_recover.png" alt="whiteboard" width="600">  
+<img src="../../assets/labs/sp26/l5_recover.png" alt="swap_recover" width="600">  
 As per it's suggestion, after you have saved the file and go back to the terminal, you can and should delete the swap file (`rm .hello.c.swp` for example).  
 If you choose the former option, you should also make sure to delete the swap file, for fear of later recovering a now out-of-date file.
 
@@ -107,8 +107,7 @@ The effect of each of these commands is summarized briefly below:
 - `inoremap { {<CR>}<Esc>ko`: autocompletion of curly braces for ease of use
 
 {: .note}
-> If you find yourself ever working with python, you may want to switch `set noexpandtab` to `set expandtab`. Python cannot handle having mixed tabs and spaces and will error with the message `TabError: inconsistent use of tabs and spaces in indentation` if you do. 
-<img src="../../assets/labs/sp26/l5_python.png" alt="python" width="200">  If you have `set noexpandtab` set and edit a python file that uses spaces, this will occur. For our future purposes we need to have real tab characters for when we learn about Makefiles!
+> If you find yourself ever working with python, you may want to switch `set noexpandtab` to `set expandtab`. Python cannot handle having mixed tabs and spaces and will error with the message `TabError: inconsistent use of tabs and spaces in indentation` if you do which appears like this-> <img src="../../assets/labs/sp26/l5_python.png" alt="python" width="250">  If you have `set noexpandtab` set and edit a python file that uses spaces, this will occur. For our future purposes we need to have real tab characters for when we learn about Makefiles!
 
 {: .warning }
 > In general, you should not paste a command into your `.vimrc` if you are not sure what it is doing. But you can *definitely* trust us! :D
@@ -235,7 +234,7 @@ be helpful:
 With these tidbits, you are now ready to write your (possibly) first ever shell script\! **Your first task will be to write a shell script to organize the text and mp3 files in `minihome` into the `Books` and `Music` directories.** Please work on this with your groupmates if you so wish. As a reminder, you can use the `ls -R` command you all discovered back in lab 1 to test if your files ended up in the right place. While testing your script, you may end up accidentally messing up your directory structure. If this happens, we have provided you with a `reset_task_1.sh` script in the **minihome** directory which you can run to reset the .txt and .mp3 files. This will leave your .sh files intact, however, so don’t worry about losing your progress.
 
 {: .checkoff }
-Ask a tutor or TA to check your `task_1.sh` script and run it. The script should organize all the files in the `minihome` directory. No need to write anything in your lab report for this.
+Please write what you did for `task_1.sh` on your whiteboard and check in with your teammates.
 
 Our minihome is now looking a lot cleaner. But maybe we can go further. The length of these books seems a bit varied, no? It would be nice if we were able to sort these books into **short stories** and **novels**. This will be your next task. One requirement for your script is that you should be able to supply an **argument** for the cutoff between a novel and a short story. Before you begin the task, **first change into the `Books` directory**.
 
@@ -489,7 +488,7 @@ Some of the files in our starter repository should not have been tracked. First,
 >   space. Therefore, you don't need to put it in `.gitignore`.
 
 {: .checkoff }
-Ask a tutor or TA to check your `.gitignore` file, and put a screenshot of its contents into your lab report.
+Please write what you added to your `gitignore` on your whiteboard.
 
 # [You've got Mail!](http://www.aolsucks.org/aolsound.htm){:target="_blank"}
 
