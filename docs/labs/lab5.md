@@ -235,7 +235,7 @@ Note that this still works inside double-quoted strings, so `echo "$num $fruit"`
 ## Shell scripting \- accessing command line arguments
 {: .no_toc}
 
-To access the `n`th command line argument, use `$n` in your script. For example, the 1st command line argument would be accessed with `$1`. Note that the 0th command line argument is the name of the command you executed, as was the case in your PA 4\. Here is a demonstration:
+To access the `n`th command line argument, use `$n` in your script. For example, the 1st command line argument would be accessed with `$1`. Note that the 0th command line argument is the name of the command you executed. Here is a demonstration:
 
 ```bash
 # Contents of demo.sh
@@ -248,7 +248,7 @@ $ ./demo.sh 5 apples and more
 5 apples
 ```
 
-Note that a string wrapped in quotes counts as one argument. For example, in: `$ ./demo.sh 4 "PA 4"`  We have `$1` equal to `4` and `$2` equal to `PA 4`.
+Note that a string wrapped in quotes counts as one argument. For example, in: `$ ./demo.sh 2 "PA 2"`  We have `$1` equal to `2` and `$2` equal to `PA 2`.
 
 ## Shell scripting \- if statements
 {: .no_toc}
