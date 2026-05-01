@@ -14,4 +14,4 @@ As each lab is a mix of information and activities, it can become a lot to look 
 | [Lab 2 -- Git ](./lab2.md) | [The Key to Git from ieng6](./lab2#the-key-to-git) | [Git Gud Bro (Overview of Git)](./lab2#git-gud-bro) | [Undoing changes using git](./lab2#oops-undoing-destructive-changes) |
 | [Lab 3 -- GDB and -Wall](./lab3.md) | [ W(arn)all ](./lab3#part-1--warnall) | [ GDB commands ](./lab3#compiling-for-gdb) | [ Identify Yourself to ieng6 ](./lab3#identify-yourself-to-ieng6)|
 | [Lab 4 -- Valgrind and Assert](./lab4.md) | [ Valgrind -- Memory Error Types ](./lab4#types-of-memory-errors) | [ Valgrind -- Leak Types ](./lab4#types-of-memory-leaks) | [ Testing Using Assert ](./lab4#part-2-exposing-bugs-via-automated-testing)|
-
+| [Lab 5 -- Bash Scripting](./lab5.md) | [In a nut-Shell](./lab5#shell-scripting---variables) | [Git Ignore](./lab5#what-should-git-ignore) | [Pokémail](./lab5#youve-got-mail) |

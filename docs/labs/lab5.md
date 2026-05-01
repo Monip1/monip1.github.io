@@ -44,6 +44,9 @@ Exit the `ieng6` server one more time, and create this SSH config file inside yo
 ```
 $ vim ~/.ssh/config
 ```
+{: .note}
+>If on windows you can do `notepad ~/.ssh.config`  
+>It may create the file as `config.txt` and you will need to rename it to `config`
 
 Copy the following lines and paste them into the `config` you just created and opened.
 ```
@@ -98,7 +101,7 @@ set number
 set belloff=all
 set showtabline=2   " always show buffer tabs
 set tabstop=4
-set expandtab   " expands tabs to space
+set noexpandtab   " ensures tabs do not expand to spaces
 set autoindent
 set smartindent
 inoremap { {<CR>}<Esc>ko
@@ -111,11 +114,12 @@ The effect of each of these commands is summarized briefly below:
 - `set belloff=all`: disable Vim bell sounds
 - `set showtabline=2`: always show buffer tabs
 - `set tabstop=4`: set tabs to be four spaces
-- `set expandtab`: expands tabs to space
+- `set noexpandtab`: does not expand tabs to space
 - `set autoindent`: apply indentation to next line based on current line
 - `set smartindent`: apply indentation with respect to code syntax
 - `inoremap { {<CR>}<Esc>ko`: autocompletion of curly braces for ease of use
-
+{: .note}
+> If you find yourself ever working with python, you may want to switch `set noexpandtab` to `set expandtab` as that is what many people use and if you add lines of code that are real tabs and not spaces, it will not run. It will tell you there is a mix of tabs and spaces and that you need to fix it. For our future purposes we need to have real tab characters for when we learn about Makefiles!
 {: .warning }
 > In general, you should not paste a command into your `.vimrc` if you are not sure what it is doing. But you can *definitely* trust us! :D
 
@@ -146,8 +150,7 @@ executable bit.
 A **shell script**, as its name suggests, is a script that runs a series of
 shell commands that accomplishes some tasks. These scripts can get very
 complicated depending on the task being automated, but even simple shell
-scripts can save lots of time. In [PA 4](/pa4), we mentioned that you could
-*write a shell script that runs all the tests in PA 3*, for example.
+scripts can save lots of time. In the coming weeks, you may want to *write a shell script that runs all the tests in PA 3*, for example.
 
 ## Aside: The executable bit
 
@@ -188,6 +191,7 @@ script!
 an instruction in a shell script.
 </div>
 
+* Change into your `minihome` directory.
 * Fill the provided `task_1.sh` file with some commands that you know like `echo`, `ls`, or `pwd`. Each command should be on a new line.
 * To mark the file as executable, run `chmod +x task_1.sh`.
 * Try running `./task_1.sh` in your command line, and you should see the output of each command in the order you added them to the shell script.
@@ -429,9 +433,6 @@ This would store the number of lines in `sample.txt` into `lines` and print it.
 
 With the above knowledge, you can now write a script to sort text files into the `Novels` and `Short_Stories` folder based on their word length **from scratch**. In `task_2.sh`, we have provided you a base script to work off of, with blanks for you to fill. There is also a `reset_task_2.sh` script, should you wish to restart. To test if your script works, 20000 works well as an argument for differentiating between Novels and Short Stories. Good luck, and have fun\!
 
-{: .important }
-Put a screenshot of your shell script for this task in your lab report.
-No checkoff is needed!
 
 Once you have **made sure** that both of your scripts work, we may now proceed to the fun part. First change back to the `minihome` directory, run the `reset_task_3.sh` script to undo the changes from both task 1 and task 2\. Next, run the `task_3.sh` script. This is a pre-written script that will run your tasks 1 and 2 in succession. This means that in **one command**, you can sort all of your files into `Books`, `Novels`, `Short_Stories`, and `Music` folders\!
 
@@ -634,11 +635,61 @@ cat pokemon.pk
 If everything went well, you should get the Pokemon your partner sent you\! Have a bit of fun with this and send each other some cool Pokemon.
 
 {: .checkoff }
-Ask a tutor or TA to check you off for having successfully received and saved a pokemon to a file. Include a screenshot in your lab report. **Remember to submit it to Gradescope\!**
+> Please spend a couple minutes drawing the pokemon you received from your neighbor.
+> You can take turns drawing and reading through the next part.
+
+# Hacking
+## Background
+
+Imagine that you're a less ethical student than I'm sure you actually are. You
+overhear from some other students in lab that there's a binary available on the
+pi-cluster that can show you your grades on assignments before we formally
+release them. You hear quieter whispers that someone found a way to use it to
+_change_ their grade. Given our less-than-ethical assumption about your state
+of mind, you might be tempted to exploit this for yourself.  
+
+## The Plot Thickens
+
+You see some code open on the professor's laptop during office hours.  You do
+your best to commit it to memory and write it down (remember, you're acting
+quite unethically in this story), because it strikes you that the code was
+something regarding assignment scores.  
+![gradebook source code](../../assets/labs/sp26/gradebook_src.png)
+
+Using this information, you decide to give yourself and A with a score 
+to match while maintaining a real due date.  
+**HINT**
+When important values are adjacent on the stack, overflowing an array with
+values that you control can let you assign into other stack-allocated values.
+
+
+GDB commands that may be useful for this activity:
+
+-   `(gdb) info locals`
+
+-   `(gdb) info args`
+
+-   `(gdb) print VALUE (or p VALUE)` You can print any variable or expression, e.g.
+
+-   `print x`, `p arr[5]`, `p ((x & 0b1111) << 3)`
+
+-   You can also specify a format to print in
+
+-   `print/t` (binary), `print/x` (hex), `print/d` (decimal)
+
+-   `(gdb) x ADDRESS` This prints out memory at an address, e.g. strings / arrays / pointers
+
+-   `(gdb) x/16cb str1` This prints the first 16 bytes of `str1` as characters
+
+-   `(gdb) x/20xb str2` This prints 20 bytes of `str2` in hex
+
+-   `(gdb) x/4dw  arr` This prints 4 "words" (i.e. `int32s`) of `arr`, as decimal numbers
+
+-   You can use the following [reference card](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf) for reference on gdb commands, and format commands for x and print.
 
 ## The Finale
 
-Congratulations! You have completed all required parts of cse29 labs. There are now 2 fun optional activities you can complete:
+There are now 2 fun optional activities you can complete:
 
 * Mass mailing, where you send your pokemon to a mailing list of recipients who would be delighted to have your pokemon
 * Pokemon `.bash_profile`, how to add pokemon to print whenever you open your terminal.
@@ -716,51 +767,3 @@ If you would like 2 Pokemon, add the line <code>paste <span contenteditable clas
 
 If you want to do the same thing on your own computer, you can add this same line to your `.bash_profile` or `.bashrc` file. Just make sure to download the referenced `.pk` files using `pokeget.sh` and edit the paths as needed!
 
-# Hacking
-## Background
-
-Imagine that you're a less ethical student than I'm sure you actually are. You
-overhear from some other students in lab that there's a binary available on the
-pi-cluster that can show you your grades on assignments before we formally
-release them. You hear quieter whispers that someone found a way to use it to
-_change_ their grade. Given our less-than-ethical assumption about your state
-of mind, you might be tempted to exploit this for yourself.  
-
-## The Plot Thickens
-
-You see some code open on the professor's laptop during office hours.  You do
-your best to commit it to memory and write it down (remember, you're acting
-quite unethically in this story), because it strikes you that the code was
-something regarding assignment scores.  
-![gradebook source code](../../assets/labs/sp26/gradebook_src.png)
-
-Using this information, you decide to give yourself and A with a score 
-to match while maintaining a real due date.  
-**HINT**
-When important values are adjacent on the stack, overflowing an array with
-values that you control can let you assign into other stack-allocated values.
-
-
-GDB commands that may be useful for this activity:
-
--   `(gdb) info locals`
-
--   `(gdb) info args`
-
--   `(gdb) print VALUE (or p VALUE)` You can print any variable or expression, e.g.
-
--   `print x`, `p arr[5]`, `p ((x & 0b1111) << 3)`
-
--   You can also specify a format to print in
-
--   `print/t` (binary), `print/x` (hex), `print/d` (decimal)
-
--   `(gdb) x ADDRESS` This prints out memory at an address, e.g. strings / arrays / pointers
-
--   `(gdb) x/16cb str1` This prints the first 16 bytes of `str1` as characters
-
--   `(gdb) x/20xb str2` This prints 20 bytes of `str2` in hex
-
--   `(gdb) x/4dw  arr` This prints 4 "words" (i.e. `int32s`) of `arr`, as decimal numbers
-
--   You can use the following [reference card](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf) for reference on gdb commands, and format commands for x and print.
