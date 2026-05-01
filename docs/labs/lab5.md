@@ -181,7 +181,6 @@ script!
 an instruction in a shell script.
 </div>
 
-* Change into your `minihome` directory.
 * Fill the provided `task_1.sh` file with some commands that you know like `echo`, `ls`, or `pwd`. Each command should be on a new line.
 * To mark the file as executable, run `chmod +x task_1.sh`.
 * Try running `./task_1.sh` in your command line, and you should see the output of each command in the order you added them to the shell script.
