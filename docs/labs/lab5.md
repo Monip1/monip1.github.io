@@ -107,7 +107,7 @@ The effect of each of these commands is summarized briefly below:
 - `inoremap { {<CR>}<Esc>ko`: autocompletion of curly braces for ease of use
 
 {: .note}
-> If you find yourself ever working with python, you may want to switch `set noexpandtab` to `set expandtab` as that is what many people use and if you add lines of code that are real tabs and not spaces, it will not run. It will tell you there is a mix of tabs and spaces and that you need to fix it. For our future purposes we need to have real tab characters for when we learn about Makefiles!
+> If you find yourself ever working with python, you may want to switch `set noexpandtab` to `set expandtab`. Python cannot handle having mixed tabs and spaces and will error with the message `TabError: inconsistent use of tabs and spaces in indentation` if you do. If you have `set noexpandtab` set and edit a python file that uses spaces, this will occur. For our future purposes we need to have real tab characters for when we learn about Makefiles!
 
 {: .warning }
 > In general, you should not paste a command into your `.vimrc` if you are not sure what it is doing. But you can *definitely* trust us! :D
