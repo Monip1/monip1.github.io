@@ -37,31 +37,15 @@ from last quarter was: _What is your favorite letter?_ which I encourage you to 
 {: .important }
 Please make sure that everyone in your group answers the icebreaker and writes their name on the whiteboard. We will come around to collect pictures for attendance soon\!
 
-### Managing SSH Keys
-In this class, we will mostly be using the `ieng6` server. However, in the future you might have access to multiple servers for which you want to create separate SSH keys. To help us keep track of our SSH keys, we can create a configuration file called an SSH config file.
+## Swap files
+If you have ever gone to open your file and encountered the following: 
+![swap](../../assets/labs/sp26/l5_swp.png)
+you may have wondered what is going on. This is the menu that appears when you try to open a file but your computer sees that it has an associated swap file. If your terminal crashes for some reason while you are editing it, you computer saves your work in a swap file named as follows: if you had `hello.c` it will create `.hello.c.swp` as the swap file (as seen in the picture above). In this file are the changes that it saved for you as it crashed. Reading through the options we find you can:
 
-Exit the `ieng6` server one more time, and create this SSH config file inside your `.ssh` directory that is in your home directory on your computer.
-```
-$ vim ~/.ssh/config
-```
-{: .note}
->If on windows you can do `notepad ~/.ssh.config`  
->It may create the file as `config.txt` and you will need to rename it to `config`
-
-Copy the following lines and paste them into the `config` you just created and opened.
-```
-Host ieng6
-    HostName ieng6.ucsd.edu
-    User <username>
-    IdentityFile ~/.ssh/id_rsa
-```
-Replace `<username>` with your `ieng6` username.  The `IdentityFile` field specifies the filename for the private key created to access the given server.
-
-Now try to login to your `ieng6` account again. This time, you can type the `ssh` command in a shorthand form using the name provided in the `ssh` config file after `Host`, which is `ieng6` in this case.
-```
-$ ssh ieng6
-```
-This configuration file can contain many entries to manage access to multiple sets of `ssh` keys for various servers that you might have access to in the future. And it will save you some typing also. How nice!
+* Press `E` to open the last save you made. If you are ok with discarding the changes you made after you last `:w` you can choose this option.
+* Press `R` to recover what is saved in the `.swp` file. If you haven't saved recently or simply would like to recover the changes you had made, choose this. After you choose this, you can type `:w` as normal in vim to save these recovered changes to your file.  
+If you choose the latter option, you will see this menu ![recover](../../assets/labs/sp26/l5_recover.png). As per it's suggestion, after you have saved the file and go back to the terminal, you can and should delete the swap file (`rm .hello.c.swp` for example).  
+If you choose the former option, you should also make sure to delete the swap file, for fear of later recovering a now out-of-date file.
 
 ## Some More Vim!
 Let's learn about just a few more Vim commands that might be helpful for the labs and programming assignments.
@@ -640,7 +624,7 @@ If everything went well, you should get the Pokemon your partner sent you\! Have
 > Please spend a couple minutes drawing the pokemon you received from your neighbor.
 > You can take turns drawing and reading through the next part.
 
-# Hacking
+<h1 style="color: #00ff41; background-color: #0d0d0d; font-family: 'Courier New', Courier, monospace; padding: 10px 20px; text-shadow: 0 0 8px #00ff41, 0 0 20px #00ff41; border-radius: 4px; letter-spacing: 4px;">HACKING</h1>   
 ## Background
 
 Imagine that you're a less ethical student than I'm sure you actually are. You

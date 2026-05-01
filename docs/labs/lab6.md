@@ -10,6 +10,35 @@ permalink: /lab6
 
 (clone the GitHub Classroom repo from here: <https://classroom.github.com/a/EM-1PiRu>)
 
+
+### Managing SSH Keys
+In this class, we will mostly be using the `ieng6` server. However, in the future you might have access to multiple servers for which you want to create separate SSH keys. To help us keep track of our SSH keys, we can create a configuration file called an SSH config file.
+
+Exit the `ieng6` server one more time, and create this SSH config file inside your `.ssh` directory that is in your home directory on your computer.
+```
+$ vim ~/.ssh/config
+```
+{: .note}
+>If on windows you can do `notepad ~/.ssh.config`  
+>It may create the file as `config.txt` and you will need to rename it to `config`
+
+Copy the following lines and paste them into the `config` you just created and opened.
+```
+Host ieng6
+    HostName ieng6.ucsd.edu
+    User <username>
+    IdentityFile ~/.ssh/id_rsa
+```
+Replace `<username>` with your `ieng6` username.  The `IdentityFile` field specifies the filename for the private key created to access the given server.
+
+Now try to login to your `ieng6` account again. This time, you can type the `ssh` command in a shorthand form using the name provided in the `ssh` config file after `Host`, which is `ieng6` in this case.
+```
+$ ssh ieng6
+```
+This configuration file can contain many entries to manage access to multiple sets of `ssh` keys for various servers that you might have access to in the future. And it will save you some typing also. How nice!
+
+
+
 # Part 1: Header Guards and Makefiles
 
 ## Header Guards
