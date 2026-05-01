@@ -457,7 +457,7 @@ Some of the files in our starter repository should not have been tracked. First,
 >   space. Therefore, you don't need to put it in `.gitignore`.
 
 {: .checkoff }
-Please write what you added to your `gitignore` on your whiteboard.
+Please write what you added to your `.gitignore` on your whiteboard.
 
 # [You've got Mail!](http://www.aolsucks.org/aolsound.htm){:target="_blank"}
 
