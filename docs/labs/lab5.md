@@ -625,6 +625,11 @@ If everything went well, you should get the Pokemon your partner sent you\! Have
 > You can take turns drawing and reading through the next part.
 
 <h1 style="color: #00ff41; background-color: #0d0d0d; font-family: 'Courier New', Courier, monospace; padding: 10px 20px; text-shadow: 0 0 8px #00ff41, 0 0 20px #00ff41; border-radius: 4px; letter-spacing: 4px;">HACKING</h1>   
+
+#  HACKING
+  {: style="color: #00ff41; background-color: #0d0d0d; font-family: 'Courier New', Courier, monospace; padding: 10px 20px;
+  text-shadow: 0 0 8px #00ff41, 0 0 20px #00ff41; border-radius: 4px; letter-spacing: 4px;"}
+
 ## Background
 
 Imagine that you're a less ethical student than I'm sure you actually are. You
