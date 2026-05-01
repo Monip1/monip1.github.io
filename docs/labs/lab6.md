@@ -1,3 +1,11 @@
+---
+layout: default
+title: Lab 6
+parent: Labs
+nav_order: 7
+permalink: /lab6
+---
+
 # Lab 6 Reference Document
 
 (clone the GitHub Classroom repo from here: <https://classroom.github.com/a/EM-1PiRu>)

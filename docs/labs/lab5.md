@@ -10,7 +10,7 @@ permalink: /lab5
 {: .no_toc}
 
 {: .note }
-You may find our solutions to Lab 4 in our [solutions repository](TODO). For now, let's focus on lab 5.
+You may find our solutions to Lab 3 and Lab 4 in our [solutions repository](https://github.com/CSE29Spring2026/lab-answer-keys). For now, let's focus on lab 5.
 
 In this lab, you will organize some nostalgic files using shell scripting, write
 your own `.gitignore`, and send mail messages with Pokemon. You have the entire lab period for this. Have fun!
