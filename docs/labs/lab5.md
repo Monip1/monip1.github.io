@@ -118,8 +118,10 @@ The effect of each of these commands is summarized briefly below:
 - `set autoindent`: apply indentation to next line based on current line
 - `set smartindent`: apply indentation with respect to code syntax
 - `inoremap { {<CR>}<Esc>ko`: autocompletion of curly braces for ease of use
+
 {: .note}
 > If you find yourself ever working with python, you may want to switch `set noexpandtab` to `set expandtab` as that is what many people use and if you add lines of code that are real tabs and not spaces, it will not run. It will tell you there is a mix of tabs and spaces and that you need to fix it. For our future purposes we need to have real tab characters for when we learn about Makefiles!
+
 {: .warning }
 > In general, you should not paste a command into your `.vimrc` if you are not sure what it is doing. But you can *definitely* trust us! :D
 
