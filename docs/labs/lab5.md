@@ -142,37 +142,6 @@ shell commands that accomplishes some tasks. These scripts can get very
 complicated depending on the task being automated, but even simple shell
 scripts can save lots of time. In the coming weeks, you may want to *write a shell script that runs all the tests in PA 3*, for example.
 
-## Aside: The executable bit
-
-The file permissions scheme used in Unix-style
-systems is designed to protect files from unauthorized access and
-unsafe execution. It prevents you from snooping into other users' files on `ieng6`.
-It also prevents you from executing a file by accident. Under this scheme,
-**three bits** describe the operations that can be performed on every file:
-**Read** (`r`), **Write** (`w`), and **Execute** (`x`). To see the settings for
-these bits for all the files in a directory, **run `ls -l` and focus on the
-second, third, and fourth character in each row**, which
-specify what the *owner* of the file is allowed to do. For example, in
-`-rwxr-x---`, `rwx` means the owner can read, write, and execute the file,
-whereas in `-r--r-----`, `r--` means the owner can read but cannot write to or
-execute the file.
-
-Why does this matter for shell scripting? Well, when you create a script file,
-it starts out with the Execute bit disabled, which means you can't execute the
-file by default. (If you try, you would see `Permission denied`.) To be able to
-execute your script, you need to set the Execute bit by running
-<code>
-    chmod +x
-    <span contenteditable class="code-replace-me">file(s) to mark executable</span></code>. If you'd like, you can verify the outcome of this command
-using `ls -l`. Here's what [our textbook](https://diveintosystems.org/book/Appendix2/chmod.html)
-has to say about the `chmod` command and file permissions in Unix.
-
-{: .note }
-Several students in the past had the misconception that you need to run `chmod
-+x` every time you run the same script. Since a file's permissions are stored
-alongside it, permission changes are stored permanently, and script files don't
-unset their executable bit every time they run. So just set it once for each
-script!
 
 ## Task 0: Run a script
 
@@ -201,7 +170,7 @@ echo "Goodbye!"
 ```
 
 And then, run it. If you see _Permission denied_ and don't know what to do, go
-read the [executable bit](#aside-the-executable-bit) section.
+read the [executable bit](./lab2#aside-the-executable-bit) section from lab 2.
 
 ```
 $ ./task_1.sh
