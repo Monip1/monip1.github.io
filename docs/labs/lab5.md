@@ -601,6 +601,8 @@ If everything went well, you should get the Pokemon your partner sent you\! Have
 #  HACKING 
 {: style="color: #00ff41 !important; background-color: #0d0d0d; font-family: 'Courier New', Courier, monospace; padding: 10px 20px;text-shadow: 0 0 8px #00ff41, 0 0 20px #00ff41; border-radius: 4px; letter-spacing: 4px;"}
 
+This is the same file you may or may not have started in lab 3 and can be found in [**this** github classroom](https://classroom.github.com/a/7dYavFbQ) in the `gradebook` directory.
+
 ## Background
 
 Imagine that you're a less ethical student than I'm sure you actually are. You
