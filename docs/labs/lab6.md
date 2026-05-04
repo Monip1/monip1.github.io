@@ -34,7 +34,6 @@ In this lab, you will fix compiler errors by adding a header guard, learn about 
 
 > What is your dream concert lineup?
 
-<img src="../../assets/labs/sp26/l5_icebreaker.png" alt="icebreaker" width="600">  
 
 {: .important }
 Please make sure that everyone in your group answers the icebreaker and writes their name on the whiteboard. We will come around to collect pictures for attendance soon\!
