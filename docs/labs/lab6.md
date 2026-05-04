@@ -20,7 +20,7 @@ $ vim ~/.ssh/config
 ```
 
 {: .note}
->If on windows you can do `notepad ~/.ssh.config`  
+>If on windows you can do `notepad ~/.ssh/config`  
 >It may create the file as `config.txt` and you will need to rename it to `config`
 
 Copy the following lines and paste them into the `config` you just created and opened.
@@ -62,7 +62,7 @@ Let's illustrate the utility of header guards with a concrete example.
 
 After cloning the Github classroom repository onto `ieng6`, `cd` into `2lab6-headers-and-makefiles`. Then `cd` into `headers` and inspect the contents of the five files inside. These files together represent 3 "modules" with the following dependency graph:
 
-![header_diagram](lab6_header_dep.svg)
+![header_diagram](../../assets/labs/sp26/lab6_header_dep.svg)
 
 When the compiler reads `test.c`, its preprocessor will process `span.h` twice: once through the direct arrow pointing to `span.h` and once through `queries.h`, which also points to `span.h`. As a result, the contents of `span.h` will be "pasted" into the source file twice. Since `span.h` contains a struct *definition* for `struct string_span`, this definition will be repeated twice. Try the following compilation command to see what this causes:
 
