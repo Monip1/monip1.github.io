@@ -18,6 +18,7 @@ Exit the `ieng6` server one more time, and create this SSH config file inside yo
 ```
 $ vim ~/.ssh/config
 ```
+
 {: .note}
 >If on windows you can do `notepad ~/.ssh.config`  
 >It may create the file as `config.txt` and you will need to rename it to `config`
