@@ -6,9 +6,41 @@ nav_order: 7
 permalink: /lab6
 ---
 
-# Lab 6 Reference Document
+# Lab 6: Automating compilation with Makefiles
+{: .no_toc}
 
-(clone the GitHub Classroom repo from here: <https://classroom.github.com/a/EM-1PiRu>)
+{: .note }
+You may find our solutions to Lab 5 in our [solutions repository](https://github.com/CSE29Spring2026/lab-answer-keys). For now, let's focus on lab 6.
+
+In this lab, you will fix compiler errors by adding a header guard, learn about the syntax of Makefiles, write a couple Makefile rules, and do a short exercise with bitwise operations.
+
+
+## Lab 6 learning objectives
+{: .no_toc}
+
+* Recognize the purpose of header files
+* Understand the need for header guards
+* Interpret and understand Makefile syntax
+* Write a simple Makefile rule with dependencies and a recipe
+* Review the behavior of bitwise operations
+
+#### Table of contents
+{: .no_toc}
+
+1. TOC
+{:toc }
+
+# Icebreaker
+
+> What is your dream concert lineup?
+
+<img src="../../assets/labs/sp26/l5_icebreaker.png" alt="icebreaker" width="600">  
+
+{: .important }
+Please make sure that everyone in your group answers the icebreaker and writes their name on the whiteboard. We will come around to collect pictures for attendance soon\!
+
+
+(clone the GitHub Classroom repo from here: <TODOu>)
 
 
 ### Managing SSH Keys
