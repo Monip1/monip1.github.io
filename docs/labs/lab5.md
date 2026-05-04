@@ -34,6 +34,8 @@ This week you have the opportunity to write an icebreaker that may be used in
 future labs\! Please write an icebreaker of your own for this lab. One icebreaker
 from last quarter was: _What is your favorite letter?_ which I encourage you to also answer.
 
+<img src="../../assets/labs/sp26/l5_icebreaker.png" alt="icebreaker" width="600">  
+
 {: .important }
 Please make sure that everyone in your group answers the icebreaker and writes their name on the whiteboard. We will come around to collect pictures for attendance soon\!
 
@@ -233,7 +235,7 @@ Note that this still works inside double-quoted strings, so `echo "$num $fruit"`
 ## Shell scripting \- accessing command line arguments
 {: .no_toc}
 
-To access the `n`th command line argument, use `$n` in your script. For example, the 1st command line argument would be accessed with `$1`. Note that the 0th command line argument is the name of the command you executed, as was the case in your PA 4\. Here is a demonstration:
+To access the `n`th command line argument, use `$n` in your script. For example, the 1st command line argument would be accessed with `$1`. Note that the 0th command line argument is the name of the command you executed. Here is a demonstration:
 
 ```bash
 # Contents of demo.sh
@@ -246,7 +248,7 @@ $ ./demo.sh 5 apples and more
 5 apples
 ```
 
-Note that a string wrapped in quotes counts as one argument. For example, in: `$ ./demo.sh 4 "PA 4"`  We have `$1` equal to `4` and `$2` equal to `PA 4`.
+Note that a string wrapped in quotes counts as one argument. For example, in: `$ ./demo.sh 2 "PA 2"`  We have `$1` equal to `2` and `$2` equal to `PA 2`.
 
 ## Shell scripting \- if statements
 {: .no_toc}
@@ -550,7 +552,7 @@ We can also use email to send attachments in the form of files. In this section,
 
 ### Sender
 
-Use the below command to generate a ".pk" file with the name of the Pokemon you picked. For example, if you picked Pikachu, \#25, you would call this file `pikachu.pk`. Alternatively, if you want the receiver to not know what the Pokemon is until they open the file, you can call it `mystery.pk`. Feel free to replace `25` with the National Dex number of any Pokemon.
+Use the below command to generate a ".pk" file with the name of the Pokemon you picked. For example, if you picked Pikachu, \#25, you would call this file `pikachu.pk`. Alternatively, if you want the receiver to not know what the Pokemon is until they open the file, you can call it `mystery.pk`. Feel free to replace `25` with the [National Dex number](https://www.pokemon.com/us/pokedex) of any Pokemon.
 
 ```
 ./pokeget.sh 25 > pikachu.pk
@@ -598,6 +600,8 @@ If everything went well, you should get the Pokemon your partner sent you\! Have
 
 #  HACKING 
 {: style="color: #00ff41 !important; background-color: #0d0d0d; font-family: 'Courier New', Courier, monospace; padding: 10px 20px;text-shadow: 0 0 8px #00ff41, 0 0 20px #00ff41; border-radius: 4px; letter-spacing: 4px;"}
+
+This is the same file you may or may not have started in lab 3 and can be found in [**this** github classroom](https://classroom.github.com/a/7dYavFbQ) in the `gradebook` directory.
 
 ## Background
 
@@ -727,3 +731,22 @@ If you would like 2 Pokemon, add the line <code>paste <span contenteditable clas
 
 If you want to do the same thing on your own computer, you can add this same line to your `.bash_profile` or `.bashrc` file. Just make sure to download the referenced `.pk` files using `pokeget.sh` and edit the paths as needed!
 
+## Other Real world Script examples:
+
+A [real life script](https://github.com/kizhikevich/violating_ripe_probes/blob/main/atlas_pipeline/run_atlas_pipeline.sh) by [Katherine Izhikevich](https://kizhikevich.github.io/) and [Ben Du](https://www.bencdu.com/)    which run several python scripts to retrieve and sort through data.
+
+The script Elena made to print out pokemon randomly when she opens ieng6 [pokemon.sh](./pokemon.sh) (complete with commented out old path variables before she figured out how to pick randomly from an arbitrary amount of directories.)
+
+The script Elena made to print out Joe quotes also upon opening ieng6. [juotes.sh](./juotes.sh) Note that the file is full of lines that look like 
+```
+Feb 10 -|Energy is priceless, but so is uninterrupted descriptions of structs.
+Sept25 2025 @10:16? -|I'm thankful to the computer engineering wizards that provided the magic sand to do this
+```
+
+The script Brendan made to automatically zip and re-install python addons for the 3D software Blender. [blender_addon_updater.sh](./blender_addon_updater.sh)
+
+> Note: Understanding scripts.  
+> Bash scripting is no small undertaking to understand. It's basically a whole new programming language with it's own syntax and rules, and while this lab covers a ton of the basics, there is a whole truckload of other things. While you do not know everything there is to know about bash-scripting, you do have a foundation of knowledge and *internet access*. Both google searching and asking ChatGPT *can* be super helpful for 2 things: understanding a script, and making one.  
+> Wonder what mapfile is? googling this gets an AI overview describing it *and* a link to a man page. This may lead you to the thought "oh right the man pages, maybe I should check it on my computer".  
+> pokemon.sh was made with much help from ChatGPT. Elena had a starting point but was unfamiliar with how to get prefixes, suffixes, or how exactly to randomly pick between folders. So, she used ChatGPT how she might switch the file extension from .mail to .pk. Prompts included "how would I remove a prefix" and "how do i pick randomly from a list" to piece together the script.  
+> It is also noteworthy that GenAI models will be good at things they have a lot of training on. Common things like what we find in pokemon.sh they will get correct a lot. **Things they are not as well trained on they may very well get wrong and they will do it confidently**. So, please do be careful.
