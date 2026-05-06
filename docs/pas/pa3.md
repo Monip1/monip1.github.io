@@ -59,7 +59,7 @@ Use the following link to accept the GitHub Classroom assignment:
 [**Click here to accept this GitHub Classroom assignment.**][classroom]
 (Right click to open in new tab.)
 
-[classroom]: #TODO
+[classroom]: https://classroom.github.com/a/6mBsnusm
 
 Just like last time, clone the repository to **your `ieng6` account**.
 
@@ -532,6 +532,6 @@ Submit your code to [Gradescope][gscp]. Make sure your code compiles and works
 with the aforementioned two test programs. To prevent problems with GitHub
 integration, you should open Gradescope by itself and not within Canvas.
 
-[gscp]: TODO!
+[gscp]: https://www.gradescope.com/courses/1290406/assignments/8110396/
 
 {: .fs-5 .fw-500 }
