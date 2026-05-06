@@ -8,11 +8,11 @@ permalink: /lab6
 
 # Lab 6 Reference Document
 
-(clone the GitHub Classroom repo from here: <https://classroom.github.com/a/EM-1PiRu>)
+(clone the GitHub Classroom repo from here: <TODO>)
 
 
 ### Managing SSH Keys
-In this class, we will mostly be using the `ieng6` server. However, in the future you might have access to multiple servers for which you want to create separate SSH keys. To help us keep track of our SSH keys, we can create a configuration file called an SSH config file.
+In this class, we mostly use the `ieng6` server. However, in the future you might have access to multiple servers for which you want to create separate SSH keys. To help us keep track of our SSH keys, we can create a configuration file called an SSH config file.
 
 Exit the `ieng6` server one more time, and create this SSH config file inside your `.ssh` directory that is in your home directory on your computer.
 ```
