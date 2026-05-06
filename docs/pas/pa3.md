@@ -505,7 +505,8 @@ If you are able to reach the checkpoint by **Wednesday (May 13, 2026)**, it mean
 
 {: .warning }
 The checkpoint may look simple, but it takes a lot of work to get it working.
-So please start this assignment early, and utilize tutor/office hours!
+So please start this assignment early, and utilize
+your study groups!
 
 {: .note }
 Remember that this checkpoint serves as a progress indicator rather than a strict deadline.
