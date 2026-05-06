@@ -137,8 +137,7 @@ You should begin by reading (and understanding!) some of the code that we have
 provided.
 
 {: .important}
-> In lecture, you were taught using an example allocator with
-> a 16-byte alignment requirement.
+> In lecture, you were taught using an example allocator.
 >
 > In this programming assignment as well, our headers/footers are 8 bytes in size, and
 > all blocks are 16-byte aligned. This means the smallest unit of allocation
