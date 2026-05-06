@@ -6,7 +6,38 @@ nav_order: 7
 permalink: /lab6
 ---
 
-# Lab 6 Reference Document
+# Lab 6: Automating compilation with Makefiles
+{: .no_toc}
+
+{: .note }
+You may find our solutions to Lab 5 in our [solutions repository](https://github.com/CSE29Spring2026/lab-answer-keys). For now, let's focus on lab 6.
+
+In this lab, you will fix compiler errors by adding a header guard, learn about the syntax of Makefiles, write a couple Makefile rules, and do a short exercise with bitwise operations.
+
+
+## Lab 6 learning objectives
+{: .no_toc}
+
+* Recognize the purpose of header files
+* Understand the need for header guards
+* Interpret and understand Makefile syntax
+* Write a simple Makefile rule with dependencies and a recipe
+* Review the behavior of bitwise operations
+
+#### Table of contents
+{: .no_toc}
+
+1. TOC
+{:toc }
+
+# Icebreaker
+
+> What is your dream concert lineup?
+
+
+{: .important }
+Please make sure that everyone in your group answers the icebreaker and writes their name on the whiteboard. We will come around to collect pictures for attendance soon\!
+
 
 (clone the GitHub Classroom repo from here: <TODO>)
 
@@ -18,8 +49,9 @@ Exit the `ieng6` server one more time, and create this SSH config file inside yo
 ```
 $ vim ~/.ssh/config
 ```
+
 {: .note}
->If on windows you can do `notepad ~/.ssh.config`  
+>If on windows you can do `notepad ~/.ssh/config`  
 >It may create the file as `config.txt` and you will need to rename it to `config`
 
 Copy the following lines and paste them into the `config` you just created and opened.
@@ -61,7 +93,7 @@ Let's illustrate the utility of header guards with a concrete example.
 
 After cloning the Github classroom repository onto `ieng6`, `cd` into `2lab6-headers-and-makefiles`. Then `cd` into `headers` and inspect the contents of the five files inside. These files together represent 3 "modules" with the following dependency graph:
 
-![header_diagram](lab6_header_dep.svg)
+![header_diagram](../../assets/labs/sp26/lab6_header_dep.svg)
 
 When the compiler reads `test.c`, its preprocessor will process `span.h` twice: once through the direct arrow pointing to `span.h` and once through `queries.h`, which also points to `span.h`. As a result, the contents of `span.h` will be "pasted" into the source file twice. Since `span.h` contains a struct *definition* for `struct string_span`, this definition will be repeated twice. Try the following compilation command to see what this causes:
 
