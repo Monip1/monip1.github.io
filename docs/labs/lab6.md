@@ -39,7 +39,7 @@ In this lab, you will fix compiler errors by adding a header guard, learn about 
 Please make sure that everyone in your group answers the icebreaker and writes their name on the whiteboard. We will come around to collect pictures for attendance soon\!
 
 
-(clone the GitHub Classroom repo from here: <TODO>)
+(clone the GitHub Classroom repo from here: <https://github.com/CSE29Spring2026/lab6-starter>)
 
 
 ### Managing SSH Keys
@@ -91,9 +91,9 @@ This can be problematic if the header file intends to *define* any symbol, not j
 In the example above, the header guard ensures that `struct example` is defined at most once.
 Let's illustrate the utility of header guards with a concrete example.
 
-After cloning the Github classroom repository onto `ieng6`, `cd` into `2lab6-headers-and-makefiles`. Then `cd` into `headers` and inspect the contents of the five files inside. These files together represent 3 "modules" with the following dependency graph:
+After cloning the Github classroom repository onto `ieng6`, `cd` into `headers` and inspect the contents of the five `.c` and `.h` files inside. These files together represent 3 "modules" with the following dependency graph:
 
-![header_diagram](../../assets/labs/sp26/lab6_header_dep.svg)
+![header_diagram](../../assets/labs/sp26/l6_header_dep.svg)
 
 When the compiler reads `test.c`, its preprocessor will process `span.h` twice: once through the direct arrow pointing to `span.h` and once through `queries.h`, which also points to `span.h`. As a result, the contents of `span.h` will be "pasted" into the source file twice. Since `span.h` contains a struct *definition* for `struct string_span`, this definition will be repeated twice. Try the following compilation command to see what this causes:
 
@@ -108,9 +108,9 @@ The compiler seems to be confused by the duplicated definition for `struct strin
 
 ## Makefiles
 
-### Part 2-0: Recipes and Dependencies
+### Part 0: Recipes and Dependencies
 
-**Exit the `headers` directory and enter the `part2-0` directory.** We have given you an example `Makefile` that illustrates its basic structure. A Makefile mostly consists of "rules", which have the form:
+**Exit the `headers` directory and enter the `part0` directory.** We have given you an example `Makefile` that illustrates its basic structure. A Makefile mostly consists of "rules", which have the form:
 
 ```make
 target: dependencies
@@ -123,7 +123,7 @@ In a lot of ways, you can think of defining rules in Makefiles like defining fun
 * The *dependencies* are files or other targets that the creation of the target depends on. For C programs, these dependencies are usually source code and object files.
 * The *recipe* contains the commands that are executed when `make` uses this rule. Recipes can have one or more different commands to be executed sequentially.
 
-Use this explanation to understand the contents of the `Makefile` in `part2-0`. Try running `make` with the `cse100` target to ask Make to build `cse100` along with its dependencies:
+Use this explanation to understand the contents of the `Makefile` in `part0`. Try running `make` with the `cse100` target to ask Make to build `cse100` along with its dependencies:
 
 ```
 $ make cse100
@@ -142,9 +142,9 @@ $ make cse100
 ```
 See what files get made at each step! Try out the other targets as well, like `cse12` and `cse29`.
 
-### Part 2-1: Makefile for One
+### Part 1: Makefile for One
 
-Exit the `part2-0` directory and enter the `part2-1` directory, where we are given a single, very simple source code file `program.c`. You can look at its contents, but there’s nothing there to see (or do).
+Exit the `part0` directory and enter the `part1` directory, where we are given a single, very simple source code file `program.c`. You can look at its contents, but there’s nothing there to see (or do).
 
 It’s not necessary to define dependencies, but we often do because Makefile automatically checks if any of its dependencies have changed more recently than the target file. If not (and if the target file already exists), then `make` does not bother to execute the recipe, because the target file must already be up to date. This means that `make` will only execute the recipe if the target file doesn’t exist, or one of its dependencies is more recently updated than the target file.
 
@@ -222,9 +222,9 @@ clean:
 
 All the rules (and phony target definition) can be defined in any order, except `default` must be placed at the top in order to be executed when you run `$ make` by itself.
 
-### Part 2-2: Makefile for Many
+### Part 2: Makefile for Many
 
-In this section, we’ll show multiple valid Makefiles for the programs **in the `part2-2` directory**. As you follow along, pick one and use it to compile all three programs.
+In this section, we’ll show multiple valid Makefiles for the programs **in the `part2` directory**. As you follow along, pick one and use it to compile all three programs.
 
 When we have multiple programs to be compiled in a single project, we could create a Makefile with rules for each:
 
@@ -299,14 +299,14 @@ This pattern rule now matches any name (not just names that begin with "program"
 
 In this section, we’ve developed a Makefile to be increasingly more flexible, both in making future changes easier and expanding the scope of valid targets. An important point to make (pun intended?) is that each of these Makefiles is a valid Makefile for compiling the three programs given in this directory, and they have their own pros and cons. For example, a Makefile similar to the last one was used in last week’s lab to easily compile programs with different names, where the compilation process is the same across programs. However, it might be undesirable to enable the programmer to attempt compiling any file ending in “.c”. On the other hand, the first Makefile might be a good fit for a use case where we know we will customize the build process for each program, but this could lead to a very large Makefile.
 
-### Part 2-3: Linking Object Files
+### Part 3: Linking Object Files
 
 When we use `gcc` to manually compile programs, we typically compile directly from the source file to the executable program. But, the build process involves multiple steps with intermediary files. One of these intermediary files are *object files*, which contain machine code from a particular *module* (.c and .h combo) and are linked into the eventual executable file. If `.class` files from Java sound familiar to you, object files are like `.class` files. To instruct `gcc` to compile a source file into an object file, we add the `-c` flag.
 
 ![Build Process](https://cf-assets.www.cloudflare.com/zkvhlag99gkb/3RNZmg4aDxjJOAjAmYxFk9/c1279a03f8962b5bb74f812b66a4a448/build.png)
 (Credit: Cloudflare)
 
-The linking process resolves symbol references between object files, meaning that functions defined in one file can be used in another. In `part2-3`, a long program with 50000 adder functions (each of which adds the integer in its name to the parameter and returns it) is given in `adders.c`. The corresponding header file, `adders.h`, contains function declarations to be shared between source files. Then, in `main.c`, we print the return value of `run_adders`, which calls all of the adder functions and sums their results.  
+The linking process resolves symbol references between object files, meaning that functions defined in one file can be used in another. In `part3`, a long program with 50000 adder functions (each of which adds the integer in its name to the parameter and returns it) is given in `adders.c`. The corresponding header file, `adders.h`, contains function declarations to be shared between source files. Then, in `main.c`, we print the return value of `run_adders`, which calls all of the adder functions and sums their results.  
 
 ![](one-million-functions.png)
 
@@ -347,7 +347,7 @@ clean:
 
 Here, we make extensive use of variables for the ultimate target (`adders`) and its prerequisite object files (`adders.o` and `main.o`) so that we can easily use these strings in multiple places, e.g. in both the compile command and in the `rm` command. Examine this Makefile and feel free to ask your groupmates, tutors, or TA about anything unclear.
 
-### Part 2-4: Makefile challenge in `headers` directory
+### Part 4: Makefile challenge in `headers` directory
 
 Let's go back to the `headers` directory from the [Header Guards section](#header-guards) and open the `Makefile` there, which is partially completed. Complete the `Makefile` according to the requirements listed inside it. Feel free to copy code segments from above. Once you're done, try `make` to see your Makefile in action\!
 
