@@ -39,7 +39,7 @@ In this lab, you will fix compiler errors by adding a header guard, learn about 
 Please make sure that everyone in your group answers the icebreaker and writes their name on the whiteboard. We will come around to collect pictures for attendance soon\!
 
 
-(clone the GitHub Classroom repo from here: <https://github.com/CSE29Spring2026/lab6-starter>)
+Please fill out [this welcome survey](https://forms.gle/g8f2AB31dDx9Mgyb8)
 
 
 ### Managing SSH Keys
@@ -70,6 +70,7 @@ $ ssh ieng6
 This configuration file can contain many entries to manage access to multiple sets of `ssh` keys for various servers that you might have access to in the future. And it will save you some typing also. How nice!
 
 
+(clone the GitHub repo from here: <https://github.com/CSE29Spring2026/lab6-starter>)
 
 # Part 1: Header Guards and Makefiles
 
@@ -350,7 +351,3 @@ Here, we make extensive use of variables for the ultimate target (`adders`) and 
 ### Part 4: Makefile challenge in `headers` directory
 
 Let's go back to the `headers` directory from the [Header Guards section](#header-guards) and open the `Makefile` there, which is partially completed. Complete the `Makefile` according to the requirements listed inside it. Feel free to copy code segments from above. Once you're done, try `make` to see your Makefile in action\!
-
-# Lab 6 Work Check-off (Due before next Tuesday lecture)
-
-Commit and push your code for any of the Makefile parts or `span.h` to your [Github Classroom repo](https://classroom.github.com/a/EM-1PiRu)! In the commit message, name the part that you edited.
