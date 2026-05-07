@@ -348,6 +348,16 @@ clean:
 
 Here, we make extensive use of variables for the ultimate target (`adders`) and its prerequisite object files (`adders.o` and `main.o`) so that we can easily use these strings in multiple places, e.g. in both the compile command and in the `rm` command. Examine this Makefile and feel free to ask your groupmates, tutors, or TA about anything unclear.
 
+Go to the `one_million_functions` directory and take a look at the `script.sh` file (a bash script, which we learned about last week).  
+This runs very similar commands to the time commands you ran previously to compile the `adders` program. This example, however, has one million functions as opposed to the original fifty thousand.  
+![](../../assets/labs/sp26/one-million-functions.png)  
+To run a program in the background we can add a `&` immediately following it.
+```bash
+$ ./script.sh > out.txt &
+```
+for example, will write to our output file and do so in the background, meaning you can use your terminal in the meantime. You can check on this periodically by using `cat` to see `script.sh`, go ahead and see what it has immediately after starting your background process.
+
+
 ### Part 4: Makefile challenge in `headers` directory
 
 Let's go back to the `headers` directory from the [Header Guards section](#header-guards) and open the `Makefile` there, which is partially completed. Complete the `Makefile` according to the requirements listed inside it. Feel free to copy code segments from above. Once you're done, try `make` to see your Makefile in action\!
