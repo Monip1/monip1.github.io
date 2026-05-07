@@ -361,3 +361,10 @@ for example, will write to our output file and do so in the background, meaning 
 ### Part 4: Makefile challenge in `headers` directory
 
 Let's go back to the `headers` directory from the [Header Guards section](#header-guards) and open the `Makefile` there, which is partially completed. Complete the `Makefile` according to the requirements listed inside it. Feel free to copy code segments from above. Once you're done, try `make` to see your Makefile in action\!
+
+# Next steps
+
+If you finish with the lab content above you may any do the following:
+* Go finish the [pokemon mailtime](./lab5#youve-got-mail) from last week!
+* Work on PA3
+* Work on HW5
