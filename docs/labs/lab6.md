@@ -363,7 +363,7 @@ To run a program in the background we can add a `&` immediately following it.
 ```bash
 $ ./script.sh > out.txt &
 ```
-for example, will write to our output file and do so in the background, meaning you can use your terminal in the meantime. You can check on this periodically by using `cat` to see `script.sh`, go ahead and see what it has immediately after starting your background process.
+for example, will write to our output file and do so in the background, meaning you can use your terminal in the meantime. You can check on this periodically by using `cat` to see `out.txt`, go ahead and see what it has immediately after starting your background process.
 
 
 ### Part 4: Makefile challenge in `headers` directory
