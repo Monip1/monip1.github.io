@@ -43,7 +43,7 @@ Please fill out [this mid-quarter survey](https://forms.gle/g8f2AB31dDx9Mgyb8)
 
 ## Warmup
 The warmup for this lab will be projected on the screen. The slides will be posted HERE once all labs have concluded.  
-Information you will need to complete this warmup can be found in the [PA3 writeup](../pas/pa3.md#implementing-vmalloc)
+Information you will need to complete this warmup can be found in the [PA3 writeup](https://cse29spring2026.github.io/pa3#implementing-vmalloc)
 
 ### Managing SSH Keys
 In this class, we mostly use the `ieng6` server. However, in the future you might have access to multiple servers for which you want to create separate SSH keys. To help us keep track of our SSH keys, we can create a configuration file called an SSH config file.
