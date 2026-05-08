@@ -15,3 +15,4 @@ As each lab is a mix of information and activities, it can become a lot to look 
 | [Lab 3 -- GDB and -Wall](./lab3) | [ W(arn)all ](./lab3#part-1--warnall) | [ GDB commands ](./lab3#compiling-for-gdb) | [ Identify Yourself to ieng6 ](./lab3#identify-yourself-to-ieng6)|
 | [Lab 4 -- Valgrind and Assert](./lab4) | [ Valgrind -- Memory Error Types ](./lab4#types-of-memory-errors) |  [ Valgrind -- Leak Types ](./lab4#types-of-memory-leaks) | [ Testing Using Assert ](./lab4#part-2-exposing-bugs-via-automated-testing)|
 | [Lab 5 -- Bash Scripting](./lab5) | [Swap files and .vimrc](/lab5#swap-files) | [In a nut-Shell](./lab5#shell-scripting---variables) | [Git Ignore](./lab5#what-should-git-ignore) | [Pokémail](./lab5#youve-got-mail) |
+| [Lab 6 -- Makefiles and Header Guards](./lab6) | [SSH config](./lab6#managing-ssh-keys) | [Header Guards](./lab6#header-guards) | [Makefiles](./lab6#makefiles) |[Bitwise Operators](./lab6#a-bit-of-practice) |
