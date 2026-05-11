@@ -10,7 +10,7 @@ permalink: /lab7
 {: .no_toc}
 
 {: .note }
-You may find our solutions to Lab 6 in our [solutions repository](https://github.com/CSE29Spring2025/lab6-solutions). You may also find the [make-up questions](https://docs.google.com/document/d/16aUlbzs8LCp3ki1XYv4DGY5I9gNnLYPNbMExjGHV0Fs) for each lab after the deadline. For now, let's focus on lab 7.
+You may find our solutions to Lab 6 in our [solutions repository](https://github.com/CSE29Spring2026/lab-answer-keys). You may also find the [make-up questions](https://docs.google.com/document/d/16aUlbzs8LCp3ki1XYv4DGY5I9gNnLYPNbMExjGHV0Fs) for each lab after the deadline. For now, let's focus on lab 7.
 
 In this lab, you will get to know the commands `less` and `grep`, and experiment with input and
 output redirection. Since Skill Demo 2 takes place next week (Week 8), we will then

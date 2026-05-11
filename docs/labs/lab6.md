@@ -42,7 +42,7 @@ Please make sure that everyone in your group answers the icebreaker and writes t
 Please fill out [this mid-quarter survey](https://forms.gle/g8f2AB31dDx9Mgyb8)
 
 ## Warmup
-The warmup for this lab will be projected on the screen. The slides will be posted HERE once all labs have concluded.  
+The warmup for this lab will be projected on the screen. The slides will be posted [HERE](https://docs.google.com/presentation/d/1vAJTyrzpIeim9xQBhIwmX8LRtB35VYUmn8ufaIRY3Xk/edit?usp=sharing) once all labs have concluded.  
 Information you will need to complete this warmup can be found in the [PA3 writeup](https://cse29spring2026.github.io/pa3#implementing-vmalloc)
 
 ### Managing SSH Keys
