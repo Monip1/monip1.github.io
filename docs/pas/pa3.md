@@ -522,9 +522,9 @@ As stated in the course syllabus:
 > understand the role of AI in the learning process, and will not impact your
 > grade.
 
-For this PA, please describe your AI usage in a new file named `CREDITS.txt`.
+For this PA, please describe your AI usage in a new file named `credits.txt`.
 If you did not use AI, you must state this in credits.txt. The autograder will
-require you to create and edit `CREDITS.txt` to get points.
+require you to create and edit `credits.txt` to get points.
 
 ## Final Submission
 
