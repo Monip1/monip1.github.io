@@ -420,7 +420,7 @@ $ ./problem > problem.txt 2> errors.txt
 {: .checkoff}
 > First, comment out the `fprintf` statement and uncomment the `printf` statement, so that all output redirects to stdout.
 > Write a command that outputs all lines that involve the first column of the 2D array into both the terminal display and a file called `out0.txt`.
-> Then, ask a tutor or TA to check your work. Put a screenshot of *your command* into your lab report, and submit it on Gradescope.
+> As a group, ask a tutor or TA to check your work.
 
 {: .note-title }
 > Hint
