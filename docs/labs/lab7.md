@@ -10,17 +10,15 @@ permalink: /lab7
 {: .no_toc}
 
 {: .note }
-You may find our solutions to Lab 6 in our [solutions repository](https://github.com/CSE29Spring2026/lab-answer-keys). You may also find the [make-up questions](https://docs.google.com/document/d/16aUlbzs8LCp3ki1XYv4DGY5I9gNnLYPNbMExjGHV0Fs) for each lab after the deadline. For now, let's focus on lab 7.
+You may find our solutions to Lab 6 in our [solutions repository](https://github.com/CSE29Spring2026/lab-answer-keys). For now, let's focus on lab 7.
 
 In this lab, you will get to know the commands `less` and `grep`, and experiment with input and
-output redirection. Since Skill Demo 2 takes place next week (Week 8), we will then
-host a Practice Skill Demo on PrairieLearn.
-
-[Start your lab report →](https://docs.google.com/document/d/1iltJHNneo45C6Za0igKNj84OIaETLpst/copy){: .btn .btn-blue }
+output redirection.
 
 ## Lab 7 learning objectives
 {: .no_toc}
 
+* Get more comfortable and efficient using the command line
 * Use `less` and `grep` to view and search through text files
 * Recognize and use pipe and redirection operators
 
@@ -32,16 +30,19 @@ host a Practice Skill Demo on PrairieLearn.
 
 # Icebreaker
 
-Can you guess what part of campus each of these photos was taken? Feel free to work with your groupmates\! Google Maps is allowed\!
+Can you guess what part of campus each of these photos was taken? Work with your groupmates\! Google Maps is allowed\!
 
 <figure>
-    <img src="/assets/labs/lab7_campus1.png" alt="Photo of somewhere on campus" width="500">
-    <img src="/assets/labs/lab7_campus2.png" alt="Photo of somewhere on campus" width="500">
-    <img src="/assets/labs/lab7_campus3.png" alt="Photo of somewhere on campus" width="500">
+    <img src="/assets/labs/sp26/lab7_campus1.png" alt="Photo of somewhere on campus" width="500">
+    <img src="/assets/labs/sp26/lab7_campus2.png" alt="Photo of somewhere on campus" width="500">
+    <img src="/assets/labs/sp26/lab7_campus3.png" alt="Photo of somewhere on campus" width="500">
 </figure>
 
 {: .important }
-Please write the answers of yourself and one of your group members in your lab report. No check-off is needed\!
+Please write the answers on your whiteboard!
+
+# Warmup / Part 1 -- Bash Golf
+
 
 # Searching and Filtering Program Output
 
@@ -416,16 +417,6 @@ $ ./problem > problem.txt 2> errors.txt
 > Hint
 >
 > The square brackets are special characters in grep, so to search for `[` and `]`, you must use the escape character. For example, if you wanted to search for `"[5]"`, you would use grep like so: `grep "\[5\]"`
-
-# Next steps: Practice Skill Demo
-
-To prepare you for Skill Demo 2 next week, we are conducting another practice Skill Demo. This time,
-you'll complete it on PrairieLearn.
-
-{: .important }
-If you would like to leave early, please ask a tutor or TA to verify that you have completed the lab, submitted your lab report, and gotten full points on the practice Skill Demo.
-
-[Go to PrairieLearn →](https://us.prairielearn.com/pl/course_instance/180232){: .btn .btn-blue }
 
 <style>
     .flowchart {
