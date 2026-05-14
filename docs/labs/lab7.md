@@ -55,7 +55,7 @@ Consider “indie” as our starting directory and start there (current pwd). Co
 
 # Searching and Filtering Program Output
 
-**Clone our [starter code](https://github.com/CSE29Spring2025/lab7-pipes) into your account on `ieng6`.**
+**Clone our [starter code](https://github.com/CSE29Spring2026/lab7-starter) into your account on `ieng6`.**
 In this lab, we’ll walk you through some helpful UNIX commands that are commonly used to save and filter program output.
 There are multiple ways to achieve the same result, and we’ll demonstrate advantages and disadvantages of each.
 
