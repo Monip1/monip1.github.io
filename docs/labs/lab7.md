@@ -32,6 +32,8 @@ host a Practice Skill Demo on PrairieLearn.
 
 # Icebreaker
 
+Write your icebreaker and warmup answers on your whiteboard.
+
 Can you guess what part of campus each of these photos was taken? Feel free to work with your groupmates\! Google Maps is allowed\!
 
 <figure>
