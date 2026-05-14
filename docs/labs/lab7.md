@@ -32,6 +32,7 @@ output redirection.
 
 Can you guess what part of campus each of these photos was taken? Work with your groupmates\! Google Maps is allowed\!
 
+
 <figure>
     <img src="/assets/labs/sp26/lab7_campus1.png" alt="Photo of somewhere on campus" width="500">
     <img src="/assets/labs/sp26/lab7_campus2.png" alt="Photo of somewhere on campus" width="500">
@@ -41,8 +42,16 @@ Can you guess what part of campus each of these photos was taken? Work with your
 {: .important }
 Please write the answers on your whiteboard!
 
-# Warmup / Part 1 -- Bash Golf
 
+# Warmup: UNIX Golf
+
+<img src="../../assets/labs/sp26/indie_tree.png" alt="diagram for warmup directory" width="500">
+
+Consider “indie” as our starting directory and start there (current pwd). Complete each task in as few command lines as possible. Write your answers on your whiteboard.
+
+1. Travis listened to Noah Kahan before he was big (totally). Move Noah Kahan to the east_coast directory, and rename him to Noah_Kahan_2024.txt.
+2. Travis forgot to add Hozier! Add Hozier.txt to less_indie.
+3. Travis only likes like one or two song from Skeggs. Remove Skeggs.txt
 
 # Searching and Filtering Program Output
 
