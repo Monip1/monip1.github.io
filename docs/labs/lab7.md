@@ -95,7 +95,7 @@ $ less problem.txt
 The one subcommand you need to know is to type `h` while in this program to display a list of subcommands. Some especially helpful subcommands include `q` to quit and `f`/`b` to move forward/backward one window. You may also notice that you can use `j` and `k` to move forward or backward by one line, just like in Vim. The subcommand we want to use to filter out all lines that do not have an error is to type "&" followed by the word "error", then press Enter. `less` will insert a slash ("/") in between to indicate that what follows is a pattern to match. This method of filtering is convenient if you don’t want to clutter the terminal interface, but requires that the output exists in a file already.
 
 {: .checkoff }
-Once you have filtered the lines in `problem.txt` such that only the "error" lines remain, interpret the error and explain it to a tutor or TA. Then, put a screenshot of the filtered lines into your lab report.
+Once you have filtered the lines in `problem.txt` such that only the "error" lines remain, as a team, interpret the error and explain it to a tutor or TA.
 
 ## Search with `grep`
 
