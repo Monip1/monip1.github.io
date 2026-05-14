@@ -40,8 +40,15 @@ Can you guess what part of campus each of these photos was taken? Feel free to w
     <img src="/assets/labs/lab7_campus3.png" alt="Photo of somewhere on campus" width="500">
 </figure>
 
-{: .important }
-Please write the answers of yourself and one of your group members in your lab report. No check-off is needed\!
+# Warmup: UNIX Golf
+
+<img src="/assets/labs/indie_tree.png" alt="Photo of somewhere on campus" width="500">
+
+Consider “indie” as our root directory. Complete each task in as few command lines as possible. Write your answers on your whiteboard.
+
+1. Travis listened to Noah Kahan before he was big (totally). Move Noah Kahan to the east_coast directory, and rename him to Noah_Kahan_2024.txt.
+2. Travis forgot to add Hozier! Add Hozier.txt to less_indie.
+3. Travis only likes like one or two song from Skeggs. Remove Skeggs.txt
 
 # Searching and Filtering Program Output
 
