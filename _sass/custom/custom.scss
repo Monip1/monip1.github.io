@@ -523,8 +523,8 @@ table {
 }
 
 .quality {
-  content: "Quality of Life Improvement 💫";
   background-color: var(--callout-quality-bg) !important;
+
   background-image:
     repeating-linear-gradient(
       35deg,
@@ -542,15 +542,49 @@ table {
       rgba(230, 136, 82, 0.35) 720px,
       transparent 960px
     ) !important;
+
   background-size: 1200% 1200%, 1200% 1200%;
   background-position: 0px 0px, 0px 0px;
+
   animation: ff-slide 300s linear infinite;
-  color: var(--text-color) !important;
+
+  color: #fff4ef !important;
   border-left-color: #fcab99 !important;
+
   padding: 0.75rem 1rem;
   border-radius: 4px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   margin: 1rem 0;
+
+  a {
+    color: #fff8f5 !important;
+
+    /* makes links readable on moving reds/oranges */
+    font-weight: 700;
+    text-decoration-color: rgba(255, 248, 245, 0.9);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+
+    /* soft glow separates text from animation */
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.45),
+      0 0 8px rgba(255, 255, 255, 0.18);
+
+    transition:
+      color 0.2s ease,
+      text-decoration-color 0.2s ease,
+      text-shadow 0.2s ease;
+  }
+
+  a:hover {
+    color: #ffffff !important;
+
+    text-decoration-color: #ffffff;
+
+    text-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.6),
+      0 0 12px rgba(255, 255, 255, 0.35);
+  }
 }
 
 .fun-fact::before {
