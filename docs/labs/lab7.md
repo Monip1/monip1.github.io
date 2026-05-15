@@ -58,6 +58,9 @@ Consider “indie” as our starting directory and start there (current pwd). Co
 > As you continue to use vim, you may want to consider tools to enhance your experience. Below are several options:
 >
 > Vundle -- a plugin manager for vim <https://github.com/vundlevim/vundle.vim>
+>
+> vimawesome -- a site with plugins you can add with the help of vundle <https://vimawesome.com/>
+>
 > These would take longer to customize so feel free to take a few minutes to look through these but do continue on without much delay.
 
 # Searching and Filtering Program Output
@@ -98,6 +101,9 @@ You can use `cat` to view the contents of the file, but this is no better than l
 ```
 $ less problem.txt
 ```
+
+{: .note }
+The `less` command succeeds the `more` command, which does the same thing but does not support backwards navigation. In this sense, `less` is like `more`, but also (as `man less` duly notes) `less` is the opposite of `more`.
 
 The one subcommand you need to know is to type `h` while in this program to display a list of subcommands. Some especially helpful subcommands include `q` to quit and `f`/`b` to move forward/backward one window. You may also notice that you can use `j` and `k` to move forward or backward by one line, just like in Vim. The subcommand we want to use to filter out all lines that do not have an error is to type "&" followed by the word "error", then press Enter. `less` will insert a slash ("/") in between to indicate that what follows is a pattern to match. This method of filtering is convenient if you don’t want to clutter the terminal interface, but requires that the output exists in a file already.
 
