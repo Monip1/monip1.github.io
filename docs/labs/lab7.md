@@ -399,6 +399,17 @@ $ ./problem | grep error | tee errors.txt
     </div>
 </div>
 
+In the starter code, we've given you a compiled `select` program and `lotr.txt` from PA3. Remember that we use this command to select specific columns from an input file:
+```
+$ ./select -c 4 1 2 4 < lotr.txt
+```
+Notice that the indirection operator (`<`) goes after the command, rather than before it. While it would be very convenient for us to imagine data flowing from left to right, UNIX requires that the first word be a command or executable. So we comply and pretend that the input flows from right to left initially, then continues rightward into any redirects or pipes.
+
+By using redirection and piping in conjunction with the `select` program we've developed previously, we can extend the abilities of program to not only print out a CSV file, but also to create new CSV files and files with rows that match some condition. Try using redirection and piping in addition to the example command above to achieve these results:
+- Save the output to a file named `select_lotr.txt`
+- Filter the output to rows that correspond to hobbits (i.e. lines that contain the string "Hobbit") and save this filtered output to a file named `hobbit_weapons.txt`. Optionally, also print out the filtered output to the terminal.
+- Could you do both of the above in all one command?
+
 ## Output Streams
 
 In the examples above, we use redirection and piping to manipulate the *standard output* (`stdout`) of a program. By default, `printf()` outputs to this `stdout` stream, which we illustrate above. What these diagrams do not show (and will not show, please don’t make me try drawing this) is that there actually exists another output stream for *standard error* (`stderr`).
