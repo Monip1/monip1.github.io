@@ -399,7 +399,8 @@ $ ./problem | grep error | tee errors.txt
     </div>
 </div>
 
-In the starter code, we've given you a compiled `select` program and `lotr.txt`. We use this command to select specific columns from an input file that is in the form of a `csv`, which stands for **c**omma **s**eparated **v**alues and is commonly used for things like spreadsheets. `select` will print out the provided columns, so for example this will print out the fourth column, then the first, second and fourth again:
+In the starter code, we've given you a compiled `select` program and `lotr.txt`. We use this command to select specific columns from an input file that is in the form of a `csv`, which stands for **c**omma **s**eparated **v**alues and is commonly used for things like spreadsheets. `select`'s first argument is how many columns are in the provided `csv` and the following numbers are which columns it will print:
+
 ```
 $ ./select -c 4 1 2 4 < lotr.txt
 ```
