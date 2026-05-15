@@ -36,10 +36,10 @@ Can you guess what part of campus each of these photos was taken? Work with your
 
 
 <figure>
-    <img src="../../assets/labs/sp26/l7_marshall.png" alt="Photo of new Marshall" width="500">
-    <img src="../../assets/labs/sp26/l7_keeling.png" alt="Photo from Keeling floor 6" width="500">
-    <img src="../../assets/labs/sp26/lab7_campus2.png" alt="Photo of DIB" width="500">
-    <img src="../../assets/labs/sp26/lab7_campus3.png" alt="Photo of Peterson" width="500">
+    <img src="../../assets/labs/sp26/l7_marshall.png" alt="Photo of somewhere on campus" width="500">
+    <img src="../../assets/labs/sp26/l7_keeling.png" alt="Photo of somewhere on campus" width="500">
+    <img src="../../assets/labs/sp26/lab7_campus2.png" alt="Photo of somewhere on campus" width="500">
+    <img src="../../assets/labs/sp26/lab7_campus3.png" alt="Photo of somewhere on campus" width="500">
 </figure>
 
 {: .important }
