@@ -54,6 +54,11 @@ Consider “indie” as our starting directory and start there (current pwd). Co
 2. Travis forgot to add Hozier! Add Hozier.txt to less_indie.
 3. Travis only likes like one or two song from Skeggs. Remove Skeggs.txt
 
+{: .quality}
+> As you continue to use vim, you may want to consider tools to enhance your experience. Below are several options:
+> Vundle -- a plugin manager for vim <https://github.com/vundlevim/vundle.vim>
+> These would take longer to customize so feel free to take a few minutes to look through these but do continue on without much delay.
+
 # Searching and Filtering Program Output
 
 **Clone our [starter code](https://github.com/CSE29Spring2026/lab7-starter) into your account on `ieng6`.**
