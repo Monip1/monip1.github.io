@@ -34,8 +34,8 @@ Can you guess what part of campus each of these photos was taken? Work with your
 
 
 <figure>
-    <img src="../../assets/labs/sp26/l7_keeling.png" alt="Photo from Keeling floor 6" width="500">
     <img src="../../assets/labs/sp26/l7_marshall.png" alt="Photo of new Marshall" width="500">
+    <img src="../../assets/labs/sp26/l7_keeling.png" alt="Photo from Keeling floor 6" width="500">
     <img src="../../assets/labs/sp26/lab7_campus2.png" alt="Photo of DIB" width="500">
     <img src="../../assets/labs/sp26/lab7_campus3.png" alt="Photo of Peterson" width="500">
 </figure>
@@ -56,6 +56,7 @@ Consider “indie” as our starting directory and start there (current pwd). Co
 
 {: .quality}
 > As you continue to use vim, you may want to consider tools to enhance your experience. Below are several options:
+>
 > Vundle -- a plugin manager for vim <https://github.com/vundlevim/vundle.vim>
 > These would take longer to customize so feel free to take a few minutes to look through these but do continue on without much delay.
 
