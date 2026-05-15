@@ -30,6 +30,8 @@ output redirection.
 
 # Icebreaker
 
+**Clone our [starter code](https://github.com/CSE29Spring2026/lab7-starter) into your account on `ieng6`.**
+
 Can you guess what part of campus each of these photos was taken? Work with your groupmates\! Google Maps is allowed\!
 
 
@@ -42,8 +44,6 @@ Can you guess what part of campus each of these photos was taken? Work with your
 
 {: .important }
 Please write the answers on your whiteboard!
-
-**Clone our [starter code](https://github.com/CSE29Spring2026/lab7-starter) into your account on `ieng6`.**
 
 # Warmup: UNIX Golf
 
