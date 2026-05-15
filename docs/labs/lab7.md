@@ -43,6 +43,7 @@ Can you guess what part of campus each of these photos was taken? Work with your
 {: .important }
 Please write the answers on your whiteboard!
 
+**Clone our [starter code](https://github.com/CSE29Spring2026/lab7-starter) into your account on `ieng6`.**
 
 # Warmup: UNIX Golf
 
@@ -65,7 +66,6 @@ Consider “surf” as our starting directory and start there (current pwd). Com
 
 # Searching and Filtering Program Output
 
-**Clone our [starter code](https://github.com/CSE29Spring2026/lab7-starter) into your account on `ieng6`.**
 In this lab, we’ll walk you through some helpful UNIX commands that are commonly used to save and filter program output.
 There are multiple ways to achieve the same result, and we’ll demonstrate advantages and disadvantages of each.
 
