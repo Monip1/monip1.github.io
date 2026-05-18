@@ -74,6 +74,41 @@ With your sub-team and team, discuss:
 
 - Your team name(s)
 
+
+# Git Great
+### Partner Activity
+Get into groups of 2, and decide who will be **Partner 1** and **Partner 2**.
+
+#### Partner 1 ONLY:
+1. Create a new team on the Github Classroom assignment for you and your partner (DO NOT accept until we do this together in class): <https://classroom.github.com/a/4gO-KCH3> 
+
+#### Partner 2 ONLY:
+2. Join the team that Partner 1 created.
+
+#### Both:
+
+3. Clone the repo to ieng6
+4. Edit `hello.c` to fill in your own name in the print statement
+
+
+#### Partner 1 ONLY:
+
+5. Commit and push this change
+
+
+#### Partner 2 AFTER PARTNER 1 HAS PUSHED:
+
+6. Commit and then attempt to push this change
+
+Work together on Partner 2's computer. Resolve the merge conflict so that the program prints `Hello [PARTNER 1 NAME] and [PARTNER 2 NAME]!`. Commit and push when done.
+(Hint: `git pull` and `git config pull.rebase false` may be useful)
+
+
+Once finished:
+
+Repeat starting from step 4 with `goodbye.c` and switch roles (i.e. Partner 2 commits and pushes first, then Partner 1 tries to push. Resolve conflict on Partner 1's computer)
+
+
 # Git Better
 
 ## Branching Out
@@ -241,7 +276,7 @@ Follow the instructions from GitHub until you see a `CONFLICT` reported by Git i
 Integrate the changes, and then remove Git's markers (`>>>>>>>`, `=======`, `<<<<<<<`), ensuring that the file has proper C syntax. **Repeat this for each file with a conflict (e.g., `stack.c`).** After fixing each file, run <code>git add <span contenteditable class="code-replace-me">filename</span></code> to tell Git that you have finished fixing it.
 
 {: .checkoff }
-Once you have finished resolving the conflicts in all files, ask a tutor or TA to check your progress. Then, run `git status` and put a screenshot of its output in your lab report.
+Once you have finished resolving the conflicts in all files, ask a tutor or TA to check your progress.
 
 Technically, the instructions from GitHub made you complete a merge in the _opposite_ direction compared to your intention. Your intention is to merge your feature branch into `main`, but the commands you ran just merged `main` into your feature branch. Think about how this approach resolves conflicts between your branch and `main` and why GitHub didn't tell you to complete the merge in the direction you intended.
 
@@ -265,15 +300,9 @@ After the branch from each sub-team has been merged, your row's `main` branch wi
 Switch to the `main` branch in your local repository, and run `git pull` to pull the latest updates from GitHub. Compile your code with `make`, and execute the combined test suite. **If the tests don't pass, that is okay! You don't need to make all the tests pass.**
 
 {: .checkoff }
-Show a TA/tutor the outcome of your tests. Run `git log` and include a screenshot of its output in your lab report.
+Show a TA/tutor the outcome of your tests.
 
-The sub-team member that owns your sub-team's lab report doc should now submit it to Gradescope and add the other members in the sub-team to the Gradescope submission. Everyone (including you\!) should make sure that this happens so that you get credit for the lab report.
 
-# Review Quiz
-
-As usual, we have a fresh Review Quiz for you this week. It will help you get started on PA 4. :)
-
-[Go to PrairieLearn →](https://us.prairielearn.com/pl/course_instance/180232){: .btn .btn-blue }
 
 <style>
   .git-action {
