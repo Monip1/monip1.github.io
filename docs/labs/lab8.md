@@ -9,13 +9,7 @@ permalink: /lab8
 # Lab 8: Git and GitHub at scale
 {: .no_toc}
 
-{: .note }
-You may find the [make-up questions](https://docs.google.com/document/d/16aUlbzs8LCp3ki1XYv4DGY5I9gNnLYPNbMExjGHV0Fs) for each lab after the deadline. For now, let's focus on lab 8. If you missed this lab, please skim the instructions below and study the Git mechanisms involved: branches, pull requests, and merge conflicts. When you visit tutor hours or office hours to make up this lab, we will do a miniature version of it together. To prepare for this, please accept the GitHub Classroom assignment and create a branch named `push` using the instructions below.
-
 In this lab, you will do a more advanced Git collaboration exercise to learn about forks, pull requests, branches, and how to revert commits. This exercise mimics common collaboration workflows in software engineering. We hope that this exercise will boost your confidence in using Git and prepare you to use it well in future CSE classes and industry\!
-
-{: .important }
-Do not start your lab report yet. Because of the structure of this lab, you and your teammates around you will share one lab report submission. We will instruct you to start the lab report later.
 
 ## Lab 8 learning objectives
 {: .no_toc}
@@ -71,18 +65,14 @@ Following the above tips should lead to a more productive and amicable pair prog
 
 # Icebreaker
 
-Once you have finalized the members of your sub-team, elect one member as the _first driver_ in your upcoming pair programming session. **From this point onwards, the driver will be the only one completing actions for the lab on behalf of their sub-team.** The first driver should sign into a **lab workstation**, sign into `ieng6` in the Windows Terminal app, and eventually submit the lab report on behalf of their sub-team.
+Once you have finalized the members of your sub-team, elect one member as the _first driver_ in your upcoming pair programming session. **From this point onwards, the driver will be the only one completing actions for the lab on behalf of their sub-team.** The first driver should sign into a **lab workstation**, sign into `ieng6` in the Windows Terminal app.
 
 With your sub-team and team, discuss:
 
 - What is your favorite place that you've been to, and why is it the CSE basement?
 - If it's a travel destination, who did you go there with, and when?
 
-{: .important }
-
-> **DRIVERS**: Please start the lab report and enter every sub-team member's email. This lab report is shared amongst your driver navigator sub-team, so other the navigator(s) should not make their own copy!
->
-> [Start your lab report →](https://docs.google.com/document/d/1GN07I3UNsdJXCj4ys1bIPb1xqFqN5QEX/copy){: .btn .btn-blue }
+- Your team name(s)
 
 # Git Better
 
@@ -102,17 +92,11 @@ Each sub-team will be responsible for building one of three features:
 {: .important }
 > **READ the following paragraph very carefully** as only **ONE** person per row **creates** the github classroom team.
 
-**Please wait for your tutor or TA to assign one of the three features to your team.** Your tutor or TA should direct **ONLY the first driver sitting closest to the whiteboard in each row** to accept the [GitHub Classroom assignment](https://classroom.github.com/a/pDMstpjN) for this lab and name your row's team following the template and example below:
-
-![GitHub classroom team name template](/assets/labs/lab8_teamnamingtemplate.png)
-
-Following the above template, “TIME” is replaced with your lab’s start time (“10am”, “12pm”, “2pm”, “4pm”), “ROOM” is replaced with your lab’s room number (“b240”, “b250”), and “ROW” should be replaced with your row’s number (“row1”, “row2”, … , “row7”). For example, the above template should be filled out like so:
-
-![GitHub classroom team name example](/assets/labs/lab8_teamnamingexample.png)
+**Please wait for your tutor or TA to assign one of the three features to your team.** Your tutor or TA should direct **ONLY the first driver sitting closest to the whiteboard in each row** to accept the [GitHub Classroom assignment](TODO) for this lab and name your row's team following the template and example below:
 
 After the first driver sitting closest to the whiteboard in your row accepts the assignment and names the team, **all other drivers will JOIN** your row's team.
 
-Hopefully, now your sub-team knows which function to implement. Because it is easy to forget, please ensure that your _first driver_ records your assigned feature in the red dropdown in your lab report. If all the sub-teams started working on the same document, absolute chaos would ensue as everybody is overwriting each other's changes. Hence, to make working in parallel less painful, we will be using **branches**.
+Hopefully, now your sub-team knows which function to implement. Because it is easy to forget, you may want to note down your assigned feature. If all the sub-teams started working on the same document, absolute chaos would ensue as everybody is overwriting each other's changes. Hence, to make working in parallel less painful, we will be using **branches**.
 
 You can think of a branch as a separate version of a repository that is unaffected by changes pushed to other branches. Each repository starts out with a **main** branch, which is what you all have been using up until now. If you were to use this approach for our collaborative task, the commit history would look something like this:
 
@@ -157,12 +141,12 @@ Let's break down this command. The `--set-upstream` option is telling git that w
 In fact, after running this command, you can check that a new remote branch has been created on GitHub. On the webpage, on the top left corner, open the branch dropdown menu. You should see your branch in the list of branches.
 
 {: .checkoff }
-Once you have created a new branch, run the `git status` command, and put a screenshot of the output on your lab report. Call over a tutor or TA to check off your progress.
+Once you have created a new branch, run the `git status` command. Call over a tutor or TA to check off your progress.
 
 ## Feature Implementation
 
 {: .note }
-Do you want to see `stack.h` and `stack.c` (or `stack_test.c`) side-by-side in Vim? You can do that with the `:vsplit` command in Vim. Run <code>:vsplit <span contenteditable class="code-replace-me">other file's filename</span></code> to open the other file in a vertical split, then press <kbd>Ctrl</kbd>+<kbd>W</kbd> **twice** to switch between the two panes.
+Do you want to see `stack.h` and `stack.c` (or `stack_test.c`) side-by-side in Vim? You can do that with the `:vsplit` command in Vim. Run <code>:vsplit <span contenteditable class="code-replace-me">other file's filename</span></code> to open the other file in a vertical split, then press <kbd>Ctrl</kbd>+<kbd>W</kbd> **twice** to switch between the two panes. Likewise, if you would like to have a terminal window open alongside your code, you can use `:vert bot term` or just `term`.
 
 In your pair programming sub-teams, you will now begin implementing your assigned feature. You may find a description of your feature along with the desired method signature in the `stack.h` file. Your sub-team will write your implementation code in the `stack.c` file. While writing this file, _the first driver_ elected from earlier should be at the keyboard, while all other members should be _navigators_. Feel free to do some light testing during this phase, but you will be writing tests after you implement the feature so prioritize getting the implementation done first. **Once your sub-team has finished an implementation of the feature, make sure to <span class="git-action">commit</span> and <span class="git-action">push</span> your changes.**
 
@@ -171,12 +155,12 @@ You'll notice that while there is a Makefile in your directory, there is no `mai
 
 ## Writing Tests
 
-Now that you've implemented your feature, you'll write tests using `assert` statements to verify that it works (remember Lab 5?). Take a look at `test_stack.c` as a reference for how `main` calls tests functions.
+Now that you've implemented your feature, you'll write tests using `assert` statements to verify that it works (remember Lab 4?). Take a look at `test_stack.c` as a reference for how `main` calls tests functions.
 
 **The _first driver_ should yield the keyboard to another sub-team member for writing tests**. If your sub-team has 3 members, each member other than the _first driver_ should be the driver for at least one test. As a sub-team of 2 or 3, brainstorm and write test cases for `stack.c` in `test_stack.c`. Since your tests likely will call functions assigned to other sub-teams, you won't be able to run the tests immediately. Instead, ask a tutor or TA to verify the correctness of your sub-team's tests.
 
 {: .checkoff }
-When you have at least 2 test functions written, ask a TA or tutor to check your progress. Once checked off, push the test cases to your sub-team's branch. You don't need to put a screenshot of this into your lab report.
+When you have at least 2 test functions written, ask a TA or tutor to check your progress. Once checked off, push the test cases to your sub-team's branch.
 
 ## Reverting Tests
 
