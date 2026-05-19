@@ -77,7 +77,7 @@ nav_order: 4
     <div class="profile-info profile-info-prof">
         <p class="profile-name"><a href="https://geraldsoosairaj.github.io/" target="_blank">Prof. Gerald Soosairaj</a></p>
         <p>Associate Teaching Professor, Computer Science and Engineering</p>
-        <p>Office Hours: TBA</p>
+        <p>Office Hours: Tu 3pm-4pm and Th 2pm-3pm, CSE 2106</p>
         <a href="mailto:asoosairaj@ucsd.edu">asoosairaj@ucsd.edu</a>
     </div>
 </div>
@@ -86,7 +86,7 @@ nav_order: 4
     <div class="profile-info profile-info-prof">
         <p class="profile-name"><a href="https://www.oliviaweng.com/about/" target="_blank">Prof. Olivia Weng</a></p>
         <p>Associate Instructor, Computer Science and Engineering</p>
-        <p>Office Hours: TBA</p>
+        <p>Office Hours: We 9am-10am and Th 4:30pm-5:30pm, CSE 4202</p>
         <a href="mailto:oweng@ucsd.edu">oweng@ucsd.edu</a>
     </div>
 </div>
@@ -100,7 +100,7 @@ nav_order: 4
      <div class="profile-info ta-info">
       <p class="profile-name">Sang Yoon Byun</p>
       <p><em>Logistics</em></p>
-        <p>Office Hours: TBA</p>
+        <p>Office Hours: Tu 2pm-3pm, CSE B240A</p>
       <a href="mailto:sabyun@ucsd.edu">sabyun@ucsd.edu</a>
      </div>
   </div>
@@ -109,7 +109,7 @@ nav_order: 4
      <div class="profile-info ta-info">
       <p class="profile-name">Andrew Cheung</p>
       <p><em>PAs</em></p>
-        <p>Office Hours: TBA</p>
+        <p>Office Hours: Fr 4pm-5pm, CSE B260</p>
       <a href="mailto:a7cheung@ucsd.edu">a7cheung@ucsd.edu</a>
      </div>
   </div>
@@ -118,7 +118,7 @@ nav_order: 4
      <div class="profile-info ta-info">
       <p class="profile-name">Elena Tomson</p>
       <p><em>Labs</em></p>
-        <p>Office Hours: TBA</p>
+        <p>Office Hours: We 11am-12pm, CSE B215</p>
       <a href="mailto:etomson@ucsd.edu">etomson@ucsd.edu</a>
      </div>
   </div>
@@ -127,7 +127,7 @@ nav_order: 4
      <div class="profile-info ta-info">
       <p class="profile-name">Lydia Zoghbi</p>
       <p><em>PSets & Skill Demos</em></p>
-        <p>Office Hours: TBA</p>
+        <p>Office Hours: Mo 5pm-6pm, CSE B250A</p>
       <a href="mailto:lzoghbi@ucsd.edu">lzoghbi@ucsd.edu</a>
      </div>
   </div>
