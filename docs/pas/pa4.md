@@ -86,6 +86,14 @@ In script mode, instead of reading from the keyboard, `pish`
 should read from a file and execute the commands from that file one line
 at a time.
 
+To run pish in script mode, pass the script file as a command-line argument:
+
+```
+$ ./pish script.sh
+```
+
+(See [Running `pish`](#running-pish) for more details.)
+
 #### Recap: What's a shell script?
 
 A shell script, as its name suggests, is a script that runs a series of shell
@@ -109,6 +117,40 @@ In both modes, once the shell hits the end-of-file marker (EOF), it should
 call `exit(EXIT_SUCCESS)` to exit gracefully. When not in script mode, you can
 send the EOF marker to a running program by pressing **Ctrl-D**.
 
+
+## Parsing Input
+
+Every time pish reads a line of input (be it from `stdin` or from a file),
+it breaks it down into our familiar `argv` array.
+For instance, if the user enters `"ls -a -l\n"` (notice the newline character),
+the shell should break it down into `argv[0] = "ls"`, `argv[1] = "-a"`, and
+`argv[2] = "-l"`. To ensure compatibility with `execvp()`, `argv` should be
+**NULL-terminated**, so in this example, pish should also set `argv[3] = NULL`.
+More on this in [the `execvp` section](#the-execvp-system-call).
+
+### Handling Whitespaces
+
+You should make sure your code is robust enough to handle various sorts of
+whitespace characters. In this PA, we expect your shell to handle any
+arbitrary number of spaces (` `) and tabs (`\t`) between arguments.
+
+For example, your shell should be able to handle the following input:
+`"   \tls\t\t-a -l     "`, and still run the `ls` program with the
+correct `argv` array. You have a few choices on how you want to parse inputs:
+
+1. `strtok()`
+2. `strsep()`
+3. You can try to implement either of these from scratch if you'd like!
+
+As usual, for an authentic Unix-style systems programming experience, we
+recommend using man pages to learn about how to use these functions. Try `man
+strtok` or `man strsep`.
+
+{: .note }
+In Vim, you can launch a terminal next to an open file by running the
+command `:vert term`. Then, you can pull up your man page of choice in the
+terminal. As before, switch between the terminal and the file by pressing
+**Ctrl+W** twice.
 
 ## Commands
 
@@ -414,40 +456,6 @@ in each case and reproduce it in your code.
   - Example: Running the command `nonexistent -q` should cause
     `nonexistent: No such file or directory` to be printed to stderr.
 - `fork()` failure: `perror("fork")`,
-
-## Parsing Input
-
-Every time pish reads a line of input (be it from `stdin` or from a file),
-it breaks it down into our familiar `argv` array.
-For instance, if the user enters `"ls -a -l\n"` (notice the newline character),
-the shell should break it down into `argv[0] = "ls"`, `argv[1] = "-a"`, and
-`argv[2] = "-l"`. To ensure compatibility with `execvp()`, `argv` should be
-**NULL-terminated**, so in this example, pish should also set `argv[3] = NULL`.
-More on this in [the `execvp` section](#the-execvp-system-call).
-
-### Handling Whitespaces
-
-You should make sure your code is robust enough to handle various sorts of
-whitespace characters. In this PA, we expect your shell to handle any
-arbitrary number of spaces (` `) and tabs (`\t`) between arguments.
-
-For example, your shell should be able to handle the following input:
-`"   \tls\t\t-a -l     "`, and still run the `ls` program with the
-correct `argv` array. You have a few choices on how you want to parse inputs:
-
-1. `strtok()`
-2. `strsep()`
-3. You can try to implement either of these from scratch if you'd like!
-
-As usual, for an authentic Unix-style systems programming experience, we
-recommend using man pages to learn about how to use these functions. Try `man
-strtok` or `man strsep`.
-
-{: .note }
-In Vim, you can launch a terminal next to an open file by running the
-command `:vert term`. Then, you can pull up your man page of choice in the
-terminal. As before, switch between the terminal and the file by pressing
-**Ctrl+W** twice.
 
 ## Getting Started
 
