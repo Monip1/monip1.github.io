@@ -542,7 +542,7 @@ Submit to [Gradescope][gscp], where the autograder will run a series
 of tests to validate your shell implementation. Most tests will include a
 Valgrind check. 
 
-[gscp]: https://www.gradescope.com/courses/1290406
+[gscp]: https://www.gradescope.com/courses/1290406/assignments/8172841/
 
 ## Acknowledgements
 {: .no_toc }
