@@ -132,12 +132,10 @@ Each sub-team will be responsible for building one of three features:
 
 **Please wait for your tutor or TA to assign one of the three features to your team.** Your tutor or TA should direct **ONLY the first driver sitting closest to the whiteboard in each row** to accept the [GitHub Classroom assignment](https://classroom.github.com/a/9roQJiWD) for this lab and name your row's team following the template and example below:
 
-:TODO Replace
 ![GitHub classroom team name template](../../assets/labs/sp26/l8_teamnamingtemplate.png)
 
 Following the above template, “TIME” is replaced with your lab’s start time (“10am”, “12pm”, “2pm”, “4pm”), “ROOM” is replaced with your lab’s room number (“b240”, “b250”), “ROW” should be replaced with your row’s number (“row1”, “row2”, … , “row7”), and “NAME” should be replaced with your agreed upon team name (“cheeze-itz”, “burgers”). For example, the above template should be filled out like so:
 
-:TODO Replace
 ![GitHub classroom team name example](../../assets/labs/sp26/l8_teamnamingexample.png)
 
 After the first driver sitting closest to the whiteboard in your row accepts the assignment and names the team, **all other drivers will JOIN** your row's team.
