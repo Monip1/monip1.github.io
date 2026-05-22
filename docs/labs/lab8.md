@@ -79,8 +79,11 @@ With your sub-team and team, discuss:
 ### Partner Activity
 Get into groups of 2, and decide who will be **Partner 1** and **Partner 2**.
 
+{: .important}
+> later in the lab you will be **switching who** is typing at the **keyboard**. You are welcome to use share your laptops but if you prefer to share the keyboard on the workstation, one of you should sign into it now. (for now you will have separate devices but soon you will be sharing)
+
 #### Partner 1 ONLY:
-1. Create a new team on the Github Classroom assignment for you and your partner (DO NOT accept until we do this together in class): <https://classroom.github.com/a/4gO-KCH3> 
+1. Create a new team on the Github Classroom assignment for you and your partner: <https://classroom.github.com/a/O9CzURk9> 
 
 #### Partner 2 ONLY:
 2. Join the team that Partner 1 created.
@@ -90,6 +93,7 @@ Get into groups of 2, and decide who will be **Partner 1** and **Partner 2**.
 3. Clone the repo to ieng6
 4. Edit `hello.c` to fill in your own name in the print statement
 
+If at any point you are not sure which git command to run, you may refer to [Lab2: Git-Gud-Bro](./lab2#git-gud-bro)
 
 #### Partner 1 ONLY:
 
@@ -101,8 +105,7 @@ Get into groups of 2, and decide who will be **Partner 1** and **Partner 2**.
 6. Commit and then attempt to push this change
 
 Work together on Partner 2's computer. Resolve the merge conflict so that the program prints `Hello [PARTNER 1 NAME] and [PARTNER 2 NAME]!`. Commit and push when done.
-(Hint: `git pull` and `git config pull.rebase false` may be useful)
-
+(Hint: `git pull` and `git config pull.rebase false` may be useful. Git is generally good about knowing what commands you want to run and will present them to you)
 
 Once finished:
 
@@ -127,7 +130,7 @@ Each sub-team will be responsible for building one of three features:
 {: .important }
 > **READ the following paragraph very carefully** as only **ONE** person per row **creates** the github classroom team.
 
-**Please wait for your tutor or TA to assign one of the three features to your team.** Your tutor or TA should direct **ONLY the first driver sitting closest to the whiteboard in each row** to accept the [GitHub Classroom assignment](https://classroom.github.com/a/pDMstpjN) for this lab and name your row's team following the template and example below:
+**Please wait for your tutor or TA to assign one of the three features to your team.** Your tutor or TA should direct **ONLY the first driver sitting closest to the whiteboard in each row** to accept the [GitHub Classroom assignment](https://classroom.github.com/a/9roQJiWD) for this lab and name your row's team following the template and example below:
 
 :TODO Replace
 ![GitHub classroom team name template](../../assets/labs/sp26/l8_teamnamingtemplate.png)
