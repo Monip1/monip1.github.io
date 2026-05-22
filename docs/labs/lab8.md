@@ -300,7 +300,7 @@ By running `git add`, you have staged changes that resolve the conflict between 
 
 > 🛑 WAIT
 >
-> Pause here until every sub-team in your row has merged their pull request into the `main` branch\! Feel free to help the other sub-teams in your row if they get stuck. You may also choose to start the Review Quiz.
+> Pause here until every sub-team in your row has merged their pull request into the `main` branch\! Help the other sub-teams in your row if they get stuck.
 
 ## Finishing up
 
@@ -311,7 +311,36 @@ Switch to the `main` branch in your local repository, and run `git pull` to pull
 {: .checkoff }
 Show a TA/tutor the outcome of your tests.
 
+# Next steps
 
+If you finish with the lab content above you may any do the following:
+* If you want to feel more comfortable with using unix commands, we have an activity involving sorting fruit pictures botanically.
+* Work on PA4
+* Work on HW6
+
+# Fruit
+{: .no_toc}
+in the initial repo you started with your partner, there is a `fruits` directory
+
+Sort the files to create the following directory, and note that the files should not be empty.
+
+```
+└── fruits/
+        ├── aggregate/
+                 ├── raspberry.png
+                 └── strawberry.png
+        ├── berries/
+                 ├── banana.png
+                 ├── blueberry.png
+                 └── melons/
+                         ├── cantaloupe.png
+                         ├── honeydew.png
+                         └── watermelon.png
+        ├── drupes/
+                 ├── cherry.png
+                 ├── raspberry.png
+                 └── peach.png
+```
 
 <style>
   .git-action {
