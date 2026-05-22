@@ -27,57 +27,24 @@ In this lab, you will do a more advanced Git collaboration exercise to learn abo
 1. TOC
 {:toc }
 
-# Intro to Pair Programming
 
-You've probably heard the saying "two minds are better than one" at some point. In the field of computer science, this also tends to hold. Thus, today you will be practicing **pair programming** in a simulated software development task.
-
-You are going to be working in teams in this lab. Please form teams of 6 or 4 in your workstation row. If necessary, you may switch rows to accomplish this. Within these teams of 6 or 4, form sub-teams of 2 or 3 for the purpose of pair programming later in the lab. If this is not possible, a tutor or TA will soon rearrange teams so that your row has at least two sub-teams.
-
-In your sub-team of 2 or 3, you will take turns being the **driver** and the **navigator**. The **driver** will be the one at the keyboard doing the coding at the keyboard. Meanwhile, the **navigator(s)** will be guiding the driver, providing live feedback on what to do next, and pointing out any errors or potential improvements in the driver's code.
-
-Here are some do's and don'ts to make your pair programming experience as smooth as possible:
-
-**As the driver,**
-
-- **Do**
-  - Verbalize your thought process so the navigators know your intention
-  - Listen closely to your navigator's feedback and adjust when necessary
-  - Stop coding and plan with your navigator when unsure about how to proceed
-- **Don't**
-  - Write long blocks of code without breaks for comprehension
-  - Ignore your navigator
-  - Vent your frustrations onto your navigator
-  - Do your course enrollment second pass in the middle of writing code
-
-**As the navigator,**
-
-- **Do**
-  - Pay attention to every line of code that your driver is writing
-  - Give feedback to your driver when necessary
-  - Think about next steps and possible improvements on the driver's code
-- **Don't**
-  - Sit idle and work on other things while the driver is coding
-  - Backseat your driver and tell them what lines of code to write
-  - Fight your driver for the keyboard
-  - Insult your driver's coding abilities when their code fails to compile
-
-Following the above tips should lead to a more productive and amicable pair programming session.
 
 # Icebreaker
 
-Once you have finalized the members of your sub-team, elect one member as the _first driver_ in your upcoming pair programming session. **From this point onwards, the driver will be the only one completing actions for the lab on behalf of their sub-team.** The first driver should sign into a **lab workstation**, sign into `ieng6` in the Windows Terminal app.
+Get into groups of 2, and decide who will be **Partner 1** and **Partner 2**.
 
-With your sub-team and team, discuss:
+With your partner and another pair, discuss:
 
 - What is your favorite place that you've been to, and why is it the CSE basement?
 - If it's a travel destination, who did you go there with, and when?
 
 - Your team name(s)
 
+Write your answer on the whiteboard.
+
 
 # Git Great
 ### Partner Activity
-Get into groups of 2, and decide who will be **Partner 1** and **Partner 2**.
 
 {: .important}
 > later in the lab you will be **switching who** is typing at the **keyboard**. You are welcome to use share your laptops but if you prefer to share the keyboard on the workstation, one of you should sign into it now. (for now you will have separate devices but soon you will be sharing)
@@ -110,6 +77,42 @@ Work together on Partner 2's computer. Resolve the merge conflict so that the pr
 Once finished:
 
 Repeat starting from step 4 with `goodbye.c` and switch roles (i.e. Partner 2 commits and pushes first, then Partner 1 tries to push. Resolve conflict on Partner 1's computer)
+
+# Intro to Pair Programming
+
+You've probably heard the saying "two minds are better than one" at some point. In the field of computer science, this also tends to hold. Thus, today you will be practicing **pair programming** in a simulated software development task.
+
+You are going to be working in teams in this lab. Please pair up with another pair forming ideally a group of 4 in your workstation row, groups of 3 pairs (6 people) may also be permitted. If necessary, you may switch rows to accomplish this. Within these teams of 4 or 6, form sub-teams of 2 for the purpose of pair programming later in the lab. If this is not possible, a tutor or TA will soon rearrange teams so that your row has at least two sub-teams.
+
+In your sub-team of 2, you will take turns being the **driver** and the **navigator**. The **driver** will be the one at the keyboard doing the coding at the keyboard. Meanwhile, the **navigator(s)** will be guiding the driver, providing live feedback on what to do next, and pointing out any errors or potential improvements in the driver's code.
+
+Here are some do's and don'ts to make your pair programming experience as smooth as possible:
+
+**As the driver,**
+
+- **Do**
+  - Verbalize your thought process so the navigators know your intention
+  - Listen closely to your navigator's feedback and adjust when necessary
+  - Stop coding and plan with your navigator when unsure about how to proceed
+- **Don't**
+  - Write long blocks of code without breaks for comprehension
+  - Ignore your navigator
+  - Vent your frustrations onto your navigator
+  - Do your course enrollment second pass in the middle of writing code
+
+**As the navigator,**
+
+- **Do**
+  - Pay attention to every line of code that your driver is writing
+  - Give feedback to your driver when necessary
+  - Think about next steps and possible improvements on the driver's code
+- **Don't**
+  - Sit idle and work on other things while the driver is coding
+  - Backseat your driver and tell them what lines of code to write
+  - Fight your driver for the keyboard
+  - Insult your driver's coding abilities when their code fails to compile
+
+Following the above tips should lead to a more productive and amicable pair programming session.
 
 
 # Git Better
