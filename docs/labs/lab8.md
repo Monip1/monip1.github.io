@@ -314,7 +314,7 @@ Show a TA/tutor the outcome of your tests.
 # Next steps
 
 If you finish with the lab content above you may any do the following:
-* If you want to feel more comfortable with using unix commands, we have an activity involving sorting fruit pictures botanically.
+* If you want to feel more comfortable with using unix commands or otherwise enjoy files or fruits, we have an activity involving sorting fruit pictures botanically.
 * Work on PA4
 * Work on HW6
 
