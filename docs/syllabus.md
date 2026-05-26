@@ -18,10 +18,10 @@ CSE 29 introduces you to the amazing world of systems programming, including 1) 
 
 **Instructors:**
 - [Gerald Soosairaj](https://geraldsoosairaj.github.io/)
-  - Office Hours: TBA
+  - Office Hours: Tuesdays 3pm-4pm and Thursdays 2pm-3pm, CSE 2106
 
 - [Olivia Weng](https://www.oliviaweng.com/about/)
-  - Office Hours: TBA
+  - Office Hours: Wednesdays 9am-10am and Thursdays 4:30pm-5:30pm, CSE 4202 
 
 **Course Website:** <https://cse29spring2026.github.io/>
 
@@ -181,7 +181,7 @@ Skill Demos will be held **twice** during the quarter, with an optional third op
 - **Skill Demo #2:** Week 8
 - **(Optional) Skill Demo #3:** Week 10
 
-Skill Demo #3 is optional and will have the same format as Skill Demos #1 and #2. It covers concepts from across both earlier skill demos. If your Skill Demo #3 score is higher than your lowest skill demo score, it will replace that score. It can only replace one skill demo.
+Skill Demo #3 is optional and will have the same format as Skill Demos #1 and #2. It covers concepts from PA 3 (e.g., bit manipulation, allocation policies, etc.). If your Skill Demo #3 score is higher than your lowest skill demo score, it will replace that score. It can only replace one skill demo.
 
 Your final skill demo scores are calculated as:
 
