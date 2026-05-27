@@ -144,11 +144,11 @@ Hopefully, now your sub-team knows which function to implement. Because it is ea
 
 You can think of a branch as a separate version of a repository that is unaffected by changes pushed to other branches. Each repository starts out with a **main** branch, which is what you all have been using up until now. If you were to use this approach for our collaborative task, the commit history would look something like this:
 
-![All commits on the main branch becomes messy](/assets/labs/lab8_singlebranch.svg)
+![All commits on the main branch becomes messy](/assets/labs/sp26/lab8_singlebranch.svg)
 
 Not only is this workflow unorganized, but since there's no easy way to go back to a previous version of your feature if you realize you made a mistake, you would need to constantly be pulling each other's changes, which may result in frequent **merge conflicts**. Let's see what a workflow with branches would look like:
 
-![Having commits on separate branches reduces conflict](/assets/labs/lab8_branched.svg)
+![Having commits on separate branches reduces conflict](/assets/labs/sp26/lab8_branched.svg)
 
 Now, each sub-team has their own branch to work on their own feature. They can make changes to their branch however much they want to without affecting the work of other teams. When each sub-team is done with their feature, they can simply **merge** all their changes back into the main branch. You'll learn how to do this merging process in a future section of the lab. For now, let's get to work.
 
@@ -241,13 +241,13 @@ Your function is now finished, but it is still sitting in your sub-team's branch
 
 Go to your row's repository on GitHub.com. Navigate to the "Pull requests" tab, and press the green "New pull request" button near the top right. Near the top of the "Comparing changes" page, you are asked to select which branch to merge from and which branch to merge into. Make sure that the "base" selection is "main" and that the "compare" selection is your sub-team's branch, which means you are merging _from_ your sub-team's branch _into_ the "main" branch.
 
-![Make selections to merge into main](/assets/labs/lab8_setup_pr.png)
+![Make selections to merge into main](/assets/labs/sp26/lab8_setup_pr.png)
 
 GitHub may report that these branches "can't automatically merge". **Nevertheless**, press "Create pull request", populate the description box with a short description of your changes, and press "Create pull request" below the box. You have just opened a Pull request\!
 
 According to the GitHub Flow, others in your organization can now review your Pull request and write comments as well as request changes. To keep things simpler in this lab, we'll skip the code review step and defer it to CSE 110\. You should see GitHub report conflicts between the two branches in your pull request, but why?
 
-![Your branch and the main branch have diverged](/assets/labs/lab8_diverge.svg)
+![Your branch and the main branch have diverged](/assets/labs/sp26/lab8_diverge.svg)
 
 Between the instant when your sub-team's branch was created and now, `main` has been updated. Unfortunately, your TA has written their own bad implementations of the three functions in `stack.c` and committed it directly to your row's `main` branch. Then, another sub-team has possibly contributed their feature to `main` already. The diagram above shows a probable state of your repository, where the `main` branch and your branch have _diverged_ with different changes. When these divergent commits modify the same file, they could pose a conflict when you want to merge them together.
 
@@ -261,7 +261,7 @@ $ git config pull.rebase false
 
 In your pull request, press the "**View command line instructions**" link near the bottom:
 
-![GitHub shows "view command line instructions" at the bottom of the conflict box](/assets/labs/lab8_pr_conflict.png)
+![GitHub shows "view command line instructions" at the bottom of the conflict box](/assets/labs/sp26/lab8_pr_conflict.png)
 
 Ensure that you are on the `main` branch by running:
 
