@@ -30,26 +30,26 @@ output redirection.
 
 # Icebreaker
 
+**Clone our [starter code](https://github.com/CSE29Spring2026/lab7-starter) into your account on `ieng6`.**
+
 Can you guess what part of campus each of these photos was taken? Work with your groupmates\! Google Maps is allowed\!
 
 
 <figure>
-    <img src="../../assets/labs/sp26/l7_marshall.png" alt="Photo of new Marshall" width="500">
-    <img src="../../assets/labs/sp26/l7_keeling.png" alt="Photo from Keeling floor 6" width="500">
-    <img src="../../assets/labs/sp26/lab7_campus2.png" alt="Photo of DIB" width="500">
-    <img src="../../assets/labs/sp26/lab7_campus3.png" alt="Photo of Peterson" width="500">
+    <img src="../../assets/labs/sp26/lab7_campus1.png" alt="Photo of muir field" width="500">
+    <img src="../../assets/labs/sp26/lab7_campus2.png" alt="Photo of sixth" width="500">
+    <img src="../../assets/labs/sp26/lab7_campus3.png" alt="Photo of Rady's" width="500">
+    <img src="../../assets/labs/sp26/lab7_campus4.png" alt="Photo of econ" width="500">
 </figure>
 
 {: .important }
 Please write the answers on your whiteboard!
 
-**Clone our [starter code](https://github.com/CSE29Spring2026/lab7-starter) into your account on `ieng6`.**
-
 # Warmup: UNIX Golf
 
 <img src="../../assets/labs/sp26/indie_tree.png" alt="diagram for warmup directory" width="500">
 
-Consider “surf” as our starting directory and start there (current pwd). Complete each task in as few command lines as possible. Write your answers on your whiteboard.
+Consider “surf” as our starting directory and start there (current pwd). Complete each task in as few keystrokes as possible. Write your answers on your whiteboard.
 
 1. Travis listened to Noah Kahan before he was big (totally). Move Noah Kahan to the east_coast directory, and rename him to Noah_Kahan_2024.txt.
 2. Travis forgot to add Hozier! Add Hozier.txt to less_indie.
@@ -400,6 +400,7 @@ $ ./problem | grep error | tee errors.txt
 </div>
 
 In the starter code, we've given you a compiled `select` program and `lotr.txt`. We use this command to select specific columns from an input file that is in the form of a `csv`, which stands for **c**omma **s**eparated **v**alues and is commonly used for things like spreadsheets. `select`'s first argument is how many columns are in the provided `csv` and the following numbers are which columns it will print:
+
 ```
 $ ./select -c 4 1 2 4 < lotr.txt
 ```

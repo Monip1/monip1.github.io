@@ -27,57 +27,24 @@ In this lab, you will do a more advanced Git collaboration exercise to learn abo
 1. TOC
 {:toc }
 
-# Intro to Pair Programming
 
-You've probably heard the saying "two minds are better than one" at some point. In the field of computer science, this also tends to hold. Thus, today you will be practicing **pair programming** in a simulated software development task.
-
-You are going to be working in teams in this lab. Please form teams of 6 or 4 in your workstation row. If necessary, you may switch rows to accomplish this. Within these teams of 6 or 4, form sub-teams of 2 or 3 for the purpose of pair programming later in the lab. If this is not possible, a tutor or TA will soon rearrange teams so that your row has at least two sub-teams.
-
-In your sub-team of 2 or 3, you will take turns being the **driver** and the **navigator**. The **driver** will be the one at the keyboard doing the coding at the keyboard. Meanwhile, the **navigator(s)** will be guiding the driver, providing live feedback on what to do next, and pointing out any errors or potential improvements in the driver's code.
-
-Here are some do's and don'ts to make your pair programming experience as smooth as possible:
-
-**As the driver,**
-
-- **Do**
-  - Verbalize your thought process so the navigators know your intention
-  - Listen closely to your navigator's feedback and adjust when necessary
-  - Stop coding and plan with your navigator when unsure about how to proceed
-- **Don't**
-  - Write long blocks of code without breaks for comprehension
-  - Ignore your navigator
-  - Vent your frustrations onto your navigator
-  - Do your course enrollment second pass in the middle of writing code
-
-**As the navigator,**
-
-- **Do**
-  - Pay attention to every line of code that your driver is writing
-  - Give feedback to your driver when necessary
-  - Think about next steps and possible improvements on the driver's code
-- **Don't**
-  - Sit idle and work on other things while the driver is coding
-  - Backseat your driver and tell them what lines of code to write
-  - Fight your driver for the keyboard
-  - Insult your driver's coding abilities when their code fails to compile
-
-Following the above tips should lead to a more productive and amicable pair programming session.
 
 # Icebreaker
 
-Once you have finalized the members of your sub-team, elect one member as the _first driver_ in your upcoming pair programming session. **From this point onwards, the driver will be the only one completing actions for the lab on behalf of their sub-team.** The first driver should sign into a **lab workstation**, sign into `ieng6` in the Windows Terminal app.
+Get into groups of 2, and decide who will be **Partner 1** and **Partner 2**.
 
-With your sub-team and team, discuss:
+With your partner and another pair, discuss:
 
 - What is your favorite place that you've been to, and why is it the CSE basement?
 - If it's a travel destination, who did you go there with, and when?
 
 - Your team name(s)
 
+Write your answer on the whiteboard.
+
 
 # Git Great
 ### Partner Activity
-Get into groups of 2, and decide who will be **Partner 1** and **Partner 2**.
 
 {: .important}
 > later in the lab you will be **switching who** is typing at the **keyboard**. You are welcome to use share your laptops but if you prefer to share the keyboard on the workstation, one of you should sign into it now. (for now you will have separate devices but soon you will be sharing)
@@ -110,6 +77,42 @@ Work together on Partner 2's computer. Resolve the merge conflict so that the pr
 Once finished:
 
 Repeat starting from step 4 with `goodbye.c` and switch roles (i.e. Partner 2 commits and pushes first, then Partner 1 tries to push. Resolve conflict on Partner 1's computer)
+
+# Intro to Pair Programming
+
+You've probably heard the saying "two minds are better than one" at some point. In the field of computer science, this also tends to hold. Thus, today you will be practicing **pair programming** in a simulated software development task.
+
+You are going to be working in teams in this lab. Please pair up with another pair forming ideally a group of 4 in your workstation row, groups of 3 pairs (6 people) may also be permitted. If necessary, you may switch rows to accomplish this. Within these teams of 4 or 6, form sub-teams of 2 for the purpose of pair programming later in the lab. If this is not possible, a tutor or TA will soon rearrange teams so that your row has at least two sub-teams.
+
+In your sub-team of 2, you will take turns being the **driver** and the **navigator**. The **driver** will be the one at the keyboard doing the coding at the keyboard. Meanwhile, the **navigator(s)** will be guiding the driver, providing live feedback on what to do next, and pointing out any errors or potential improvements in the driver's code.
+
+Here are some do's and don'ts to make your pair programming experience as smooth as possible:
+
+**As the driver,**
+
+- **Do**
+  - Verbalize your thought process so the navigators know your intention
+  - Listen closely to your navigator's feedback and adjust when necessary
+  - Stop coding and plan with your navigator when unsure about how to proceed
+- **Don't**
+  - Write long blocks of code without breaks for comprehension
+  - Ignore your navigator
+  - Vent your frustrations onto your navigator
+  - Do your course enrollment second pass in the middle of writing code
+
+**As the navigator,**
+
+- **Do**
+  - Pay attention to every line of code that your driver is writing
+  - Give feedback to your driver when necessary
+  - Think about next steps and possible improvements on the driver's code
+- **Don't**
+  - Sit idle and work on other things while the driver is coding
+  - Backseat your driver and tell them what lines of code to write
+  - Fight your driver for the keyboard
+  - Insult your driver's coding abilities when their code fails to compile
+
+Following the above tips should lead to a more productive and amicable pair programming session.
 
 
 # Git Better
@@ -144,11 +147,11 @@ Hopefully, now your sub-team knows which function to implement. Because it is ea
 
 You can think of a branch as a separate version of a repository that is unaffected by changes pushed to other branches. Each repository starts out with a **main** branch, which is what you all have been using up until now. If you were to use this approach for our collaborative task, the commit history would look something like this:
 
-![All commits on the main branch becomes messy](/assets/labs/sp26/lab8_singlebranch.svg)
+![All commits on the main branch becomes messy](/assets/labs/lab8_singlebranch.svg)
 
 Not only is this workflow unorganized, but since there's no easy way to go back to a previous version of your feature if you realize you made a mistake, you would need to constantly be pulling each other's changes, which may result in frequent **merge conflicts**. Let's see what a workflow with branches would look like:
 
-![Having commits on separate branches reduces conflict](/assets/labs/sp26/lab8_branched.svg)
+![Having commits on separate branches reduces conflict](/assets/labs/lab8_branched.svg)
 
 Now, each sub-team has their own branch to work on their own feature. They can make changes to their branch however much they want to without affecting the work of other teams. When each sub-team is done with their feature, they can simply **merge** all their changes back into the main branch. You'll learn how to do this merging process in a future section of the lab. For now, let's get to work.
 
@@ -241,13 +244,13 @@ Your function is now finished, but it is still sitting in your sub-team's branch
 
 Go to your row's repository on GitHub.com. Navigate to the "Pull requests" tab, and press the green "New pull request" button near the top right. Near the top of the "Comparing changes" page, you are asked to select which branch to merge from and which branch to merge into. Make sure that the "base" selection is "main" and that the "compare" selection is your sub-team's branch, which means you are merging _from_ your sub-team's branch _into_ the "main" branch.
 
-![Make selections to merge into main](/assets/labs/sp26/lab8_setup_pr.png)
+![Make selections to merge into main](/assets/labs/lab8_setup_pr.png)
 
 GitHub may report that these branches "can't automatically merge". **Nevertheless**, press "Create pull request", populate the description box with a short description of your changes, and press "Create pull request" below the box. You have just opened a Pull request\!
 
 According to the GitHub Flow, others in your organization can now review your Pull request and write comments as well as request changes. To keep things simpler in this lab, we'll skip the code review step and defer it to CSE 110\. You should see GitHub report conflicts between the two branches in your pull request, but why?
 
-![Your branch and the main branch have diverged](/assets/labs/sp26/lab8_diverge.svg)
+![Your branch and the main branch have diverged](/assets/labs/lab8_diverge.svg)
 
 Between the instant when your sub-team's branch was created and now, `main` has been updated. Unfortunately, your TA has written their own bad implementations of the three functions in `stack.c` and committed it directly to your row's `main` branch. Then, another sub-team has possibly contributed their feature to `main` already. The diagram above shows a probable state of your repository, where the `main` branch and your branch have _diverged_ with different changes. When these divergent commits modify the same file, they could pose a conflict when you want to merge them together.
 
@@ -261,7 +264,7 @@ $ git config pull.rebase false
 
 In your pull request, press the "**View command line instructions**" link near the bottom:
 
-![GitHub shows "view command line instructions" at the bottom of the conflict box](/assets/labs/sp26/lab8_pr_conflict.png)
+![GitHub shows "view command line instructions" at the bottom of the conflict box](/assets/labs/lab8_pr_conflict.png)
 
 Ensure that you are on the `main` branch by running:
 
