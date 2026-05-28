@@ -115,7 +115,13 @@ At the top it'll say “GitHub Pages source saved". Wait a bit and refresh the p
 
 Note that in addition to seeing your file at, e.g, [https://monip1.github.io/cse29-fun/](https://monip1.github.io/cse29-fun/), you can also see it with `index.html` added to the end of the URL: [https://monip1.github.io/cse29-fun/index.html](https://monip1.github.io/cse29-fun/index.html) (Try it!).
 
-**Do now!** Add another file to your repository with any name you choose, but end it in the extension `.md`. Can you use this idea to see that file?
+Something interesting that can now be done is many files can be added. If you recall from [lab 1](./lab1) where we had a `people` directory that included all of the staff, you can now see those `data.md` files because that entire directory has been copied in at the top level next to `index.md`. i.e. <https://monip1.github.io/cse29-fun/people/TAs/Elena/data> will show you Elena's nicely rendered markdown file. 
+
+{: .note}
+Adding `.md` to the end of that <https://monip1.github.io/cse29-fun/people/TAs/Elena/data.md> will allow you to see the raw text of said file.
+
+{: .exercise} 
+Add another file to your repository with any name you choose, but end it in the extension `.md`. Can you use this idea to see that file?
 
 #### Editing Markdown
 
