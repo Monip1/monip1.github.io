@@ -142,7 +142,7 @@ You should now have:
 Please go ahead and fill out this Google form before you leave, it will help us improve the class in the future (survey??TODO)
 
 
-**How do I submit my Github Pages site to Gradescope?**
+<!---**How do I submit my Github Pages site to Gradescope?**
 
 Visit your Github Pages website with your tutorial in a browser (Safari, Chrome, Brave, 
 Firefox, Edge, etc), and use “Print” to save it to a PDF. Then, upload the PDF to the 
@@ -158,7 +158,7 @@ The format of the PDF you submit should look something like this:
 Sure! If they are from your account, that's fine. Don't share another person's screenshots,
 instead describe where you got stuck and include a screenshot of what doesn't
 work.
-
+--->
 
 
 
