@@ -9,7 +9,14 @@ permalink: /lab9
 # Lab 9: Github Pages
 {: .no_toc}
 
+#### Table of contents
+{: .no_toc}
+
+1. TOC
+{:toc }
+
 ## Related Links
+{: .no_toc}
 
 - [About Git](https://docs.github.com/en/get-started/using-git/about-git)
 - [Github](https://github.com/)
@@ -19,6 +26,7 @@ permalink: /lab9
 - [What is Markdown?](https://www.markdownguide.org/getting-started/)
 - [Git](https://git-scm.com/)
 - [Lab Doc](https://docs.google.com/spreadsheets/d/1otg_99XZKDlf7_rpDagsQmmb3jqUd0qvWUjhWcX-sVY/edit?usp=sharing)
+
 
 ## Key Definitions
 
@@ -39,28 +47,16 @@ from our computer to Github)
 
 ## Lab Tasks
 
-In this lab you'll make a professional website for yourself where you can post projects you have done or other fun things. Please contact the TA (`etomson@ucsd.edu`) if for personal privacy or security reasons you do not want to publish a public website, even under a pseudonym.
+In this lab you'll make a professional website for yourself where you can post your lab reports for the course. Please contact your instructor (asoosairaj@ucsd.edu or oweng@ucsd.edu) if for personal privacy or security reasons you do not want to publish a public website, even under a pseudonym.
 
 
 ### Part 5 – git, Github, and Github Pages
 
-Having a professional portfolio website for yourself can be useful in many, many
-ways. It's a useful URL to put at the top of your resume/CV where potential
-employers can learn more about you.  Lots of great work in CS is published only on
-someone's personal page, or is at least most accessible there.  Most CS faculty
-have such a page ([just](https://roseyu.com/) [a
-few](https://cseweb.ucsd.edu/~tzli/) [examples](http://kvaccaro.com/) [from
-new](https://web.engr.oregonstate.edu/~jensenca/OSU_ENGR/index.html) CSE
-faculty), for example.
+Having a professional portfolio website for yourself can be useful in many, many ways. It's a useful URL to put at the top of your resume/CV where potential employers can learn more about you.  Lots of great work in CS is published only on someone's personal page, or is at least most accessible there.  Most CS faculty have such a page ([just](https://roseyu.com/) [a few](https://cseweb.ucsd.edu/~tzli/) [examples](http://kvaccaro.com/) [from new](https://web.engr.oregonstate.edu/~jensenca/OSU_ENGR/index.html) CSE faculty), for example.
 
-Also, journaling and logging what you've learned is a powerful tool. Writing
-down what we've done and how we've done it, for an audience (real or imagined)
-other than ourselves, forces us to confront lingering misconceptions and cements
-what we learned in our memories. It's also simply useful to refresh your memory
-later!
+Also, journaling and logging what you've learned is a powerful tool. Writing down what we've done and how we've done it, for an audience (real or imagined) other than ourselves, forces us to confront lingering misconceptions and cements what we learned in our memories. It's also simply useful to refresh your memory later!
 
-For these reasons, we'll spend the rest of this lab creating a personal page,
-and then learning to write a blog post about what we learned.
+For these reasons, we'll spend the rest of this lab creating a personal page, and then learning to write a blog post about what we learned.
 
 Github ([https://www.github.com](github.com)) is a web service for storing and
 sharing code, along with a huge number of services surrounding that code. It
