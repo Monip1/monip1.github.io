@@ -143,6 +143,29 @@ You should now have:
 {: .fun-fact} 
 [the page you are reading](https://github.com/CSE29Spring2026/cse29spring2026.github.io/blob/main/docs/labs/lab9.md) is written in Markdown and uses Github Pages!
 
+### Images in markdown
+
+Another video you may want to watch from our much appreciated Spring 2024 CSE15L staff on images in markdown.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FN6K9YvdhTA?cc_load_policy=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+
+Images are added using the format: `![description of image](link-to-image)`
+* the description can be any string you'd like, but ideally something useful in the event the image does not properly load.
+* the link can be either a link to an image online, or a link to an image stored in your repo where you give it the relative path. If you make a folder called `images` next to `index.md` and add `dog.png` to said `images` folder, then you could add the image to your `index.md` by adding the line `![a very cute dog](./images/dog.png)`
+
+### Fun with Github Pages
+
+As mentioned [earlier in the lab](./lab9#part-1--git-github-and-github-pages-overview), these tools can be used for very serious things like portfolios, but to help build the toolset of getting comfortable with **markdown** and structuring the site, your task is to make something fun or interesting to you during this lab time.
+
+If you are at a loss on what to do, consider:
+* make a loop of pages with 1 home page. ie `index.md` has a link to a second page, which has a link to a third.
+* a page on something you enjoy (some sport or hobby)
+* incorporate back buttons on your pages to get back to your `index.md` or otherwise
+
+If you would like any inspiration, Elena has provided her [15L reports repo](https://monip1.github.io/cse15l-lab-reports/), which serves as an example of what is possible with the handful of tools you have learned (mostly links and pictures) throughout the course of the quarter's worth of 15L labs and one lockdown-induced late night session of possible insanity in about week 3 of said quarter.
+
+
+
 #### Before you leave
 
 Please go ahead and fill out this Google form before you leave, it will help us improve the class in the future (survey??TODO)
@@ -207,3 +230,151 @@ There is an alternative way of working with our repository, and we *highly recom
 **Important Note:** Make sure you apply for your Github Student Account in order to get access to the codespaces. 
 
 *(Only if you set up GitHub Codespaces -- highly recommended)* Go to a repository on GitHub and click “<> Code”, click "Codespaces", click "Create codespace on main"
+
+<style>
+    .fun-fact {
+    content: "Fun Fact";
+    background-color: var(--callout-funfact-bg) !important;
+    background-image:
+        repeating-linear-gradient(
+        35deg,
+        transparent 0px,
+        rgba(130, 231, 211, 0.35) 240px,
+        rgba(132, 176, 243, 0.35) 480px,
+        rgba(171, 150, 254, 0.35) 720px,
+        transparent 960px
+        ),
+        repeating-linear-gradient(
+        -35deg,
+        transparent 0px,
+        rgba(130, 231, 211, 0.35) 240px,
+        rgba(132, 176, 243, 0.35) 480px,
+        rgba(171, 150, 254, 0.35) 720px,
+        transparent 960px
+        ) !important;
+    background-size: 1200% 1200%, 1200% 1200%;
+    background-position: 0px 0px, 0px 0px;
+    animation: ff-slide 200s linear infinite;
+    color: var(--text-color) !important;
+    border-left-color: #41ac99 !important;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    margin: 1rem 0;
+    }
+
+    .fun-fact::before {
+    content: "Fun fact: ✨";
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.25rem;
+    vertical-align: middle;
+    animation: ff-pulse 8s ease-in-out infinite;
+    }
+    .fun-fact a,
+    .fun-fact a:visited,
+    .fun-fact .internal-link,
+    .fun-fact .external-link {
+    color: #fff8f5 !important;
+
+    font-weight: 700;
+    text-decoration-color: rgba(255, 248, 245, 0.9) !important;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2.5px;
+
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.45),
+        0 0 8px rgba(255, 255, 255, 0.18);
+    }
+
+    .fun-fact a:hover,
+    .fun-fact .internal-link:hover,
+    .fun-fact .external-link:hover {
+    color: #ffffff !important;
+
+    text-decoration-color: #ffffff !important;
+
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.6),
+        0 0 12px rgba(255, 255, 255, 0.25);
+    }
+
+    .quality::before {
+    content: "Quality of Life Improvement 💫";
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.25rem;
+    vertical-align: middle;
+    animation: ff-pulse 8s ease-in-out infinite;
+    }
+
+    .quality {
+    content: "Quality of Life Improvement 💫";
+    background-color: var(--callout-quality-bg) !important;
+    background-image:
+        repeating-linear-gradient(
+        35deg,
+        transparent 0px,
+        rgba(225, 118, 73, 0.35) 240px,
+        rgba(236, 61, 38, 0.35) 480px,
+        rgba(230, 136, 82, 0.35) 720px,
+        transparent 960px
+        ),
+        repeating-linear-gradient(
+        -35deg,
+        transparent 0px,
+        rgba(225, 118, 73, 0.35) 240px,
+        rgba(236, 61, 38, 0.35) 480px,
+        rgba(230, 136, 82, 0.35) 720px,
+        transparent 960px
+        ) !important;
+    background-size: 1200% 1200%, 1200% 1200%;
+    background-position: 0px 0px, 0px 0px;
+    animation: ff-slide 300s linear infinite;
+    color: var(--text-color) !important;
+    border-left-color: #fcab99 !important;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    margin: 1rem 0;
+    }
+    .quality a,
+    .quality a:visited,
+    .quality .internal-link,
+    .quality .external-link {
+    color: #fff8f5 !important;
+
+    font-weight: 700;
+    text-decoration-color: rgba(255, 248, 245, 0.9) !important;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2.5px;
+
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.45),
+        0 0 8px rgba(255, 255, 255, 0.18);
+    }
+
+    .quality a:hover,
+    .quality .internal-link:hover,
+    .quality .external-link:hover {
+    color: #ffffff !important;
+
+    text-decoration-color: #ffffff !important;
+
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.6),
+        0 0 12px rgba(255, 255, 255, 0.25);
+    }
+
+
+    @keyframes ff-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.10); }
+    100% { transform: scale(1); }
+    }
+
+    @keyframes ff-slide {
+    0% { background-position: 0% 0%, 0% 0%; }
+    100% { background-position: 1200% 0% }
+    }
+<style>
