@@ -50,73 +50,55 @@ from our computer to Github)
 In this lab you'll make a professional website for yourself where you can post your lab reports for the course. Please contact your instructor (asoosairaj@ucsd.edu or oweng@ucsd.edu) if for personal privacy or security reasons you do not want to publish a public website, even under a pseudonym.
 
 
-### Part 5 – git, Github, and Github Pages
+### Part 1 – git, Github, and Github Pages Overview
 
 Having a professional portfolio website for yourself can be useful in many, many ways. It's a useful URL to put at the top of your resume/CV where potential employers can learn more about you.  Lots of great work in CS is published only on someone's personal page, or is at least most accessible there.  Most CS faculty have such a page ([just](https://roseyu.com/) [a few](https://cseweb.ucsd.edu/~tzli/) [examples](http://kvaccaro.com/) [from new](https://web.engr.oregonstate.edu/~jensenca/OSU_ENGR/index.html) CSE faculty), for example.
 
 Also, journaling and logging what you've learned is a powerful tool. Writing down what we've done and how we've done it, for an audience (real or imagined) other than ourselves, forces us to confront lingering misconceptions and cements what we learned in our memories. It's also simply useful to refresh your memory later!
 
-For these reasons, we'll spend the rest of this lab creating a personal page, and then learning to write a blog post about what we learned.
+For these reasons, we'll spend this lab creating a personal page, and then learning to write a blog post about what we learned.
 
-Github ([https://www.github.com](github.com)) is a web service for storing and
-sharing code, along with a huge number of services surrounding that code. It
-uses a tool and protocol called `git` [https://git-scm.com/](https://git-scm.com) to store and
-retrieve that code. Github Pages
-[https://pages.github.com/](https://pages.github.com/) is one of the services
-Github provides for publishing personal and project websites from your Github
-account.
+Github ([https://www.github.com](github.com)) is a web service for storing and sharing code, along with a huge number of services surrounding that code. It uses a tool and protocol called `git` [https://git-scm.com/](https://git-scm.com) to store and retrieve that code. Github Pages [https://pages.github.com/](https://pages.github.com/) is one of the services Github provides for publishing personal and project websites from your Github account.
 
-This lab is a basic introduction to all of these. We will learn to use them in
-more detail as the quarter goes on; learning all that git, Github, or Github
+This lab is a basic introduction to Github Pages, building on what you have already learned about git in past labs; learning all that git, Github, or Github
 Pages has to offer could take months of practice!
 
-### Part 6 – Creating a Website with Github Pages
+### Part 2 – Creating a Website with Github Pages
 
-This section will show you how to create a site with Github Pages that you'll
-use for your lab reports.
+This section will show you how to create a site with Github Pages.
 
-There are written instructions with screenshots below you can follow, and also a
-video:
+There are written instructions with screenshots below you can follow, and also a video. This demonstration was reorded for 15L, and you do not need to worry about lab reports and should name your repository whatever makes sense for *your* website.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GZqizez1Dzs" title="GitHub Pages Youtube Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 #### Create a Repository
 
-On your github account, we are going to _create a new repository_ on
-Github. A _repository_ is a folder or directory with an associated history of
-changes that were made to the files within it. In this sense, a repository on
-Github has some similarities to a folder in Google Drive; the differences are
-mainly in the level of control we get in managing that history of changes.
+On your github account, we are going to _create a new repository_ on Github. Throughout the quarter, we have provided repositories to you via a link to the repository on github which you were able to clone, or a github classroom assignment which creates a repository for you.
 
 ![](../../assets/labs/sp26/l9new-repository.png)
 
-Name the repository `cse15l-lab-reports` (in my screenshot it looks like the
-name is taken because I made it before taking the screenshot; it will be green
-and OK for you). Leave the other settings as they are, and click "Create
-Repository" at the bottom.
+Name the repository something fitting, as it will be in the url to get to your website. Leave the other settings as they are, and click "Create Repository" at the bottom.
 
 ![](../../assets/labs/sp26/l9create-repository.png)
 
-You should see a screen like this (but with your username):
+You should see a screen like this (but with your username and repo name):
 
 ![](../../assets/labs/sp26/l9new-repository-screen.png)
 
-Click the "Create a new file" link (small, in blue, beneath the "Set up in
-Desktop" button). Make a new file called `index.md`, and put some text in it
-(whatever you like).
+It is at this point that you could copy the ssh link from the blue box in the middle to clone the repo and edit it how you've edited any github assignment for this class, but now we can learn another way to add and edit files without ever leaving github. 
+
+Click the "Create a new file" link (small, in blue, beneath the "Set up in Desktop" button). Make a new file called `index.md`, and put some text in it (whatever you like).
 
 ![](../../assets/labs/sp26/l9hello-world-pages.png)
 
-Scroll down to the bottom of the page and click "Commit new file". You should see
-a view of your repository that now lists a file called `index.md`.
+At the top right of the screen you should see a green button with "Commit changes..." written on it. Click it and then type in a commit message (or accept the one copilot will surely give you), something like "created index.md" will do. Now click the green "Commit changes" button. You should see a view of your repository that now lists a file called `index.md`.
 
-You have a public Github repository with some text in it! You can copy the link from your browser and send it to your friends and family to view!
+You have a public Github repository with some text in it! You could copy the link from your browser and send it to your friends and family to view! But wait... it will get cooler and more sharable.
 
 #### Making a Pages Site
 
-Next, click on "Settings" at the top of your repository, and then choose the
-"Pages" option in the sidebar:
+Next, click on "Settings" at the top of your repository, and then choose the "Pages" option in the sidebar:
 
 ![](../../assets/labs/sp26/l9settings-repo-button.png)
 
@@ -127,61 +109,37 @@ Choose `main` as the source for Github Pages, and click "Save".
 ![](../../assets/labs/sp26/l9github-pages-link.png)
 
 
-At the top it'll say “GitHub Pages source saved". Wait a bit and refresh the
-page. Eventually you'll see a message that says “Your site is live at `<url
-here>`.” (This can take a few minutes!) Click the link that's shown there; at
-first it will say the page isn't found. Wait a few minutes, then refresh the
-page.  Then you should see the text you wrote show up on a page like this:
+At the top it'll say “GitHub Pages source saved". Wait a bit and refresh the page. Eventually you'll see a message that says “Your site is live at `<url here>`.” (This can take a few minutes!) Click the link that's shown there; at first it will say the page isn't found. Wait a few minutes, then refresh the page.  Then you should see the text you wrote show up on a page like this:
 
-![](../../assets/labs/sp26/l9images/hello-world-page-load.png)
+![](../../assets/labs/sp26/l9images/sp26/l9hello-world-page-load.png)
 
-<!-- **Write down in notes** – everyone should be able to screenshot their page
-showing the text they wrote in their `index.md`.
+Note that in addition to seeing your file at, e.g, [https://monip1.github.io/cse29-fun/](https://monip1.github.io/cse29-fun/), you can also see it with `index.html` added to the end of the URL: [https://monip1.github.io/cse29-fun/index.html](https://monip1.github.io/cse29-fun/index.html) (Try it!).
 
-**Write down in notes** – Conduct the following experiment: -->
-Note that in addition to seeing your file at, e.g,
-[https://jpolitz.github.io/cse-15l-lab-report/](https://jpolitz.github.io/cse-15l-lab-report/),
-you can also see it with `index.html` added to the end of the URL:
-[https://jpolitz.github.io/cse-15l-lab-report/index.html](https://jpolitz.github.io/cse-15l-lab-report/index.html)
-(Try it!).
+**Do now!** Add another file to your repository with any name you choose, but end it in the extension `.md`. Can you use this idea to see that file?
 
-**Do now!** Add another file to your repository with any name you choose, but
-end it in the extension `.md`. Can you use this idea to see that file?
-
-<!-- Write down what you think is happening when you commit a new file. -->
 #### Editing Markdown
 
-The `.md` extension stands for "Markdown," which is a particular text format
-used for writing. There are many good documents on the web. A good cheat sheet
-and explainer are here:
+The `.md` extension stands for "Markdown," which is a particular text format used for writing. There are many good documents on the web. A good cheat sheet and explainer are here:
 
 - [Cheat sheet](https://commonmark.org/help/)
 - [What is Markdown?](https://www.markdownguide.org/getting-started/)
 
-Skim both of those documents, then try to use some of the elements described in
-the cheat sheet in your `index.md` file. How do some of the different formatting
-options show up when you use them? Are any surprising?
+Skim both of those documents, then try to use some of the elements described in the cheat sheet in your `index.md` or your new file (or both). How do some of the different formatting options show up when you use them? Are any surprising?
 
-<!-- **Write down in notes** – Try all of the formatting in the “Basic Syntax” part
-of the markdown cheat sheet above; everyone should screenshot their page that
-uses all of these. -->
 You should now have:
 
 - A repository with at least two files (`index.md` and another one you made up)
 - In one of those files, a use of each kind of basic Markdown syntax
 - A page that shows the rendered version of your Markdown text at a public URL
 
-**Congratulations** – you now know how to make a (simple), public-facing website
-with basic formatting! You can share the link to your page with anyone in the
-world with an internet connection, and they can see your page.
+**Congratulations** – you now know how to make a (simple), public-facing website with basic formatting! You can share the link to your page with anyone in the world with an internet connection, and they can see your page.
 
-(Fun fact: [the page you are
-reading](https://github.com/ucsd-cse15l-s23/ucsd-cse15l-s23.github.io/blob/main/_posts/weeks/2023-01-09-week1.md)
-is written in Markdown and uses Github Pages!)
+{: .fun-fact} 
+[the page you are reading](https://github.com/CSE29Spring2026/cse29spring2026.github.io/blob/main/docs/labs/lab9.md) is written in Markdown and uses Github Pages!
 
 #### Before you leave
 
-Please go ahead and fill out this Google form before you leave, this will help us create the seating chart for next week. [Link to Google form](https://forms.gle/5PPvrtnzPMdry68f9)
+Please go ahead and fill out this Google form before you leave, it will help us improve the class in the future (survey??TODO)
 
 
 **How do I submit my Github Pages site to Gradescope?**
