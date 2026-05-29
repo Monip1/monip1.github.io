@@ -156,7 +156,8 @@ Another video you may want to watch from our much appreciated Spring 2024 CSE15L
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FN6K9YvdhTA?cc_load_policy=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
 
-{: .funny}
+{: .funny} 
+.
 
 Images are added using the format: `![description of image](link-to-image)`
 * the description can be any string you'd like, but ideally something useful in the event the image does not properly load.
@@ -173,12 +174,11 @@ If you are at a loss on what to do, consider:
 
 If you would like any inspiration, Elena has provided her [15L reports repo](https://monip1.github.io/cse15l-lab-reports/), which serves as an example of what is possible with the handful of tools you have learned (mostly links and pictures) throughout the course of the quarter's worth of 15L labs and one lockdown-induced late night session of possible insanity in about week 3 of said quarter.
 
-
-
-#### Before you leave
-
-Please go ahead and fill out this Google form before you leave, it will help us improve the class in the future (survey??TODO)
-
+# Next Steps
+* if you think you've completed your site, you probably haven't.
+* if you truly have finished your website and it's already perfect, then:
+    * PA 4
+    * prep for final
 
 <!---**How do I submit my Github Pages site to Gradescope?**
 
@@ -200,7 +200,9 @@ work.
 
 
 
-### Part ? -- Installing VSCode and git on your computer
+## Future workflow setup.
+
+While vim is very useful for when you only have a command line available, there exist other slightly more modern ways of editing code. VSCode is a very popular editor and you will likely use it at some point in your career. We have also provided how to install git on windows as it is a very useful tool to have readily available. All following resources are provided by 15L Spring 2024.
 
 
 Go to the Visual Studio Code website
@@ -245,13 +247,9 @@ There is an alternative way of working with our repository, and we *highly recom
     position: relative;
     overflow: hidden;
 
-    background-color: var(--callout-funfact-bg) !important;
-    color: var(--text-color) !important;
-    border-left: 4px solid #41ac99 !important;
-
+    background-color: transparent !important;
     padding: 0.75rem 1rem;
     border-radius: 4px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     margin: 1rem 0;
 }
 
@@ -279,19 +277,6 @@ There is an alternative way of working with our repository, and we *highly recom
     animation: saber-flyby 14s linear infinite;
 }
 
-/* Optional pulse for icon/text/etc */
-.funny::before {
-    content: "⚔️";
-    display: inline-block;
-    margin-right: 0.5rem;
-    animation: ff-pulse 8s ease-in-out infinite;
-}
-
-@keyframes ff-pulse {
-    0%   { transform: scale(1); }
-    50%  { transform: scale(1.10); }
-    100% { transform: scale(1); }
-}
 
 /*
     Most of the animation is invisible.
