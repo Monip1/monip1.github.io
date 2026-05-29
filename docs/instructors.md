@@ -38,8 +38,8 @@ nav_order: 4
       position: relative;
 
       box-shadow:
-          0 0 8px rgba(65, 172, 153, 0.35),
-          0 0 18px rgba(65, 172, 153, 0.20);
+          0 0 8px rgba(65, 172, 152, 0.86),
+          0 0 18px rgba(65, 172, 152, 0.63);
 
       transition:
           transform 0.25s ease,
@@ -53,8 +53,8 @@ nav_order: 4
       transform: scale(1.04);
 
       box-shadow:
-          0 0 14px rgba(65, 172, 153, 0.6),
-          0 0 32px rgba(65, 172, 153, 0.4),
+          0 0 14px rgba(65, 172, 152, 0.77),
+          0 0 32px rgb(65, 172, 152),
           0 0 48px rgba(65, 172, 153, 0.25);
   }
 
@@ -64,8 +64,8 @@ nav_order: 4
 
       /* blue tutor glow */
       box-shadow:
-          0 0 10px rgba(100, 180, 255, 0.35),
-          0 0 24px rgba(100, 180, 255, 0.2);
+          0 0 10px rgba(100, 180, 255, 0.84),
+          0 0 24px rgba(100, 180, 255, 0.6);
   }
 
   .prof {
@@ -76,8 +76,8 @@ nav_order: 4
 
       /* gold professor glow */
       box-shadow:
-          0 0 12px rgba(255, 215, 100, 0.45),
-          0 0 30px rgba(255, 215, 100, 0.25);
+          0 0 12px rgba(255, 215, 100, 0.75),
+          0 0 30px rgba(255, 215, 100, 0.65);
   }
 
   .profile-info-prof {
@@ -110,20 +110,20 @@ nav_order: 4
 
       0% {
           box-shadow:
-              0 0 8px rgba(65, 172, 153, 0.25),
-              0 0 18px rgba(65, 172, 153, 0.15);
+              0 0 8px rgba(65, 172, 153, 0.65),
+              0 0 18px rgba(65, 172, 153, 0.55);
       }
 
       50% {
           box-shadow:
-              0 0 14px rgba(65, 172, 153, 0.45),
-              0 0 30px rgba(65, 172, 153, 0.25);
+              0 0 14px rgba(65, 172, 153, 0.85),
+              0 0 30px rgba(65, 172, 153, 0.65);
       }
 
       100% {
           box-shadow:
-              0 0 8px rgba(65, 172, 153, 0.25),
-              0 0 18px rgba(65, 172, 153, 0.15);
+              0 0 8px rgba(65, 172, 153, 0.85),
+              0 0 18px rgba(65, 172, 153, 0.65);
       }
   }
 
