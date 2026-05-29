@@ -175,7 +175,7 @@ Images are added using the format: `![description of image](link-to-image)`
 
 As mentioned [earlier in the lab](./lab9#part-1--git-github-and-github-pages-overview), these tools can be used for very serious things like portfolios, but to help build the toolset of getting comfortable with **markdown** and structuring the site, your task is to make something fun or interesting to you during this lab time.
 
-If you would like to make it more custom and interesting, you may want to consider using **jekyll**, which you can find info on by going to `Settings -> Pages ->` and then clicking the "add a Jekyll theme" link highlighted in the image below.
+If you would like to make it more custom and interesting, you may want to consider using **jekyll**, which you can find info on by going to `Settings -> Pages` and then clicking the "add a Jekyll theme" link highlighted in the image below.
 
 ![jekyll](../../assets/labs/sp26/l9-jekyll.png)
 
