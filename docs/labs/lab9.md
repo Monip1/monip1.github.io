@@ -8,12 +8,23 @@ permalink: /lab9
 
 # Lab 9: Github Pages
 {: .no_toc}
+In this lab you'll make a public website that is accessible by anyone with an internet connection. Please contact your TA (etomson@ucsd.edu) if for personal privacy or security reasons you do not want to publish a public website, even under a pseudonym.
+
+## Lab 9 learning objectives
+{: .no_toc}
+* Learn how to use markdown 
+* Learn how to make a repository into a Github Pages Site
+* Explore expanding upon a site
 
 #### Table of contents
 {: .no_toc}
 
 1. TOC
 {:toc }
+
+# Icebreaker
+{: .no_toc}
+If you could only eat one meal for the rest of your life, what would it be?
 
 ## Related Links
 {: .no_toc}
@@ -44,10 +55,6 @@ folder _and_ the entire history – the whole repository.
 turn them into a commit in the repository's history
 - **git push**: A git action to send commits from one place to another (usually
 from our computer to Github)
-
-## Lab Tasks
-
-In this lab you'll make a public website that is accessible by anyone with an internet connection. Please contact your TA (etomson@ucsd.edu) if for personal privacy or security reasons you do not want to publish a public website, even under a pseudonym.
 
 
 ### Part 1 – git, Github, and Github Pages Overview
