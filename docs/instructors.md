@@ -7,67 +7,131 @@ nav_order: 4
 # Course Staff
 
 <style>
-    .profile-display {
-        display: grid;
-    }
-    .profile {
-        display: flex;
-        flex-direction: row;
-        margin: 12px;
-        min-width: 340px;
-        line-height: 20px;
-    }
-    .profile-prof {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .profile-pic {
-        height: 10rem;
-        width: 10rem;
-        border-radius: 8px;
-        object-fit: cover;
-        margin-right: 8px;
-        overflow: hidden;
-        flex-shrink: 0;
-    }
-    .tutor-pic {
-        height: 7.5rem;
-        width: 7.5rem;
-    }
-    .prof {
-        height: 12.5rem;
-        width: 12.5rem;
-        margin-right: 0px;
-        margin-bottom: 10px;
-    }
-    .profile-info-prof {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .profile-info {
-        margin: 4px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .profile-info p {
-        text-wrap: pretty;
-        margin: 1px;
-    }
-    .profile-name {
-        font-size: 18px;
-        font-weight: 500;
-        margin-top: 10px;
-        margin-bottom: 7px;
-    }
+  .profile-display {
+      display: grid;
+  }
 
-    @media screen and (min-width: 1000px) {
-      .profile-display {
-        grid-template-columns: 1fr 1fr;
+  .profile {
+      display: flex;
+      flex-direction: row;
+      margin: 12px;
+      min-width: 340px;
+      line-height: 20px;
+  }
+
+  .profile-prof {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .profile-pic {
+      height: 10rem;
+      width: 10rem;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+
+      /* glow effects */
+      position: relative;
+
+      box-shadow:
+          0 0 8px rgba(65, 172, 153, 0.35),
+          0 0 18px rgba(65, 172, 153, 0.20);
+
+      transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+
+      animation: profile-glow 4s ease-in-out infinite;
+  }
+
+  /* hover effect */
+  .profile-pic:hover {
+      transform: scale(1.04);
+
+      box-shadow:
+          0 0 14px rgba(65, 172, 153, 0.6),
+          0 0 32px rgba(65, 172, 153, 0.4),
+          0 0 48px rgba(65, 172, 153, 0.25);
+  }
+
+  .tutor-pic {
+      height: 7.5rem;
+      width: 7.5rem;
+
+      /* blue tutor glow */
+      box-shadow:
+          0 0 10px rgba(100, 180, 255, 0.35),
+          0 0 24px rgba(100, 180, 255, 0.2);
+  }
+
+  .prof {
+      height: 12.5rem;
+      width: 12.5rem;
+      margin-right: 0px;
+      margin-bottom: 10px;
+
+      /* gold professor glow */
+      box-shadow:
+          0 0 12px rgba(255, 215, 100, 0.45),
+          0 0 30px rgba(255, 215, 100, 0.25);
+  }
+
+  .profile-info-prof {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .profile-info {
+      margin: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .profile-info p {
+      text-wrap: pretty;
+      margin: 1px;
+  }
+
+  .profile-name {
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 10px;
+      margin-bottom: 7px;
+  }
+
+  /* breathing glow animation */
+  @keyframes profile-glow {
+
+      0% {
+          box-shadow:
+              0 0 8px rgba(65, 172, 153, 0.25),
+              0 0 18px rgba(65, 172, 153, 0.15);
       }
-    }
+
+      50% {
+          box-shadow:
+              0 0 14px rgba(65, 172, 153, 0.45),
+              0 0 30px rgba(65, 172, 153, 0.25);
+      }
+
+      100% {
+          box-shadow:
+              0 0 8px rgba(65, 172, 153, 0.25),
+              0 0 18px rgba(65, 172, 153, 0.15);
+      }
+  }
+
+  @media screen and (min-width: 1000px) {
+      .profile-display {
+          grid-template-columns: 1fr 1fr;
+      }
+  }
 </style>
 
 ## Instructor
