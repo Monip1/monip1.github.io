@@ -279,7 +279,7 @@ There is an alternative way of working with our repository, and we *highly recom
 
     pointer-events: none;
 
-    animation: saber-flyby 10s linear infinite;
+    animation: saber-flyby 60s linear infinite;
 }
 
 
@@ -312,8 +312,7 @@ There is an alternative way of working with our repository, and we *highly recom
         left: calc(100% + 250px);
         opacity: 1;
         transform:
-            translateY(-50%)
-            rotate(900deg);
+            translateY(-50%);
     }
 
     /* fade away */
@@ -321,7 +320,6 @@ There is an alternative way of working with our repository, and we *highly recom
         left: calc(100% + 250px);
         opacity: 0;
         transform:
-            translateY(-50%)
-            rotate(1080deg);
+            translateY(-50%);
     }
 }
