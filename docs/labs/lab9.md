@@ -294,7 +294,7 @@ There is an alternative way of working with our repository, and we *highly recom
         opacity: 0;
         transform:
             translateY(-50%)
-            rotate(0deg);
+            rotate(-78deg);
     }
 
     /* start appearing */
@@ -303,7 +303,7 @@ There is an alternative way of working with our repository, and we *highly recom
         opacity: 1;
         transform:
             translateY(-50%)
-            rotate(180deg);
+            rotate(12deg);
     }
 
     /* fly across spinning */
@@ -312,7 +312,7 @@ There is an alternative way of working with our repository, and we *highly recom
         opacity: 1;
         transform:
             translateY(-50%)
-            rotate(180deg);
+            rotate(12deg);
     }
 
     /* fade away */
@@ -321,6 +321,6 @@ There is an alternative way of working with our repository, and we *highly recom
         opacity: 0;
         transform:
             translateY(-50%)
-            rotate(180deg);
+            rotate(12deg);
     }
 }
