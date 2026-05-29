@@ -273,7 +273,7 @@ There is an alternative way of working with our repository, and we *highly recom
     background-size: contain;
     background-repeat: no-repeat;
 
-    transform: translateY(-50%) rotate(-12deg);
+    transform: translateY(-50%);
 
     opacity: 0;
 
@@ -289,27 +289,30 @@ There is an alternative way of working with our repository, and we *highly recom
 */
 @keyframes saber-flyby {
 
-    /* Hidden for a while */
+    /* Hidden */
     0%, 77% {
         left: -250px;
         opacity: 0;
+        transform: translateY(-50%) rotate(0deg);
     }
 
-    /* Fade in */
+    /* Begin entering */
     80% {
         opacity: 1;
+        transform: translateY(-50%) rotate(180deg);
     }
 
-    /* Fly across */
+    /* Fly across with spin */
     83% {
         left: calc(100% + 250px);
         opacity: 1;
+        transform: translateY(-50%) rotate(900deg);
     }
 
     /* Fade out */
     86%, 100% {
         left: calc(100% + 250px);
         opacity: 0;
+        transform: translateY(-50%) rotate(1080deg);
     }
 }
-</style>
