@@ -312,7 +312,8 @@ There is an alternative way of working with our repository, and we *highly recom
         left: calc(100% + 250px);
         opacity: 1;
         transform:
-            translateY(-50%);
+            translateY(-50%)
+            rotate(180deg);
     }
 
     /* fade away */
@@ -320,6 +321,7 @@ There is an alternative way of working with our repository, and we *highly recom
         left: calc(100% + 250px);
         opacity: 0;
         transform:
-            translateY(-50%);
+            translateY(-50%)
+            rotate(180deg);
     }
 }
