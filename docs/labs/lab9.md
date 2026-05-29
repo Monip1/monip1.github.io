@@ -111,7 +111,7 @@ Choose `main` as the source for Github Pages, and click "Save".
 
 At the top it'll say “GitHub Pages source saved". Wait a bit and refresh the page. Eventually you'll see a message that says “Your site is live at `<url here>`.” (This can take a few minutes!) Click the link that's shown there; at first it will say the page isn't found. Wait a few minutes, then refresh the page.  Then you should see the text you wrote show up on a page like this:
 
-![](../../assets/labs/sp26/l9images/sp26/l9hello-world-page-load.png)
+![](../../assets/labs/sp26/l9hello-world-page-load.png)
 
 Note that in addition to seeing your file at, e.g, [https://monip1.github.io/cse29-fun/](https://monip1.github.io/cse29-fun/), you can also see it with `index.html` added to the end of the URL: [https://monip1.github.io/cse29-fun/index.html](https://monip1.github.io/cse29-fun/index.html) (Try it!).
 
