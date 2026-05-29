@@ -261,8 +261,8 @@ There is an alternative way of working with our repository, and we *highly recom
     top: 50%;
     left: -200px;
 
-    width: 160px;
-    height: 160px;
+    width: 240px;
+    height: 240px;
 
     background-image: url("../../assets/labs/sp26/lightsaber.png");
     background-size: contain;
