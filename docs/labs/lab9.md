@@ -290,7 +290,7 @@ There is an alternative way of working with our repository, and we *highly recom
 
     /* Fade in */
     80% {
-        left: 100px;
+        left: 170px;
         opacity: 1;
     }
 
