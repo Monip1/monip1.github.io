@@ -186,6 +186,7 @@ If you would like any inspiration, Elena has provided her [15L reports repo](htt
 {: .no_toc}
 
 * if you think you've completed your site, you probably haven't.
+* Please also fill out your set evalutaions and IA evaluations!. <https://academicaffairs.ucsd.edu/Modules/Evals/>
 * if you truly have finished your website and it's already perfect, then:
     * PA 4
     * prep for final
