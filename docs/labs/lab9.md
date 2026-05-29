@@ -283,13 +283,13 @@ There is an alternative way of working with our repository, and we *highly recom
 @keyframes saber-flyby {
 
     /* Hidden for a while */
-    0%, 75% {
+    0%, 77% {
         left: -250px;
         opacity: 0;
     }
 
     /* Fade in */
-    77% {
+    80% {
         left: 100px;
         opacity: 1;
     }
