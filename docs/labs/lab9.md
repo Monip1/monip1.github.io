@@ -28,6 +28,8 @@ In this lab you'll make a public website that is accessible by anyone with an in
 {: .funny}
 If you could only eat one meal for the rest of your life, what would it be?
 
+Your whiteboard activity for this lab is to write down your names and icebreaker answers. Then towards the end of the lab, add your favorite thing that you learned in this lab as well as any cool things in this clone of the cse29 website you find.
+
 # Related Links
 {: .no_toc}
 
