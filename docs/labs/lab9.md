@@ -284,12 +284,13 @@ There is an alternative way of working with our repository, and we *highly recom
 
     /* Hidden for a while */
     0%, 75% {
-        left: 50px;
+        left: -250px;
         opacity: 0;
     }
 
     /* Fade in */
     77% {
+        left: 100px;
         opacity: 1;
     }
 
