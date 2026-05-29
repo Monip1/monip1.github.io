@@ -34,38 +34,32 @@ nav_order: 4
       overflow: hidden;
       flex-shrink: 0;
 
-      /* glow effects */
       position: relative;
 
-      box-shadow:
-          0 0 8px rgba(65, 172, 152, 0.86),
-          0 0 18px rgba(65, 172, 152, 0.63);
-
       transition:
-          transform 0.25s ease,
-          box-shadow 0.25s ease;
+          transform 0.35s ease,
+          filter 0.35s ease;
 
-      animation: profile-glow 4s ease-in-out infinite;
+      /* smooth colorful glow */
+      animation: rainbow-glow 8s ease-in-out infinite;
+
+      filter:
+          drop-shadow(0 0 8px rgba(65, 172, 153, 0.7))
+          drop-shadow(0 0 18px rgba(65, 172, 153, 0.45));
   }
 
-  /* hover effect */
   .profile-pic:hover {
-      transform: scale(1.04);
+      transform: scale(1.05);
 
-      box-shadow:
-          0 0 14px rgba(65, 172, 152, 0.77),
-          0 0 32px rgb(65, 172, 152),
-          0 0 48px rgba(65, 172, 153, 0.25);
+      filter:
+          drop-shadow(0 0 14px rgba(255,255,255,0.8))
+          drop-shadow(0 0 28px rgba(65, 172, 153, 0.9))
+          drop-shadow(0 0 50px rgba(65, 172, 153, 0.5));
   }
 
   .tutor-pic {
       height: 7.5rem;
       width: 7.5rem;
-
-      /* blue tutor glow */
-      box-shadow:
-          0 0 10px rgba(100, 180, 255, 0.84),
-          0 0 24px rgba(100, 180, 255, 0.6);
   }
 
   .prof {
@@ -73,11 +67,6 @@ nav_order: 4
       width: 12.5rem;
       margin-right: 0px;
       margin-bottom: 10px;
-
-      /* gold professor glow */
-      box-shadow:
-          0 0 12px rgba(255, 215, 100, 0.75),
-          0 0 30px rgba(255, 215, 100, 0.65);
   }
 
   .profile-info-prof {
@@ -105,25 +94,37 @@ nav_order: 4
       margin-bottom: 7px;
   }
 
-  /* breathing glow animation */
-  @keyframes profile-glow {
+  /* soft animated color shifting */
+  @keyframes rainbow-glow {
 
       0% {
-          box-shadow:
-              0 0 8px rgba(65, 172, 153, 0.85),
-              0 0 18px rgba(65, 172, 153, 0.65);
+          filter:
+              drop-shadow(0 0 8px rgba(65, 172, 153, 0.75))
+              drop-shadow(0 0 22px rgba(65, 172, 153, 0.45));
+      }
+
+      25% {
+          filter:
+              drop-shadow(0 0 10px rgba(80, 180, 255, 0.75))
+              drop-shadow(0 0 24px rgba(80, 180, 255, 0.45));
       }
 
       50% {
-          box-shadow:
-              0 0 14px rgba(70, 211, 66, 0.85),
-              0 0 30px rgba(16, 137, 26, 0.65);
+          filter:
+              drop-shadow(0 0 10px rgba(180, 120, 255, 0.75))
+              drop-shadow(0 0 24px rgba(180, 120, 255, 0.45));
+      }
+
+      75% {
+          filter:
+              drop-shadow(0 0 10px rgba(255, 120, 180, 0.75))
+              drop-shadow(0 0 24px rgba(255, 120, 180, 0.45));
       }
 
       100% {
-          box-shadow:
-              0 0 8px rgba(65, 172, 153, 0.85),
-              0 0 18px rgba(65, 172, 153, 0.65);
+          filter:
+              drop-shadow(0 0 8px rgba(65, 172, 153, 0.75))
+              drop-shadow(0 0 22px rgba(65, 172, 153, 0.45));
       }
   }
 
