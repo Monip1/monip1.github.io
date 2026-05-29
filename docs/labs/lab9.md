@@ -289,30 +289,39 @@ There is an alternative way of working with our repository, and we *highly recom
 */
 @keyframes saber-flyby {
 
-    /* Hidden */
+    /* hidden offscreen */
     0%, 77% {
         left: -250px;
         opacity: 0;
-        transform: translateY(-50%) rotate(0deg);
+        transform:
+            translateY(-50%)
+            rotate(0deg);
     }
 
-    /* Begin entering */
+    /* start appearing */
     80% {
+        left: -250px;
         opacity: 1;
-        transform: translateY(-50%) rotate(180deg);
+        transform:
+            translateY(-50%)
+            rotate(180deg);
     }
 
-    /* Fly across with spin */
+    /* fly across spinning */
     83% {
         left: calc(100% + 250px);
         opacity: 1;
-        transform: translateY(-50%) rotate(900deg);
+        transform:
+            translateY(-50%)
+            rotate(900deg);
     }
 
-    /* Fade out */
+    /* fade away */
     86%, 100% {
         left: calc(100% + 250px);
         opacity: 0;
-        transform: translateY(-50%) rotate(1080deg);
+        transform:
+            translateY(-50%)
+            rotate(1080deg);
     }
 }
