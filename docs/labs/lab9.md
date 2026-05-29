@@ -272,7 +272,7 @@ There is an alternative way of working with our repository, and we *highly recom
 
     pointer-events: none;
 
-    animation: saber-flyby 14s linear infinite;
+    animation: saber-flyby 60s linear infinite;
 }
 
 
@@ -283,24 +283,24 @@ There is an alternative way of working with our repository, and we *highly recom
 @keyframes saber-flyby {
 
     /* Hidden for a while */
-    0%, 70% {
+    0%, 75% {
         left: 50px;
         opacity: 0;
     }
 
     /* Fade in */
-    72% {
+    77% {
         opacity: 1;
     }
 
     /* Fly across */
-    85% {
+    83% {
         left: calc(100% + 250px);
         opacity: 1;
     }
 
     /* Fade out */
-    88%, 100% {
+    86%, 100% {
         left: calc(100% + 250px);
         opacity: 0;
     }
