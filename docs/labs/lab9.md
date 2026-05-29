@@ -28,7 +28,7 @@ In this lab you'll make a public website that is accessible by anyone with an in
 {: .funny}
 If you could only eat one meal for the rest of your life, what would it be?
 
-## Related Links
+# Related Links
 {: .no_toc}
 
 - [About Git](https://docs.github.com/en/get-started/using-git/about-git)
@@ -58,7 +58,7 @@ turn them into a commit in the repository's history
 from our computer to Github)
 
 
-### Part 1 – git, Github, and Github Pages Overview
+# Part 1: git, Github, and Github Pages Overview
 
 {: .warning}
 This lab has many images and sometimes there is quite little text between said images, so be careful not to skip things between images. (switching to dark mode via the toggle switch in the bottom left may help)
@@ -74,7 +74,7 @@ Github ([https://www.github.com](github.com)) is a web service for storing and s
 This lab is a basic introduction to Github Pages, building on what you have already learned about git in past labs; learning all that git, Github, or Github
 Pages has to offer could take months of practice!
 
-### Part 2 – Creating a Website with Github Pages
+# Part 2: Creating a Website with Github Pages
 
 {: .funny}
 This section will show you how to create a site with Github Pages.
@@ -84,7 +84,7 @@ There are written instructions with screenshots below you can follow, and also a
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GZqizez1Dzs" title="GitHub Pages Youtube Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
-#### Create a Repository
+## Create a Repository
 
 On your github account, we are going to _create a new repository_ on Github. Throughout the quarter, we have provided repositories to you via a link to the repository on github which you were able to clone, or a github classroom assignment which creates a repository for you.
 
@@ -108,7 +108,7 @@ At the top right of the screen you should see a green button with "Commit change
 
 You have a public Github repository with some text in it! You could copy the link from your browser and send it to your friends and family to view! But wait... it will get cooler and more sharable.
 
-#### Making a Pages Site
+## Making a Pages Site
 
 Next, click on "Settings" at the top of your repository, and then choose the "Pages" option in the sidebar:
 
@@ -136,7 +136,7 @@ Adding `.md` to the end of that <https://monip1.github.io/cse29-fun/people/TAs/E
 {: .exercise} 
 Add another file to your repository with any name you choose, but end it in the extension `.md`. Can you use this idea to see that file?
 
-#### Editing Markdown
+## Editing Markdown
 
 The `.md` extension stands for "Markdown," which is a particular text format used for writing. There are many good documents on the web. A good cheat sheet and explainer are here:
 
@@ -167,7 +167,7 @@ Images are added using the format: `![description of image](link-to-image)`
 * the description can be any string you'd like, but ideally something useful in the event the image does not properly load.
 * the link can be either a link to an image online, or a link to an image stored in your repo where you give it the relative path. If you make a folder called `images` next to `index.md` and add `dog.png` to said `images` folder, then you could add the image to your `index.md` by adding the line `![a very cute dog](./images/dog.png)`
 
-### Fun with Github Pages
+# Part 3: Fun with Github Pages
 
 As mentioned [earlier in the lab](./lab9#part-1--git-github-and-github-pages-overview), these tools can be used for very serious things like portfolios, but to help build the toolset of getting comfortable with **markdown** and structuring the site, your task is to make something fun or interesting to you during this lab time.
 
@@ -206,7 +206,7 @@ work.
 
 ## Future workflow setup.
 
-While vim is very useful for when you only have a command line available, there exist other slightly more modern ways of editing code. VSCode is a very popular editor and you will likely use it at some point in your career. We have also provided how to install git on windows as it is a very useful tool to have readily available. All following resources are provided by 15L Spring 2024.
+While vim is very useful for when you only have a command line available, there exist other slightly more modern ways of editing code. VSCode is a very popular editor and you will likely use it at some point in your career. We have also provided how to install git on windows as it is a very useful tool to have readily available. Codespaces, which allow you to use a VSCode environment from a browser to edit your repo is also provided. All following resources are provided by 15L Spring 2024.
 
 
 Go to the Visual Studio Code website
