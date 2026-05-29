@@ -1,19 +1,21 @@
 ---
 layout: default
-title: PA 5
+title: PA 123
 parent: Programming Assignments
 permalink: /pa5
 nav_order: 6
 toc: sidebar
 ---
 
-# PA5 - Web Server
+# PA123 - Web Server
 
-**Due Friday, June 7th, 1:43pm**
+**Due Friday, June 7th, 2029, 1:43pm**
 
 Github Repo: [https://github.com/ucsd-cse29/pa5-web-server](https://github.com/ucsd-cse29/pa5-web-server)
 
-**Important**: There is no resubmission available for Assignment 5 (Problem Set, Design Questions, and Programming Assignment). Please plan your development and testing accordingly. There will also be no hidden tests for PA5, so you will receive immediate feedback on your code.
+{: .important}
+this assignment is not **real** for spring 2026.
+
 
 ## Web Servers and HTTP
 
