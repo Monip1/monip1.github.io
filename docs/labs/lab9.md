@@ -157,8 +157,6 @@ Another video you may want to watch from our much appreciated Spring 2024 CSE15L
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FN6K9YvdhTA?cc_load_policy=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
 
 {: .funny} 
-.
-
 Images are added using the format: `![description of image](link-to-image)`
 * the description can be any string you'd like, but ideally something useful in the event the image does not properly load.
 * the link can be either a link to an image online, or a link to an image stored in your repo where you give it the relative path. If you make a folder called `images` next to `index.md` and add `dog.png` to said `images` folder, then you could add the image to your `index.md` by adding the line `![a very cute dog](./images/dog.png)`
@@ -286,7 +284,7 @@ There is an alternative way of working with our repository, and we *highly recom
 
     /* Hidden for a while */
     0%, 70% {
-        left: -250px;
+        left: 50px;
         opacity: 0;
     }
 
