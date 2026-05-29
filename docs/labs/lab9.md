@@ -179,6 +179,8 @@ If you are at a loss on what to do, consider:
 If you would like any inspiration, Elena has provided her [15L reports repo](https://monip1.github.io/cse15l-lab-reports/), which serves as an example of what is possible with the handful of tools you have learned (mostly links and pictures) throughout the course of the quarter's worth of 15L labs and one lockdown-induced late night session of possible insanity in about week 3 of said quarter.
 
 # Next Steps
+{: no_toc}
+
 * if you think you've completed your site, you probably haven't.
 * if you truly have finished your website and it's already perfect, then:
     * PA 4
@@ -239,7 +241,10 @@ labs and lectures on this computer.
 
 
 ## Codespaces
-### *Alternative way of working with a GitHub repository* 
+{: no_toc}
+
+### *Alternative way of working with a GitHub repository*
+{: no_toc}
 There is an alternative way of working with our repository, and we *highly recommend* you try working with GitHub Codespaces (which comes with the GitHub Student Developer Pack)! More documentation is available [here](https://docs.github.com/en/codespaces). It is an online Integrated Development Environment that allows us to work with our code directly online! 
 
 **Important Note:** Make sure you apply for your Github Student Account in order to get access to the codespaces. 
