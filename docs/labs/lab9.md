@@ -278,7 +278,7 @@ There is an alternative way of working with our repository, and we *highly recom
 
     pointer-events: none;
 
-    animation: saber-flyby 10s linear infinite;
+    animation: saber-flyby 60s linear infinite;
 }
 
 
