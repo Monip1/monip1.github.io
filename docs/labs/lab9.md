@@ -24,6 +24,8 @@ In this lab you'll make a public website that is accessible by anyone with an in
 
 # Icebreaker
 {: .no_toc}
+
+{: .funny}
 If you could only eat one meal for the rest of your life, what would it be?
 
 ## Related Links
@@ -59,6 +61,9 @@ from our computer to Github)
 
 ### Part 1 – git, Github, and Github Pages Overview
 
+{: .warning}
+This lab has many images and sometimes there is quite little text between said images, so be careful not to skip things between images. (switching to dark mode via the toggle switch in the bottom left may help)
+
 Having a professional portfolio website for yourself can be useful in many, many ways. It's a useful URL to put at the top of your resume/CV where potential employers can learn more about you.  Lots of great work in CS is published only on someone's personal page, or is at least most accessible there.  Most CS faculty have such a page ([just](https://roseyu.com/) [a few](https://cseweb.ucsd.edu/~tzli/) [examples](http://kvaccaro.com/) [from new](https://web.engr.oregonstate.edu/~jensenca/OSU_ENGR/index.html) CSE faculty), for example.
 
 Also, journaling and logging what you've learned is a powerful tool. Writing down what we've done and how we've done it, for an audience (real or imagined) other than ourselves, forces us to confront lingering misconceptions and cements what we learned in our memories. It's also simply useful to refresh your memory later!
@@ -72,6 +77,7 @@ Pages has to offer could take months of practice!
 
 ### Part 2 – Creating a Website with Github Pages
 
+{: .funny}
 This section will show you how to create a site with Github Pages.
 
 There are written instructions with screenshots below you can follow, and also a video. This demonstration was reorded for 15L, and you do not need to worry about lab reports and should name your repository whatever makes sense for *your* website.
@@ -111,6 +117,7 @@ Next, click on "Settings" at the top of your repository, and then choose the "Pa
 
 ![](../../assets/labs/sp26/l9github-pages-branch.png)
 
+{: .funny}
 Choose `main` as the source for Github Pages, and click "Save".
 
 ![](../../assets/labs/sp26/l9github-pages-link.png)
