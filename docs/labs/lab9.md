@@ -47,7 +47,7 @@ from our computer to Github)
 
 ## Lab Tasks
 
-In this lab you'll make a professional website for yourself where you can post your lab reports for the course. Please contact your instructor (asoosairaj@ucsd.edu or oweng@ucsd.edu) if for personal privacy or security reasons you do not want to publish a public website, even under a pseudonym.
+In this lab you'll make a public website that is accessible by anyone with an internet connection. Please contact your TA (etomson@ucsd.edu) if for personal privacy or security reasons you do not want to publish a public website, even under a pseudonym.
 
 
 ### Part 1 – git, Github, and Github Pages Overview
