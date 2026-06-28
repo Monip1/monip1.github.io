@@ -32,7 +32,7 @@ We will be playing on version 1.21.1 and the neoforge version is 21.1.234.
 Locate your `.minecraft` folder. You should see it if you go to your file explorer and type `%appdata%` in the path. It's probably `~/AppData/Roaming`. Enter the `.minecraft/mods` directory.
 
 {: .funny}
-Take the mods [here](todo) and put them into said `mods` folder. (Be sure to unzip it first, probably right-click -> extract all). 
+Take the mods [here](https://drive.google.com/file/d/1xwSeHTVEzeA6fo6s7rrIhwbUI7Itd3eT/view?usp=sharing) and put them into said `mods` folder. (Be sure to unzip it first after you download it, probably right-click -> extract all). 
 
 # Playing
 
