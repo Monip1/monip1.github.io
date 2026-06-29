@@ -32,10 +32,13 @@ You are the client.
 
 # Adding Mods
 
+{: .funny}
 Locate your `.minecraft` folder. You should see it if you go to your file explorer and type `%appdata%` in the path. It's probably `~/AppData/Roaming`. Enter the `.minecraft/mods` directory.
 
-{: .funny}
-Take the mods [here](https://drive.google.com/file/d/1xwSeHTVEzeA6fo6s7rrIhwbUI7Itd3eT/view?usp=sharing) and put them into said `mods` folder. (Be sure to unzip it first after you download it, probably right-click -> extract all). 
+All documentation and such can be found in the [Google Drive](https://drive.google.com/drive/folders/1fcEmuc0DucWhrir9FRV8IwTGwZ4DobZZ?usp=sharing)  
+Download links -> [Current set of all mods](https://drive.google.com/file/d/1Z-gdDD7-Mam0fUZTHhYF5duqB8njuK7n/view?usp=sharing) = [Starting mods](https://drive.google.com/file/d/1xwSeHTVEzeA6fo6s7rrIhwbUI7Itd3eT/view?usp=sharing) + [Extra Pack 1](https://drive.google.com/file/d/1RF3OdRoSaFohHqB-IVZyopVCFHNArRbI/view?usp=sharing)  
+and put them into said `mods` folder. (Be sure to unzip it first after you download it, probably right-click -> extract all).
+
 
 # Playing
 
