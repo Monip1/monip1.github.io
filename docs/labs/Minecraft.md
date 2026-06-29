@@ -27,6 +27,9 @@ We will be playing on version 1.21.1 and the neoforge version is 21.1.234.
 
 [This link](https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.234/neoforge-21.1.234-installer.jar) should download it automatically? 
 
+Run the `.jar` file by running it with Java.  
+You are the client.
+
 # Adding Mods
 
 Locate your `.minecraft` folder. You should see it if you go to your file explorer and type `%appdata%` in the path. It's probably `~/AppData/Roaming`. Enter the `.minecraft/mods` directory.
