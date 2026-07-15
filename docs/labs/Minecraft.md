@@ -40,7 +40,7 @@ Download links -> [Current set of all mods](https://drive.google.com/file/d/1LaJ
 [Starting mods](https://drive.google.com/file/d/1xwSeHTVEzeA6fo6s7rrIhwbUI7Itd3eT/view?usp=sharing) +  
 [Extra Pack 1](https://drive.google.com/file/d/1RF3OdRoSaFohHqB-IVZyopVCFHNArRbI/view?usp=sharing) +  
 [Extra 2: Gravestones](https://drive.google.com/file/d/1DwKR0AEtbSesBSzKm-cL6pzvIdEsthrU/view?usp=sharing) +  
-[Replacement: walkers replacement](https://drive.google.com/file/d/1Icvk3NX3wpQ4ZwURIqJgN-kWQ8dBsGs7/view?usp=drive_link) you must *delete* `walkers-5.8.11.jar` and leave `walkers-5.8.11-elena-version4.jar` in it's place. This adds compatibility with Aether, Dan's Mo' Creatures, and Ice and Fire Comminuty Version.
+[Replacement: walkers replacement](https://drive.google.com/file/d/1Icvk3NX3wpQ4ZwURIqJgN-kWQ8dBsGs7/view?usp=drive_link) you must *delete* `walkers-5.8.11.jar` and leave `walkers-5.8.11-elena-version6.jar` in it's place. This adds compatibility with Aether, Dan's Mo' Creatures, and Ice and Fire Comminuty Version.
 and put them into said `mods` folder. (Be sure to unzip it first after you download it, probably right-click -> extract all).
 
 
