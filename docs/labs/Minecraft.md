@@ -36,11 +36,13 @@ You are the client.
 Locate your `.minecraft` folder. You should see it if you go to your file explorer and type `%appdata%` in the path. It's probably `~/AppData/Roaming`. Enter the `.minecraft/mods` directory.
 
 All documentation and such can be found in the [Google Drive](https://drive.google.com/drive/folders/1fcEmuc0DucWhrir9FRV8IwTGwZ4DobZZ?usp=sharing)  
-Download links -> [Current set of all mods](https://drive.google.com/file/d/186S2twkY90cp1uSj788IPTX8oJOOsbfg/view?usp=drive_link) =  
+Download links -> [Current set of all mods](https://drive.google.com/file/d/1Ywwh6aRTjzZIiTojTCYSoFELw3aADDKC/view?usp=drive_link) =  
 [Starting mods](https://drive.google.com/file/d/1xwSeHTVEzeA6fo6s7rrIhwbUI7Itd3eT/view?usp=sharing) +  
 [Extra Pack 1](https://drive.google.com/file/d/1RF3OdRoSaFohHqB-IVZyopVCFHNArRbI/view?usp=sharing) +  
 [Extra 2: Gravestones](https://drive.google.com/file/d/1DwKR0AEtbSesBSzKm-cL6pzvIdEsthrU/view?usp=sharing) +  
-[Replacement: walkers replacement](https://drive.google.com/file/d/1Lcd5_CVDZ859HWBSuyfWWB5gKxTYRyrk/view?usp=drive_link) you must *delete* `walkers-5.8.11.jar` and leave `walkers-5.8.11-elena-version7.jar` in it's place. This adds compatibility with Aether, Dan's Mo' Creatures, and Ice and Fire Comminuty Version.
+[Replacement: walkers replacement](https://drive.google.com/file/d/1OzK3JSFPJzXVDdC-s8HlEeWNiPu257Ht/view?usp=drive_link) you must *delete* `walkers-5.8.11.jar` and leave ~~`walkers-5.8.11-elena-version7.jar`~~ `walkers-5.8.11-elena-version8.jar`in it's place. This adds compatibility with Aether, Dan's Mo' Creatures, and Ice and Fire Comminuty Version. +  
+[Replacement: MoCreatures](https://drive.google.com/file/d/12sKvULALFiged9p-RxJXL2jGARJ3Nxnj/view?usp=drive_link) add [`mocreatures-1.1.jar`](https://drive.google.com/file/d/12sKvULALFiged9p-RxJXL2jGARJ3Nxnj/view?usp=drive_link) *delete* `Pehkui-3.8.3+1.21-neoforge.jar` and `bigdans_mocreatures-2.0.0-neoforge-1.21.1.jar` 
+
 and put them into said `mods` folder. (Be sure to unzip it first after you download it, probably right-click -> extract all).
 
 
